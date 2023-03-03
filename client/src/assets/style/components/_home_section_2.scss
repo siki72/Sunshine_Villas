@@ -1,9 +1,19 @@
-.main_select {
-  text-align: center;
-  h2 {
-    font-family: $pop2;
-    font-size: 46px;
-    line-height: 46px;
-    color: #1c1c1c;
+.section_2 {
+  max-width: 90%;
+  padding: 40px;
+  margin: 0 auto;
+
+  .main_select {
+    text-align: center;
+    h2 {
+      font-family: $pop2;
+      font-size: 46px;
+      line-height: 46px;
+      color: #1c1c1c;
+    }
+
+    .villas-cards {
+      display: flex;
+    }
   }
 }

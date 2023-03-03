@@ -221,7 +221,7 @@
   }
 }
 .section_1 {
-  max-width: 80%;
+  max-width: 90%;
   padding: 40px;
   margin: 0 auto;
 }
@@ -283,12 +283,35 @@
   color: #1c1c1c;
 }
 
-.main_select {
+.section_2 {
+  max-width: 90%;
+  padding: 40px;
+  margin: 0 auto;
+}
+.section_2 .main_select {
   text-align: center;
 }
-.main_select h2 {
+.section_2 .main_select h2 {
   font-family: "font-pop200", sans-serif;
   font-size: 46px;
   line-height: 46px;
   color: #1c1c1c;
+}
+.section_2 .main_select .villas-cards {
+  display: flex;
+}
+
+.card-container {
+  margin-top: 40px;
+  width: 100%;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0px 0px 6px #6e6161;
+  border-radius: 10px;
+  padding: 15px;
+  margin-left: 10px;
+  transition: 0.4s;
+}
+.card-container:hover {
+  box-shadow: 0px 0px 11px 3px #6e6161;
+  transform: scale(1.02);
 }/*# sourceMappingURL=index.css.map */
