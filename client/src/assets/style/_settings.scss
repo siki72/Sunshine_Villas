@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "font-pop";
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "font-rob";
+  src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "font-gildas";
+  src: url(../fonts/GildaDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "font-pop-bold";
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "font-pop200";
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "font-rob300";
+  src: url(../fonts/Roboto-Light.ttf);
+}
+
+$pop: "font-pop", sans-serif;
+$rob: "font-rob", sans-serif;
+$gildas: "font-gildas", sans-serif;
+$pop7: "font-pop-bold", sans-serif;
+$pop2: "font-pop200", sans-serif;
+$rob3: "font-rob300", sans-serif;
+
+$color1: rgb(255, 255, 255);
+$color2: rgb(1, 1, 1);
+$color3: rgb(102, 102, 102);
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin block {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+@mixin around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin hover-nav {
+  background-color: $color2;
+  color: $color1;
+  transition: 0.5s;
+}
+@keyframes headeranim {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: $pop;
+  ::selection {
+    color: $color1;
+
+    background-color: $color2;
+  }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+.success {
+  color: green;
+  font-weight: bold;
+}

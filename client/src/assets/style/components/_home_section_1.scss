@@ -1,0 +1,68 @@
+.section_1 {
+  max-width: 80%;
+  padding: 40px;
+  margin: 0 auto;
+
+  .main-villa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    .section_1_img {
+      box-shadow: 0 0 3px black;
+      border-radius: 10px;
+    }
+
+    .text {
+      margin-top: 40px;
+      padding-top: 50px;
+
+      h2 {
+        font-family: $pop2;
+
+        line-height: 46px;
+        font-size: 46px;
+      }
+      p {
+        margin-top: 30px;
+        font-family: $rob3;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 31px;
+        color: $color3;
+      }
+
+      .link-villas {
+        margin-top: 60px;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+          font-family: $rob3;
+          font-size: 18px;
+          color: $color1;
+          background: $color2;
+          cursor: pointer;
+          line-height: 18px;
+          padding: 10px 30px;
+          transition: 0.4s;
+          font-size: 14px;
+          &:hover {
+            transform: scale(1.15);
+          }
+        }
+        .check-div {
+          @include flex;
+        }
+
+        .check {
+          margin-right: 20px;
+          font-family: $pop2;
+          font-size: 24px;
+          line-height: 24px;
+          color: #1c1c1c;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "font-pop";
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: "font-rob";
+  src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: "font-gildas";
+  src: url(../fonts/GildaDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "font-pop-bold";
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "font-pop200";
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "font-rob300";
+  src: url(../fonts/Roboto-Light.ttf);
+}
+@keyframes headeranim {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "font-pop", sans-serif;
+}
+* ::-moz-selection {
+  color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
+}
+* ::selection {
+  color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+.header {
+  max-width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+}
+.header .main_img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .main_img div {
+  font-family: "font-pop-bold", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  text-align: center;
+  line-height: 7rem;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(-500px);
+  animation: headeranim 2s ease forwards;
+}
+.header .main_img div h2 {
+  font-family: "font-gildas", sans-serif;
+  font-weight: 200;
+  font-size: 3.5rem;
+}
+.header .main_img div .button {
+  background: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+  font-size: 1.4rem;
+  font-family: "font-rob", sans-serif;
+  line-height: 18px;
+  padding: 20px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.header .main_img div .button:hover {
+  transform: scale(1.2);
+  background: rgba(127, 127, 127, 0.672);
+}
+
+.navigation {
+  display: grid;
+  height: 60px;
+  width: 100%;
+  grid-template-columns: 10% 30% 60%;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+}
+.navigation .logo {
+  position: absolute;
+  left: 15%;
+  color: rgb(1, 1, 1);
+  font-family: "font-gildas", sans-serif;
+  max-width: 30%;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px 10px;
+  background-color: rgb(255, 255, 255);
+}
+.navigation .logo p {
+  color: rgb(1, 1, 1);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "font-rob", sans-serif;
+  font-weight: 400;
+  margin-top: 5px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.navigation .logo p:last-child {
+  background-color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
+  font-size: 0.7rem;
+}
+.navigation .logo .line {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.navigation ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navigation ul li {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.navigation ul li.villas {
+  color: rgb(102, 102, 102);
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 300;
+  height: 100%;
+  cursor: pointer;
+}
+.navigation ul li.villas:hover .nav-our-villas,
+.navigation ul li.villas .nav-our-villas:hover {
+  display: block;
+}
+.navigation ul li.villas .nav-our-villas {
+  background-color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
+  display: none;
+  opacity: 0;
+  height: 0;
+  position: absolute;
+  visibility: visible;
+  top: 47px;
+  animation: show 0.4s forwards;
+}
+.navigation ul li.villas .nav-our-villas li {
+  background-color: rgb(255, 255, 255);
+  font-size: 0.78rem;
+  color: rgb(1, 1, 1);
+  opacity: 0.8;
+  text-align: left;
+  font-weight: 300;
+}
+.navigation ul li.villas .nav-our-villas li:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
+}
+.navigation ul a {
+  height: 100%;
+  color: rgb(102, 102, 102);
+}
+.navigation ul a :hover {
+  background-color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+}
+.navigation ul .book {
+  font-family: "font-rob300", sans-serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background: rgb(1, 1, 1);
+  cursor: pointer;
+  line-height: 18px;
+  padding: 10px 30px;
+  transition: 0.4s;
+  font-size: 14px;
+}
+.navigation ul .book:hover {
+  transform: scale(1.15);
+}
+
+@keyframes show {
+  to {
+    height: 50px;
+    opacity: 1;
+  }
+}
+.section_1 {
+  max-width: 80%;
+  padding: 40px;
+  margin: 0 auto;
+}
+.section_1 .main-villa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.section_1 .main-villa .section_1_img {
+  box-shadow: 0 0 3px black;
+  border-radius: 10px;
+}
+.section_1 .main-villa .text {
+  margin-top: 40px;
+  padding-top: 50px;
+}
+.section_1 .main-villa .text h2 {
+  font-family: "font-pop200", sans-serif;
+  line-height: 46px;
+  font-size: 46px;
+}
+.section_1 .main-villa .text p {
+  margin-top: 30px;
+  font-family: "font-rob300", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 31px;
+  color: rgb(102, 102, 102);
+}
+.section_1 .main-villa .text .link-villas {
+  margin-top: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+.section_1 .main-villa .text .link-villas .button {
+  font-family: "font-rob300", sans-serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background: rgb(1, 1, 1);
+  cursor: pointer;
+  line-height: 18px;
+  padding: 10px 30px;
+  transition: 0.4s;
+  font-size: 14px;
+}
+.section_1 .main-villa .text .link-villas .button:hover {
+  transform: scale(1.15);
+}
+.section_1 .main-villa .text .link-villas .check-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section_1 .main-villa .text .link-villas .check {
+  margin-right: 20px;
+  font-family: "font-pop200", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  color: #1c1c1c;
+}
+
+.main_select {
+  text-align: center;
+}
+.main_select h2 {
+  font-family: "font-pop200", sans-serif;
+  font-size: 46px;
+  line-height: 46px;
+  color: #1c1c1c;
+}/*# sourceMappingURL=index.css.map */

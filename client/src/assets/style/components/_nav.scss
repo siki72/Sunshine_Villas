@@ -1,0 +1,123 @@
+.navigation {
+  display: grid;
+  height: 60px;
+  width: 100%;
+  grid-template-columns: 10% 30% 60%;
+  position: fixed;
+  background-color: $color1;
+  top: 0;
+
+  .logo {
+    position: absolute;
+    left: 15%;
+    color: $color2;
+    font-family: $gildas;
+    max-width: 30%;
+
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: $color1;
+
+    p {
+      color: $color2;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-family: $rob;
+      font-weight: 400;
+      margin-top: 5px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    p:last-child {
+      background-color: $color2;
+      color: $color1;
+      font-size: 0.7rem;
+    }
+
+    .line {
+      width: 100%;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  ul {
+    height: 100%;
+    @include around;
+    li {
+      height: 100%;
+      @include flex;
+      padding: 0 10px;
+    }
+
+    li.villas {
+      color: $color3;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: 300;
+      height: 100%;
+      cursor: pointer;
+      &:hover .nav-our-villas,
+      .nav-our-villas:hover {
+        display: block;
+      }
+
+      .nav-our-villas {
+        background-color: $color1;
+        color: $color2;
+        display: none;
+        opacity: 0;
+        height: 0;
+        position: absolute;
+        visibility: visible;
+        top: 47px;
+        animation: show 0.4s forwards;
+
+        li {
+          background-color: $color1;
+          font-size: 0.78rem;
+          color: $color2;
+          opacity: 0.8;
+          text-align: left;
+          font-weight: 300;
+
+          &:hover {
+            color: $color1;
+            background-color: $color2;
+          }
+        }
+      }
+    }
+    a {
+      height: 100%;
+      color: $color3;
+      & :hover {
+        @include hover-nav;
+      }
+    }
+
+    .book {
+      font-family: $rob3;
+      font-size: 18px;
+      color: $color1;
+      background: $color2;
+      cursor: pointer;
+      line-height: 18px;
+      padding: 10px 30px;
+      transition: 0.4s;
+      font-size: 14px;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+@keyframes show {
+  to {
+    height: 50px;
+    opacity: 1;
+  }
+}
