@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Home_section1 from "../components/Home_section1";
 import Home_section2 from "../components/Home_section2";
 import Home_section3 from "../components/Home_section3";
+import Home_section4 from "../components/Home_section4";
+
 const Home = () => {
   return (
     <div>
@@ -29,6 +31,7 @@ const Home = () => {
       <Home_section1 />
       <Home_section2 />
       <Home_section3 />
+      <Home_section4 />
     </div>
   );
 };

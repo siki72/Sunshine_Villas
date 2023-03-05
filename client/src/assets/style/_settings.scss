@@ -48,7 +48,7 @@ $color2: rgb(1, 1, 1);
 $color3: rgb(102, 102, 102);
 $color4: #1c1c1c;
 $color5: #878787;
-
+$color6: #403f3d;
 @mixin flex {
   display: flex;
   justify-content: center;
@@ -90,6 +90,10 @@ $color5: #878787;
 
     background-color: $color2;
   }
+}
+
+body {
+  background-color: $color1;
 }
 
 .error {

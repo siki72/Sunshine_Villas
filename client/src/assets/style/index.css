@@ -55,6 +55,10 @@
   background-color: rgb(1, 1, 1);
 }
 
+body {
+  background-color: rgb(255, 255, 255);
+}
+
 .error {
   color: red;
   font-weight: bold;
@@ -433,4 +437,61 @@
 .section_3 .section_3_grid .text .explore-tours button:hover {
   background-color: rgb(102, 102, 102);
   transform: scale(1.1);
+}
+
+.section_4 {
+  max-width: 90%;
+  margin: 60px auto;
+  height: 1000px;
+  text-align: center;
+}
+.section_4 .titles_div h2 {
+  font-family: "font-pop-bold", sans-serif;
+  font-size: 4.375rem;
+  line-height: 6.25rem;
+  color: #403f3d;
+  text-transform: uppercase;
+}
+.section_4 .titles_div p {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.75rem;
+  line-height: 2.75rem;
+  font-weight: 100;
+  color: #403f3d;
+}
+.section_4 .reviews-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.section_4 .reviews-grid .swiper {
+  transition: 0.4s;
+}
+.section_4 .reviews-grid .swiper:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 11px 3px #6e6161;
+}
+.section_4 .reviews-grid .stars img {
+  width: 11rem;
+  transition: 0.4s;
+}
+.section_4 .reviews-grid .stars img:hover {
+  transform: scale(1.2);
+}
+
+.comment {
+  width: 80%;
+}
+.comment h4 {
+  font-family: "font-rob400", sans-serif;
+  font-size: 0.875rem;
+  color: #282828;
+  line-height: 1.313rem;
+}
+.comment p {
+  margin-top: 20px;
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.875rem;
+  color: #939393;
+  line-height: 1.813rem;
 }/*# sourceMappingURL=index.css.map */
