@@ -22,6 +22,14 @@
   font-family: "font-rob300";
   src: url(../fonts/Roboto-Light.ttf);
 }
+@font-face {
+  font-family: "font-pop400";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "font-rob400";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
 @keyframes headeranim {
   to {
     opacity: 1;
@@ -302,6 +310,8 @@
 }
 
 .card-container {
+  position: relative;
+  height: 950px;
   margin-top: 40px;
   width: 100%;
   border: 1px solid rgb(255, 255, 255);
@@ -314,4 +324,61 @@
 .card-container:hover {
   box-shadow: 0px 0px 11px 3px #6e6161;
   transform: scale(1.02);
+}
+.card-container .card-infos > * {
+  margin-top: 1.5rem;
+}
+.card-container .card-infos p {
+  font-family: "font-pop400", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: #1c1c1c;
+}
+.card-container .card-infos .guests > * {
+  margin-top: 10px;
+  font-family: "font-rob400", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.438rem;
+}
+.card-container .card-infos .guests span {
+  margin-left: 10px;
+}
+.card-container .card-infos .guests .house {
+  margin-left: 20px;
+  position: relative;
+}
+.card-container .card-infos .guests .house::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: #1c1c1c;
+  left: -9px;
+  bottom: 0;
+}
+.card-container .card-infos .card-desc {
+  font-family: "font-rob400", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  color: #878787;
+}
+.card-container .card-booking {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card-container .card-booking span {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  border: 2px solid black;
+  color: rgb(1, 1, 1);
+  transition: 0.4s;
+}
+.card-container .card-booking span:hover {
+  background-color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
 }/*# sourceMappingURL=index.css.map */

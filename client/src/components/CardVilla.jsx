@@ -18,13 +18,23 @@ const CardVilla = ({ card }) => {
       ></div>
       <div className="card-infos">
         <p>{card.name}</p>
-        <FontAwesomeIcon icon={faUsers} /> {card.max_guests}{" "}
-        <FontAwesomeIcon icon={faHouse} /> {card.area} m2
+        <div className="guests">
+          <span>
+            <FontAwesomeIcon className="icons" icon={faUsers} />{" "}
+          </span>
+          <span> {card.max_guests}</span>
+          {""}
+
+          <span className="house">
+            <FontAwesomeIcon className="icons" icon={faHouse} />{" "}
+          </span>
+          <span>{card.area} m2</span>
+        </div>
+        <div className="card-desc">{card.infos}</div>
       </div>
-      <div className="card-desc"></div>
       <div className="card-booking">
         <Link to={card.link}>
-          <span>click for more info</span>
+          <span>Click for more info</span>
         </Link>
       </div>
     </div>

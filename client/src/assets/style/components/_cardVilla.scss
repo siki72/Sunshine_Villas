@@ -1,4 +1,6 @@
 .card-container {
+  position: relative;
+  height: 950px;
   margin-top: 40px;
   width: 100%;
   border: 1px solid $color1;
@@ -11,5 +13,71 @@
   &:hover {
     box-shadow: 0px 0px 11px 3px #6e6161;
     transform: scale(1.02);
+  }
+
+  .card-infos {
+    > * {
+      margin-top: 1.5rem;
+    }
+    p {
+      font-family: $pop4;
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      color: $color4;
+    }
+
+    .guests {
+      > * {
+        margin-top: 10px;
+        font-family: $rob4;
+        font-size: 0.813rem;
+        line-height: 1.438rem;
+      }
+      span {
+        margin-left: 10px;
+      }
+      .house {
+        margin-left: 20px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 100%;
+          background-color: $color4;
+          left: -9px;
+          bottom: 0;
+        }
+      }
+    }
+    .card-desc {
+      font-family: $rob4;
+      font-size: 0.875rem;
+      line-height: 1.75rem;
+      color: $color5;
+    }
+  }
+
+  .card-booking {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    span {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: $rob3;
+      font-size: 1rem;
+      line-height: 1rem;
+      border: 2px solid black;
+      color: $color2;
+      transition: 0.4s;
+
+      &:hover {
+        background-color: $color2;
+        color: $color1;
+      }
+    }
   }
 }

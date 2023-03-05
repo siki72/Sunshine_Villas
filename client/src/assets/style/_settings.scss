@@ -25,16 +25,30 @@
   src: url(../fonts/Roboto-Light.ttf);
 }
 
+@font-face {
+  font-family: "font-pop400";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "font-rob400";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
 $pop: "font-pop", sans-serif;
 $rob: "font-rob", sans-serif;
 $gildas: "font-gildas", sans-serif;
 $pop7: "font-pop-bold", sans-serif;
 $pop2: "font-pop200", sans-serif;
 $rob3: "font-rob300", sans-serif;
+$rob4: "font-rob400", sans-serif;
+$pop4: "font-pop400", sans-serif;
 
 $color1: rgb(255, 255, 255);
 $color2: rgb(1, 1, 1);
 $color3: rgb(102, 102, 102);
+$color4: #1c1c1c;
+$color5: #878787;
+
 @mixin flex {
   display: flex;
   justify-content: center;
