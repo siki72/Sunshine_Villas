@@ -104,3 +104,15 @@ body {
   color: green;
   font-weight: bold;
 }
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "next";
+  color: rgb(159, 149, 149);
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "prev";
+  color: rgb(159, 149, 149);
+}

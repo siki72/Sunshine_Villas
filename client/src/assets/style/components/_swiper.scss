@@ -1,0 +1,39 @@
+.swiper {
+  width: 800px;
+  display: flex;
+
+  div {
+    padding: 0 30px;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: flex-start;
+
+    h3 {
+      text-align: left;
+      font-family: $pop2;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: rgba(28, 28, 28, 0.27);
+    }
+    p {
+      font-family: $rob3;
+      font-size: 0.75;
+      line-height: 1.813rem;
+      color: #939393;
+    }
+
+    h4 {
+      margin-top: 3px;
+      text-align: left;
+      font-family: $rob4;
+      font-weight: 500;
+      line-height: 1.75rem;
+      font-size: 1rem;
+      color: #282828;
+    }
+    img {
+      margin-top: 20px;
+      width: 56px;
+    }
+  }
+}

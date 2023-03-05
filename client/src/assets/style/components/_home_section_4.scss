@@ -27,12 +27,10 @@
     grid-template-columns: 70% 30%;
 
     .swiper {
-      transition: 0.4s;
+      transition: 0.7s;
 
       &:hover {
-        transform: scale(1.05);
-
-        box-shadow: 0px 0px 11px 3px #6e6161;
+        box-shadow: 0px 0px 10px 2px #989393;
       }
     }
 

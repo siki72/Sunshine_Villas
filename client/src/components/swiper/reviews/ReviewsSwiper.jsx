@@ -10,34 +10,43 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./swiperStyle.css";
-import ReviewsCards from "./reviewsCards";
 
 export default function App() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
+    fetch("https://alimissoum.app.3wa.io/reveiws")
       .then((resp) => resp.json())
-      .then((data) => setReviews(data));
+      .then((data) => {
+        console.log(data);
+        setReviews(data);
+      });
   }, []);
   return (
     <div className="swiper">
       <Swiper
+        modules={[Pagination, Navigation, Autoplay]}
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         autoplay={true}
-        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
         {reviews.map((comment) => (
           <SwiperSlide key={comment.id}>
-            <h4>{comment.name}</h4>
-            <p>{comment.body}</p>
+            <div>
+              <h3>Guest reviews :</h3>
+
+              <span>
+                <img src={comment.link} alt={"picture" + comment.name} />{" "}
+                <h4>{comment.name}</h4>
+                <h4>5/5</h4>
+              </span>
+              <p>{comment.content}</p>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
