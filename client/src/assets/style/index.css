@@ -81,6 +81,11 @@ body {
   color: rgb(159, 149, 149);
 }
 
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background-color: rgb(159, 149, 149);
+}
+
 .header {
   max-width: 100vw;
   overflow: hidden;
@@ -512,6 +517,7 @@ body {
   font-size: 0.75;
   line-height: 1.813rem;
   color: #939393;
+  margin-bottom: 30px;
 }
 .swiper div h4 {
   margin-top: 3px;

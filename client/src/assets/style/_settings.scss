@@ -116,3 +116,8 @@ body {
   content: "prev";
   color: rgb(159, 149, 149);
 }
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background-color: rgb(159, 149, 149);
+}

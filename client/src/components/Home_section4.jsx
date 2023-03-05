@@ -19,6 +19,16 @@ const Home_section4 = () => {
           </div>
         </div>
       </div>
+      <div className="get_media">
+        <ul>
+          <li>
+            <a href="www.instagram.com"></a>
+          </li>
+          <li>
+            <a href="www.facebook.com"></a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
