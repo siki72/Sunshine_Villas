@@ -76,6 +76,12 @@ $color6: #403f3d;
     transform: translate(0);
   }
 }
+
+@keyframes up {
+  to {
+    transform: translateY(-15px);
+  }
+}
 * {
   margin: 0;
   padding: 0;

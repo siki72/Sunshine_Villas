@@ -42,4 +42,38 @@
       }
     }
   }
+
+  .get_media {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 700px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 70%);
+    ul {
+      min-width: 40%;
+      display: flex;
+      justify-content: space-around;
+
+      li h4 {
+        font-family: $pop2;
+        font-size: 3.188rem;
+        line-height: 3.188rem;
+        color: $color1;
+      }
+      li a {
+        & :hover {
+          animation: up 0.4s ease forwards;
+        }
+      }
+      .media-icons {
+        font-size: 2.813rem;
+        line-height: 2.813rem;
+        color: $color1;
+      }
+    }
+  }
 }

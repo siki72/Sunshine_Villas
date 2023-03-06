@@ -1,5 +1,8 @@
 import React from "react";
 import ReviewsSwiper from "./swiper/reviews/ReviewsSwiper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faFacebook } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Home_section4 = () => {
   return (
@@ -19,13 +22,28 @@ const Home_section4 = () => {
           </div>
         </div>
       </div>
-      <div className="get_media">
+      <div
+        className="get_media"
+        style={{
+          backgroundImage: `url(./img/home/section_4.jpg)`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right",
+          backgroundSize: "cover",
+        }}
+      >
         <ul>
           <li>
-            <a href="www.instagram.com"></a>
+            <h4>#Let's get social</h4>
           </li>
           <li>
-            <a href="www.facebook.com"></a>
+            <a href="https://www.instagram.com">
+              <FontAwesomeIcon className="media-icons" icon={faInstagram} />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com">
+              <FontAwesomeIcon className="media-icons" icon={faFacebook} />
+            </a>
           </li>
         </ul>
       </div>
