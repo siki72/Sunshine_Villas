@@ -1,0 +1,81 @@
+.booking {
+  text-align: center;
+  .main_img {
+    margin: 50px 0;
+    height: 540px;
+    min-width: 100%;
+  }
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    > * {
+      margin-bottom: 40px;
+    }
+    .head-div {
+      height: 60px;
+      background-color: rgb(91, 94, 97);
+      width: 100%;
+      h3 {
+        margin-left: 5rem;
+        text-align: left;
+        font-family: $rob4;
+        color: $color1;
+        padding: 10px 0;
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+    h2 {
+      font-family: $pop7;
+      font-size: 3.688rem;
+      text-transform: uppercase;
+      color: #000000;
+      letter-spacing: 10px;
+      line-height: 3.688rem;
+    }
+
+    .choose-villas {
+      .choose-villa-card {
+        min-height: 00px;
+
+        border: 1px solid $color1;
+
+        box-shadow: 0px 0px 6px #6e6161;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        .swipe {
+          .swiper-pagination-bullet-active {
+            background-color: rgb(36, 34, 34);
+          }
+          .swiper-wrapper {
+            width: 500px;
+          }
+          .swiper,
+          .swiper-initialized,
+          .swiper-horizontal,
+          .swiper-backface-hidden,
+          .mySwiper {
+            width: 100%;
+          }
+          max-width: 500px;
+          .swiper-slide .swiper-slide-active {
+            min-width: 100%;
+          }
+          div {
+            border-radius: 5px;
+            min-width: 100%;
+          }
+          .swiper .swiper-initialized,
+          .swiper-horizontal,
+          .swiper-backface-hidden,
+          .mySwiper {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

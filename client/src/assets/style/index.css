@@ -138,6 +138,83 @@ body {
   background: rgba(127, 127, 127, 0.672);
 }
 
+.booking {
+  text-align: center;
+}
+.booking .main_img {
+  margin: 50px 0;
+  height: 540px;
+  min-width: 100%;
+}
+.booking .container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.booking .container > * {
+  margin-bottom: 40px;
+}
+.booking .container .head-div {
+  height: 60px;
+  background-color: rgb(91, 94, 97);
+  width: 100%;
+}
+.booking .container .head-div h3 {
+  margin-left: 5rem;
+  text-align: left;
+  font-family: "font-rob400", sans-serif;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.booking .container h2 {
+  font-family: "font-pop-bold", sans-serif;
+  font-size: 3.688rem;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 10px;
+  line-height: 3.688rem;
+}
+.booking .container .choose-villas .choose-villa-card {
+  min-height: 0px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0px 0px 6px #6e6161;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+}
+.booking .container .choose-villas .choose-villa-card .swipe {
+  max-width: 500px;
+}
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-pagination-bullet-active {
+  background-color: rgb(36, 34, 34);
+}
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-wrapper {
+  width: 500px;
+}
+.booking .container .choose-villas .choose-villa-card .swipe .swiper,
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-initialized,
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-horizontal,
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-backface-hidden,
+.booking .container .choose-villas .choose-villa-card .swipe .mySwiper {
+  width: 100%;
+}
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-slide .swiper-slide-active {
+  min-width: 100%;
+}
+.booking .container .choose-villas .choose-villa-card .swipe div {
+  border-radius: 5px;
+  min-width: 100%;
+}
+.booking .container .choose-villas .choose-villa-card .swipe .swiper .swiper-initialized,
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-horizontal,
+.booking .container .choose-villas .choose-villa-card .swipe .swiper-backface-hidden,
+.booking .container .choose-villas .choose-villa-card .swipe .mySwiper {
+  max-width: 300px;
+}
+
 .navigation {
   z-index: 100;
   display: grid;

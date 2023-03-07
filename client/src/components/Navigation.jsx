@@ -28,7 +28,7 @@ const Navigation = () => {
   }, [lastScrol]);
 
   return (
-    <div className={`navigation ${show && "hidden"}`}>
+    <div className={`navigation  ${show && "hidden"} `}>
       <div></div>
       <div></div>
       <div className="logo">
