@@ -1,5 +1,6 @@
 .navigation {
   z-index: 100;
+
   display: grid;
   height: 60px;
   width: 100%;
@@ -7,6 +8,7 @@
   position: fixed;
   background-color: $color1;
   top: 0;
+  transition: 0.3s linear;
 
   .logo {
     position: absolute;
@@ -121,4 +123,16 @@
     height: 50px;
     opacity: 1;
   }
+}
+
+.hidden {
+  transition: 0.4s linear;
+  z-index: 100;
+  display: grid;
+  height: 60px;
+  width: 100%;
+  grid-template-columns: 10% 30% 60%;
+  position: fixed;
+  background-color: $color1;
+  top: -180px;
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import Home_section1 from "../components/Home_section1";
 import Home_section2 from "../components/Home_section2";
 import Home_section3 from "../components/Home_section3";
 import Home_section4 from "../components/Home_section4";
+import Home_section5 from "../components/Home_section5";
 
 const Home = () => {
   return (
@@ -32,6 +34,8 @@ const Home = () => {
       <Home_section2 />
       <Home_section3 />
       <Home_section4 />
+      <Home_section5 />
+      <Footer />
     </div>
   );
 };

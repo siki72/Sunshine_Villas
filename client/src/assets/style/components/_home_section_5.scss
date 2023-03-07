@@ -1,0 +1,52 @@
+.section_5 {
+  margin-top: 70px;
+  max-width: 90%;
+  margin: 60px auto;
+  text-align: center;
+  min-height: 800px;
+
+  .main-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .read {
+      padding: 30px 50px;
+      > * {
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-family: $pop2;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        color: #1c1c1c;
+      }
+      p {
+        text-align: left;
+        font-family: $rob4;
+        font-size: 0.875rem;
+        line-height: 1.75rem;
+        color: #878787;
+        letter-spacing: 1px;
+      }
+
+      a {
+        & :hover {
+          background-color: #1c1c1c;
+          color: $color1;
+          animation: up 0.4s ease forwards;
+        }
+      }
+      button {
+        cursor: pointer;
+        transition: 0.4s;
+        font-family: $rob3;
+        font-size: 0.938rem;
+        line-height: 0.938rem;
+        padding: 15px 40px;
+        background-color: transparent;
+        border: 2px solid rgb(64, 63, 61);
+        border-radius: 5px;
+      }
+    }
+  }
+}

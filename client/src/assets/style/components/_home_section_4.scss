@@ -1,7 +1,6 @@
 .section_4 {
-  max-width: 90%;
   margin: 60px auto;
-  height: 1000px;
+  max-height: 1000px;
   text-align: center;
 
   .titles_div {
@@ -44,10 +43,7 @@
   }
 
   .get_media {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    min-height: 700px;
+    min-height: 500px;
     min-width: 100%;
     display: flex;
     justify-content: center;

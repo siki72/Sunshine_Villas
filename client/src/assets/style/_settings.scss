@@ -79,7 +79,7 @@ $color6: #403f3d;
 
 @keyframes up {
   to {
-    transform: translateY(-15px);
+    transform: translateY(-15%);
   }
 }
 * {
@@ -91,6 +91,7 @@ $color6: #403f3d;
   border: none;
   text-decoration: none;
   font-family: $pop;
+  scroll-behavior: smooth;
   ::selection {
     color: $color1;
 

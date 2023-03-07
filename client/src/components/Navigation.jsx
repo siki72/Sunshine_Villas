@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVihara } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrol, setLastScroll] = useState(0);
+
+  const controlNavBar = () => {
+    if (window.scrollY > lastScrol) {
+      // if scroll down hide the navbar
+      setShow(true);
+    } else {
+      // if scroll up show the navbar
+      setShow(false);
+    }
+
+    setLastScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavBar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavBar);
+    };
+  }, [lastScrol]);
+
   return (
-    <div className="navigation">
+    <div className={`navigation ${show && "hidden"}`}>
       <div></div>
       <div></div>
       <div className="logo">
