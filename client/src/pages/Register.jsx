@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import userApi from "../users/api";
 
 const Register = () => {
   const formRef = useRef();
@@ -15,13 +16,7 @@ const Register = () => {
       password: data.get("password"),
     };
 
-    fetch("https://alimissoum.app.3wa.io/register", {
-      method: "POST",
-      body: JSON.stringify(newUser),
-      headers: {
-        "Content-type": "application/json ; charset=UTF-8",
-      },
-    });
+    userApi.addUser(newUser).then((resp) => console.log(resp));
   };
 
   return (
