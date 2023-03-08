@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const formRef = useRef();
+
+  const registerUser = (e) => {
+    e.preventDefault();
+    const data = new FormData(formRef.current);
+
+    const newUser = {
+      firstname: data.get("firstname"),
+      lastname: data.get("lastname"),
+      email: data.get("email"),
+      password: data.get("password"),
+    };
+
+    fetch("https://alimissoum.app.3wa.io/register", {
+      method: "POST",
+      body: JSON.stringify(newUser),
+      headers: {
+        "Content-type": "application/json ; charset=UTF-8",
+      },
+    });
+  };
+
   return (
     <div className="full-screen-container">
       <div className="login-container">
         <h1 className="login-title">Welcome</h1>
-        <form className="form " action="/register" method="POST">
+        <form
+          className="form "
+          ref={formRef}
+          action="/register"
+          method="POST"
+          onSubmit={registerUser}
+        >
           <div className="input-group ">
             <label htmlFor="firstname">First name</label>
             <input type="text" name="firstname" id="firstname" />
