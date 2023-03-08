@@ -178,12 +178,13 @@ body {
 }
 .booking .container .choose-villas .choose-villa-card {
   min-height: 0px;
+  padding: 15px 30px;
   border: 1px solid rgb(255, 255, 255);
   box-shadow: 0px 0px 6px #6e6161;
   border-radius: 10px;
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: 50% 25% 25%;
+  grid-template-columns: 50% 50%;
 }
 .booking .container .choose-villas .choose-villa-card .swipe {
   max-width: 500px;
@@ -213,6 +214,69 @@ body {
 .booking .container .choose-villas .choose-villa-card .swipe .swiper-backface-hidden,
 .booking .container .choose-villas .choose-villa-card .swipe .mySwiper {
   max-width: 300px;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos > * {
+  margin-bottom: 40px;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos h2 {
+  font-size: 2rem;
+  color: #1e1d1d;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos {
+  font-size: 1rem;
+  font-family: "font-gildas", sans-serif;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos > * {
+  margin-left: 15px;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house {
+  position: relative;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: #1c1c1c;
+  left: -8px;
+  bottom: 0;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .header-book {
+  margin-top: 1rem;
+  font-size: 1rem;
+  max-width: 80%;
+  margin: 20px auto;
+  box-shadow: 0 0 5px #746b6b;
+  padding: 10px 15px;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .header-book .headerSearchText {
+  margin: 40px 20px;
+  font-family: "font-gildas", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #767575;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  background: rgb(1, 1, 1);
+  cursor: pointer;
+  line-height: 18px;
+  padding: 15px 20px;
+  transition: 0.4s;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: 0.4s linear;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button:hover {
+  transform: scale(1.1);
 }
 
 .navigation {
