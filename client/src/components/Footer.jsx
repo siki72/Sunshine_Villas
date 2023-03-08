@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
       <div className="trip-logo">
         <div className="trip-logo-img">
-          <img src="./img/logo/trip-footer-logo.png" alt="" />
+          <img src="../img/logo/trip-footer-logo.png" alt="" />
         </div>
         <p>Connect With Us</p>
         <p>SOCIAL MEDIA CHANNELS</p>

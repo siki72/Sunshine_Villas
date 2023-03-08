@@ -27,7 +27,7 @@ const Swiper_img_1 = () => {
       <SwiperSlide>
         <div
           style={{
-            backgroundImage: `url(./img/choose_book/1_bed/1.jpg)`,
+            backgroundImage: `url(../img/choose_book/1_bed/1.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -39,7 +39,7 @@ const Swiper_img_1 = () => {
       <SwiperSlide>
         <div
           style={{
-            backgroundImage: `url(./img/choose_book/1_bed/2.jpg)`,
+            backgroundImage: `url(../img/choose_book/1_bed/2.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -50,7 +50,7 @@ const Swiper_img_1 = () => {
       <SwiperSlide>
         <div
           style={{
-            backgroundImage: `url(./img/choose_book/1_bed/3.jpg)`,
+            backgroundImage: `url(../img/choose_book/1_bed/3.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -61,7 +61,7 @@ const Swiper_img_1 = () => {
       <SwiperSlide>
         <div
           style={{
-            backgroundImage: `url(./img/choose_book/1_bed/4.jpg)`,
+            backgroundImage: `url(../img/choose_book/1_bed/4.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
