@@ -19,6 +19,10 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 const Booking = () => {
   /*   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
   console.log(data); */
+
+  const [openDate1, setOpenDate1] = useState(false);
+  const [openDate2, setOpenDate2] = useState(false);
+  const [openDate3, setOpenDate3] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -71,19 +75,24 @@ const Booking = () => {
                       className="headerIcon"
                       icon={faCalendarDays}
                     />
-                    <span className="headerSearchText">{`${format(
-                      date[0].startDate,
+                    <span
+                      onClick={() => setOpenDate1(!openDate1)}
+                      className="headerSearchText"
+                    >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+                      date[0].endDate,
                       "dd/MM/yyyy"
-                    )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
+                    )}`}</span>
                   </div>
                   <div className="date">
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={date}
-                      className="date"
-                    />
+                    {openDate1 && (
+                      <DateRange
+                        editableDateInputs={true}
+                        onChange={(item) => setDate([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        ranges={date}
+                        className="date"
+                      />
+                    )}
                   </div>
                 </div>
                 <Link className="button-book">
@@ -98,7 +107,7 @@ const Booking = () => {
             </div>
             <div className="choose-villa-infos">
               <div className="card-infos">
-                <p>2 BEDROOM VILLA​</p>
+                <h2>2 BEDROOM VILLA​</h2>
                 <div className="guests">
                   <div className="infos">
                     <span>
@@ -118,19 +127,24 @@ const Booking = () => {
                       className="headerIcon"
                       icon={faCalendarDays}
                     />
-                    <span className="headerSearchText">{`${format(
-                      date[0].startDate,
+                    <span
+                      onClick={() => setOpenDate2(!openDate2)}
+                      className="headerSearchText"
+                    >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+                      date[0].endDate,
                       "dd/MM/yyyy"
-                    )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
+                    )}`}</span>
                   </div>
                   <div className="date">
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={date}
-                      className="date"
-                    />
+                    {openDate2 && (
+                      <DateRange
+                        editableDateInputs={true}
+                        onChange={(item) => setDate([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        ranges={date}
+                        className="date"
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -146,7 +160,7 @@ const Booking = () => {
             </div>
             <div className="choose-villa-infos">
               <div className="card-infos">
-                <p>3 BEDROOM VILLA​</p>
+                <h2>3 BEDROOM VILLA​</h2>
                 <div className="guests">
                   <div className="infos">
                     <span>
@@ -166,19 +180,24 @@ const Booking = () => {
                       className="headerIcon"
                       icon={faCalendarDays}
                     />
-                    <span className="headerSearchText">{`${format(
-                      date[0].startDate,
+                    <span
+                      onClick={() => setOpenDate3(!openDate3)}
+                      className="headerSearchText"
+                    >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+                      date[0].endDate,
                       "dd/MM/yyyy"
-                    )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
+                    )}`}</span>
                   </div>
                   <div className="date">
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={date}
-                      className="date"
-                    />
+                    {openDate3 && (
+                      <DateRange
+                        editableDateInputs={true}
+                        onChange={(item) => setDate([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        ranges={date}
+                        className="date"
+                      />
+                    )}
                   </div>
                 </div>
 
