@@ -110,6 +110,11 @@
       padding: 10px 30px;
       transition: 0.4s;
       font-size: 14px;
+      li {
+        .svg-inline--fa {
+          margin-left: 10px;
+        }
+      }
 
       &:hover {
         transform: scale(1.15);

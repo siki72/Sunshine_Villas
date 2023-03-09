@@ -9,10 +9,13 @@ import argon2 from "argon2";
 
 dotenv.config();
 const app = express();
+app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+const maxAge = 3 * 24 * 60 * 60 * 1000;
 
+// CORS
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Origin", req.headers.origin);
@@ -27,23 +30,40 @@ app.use(function (req, res, next) {
     next();
   }
 });
-/*app.use(
-  
-    cors({
-      credentials: true,
-      origin: "*",
-      methods: ["GET", "POST", "PUT", "DELETE", "HEAD", "PATCH"],
 
-      
-    })
-  );
+/* ************** GET profile **************/
 
-/****** GET **** */
+app.get("/profile", (req, res) => {
+  const { karibu } = req.cookies;
+  if (karibu) {
+    jwt.verify(
+      karibu,
+      process.env.TOKEN_SECRET,
+      {},
+      async (err, karibuData) => {
+        if (err) throw err;
+        const { id } = karibuData;
+        const co = await createPoolConnexion();
+        const [nameUSer] = await co.query(
+          `SELECT firstname FROM users WHERE id = ? `,
+          [id]
+        );
+        res.json(nameUSer[0]);
+      }
+    );
+  } else {
+    res.json(null);
+  }
+});
+
+/****** GET  CARDS *****/
 app.get("/cards", async (req, res) => {
   const co = await createPoolConnexion();
   const [table] = await co.query(`SELECT * FROM cards WHERE 1`);
   res.json(table);
 });
+
+/***** GET REVIEWS ****/
 
 app.get("/reveiws", async (req, res) => {
   const co = await createPoolConnexion();
@@ -51,7 +71,7 @@ app.get("/reveiws", async (req, res) => {
   res.json(table);
 });
 
-/****** post  new user *********/
+/****** POST  NEW USER *********/
 
 app.post("/register", bodyParser.json(), async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
@@ -96,13 +116,17 @@ app.post("/login", bodyParser.json(), async (req, res) => {
 
       if (validPass) {
         jwt.sign(
-          { email: user[0].email, id: user[0].id },
+          { email: user[0].email, id: user[0].id, name: user[0].firstname },
           process.env.TOKEN_SECRET,
           {},
           (err, token) => {
             if (err) throw err;
             res
-              .cookie("karibu", token, { sameSite: "none", secure: true })
+              .cookie("karibu", token, {
+                sameSite: "none",
+                secure: true,
+                maxAge: maxAge,
+              })
               .json({ id: user[0].id, name: user[0].firstname });
             res.status(200);
           }

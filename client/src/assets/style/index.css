@@ -388,6 +388,9 @@ body {
   transition: 0.4s;
   font-size: 14px;
 }
+.navigation ul .book li .svg-inline--fa {
+  margin-left: 10px;
+}
 .navigation ul .book:hover {
   transform: scale(1.15);
 }

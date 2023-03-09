@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVihara } from "@fortawesome/free-solid-svg-icons";
+import { UserContext } from "../users/UserContext.jsx";
 
 const Navigation = () => {
   const [show, setShow] = useState(true);
   const [lastScrol, setLastScroll] = useState(0);
-
+  const { user } = useContext(UserContext); // je recupére la data de user depuis UserContext
   const controlNavBar = () => {
     if (window.scrollY > lastScrol) {
       // if scroll down hide the navbar
@@ -71,7 +72,9 @@ const Navigation = () => {
           <li className="li">BOOKINGS</li>
         </NavLink> */}
         <NavLink to="/login" className={"book"}>
-          <li className="li">Login</li>
+          <li className="li">
+            {user ? " Welcome  " + user.firstname.toUpperCase() : "Login"}
+          </li>
         </NavLink>
       </ul>
     </div>
