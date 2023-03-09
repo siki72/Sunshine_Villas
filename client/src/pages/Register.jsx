@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import userApi from "../users/api";
 
 const Register = () => {
-  const formRef = useRef();
+  const formRegisterRef = useRef();
 
   const registerUser = (e) => {
     e.preventDefault();
-    const data = new FormData(formRef.current);
+    const data = new FormData(formRegisterRef.current);
 
     const newUser = {
       firstname: data.get("firstname"),
@@ -25,7 +25,7 @@ const Register = () => {
         <h1 className="login-title">Welcome</h1>
         <form
           className="form "
-          ref={formRef}
+          ref={formRegisterRef}
           action="/register"
           method="POST"
           onSubmit={registerUser}

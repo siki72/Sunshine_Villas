@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const URL = "https://alimissoum.app.3wa.io/";
 
 async function addUser(user) {
@@ -9,12 +11,29 @@ async function addUser(user) {
         "Content-type": "application/json ; charset=UTF-8",
       },
     });
+  } catch (e) {
+    alert("Registration failed. Please try again later");
+  }
+}
+
+async function login(user) {
+  try {
+    const results = await fetch(`${URL}login`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+        /*         "Access-Control-Allow-Credentials": true, */
+      },
+      body: JSON.stringify(user),
+    });
     return results.json();
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    console.log(e);
   }
 }
 
 export default {
   addUser,
+  login,
 };
