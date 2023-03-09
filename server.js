@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
 /* ************** GET profile **************/
 
 app.get("/profile", (req, res) => {
-  const { karibu } = req.cookies;
+  const { karibu } = req.cookies; // ---> on récupére le cookie par le nom qu'on lui attribué
   if (karibu) {
     jwt.verify(
       karibu,
@@ -42,13 +42,14 @@ app.get("/profile", (req, res) => {
       {},
       async (err, karibuData) => {
         if (err) throw err;
-        const { id } = karibuData;
-        const co = await createPoolConnexion();
+        console.log(karibuData);
+        const { name, email, id } = karibuData; // --> on récupére l'ID de notre utilisateur depuis le cookie qui ont été passé dans l'objet JWT
+        /*const co = await createPoolConnexion();
         const [nameUSer] = await co.query(
           `SELECT firstname FROM users WHERE id = ? `,
           [id]
-        );
-        res.json(nameUSer[0]);
+        );*/
+        res.json({ name, email, id });
       }
     );
   } else {
@@ -103,6 +104,8 @@ app.post("/register", bodyParser.json(), async (req, res) => {
   }
 });
 
+/******* LOGIN ******/
+
 app.post("/login", bodyParser.json(), async (req, res) => {
   const { email, password } = req.body;
 
@@ -135,7 +138,7 @@ app.post("/login", bodyParser.json(), async (req, res) => {
         res.status(422).json("pass not ok");
       }
     } else {
-      res.json("notfound");
+      res.json("not found");
     }
   }
 });

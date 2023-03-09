@@ -7,7 +7,7 @@ import { UserContext } from "../users/UserContext.jsx";
 const Navigation = () => {
   const [show, setShow] = useState(true);
   const [lastScrol, setLastScroll] = useState(0);
-  const { user } = useContext(UserContext); // je recupére la data de user depuis UserContext
+  const { user } = useContext(UserContext); // je recupére la data de user depuis
   const controlNavBar = () => {
     if (window.scrollY > lastScrol) {
       // if scroll down hide the navbar
@@ -73,7 +73,7 @@ const Navigation = () => {
         </NavLink> */}
         <NavLink to="/login" className={"book"}>
           <li className="li">
-            {user ? " Welcome  " + user.firstname.toUpperCase() : "Login"}
+            {user ? " Welcome  " + user.name?.toUpperCase() : "Login"}
           </li>
         </NavLink>
       </ul>

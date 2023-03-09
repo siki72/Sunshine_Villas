@@ -18,7 +18,20 @@ const Login = () => {
         password: data.get("password"),
       };
 
-      userApi.login(tryLoginUser).then((resp) => setUser(resp)); // passer les infos de user depuis node à notre UserCOntext
+      /*   userApi.login(tryLoginUser).then((resp) => setUser(resp)); // passer les infos de user depuis node à notre UserCOntext */
+
+      fetch("https://alimissoum.app.3wa.io/login", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+          /*         "Access-Control-Allow-Credentials": true, */
+        },
+        body: JSON.stringify(tryLoginUser),
+      })
+        .then((resp) => resp.json())
+        .then((data) => setUser(data));
+      alert("Login successful");
       setRedirect(true);
     } catch (e) {
       alert("failed");
