@@ -128,3 +128,8 @@ body {
 .swiper-pagination-bullet-active {
   background-color: rgb(159, 149, 149);
 }
+
+.active {
+  background-color: $color2;
+  color: $color1;
+}

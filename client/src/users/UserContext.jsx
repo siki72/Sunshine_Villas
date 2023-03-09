@@ -4,19 +4,23 @@ export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!user) {
       fetch("https://alimissoum.app.3wa.io/profile", {
-        credentials: "include",
+        credentials: "include", // renvoi tes cookie dans la req
       })
         .then((resp) => resp.json())
-        .then((data) => setUser(data));
+        .then((data) => {
+          setUser(data);
+          setReady(true);
+        });
     }
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, ready }}>
       {children}
     </UserContext.Provider>
   );

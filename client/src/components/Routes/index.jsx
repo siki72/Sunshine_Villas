@@ -14,6 +14,7 @@ import Footer from "../Footer";
 import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 import { UserContextProvider } from "../../users/UserContext.jsx";
+import Account from "../../pages/Account.jsx";
 
 const index = () => {
   return (
@@ -31,6 +32,8 @@ const index = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/explore-zanzibar" element={<Explore_zanzibar />} />
+          <Route path="/account/" element={<Account />} />
+          <Route path="/account/:pages" element={<Account />} />
         </Routes>
         <Footer />
       </UserContextProvider>

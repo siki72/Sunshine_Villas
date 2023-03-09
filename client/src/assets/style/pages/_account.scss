@@ -1,0 +1,22 @@
+.account-container {
+  .container {
+    margin-top: 80px;
+    padding: 40px;
+    .nav-book {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid transparent;
+      box-shadow: 0 0 5px 1px #7c7373;
+      border-radius: 5px;
+      height: 40px;
+      max-width: 500px;
+      padding: 20px;
+
+      a {
+        color: black;
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVihara } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../users/UserContext.jsx";
 
 const Navigation = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [lastScrol, setLastScroll] = useState(0);
   const { user } = useContext(UserContext); // je recupére la data de user depuis
   const controlNavBar = () => {
@@ -32,15 +32,19 @@ const Navigation = () => {
     <div className={`navigation  ${show && "hidden"} `}>
       <div></div>
       <div></div>
-      <div className="logo">
-        <FontAwesomeIcon icon={faVihara} />
-        <FontAwesomeIcon icon={faVihara} />
-        <FontAwesomeIcon icon={faVihara} />
-        <div className="line"></div>
-        <p>SUNSHINE</p>
-        <p>VILLAS</p>
-        <p>CODELAND</p>
-      </div>
+
+      <Link to={"/"} className="logo">
+        <div>
+          <FontAwesomeIcon icon={faVihara} />
+          <FontAwesomeIcon icon={faVihara} />
+          <FontAwesomeIcon icon={faVihara} />
+          <div className="line"></div>
+          <p>SUNSHINE</p>
+          <p>VILLAS</p>
+          <p>CODELAND</p>
+        </div>
+      </Link>
+
       <ul>
         <NavLink to="/">
           <li>Home</li>
@@ -71,7 +75,7 @@ const Navigation = () => {
         {/*        <NavLink to="/booking" className={"book"}>
           <li className="li">BOOKINGS</li>
         </NavLink> */}
-        <NavLink to="/login" className={"book"}>
+        <NavLink to={user ? "/account" : "/login"} className={"book"}>
           <li className="li">
             {user ? " Welcome  " + user.name?.toUpperCase() : "Login"}
           </li>
