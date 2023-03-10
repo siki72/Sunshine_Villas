@@ -13,7 +13,7 @@ const Home = () => {
       <div className="header">
         <div
           style={{
-            backgroundImage: `url(./img/home/zanzibar.jpg)`,
+            backgroundImage: `url(../img/home/zanzibar.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}

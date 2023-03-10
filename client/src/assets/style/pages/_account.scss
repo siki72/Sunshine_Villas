@@ -1,21 +1,74 @@
 .account-container {
+  min-width: 100vw;
+  position: relative;
+  min-height: 1000px;
   .container {
-    margin-top: 80px;
-    padding: 40px;
+    min-width: 100%;
+    .header-img {
+      min-width: 100%;
+      min-height: 300px;
+      min-width: 100%;
+      z-index: -1000;
+    }
     .nav-book {
-      margin: 0 auto;
+      margin: 40px auto;
       display: flex;
       justify-content: space-around;
       align-items: center;
       border: 1px solid transparent;
+      padding: 50px;
 
       border-radius: 5px;
       height: 40px;
       max-width: 500px;
       padding: 20px;
+      span {
+        margin-left: 1rem;
+      }
       a {
+        border: 2px solid black;
         padding: 15px 30px;
-        border-radius: 25px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        color: $color2;
+        font-family: $rob3;
+      }
+    }
+
+    .login {
+      padding: 40px;
+      margin-top: 15px;
+      font-family: $pop2;
+      font-size: 1.875rem;
+      line-height: 2.875rem;
+      color: #1c1c1c;
+      text-align: center;
+      h2 {
+        font-family: $gildas;
+        font-size: 3.5rem;
+        line-height: 7rem;
+      }
+
+      button {
+        border-radius: 5px;
+        background-color: $color1;
+        margin-top: 40px;
+        border: 2px solid #1c1c1c;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-family: $rob3;
+        line-height: 1rem;
+        color: $color2;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover {
+          animation: up 0.4s ease forwards;
+          background-color: $color2;
+          color: $color1;
+        }
+        span {
+          margin-left: 15px;
+        }
       }
     }
   }

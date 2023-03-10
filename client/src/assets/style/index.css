@@ -96,6 +96,9 @@ body {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
 }
+.active-nav > * {
+  color: rgb(255, 255, 255);
+}
 
 .header {
   max-width: 100vw;
@@ -1059,22 +1062,75 @@ body {
   background-color: hsl(var(--primary-hsl), 0.4);
 }
 
+.account-container {
+  min-width: 100vw;
+  position: relative;
+  min-height: 1000px;
+}
 .account-container .container {
-  margin-top: 80px;
-  padding: 40px;
+  min-width: 100%;
+}
+.account-container .container .header-img {
+  min-width: 100%;
+  min-height: 300px;
+  min-width: 100%;
+  z-index: -1000;
 }
 .account-container .container .nav-book {
-  margin: 0 auto;
+  margin: 40px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: 1px solid transparent;
+  padding: 50px;
   border-radius: 5px;
   height: 40px;
   max-width: 500px;
   padding: 20px;
 }
+.account-container .container .nav-book span {
+  margin-left: 1rem;
+}
 .account-container .container .nav-book a {
+  border: 2px solid black;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: rgb(1, 1, 1);
+  font-family: "font-rob300", sans-serif;
+}
+.account-container .container .login {
+  padding: 40px;
+  margin-top: 15px;
+  font-family: "font-pop200", sans-serif;
+  font-size: 1.875rem;
+  line-height: 2.875rem;
+  color: #1c1c1c;
+  text-align: center;
+}
+.account-container .container .login h2 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 3.5rem;
+  line-height: 7rem;
+}
+.account-container .container .login button {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 40px;
+  border: 2px solid #1c1c1c;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-family: "font-rob300", sans-serif;
+  line-height: 1rem;
+  color: rgb(1, 1, 1);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.account-container .container .login button:hover {
+  animation: up 0.4s ease forwards;
+  background-color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
+}
+.account-container .container .login button span {
+  margin-left: 15px;
 }/*# sourceMappingURL=index.css.map */

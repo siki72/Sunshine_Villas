@@ -132,4 +132,7 @@ body {
 .active-nav {
   background-color: $color2;
   color: $color1;
+  > * {
+    color: $color1;
+  }
 }

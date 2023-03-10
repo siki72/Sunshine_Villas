@@ -1,6 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import { Link, Navigate, NavLink, useParams } from "react-router-dom";
 import { UserContext } from "../users/UserContext.jsx";
+import {
+  faArrowRightFromBracket,
+  faHouse,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Account = () => {
   const { pages } = useParams();
@@ -48,19 +54,34 @@ const Account = () => {
   return (
     <div className="account-container">
       <div className="container">
+        <div
+          style={{
+            backgroundImage: `url(./img/home/login.jpeg)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          className="header-img"
+        ></div>
         <nav className="nav-book">
           <Link className={linkClasses("")} to={"/account"}>
-            My profile
+            <FontAwesomeIcon icon={faUser} />
+            <span> My profile</span>
           </Link>
           <Link className={linkClasses("bookings")} to={"/account/bookings"}>
-            My Booking
+            <FontAwesomeIcon icon={faHouse} />
+            <span>My Booking</span>
           </Link>
         </nav>
         {pages === undefined && (
           <div className="login">
+            <h2>Welcome Home {user.name} ..</h2>
             logged in as {user.name} {user.email} <br />
-            <button onClick={handleLogout}>Logout</button>
-            <button onClick={handleTestMe}>test me</button>
+            <button onClick={handleLogout}>
+              Logout{" "}
+              <span>
+                <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              </span>
+            </button>
           </div>
         )}
       </div>
