@@ -42,7 +42,7 @@ app.get("/profile", (req, res) => {
       {},
       async (err, karibuData) => {
         if (err) throw err;
-        console.log(karibuData);
+
         const { name, email, id } = karibuData; // --> on récupére l'ID de notre utilisateur depuis le cookie qui ont été passé dans l'objet JWT
         /*const co = await createPoolConnexion();
         const [nameUSer] = await co.query(
@@ -141,6 +141,15 @@ app.post("/login", bodyParser.json(), async (req, res) => {
       res.json("not found");
     }
   }
+});
+
+/******* logout ******/
+
+app.get("/logout", (req, res) => {
+  res
+    .status(202)
+    .clearCookie("karibu", { sameSite: "none", secure: true })
+    .send("cookie cleared");
 });
 
 const PORT = process.env.PORT || 3000;

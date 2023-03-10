@@ -6,37 +6,39 @@ import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
 const CardVilla = ({ card }) => {
   return (
     <div className="card-container">
-      <div
-        className="villa-pic"
-        style={{
-          backgroundImage: `url(${card.url})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "left",
-          backgroundSize: "cover",
-          height: "600px",
-        }}
-      ></div>
-      <div className="card-infos">
-        <p>{card.name}</p>
-        <div className="guests">
-          <span>
-            <FontAwesomeIcon className="icons" icon={faUsers} />{" "}
-          </span>
-          <span> {card.max_guests}</span>
-          {""}
+      <Link to={"/villas/" + card.id}>
+        <div
+          className="villa-pic"
+          style={{
+            backgroundImage: `url(${card.url})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "left",
+            backgroundSize: "cover",
+            height: "600px",
+          }}
+        ></div>
+        <div className="card-infos">
+          <p>{card.name}</p>
+          <div className="guests">
+            <span>
+              <FontAwesomeIcon className="icons" icon={faUsers} />{" "}
+            </span>
+            <span> {card.max_guests}</span>
+            {""}
 
-          <span className="house">
-            <FontAwesomeIcon className="icons" icon={faHouse} />{" "}
-          </span>
-          <span>{card.area} m2</span>
+            <span className="house">
+              <FontAwesomeIcon className="icons" icon={faHouse} />{" "}
+            </span>
+            <span>{card.area} m2</span>
+          </div>
+          <div className="card-desc">{card.infos}</div>
         </div>
-        <div className="card-desc">{card.infos}</div>
-      </div>
-      <div className="card-booking">
-        <Link to={card.link}>
-          <span>Click for more info</span>
-        </Link>
-      </div>
+        <div className="card-booking">
+          <Link to={"/villas/" + card.id}>
+            <span>Click for more info</span>
+          </Link>
+        </div>
+      </Link>
     </div>
   );
 };

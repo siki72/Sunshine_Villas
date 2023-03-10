@@ -92,7 +92,7 @@ body {
   background-color: rgb(159, 149, 149);
 }
 
-.active {
+.active-nav {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
 }
@@ -532,6 +532,7 @@ body {
 }
 .card-container .card-infos .guests span {
   margin-left: 10px;
+  color: rgb(1, 1, 1);
 }
 .card-container .card-infos .guests .house {
   margin-left: 20px;
@@ -1068,12 +1069,12 @@ body {
   justify-content: space-around;
   align-items: center;
   border: 1px solid transparent;
-  box-shadow: 0 0 5px 1px #7c7373;
   border-radius: 5px;
   height: 40px;
   max-width: 500px;
   padding: 20px;
 }
 .account-container .container .nav-book a {
-  color: black;
+  padding: 15px 30px;
+  border-radius: 25px;
 }/*# sourceMappingURL=index.css.map */

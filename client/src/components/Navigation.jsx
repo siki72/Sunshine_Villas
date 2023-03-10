@@ -57,13 +57,13 @@ const Navigation = () => {
         <li className="villas">
           Our villas
           <ul className="nav-our-villas">
-            <NavLink to="/villa/1">
+            <NavLink to="/villas/1">
               <li>1-bed-apartement</li>
             </NavLink>
-            <NavLink to="/villa/2">
+            <NavLink to="/villas/2">
               <li>2-bed-villa</li>
             </NavLink>
-            <NavLink to="/villa/3">
+            <NavLink to="/villas/3">
               <li>3-bed-villa</li>
             </NavLink>
           </ul>
