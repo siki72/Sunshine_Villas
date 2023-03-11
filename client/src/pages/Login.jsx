@@ -38,10 +38,6 @@ const Login = () => {
     }
   };
 
-  if (redirect) {
-    return <Navigate to={"/"} />;
-  }
-
   return (
     <div className="full-screen-container">
       <div className="login-container">

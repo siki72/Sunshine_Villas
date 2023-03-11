@@ -7,30 +7,20 @@ import {
   faHouse,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const Account = () => {
   const { pages } = useParams();
+  const [redirect, setRedirect] = useState(false);
   console.log(pages);
 
-  const { user, ready } = useContext(UserContext);
+  const { user, ready, setUser } = useContext(UserContext);
   if (!ready) {
     return "loading";
   }
   if (ready && !user) {
     return <Navigate to={"/login"} />;
   }
-
-  const handleTestMe = () => {
-    fetch("https://alimissoum.app.3wa.io/testme", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => console.log(data));
-  };
 
   const handleLogout = () => {
     fetch("https://alimissoum.app.3wa.io/logout", {
@@ -39,9 +29,7 @@ const Account = () => {
       headers: {
         "Content-type": "application/json",
       },
-    })
-      .then((resp) => resp.json())
-      .then((data) => console.log(data));
+    }).then(setUser(null));
   };
 
   function linkClasses(type = null) {
