@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import userApi from "../users/api";
 
 const Register = () => {
+  const [redirect, setRedirect] = useState(false);
   const formRegisterRef = useRef();
 
   const registerUser = (e) => {
@@ -16,8 +17,14 @@ const Register = () => {
       password: data.get("password"),
     };
 
-    userApi.addUser(newUser).then((resp) => console.log(resp));
+    userApi.addUser(newUser).then((resp) => {
+      setRedirect(true);
+    });
   };
+
+  if (redirect) {
+    return <Navigate to={"/login"} />;
+  }
 
   return (
     <div className="full-screen-container">
