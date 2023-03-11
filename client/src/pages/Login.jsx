@@ -25,19 +25,20 @@ const Login = () => {
         credentials: "include",
         headers: {
           "Content-type": "application/json",
-          /*         "Access-Control-Allow-Credentials": true, */
         },
         body: JSON.stringify(tryLoginUser),
       })
         .then((resp) => resp.json())
         .then((data) => setUser(data));
-      alert("Login successful");
       setRedirect(true);
+      alert("Login successful");
     } catch (e) {
       alert("failed");
     }
   };
-
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="full-screen-container">
       <div className="login-container">
