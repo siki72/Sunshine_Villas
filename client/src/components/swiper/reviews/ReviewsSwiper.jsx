@@ -18,7 +18,6 @@ export default function App() {
     fetch("https://alimissoum.app.3wa.io/reveiws")
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       });
   }, []);

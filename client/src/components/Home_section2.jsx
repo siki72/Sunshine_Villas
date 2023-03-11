@@ -10,11 +10,10 @@ const Home_section2 = () => {
   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
 
   useEffect(() => {
-    fetch(`https://alimissoum.app.3wa.io/cards`)
+    fetch(`https://alimissoum.app.3wa.io/villas`)
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(setCardsData(data));
-        console.log(data);
       });
   }, []);
 

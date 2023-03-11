@@ -126,6 +126,22 @@
                   color: #767575;
                 }
               }
+              .date {
+                .link {
+                  margin: 20px;
+                  p {
+                    font-size: 1rem;
+                    font-family: $rob3;
+                    color: #878788;
+                    line-height: 2rem;
+                  }
+
+                  button {
+                    cursor: pointer;
+                    padding: 10px 20px;
+                  }
+                }
+              }
             }
 
             #button {

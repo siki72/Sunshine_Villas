@@ -270,6 +270,19 @@ body {
   letter-spacing: 2px;
   color: #767575;
 }
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link {
+  margin: 20px;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link p {
+  font-size: 1rem;
+  font-family: "font-rob300", sans-serif;
+  color: #878788;
+  line-height: 2rem;
+}
+.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link button {
+  cursor: pointer;
+  padding: 10px 20px;
+}
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button {
   font-family: "font-rob300", sans-serif;
   font-size: 1.3rem;
