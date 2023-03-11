@@ -3,26 +3,28 @@ import { createConnexion } from "./connexion.js";
 (async () => {
   try {
     const co = await createConnexion();
-    await co.query("DROP TABLE IF EXISTS cards ");
+    await co.query("DROP TABLE IF EXISTS villas ");
 
     // { name: max-people: area: des:   }
 
-    await co.query(`CREATE TABLE IF NOT EXISTS cards(
+    await co.query(`CREATE TABLE IF NOT EXISTS villas(
             id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL,
             max_guests INT NOT NULL,
             area INT NOT NULL,
+            price INT NOT NULL,
             infos VARCHAR(255) NOT NULL,
             url VARCHAR(255) NOT NULL,
-            link VARCHAR(255) NOT NULL
+            link VARCHAR(255) NOT NULL,
+             created_at DATETIME NOT NULL DEFAULT NOW()
         ) `);
 
-    co.query(`INSERT INTO cards (name, max_guests, area, infos, url, link)
+    co.query(`INSERT INTO villas (name, max_guests, area, price, infos, url, link)
             
             VALUES
-                 ("1-BED-APARTEMENT", 2, 40, "Modern apartements with a private balcony overlooking the ocean, Perfect for couples.", "https://i.postimg.cc/g066x36v/card2.png", "/1-bed-apartement"),
-                 ("2-BED-VILLA", 5, 90, "Villas designed for perfect and relaxing holidays, The ideal choice for those searching for a tropical home away from home.", "https://i.postimg.cc/SK10XzCf/card1.jpg", "/2-bed-villa"),
-                 ("3-BED-VILLA", 7, 160, "Luxurious, tastefully decorated, and spacious villas providing stunning Ocean Views, The perfect base for a memorable vacation.", "https://i.postimg.cc/9FDDzG9J/card3.jpg", "/3-bed-villa")
+                 ("1-BED-APARTEMENT", 2, 40, 75, "Modern apartements with a private balcony overlooking the ocean, Perfect for couples.", "https://i.postimg.cc/g066x36v/card2.png", "/1-bed-apartement"),
+                 ("2-BED-VILLA", 5, 90, 95,  "Villas designed for perfect and relaxing holidays, The ideal choice for those searching for a tropical home away from home.", "https://i.postimg.cc/SK10XzCf/card1.jpg", "/2-bed-villa"),
+                 ("3-BED-VILLA", 7, 160, 125, "Luxurious, tastefully decorated, and spacious villas providing stunning Ocean Views, The perfect base for a memorable vacation.", "https://i.postimg.cc/9FDDzG9J/card3.jpg", "/3-bed-villa")
             
         `);
 
@@ -61,9 +63,11 @@ import { createConnexion } from "./connexion.js";
             
         ) `);
 
-    await co.query("DROP TABLE IF EXISTS  villas");
+    /*await co.query("DROP TABLE IF EXISTS  villas");
 
-    await co.query(`CREATE TABLE IF NOT EXISTS villas(
+
+
+        await co.query(`CREATE TABLE IF NOT EXISTS villas(
             id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL,
             price INT NOT NULL,
@@ -71,8 +75,8 @@ import { createConnexion } from "./connexion.js";
          
 
 
-        ) `); //            FOREIGN KEY(reservation_id) REFERENCES reservations(id)  enlevé depuis villas    FOREIGN KEY(guest_id) REFERENCES users(id)
-    co.query(`INSERT INTO villas (name, price)
+        ) `);            FOREIGN KEY(reservation_id) REFERENCES reservations(id)  enlevé depuis villas    FOREIGN KEY(guest_id) REFERENCES users(id)
+        co.query(`INSERT INTO villas (name, price)
             
             VALUES
                  ("1 BEDROOM APARTMENT", 75),
@@ -80,7 +84,7 @@ import { createConnexion } from "./connexion.js";
                  ("3 BEDROOM VILLA", 120)
 
             
-        `);
+        `);*/
 
     await co.query("DROP TABLE IF EXISTS  reservations");
 

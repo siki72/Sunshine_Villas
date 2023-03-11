@@ -20,7 +20,7 @@ import { UserContext } from "../users/UserContext.jsx";
 
 const Villa_1_bed = () => {
   const { id } = useParams();
-  const { user, ready, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   // const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
   const [villaInfos, setVillaInfos] = useState([]);
   const [openDate1, setOpenDate1] = useState(false);
@@ -66,17 +66,22 @@ const Villa_1_bed = () => {
                 <h2>{villaInfos.name}</h2>
                 <div className="guests">
                   <div className="infos">
-                    <span>
-                      <FontAwesomeIcon className="icons" icon={faUsers} />{" "}
-                    </span>
-                    <span> {villaInfos.max_guests} </span>
-                    {""}
+                    <div>
+                      <span>
+                        <FontAwesomeIcon className="icons" icon={faUsers} />{" "}
+                      </span>
+                      <span> {villaInfos.max_guests} </span>
+                      {""}
 
-                    <span className="house">
-                      <FontAwesomeIcon className="icons" icon={faHouse} />{" "}
-                    </span>
+                      <span className="house">
+                        <FontAwesomeIcon className="icons" icon={faHouse} />{" "}
+                      </span>
 
-                    <span>{villaInfos.area} m2</span>
+                      <span>{villaInfos.area} m2</span>
+                    </div>
+                    <span className="price">
+                      {villaInfos.price} € / per night
+                    </span>
                   </div>
 
                   <div className="date">

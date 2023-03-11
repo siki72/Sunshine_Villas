@@ -1,4 +1,4 @@
-/* import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2";
 import { format } from "date-fns";
@@ -110,4 +110,3 @@ const Villa_2_bed = () => {
 };
 
 export default Villa_2_bed;
- */

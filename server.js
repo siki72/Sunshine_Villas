@@ -57,10 +57,10 @@ app.get("/profile", (req, res) => {
   }
 });
 
-/****** GET  CARDS *****/
-app.get("/cards", async (req, res) => {
+/****** GET  all villas for card components  *****/
+app.get("/villas", async (req, res) => {
   const co = await createPoolConnexion();
-  const [table] = await co.query(`SELECT * FROM cards WHERE 1`);
+  const [table] = await co.query(`SELECT * FROM villas WHERE 1`);
   res.json(table);
 });
 
@@ -70,6 +70,23 @@ app.get("/reveiws", async (req, res) => {
   const co = await createPoolConnexion();
   const [table] = await co.query(`SELECT * FROM reveiws WHERE 1`);
   res.json(table);
+});
+
+/****** get  villa ny id *********/
+
+app.get("/villas/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const co = await createPoolConnexion();
+    const [villa_row] = await co.query(`SELECT * FROM villas WHERE id = ? `, [
+      id,
+    ]);
+    console.log(villa_row);
+    res.status(200).json(villa_row[0]);
+  } catch (e) {
+    res.json(e.message);
+  }
 });
 
 /****** POST  NEW USER *********/
