@@ -9,6 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
+import Mybookings from "./Mybookings.jsx";
+
 const Account = () => {
   const { pages } = useParams();
   const [redirect, setRedirect] = useState(false);
@@ -72,6 +74,7 @@ const Account = () => {
             </button>
           </div>
         )}
+        {pages === "bookings" && <Mybookings />}
       </div>
     </div>
   );

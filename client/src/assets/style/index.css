@@ -1171,4 +1171,94 @@ body {
 }
 .account-container .container .login button span {
   margin-left: 15px;
+}
+
+.container-bookings {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.container-bookings .reservation-grid {
+  background-color: #595757;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  max-width: 70%;
+  margin: 25px auto;
+  border: 1px solid rgb(127, 132, 127);
+  box-shadow: 0 0 4px #989d85;
+  border-radius: 25px;
+  padding: 10px;
+  min-height: 350px;
+}
+.container-bookings .reservation-grid .res-img {
+  margin: 15px;
+  border-radius: 15px;
+}
+.container-bookings .reservation-grid .res-infos {
+  padding: 40px;
+  text-align: center;
+}
+.container-bookings .reservation-grid .res-infos > * {
+  margin-bottom: 15px;
+}
+.container-bookings .reservation-grid .res-infos h2 {
+  font-size: 2rem;
+  font-family: "font-pop-bold", sans-serif;
+  color: #c3c1bd;
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+}
+.container-bookings .reservation-grid .res-infos h3,
+.container-bookings .reservation-grid .res-infos h3 span {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.3rem;
+  color: rgb(68, 207, 68);
+}
+.container-bookings .reservation-grid .res-infos .res-date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  font-size: 1rem;
+}
+.container-bookings .reservation-grid .res-infos .res-date .start {
+  position: relative;
+}
+.container-bookings .reservation-grid .res-infos .res-date .start::after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: rgba(167, 164, 164, 0.855);
+  position: absolute;
+  bottom: 0px;
+  right: 27px;
+}
+.container-bookings .reservation-grid .res-infos .res-date p {
+  margin-bottom: 10px;
+  color: #cbc9c4;
+  font-family: "font-pop400", sans-serif;
+  font-size: 0.9rem;
+}
+.container-bookings .reservation-grid .res-infos .res-date h4 {
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+.container-bookings .reservation-grid .res-infos .totals p {
+  margin-bottom: 10px;
+  color: #cbc9c4;
+  font-family: "font-pop400", sans-serif;
+  font-size: 0.9rem;
+}
+.container-bookings .reservation-grid .res-infos .totals h4 {
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+.container-bookings .reservation-grid .res-infos .totals div {
+  background-color: rgba(46, 43, 43, 0.5254901961);
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-family: "font-rob300", sans-serif;
+  color: rgb(255, 255, 255);
+  line-height: 2rem;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=index.css.map */

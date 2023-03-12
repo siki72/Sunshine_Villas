@@ -16,15 +16,13 @@ import Swiper_img_3 from "../components/swiper/imgs/Swiper_img_3.jsx";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
 import { userSlice } from "../feature/user.slice";
+import CardVilla from "../components/CardVilla.jsx";
+import { useSelector } from "react-redux";
 
 const Villa_1_bed = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
-
-  // const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
   const [villaInfos, setVillaInfos] = useState([]);
-  const [total, setTotal] = useState("");
-
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -32,7 +30,7 @@ const Villa_1_bed = () => {
       key: "selection",
     },
   ]);
-  /*   `${format(dates[0].startDate, "MM/dd/yyyy")}`; */
+
   const checkIn = date[0].startDate;
   const checkOut = date[0].endDate;
 
@@ -46,6 +44,7 @@ const Villa_1_bed = () => {
       checkOut,
       villaId: id,
       userId: user.id,
+      nights: numberOfnights,
       total: numberOfnights * villaInfos.price,
     };
     try {
@@ -155,6 +154,7 @@ const Villa_1_bed = () => {
             </div>
           </div>
         </div>
+        {/* <CardVilla /> */}
       </div>
     </div>
   );
