@@ -25,7 +25,6 @@ async function login(user) {
       credentials: "include",
       headers: {
         "Content-type": "application/json",
-        /*         "Access-Control-Allow-Credentials": true, */
       },
       body: JSON.stringify(user),
     });
@@ -39,3 +38,23 @@ export default {
   addUser,
   login,
 };
+
+/* 
+{user && numberOfnights > 0 ?:(
+  <Link to={"/account/bookings"} className="button-book">
+    {user ? "Book Now   " : "Login"}
+    {numberOfnights > 0 ? (
+      <>
+        <button id="button" onClick={handleBooking}></button>
+        <span> : {numberOfnights * villaInfos.price} €</span>
+      </>
+    ) : (
+      ""
+    )}
+  </Link>
+) : (
+  <Link to={"/login"} className="button-book">
+    <button id="button">{user ? "Book Now" : "Login"}</button>
+  </Link>
+)} 
+ */

@@ -1,29 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Swiper_img_1 from "../components/swiper/imgs/Swiper_img_1";
-import { format } from "date-fns";
+import { differenceInCalendarDays, format } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
   faHouse,
-  faPerson,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Swiper_img_3 from "../components/swiper/imgs/Swiper_img_3.jsx";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
+import { userSlice } from "../feature/user.slice";
 
 const Villa_1_bed = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
+
   // const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
   const [villaInfos, setVillaInfos] = useState([]);
-  const [openDate1, setOpenDate1] = useState(false);
+  const [total, setTotal] = useState("");
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -31,6 +32,36 @@ const Villa_1_bed = () => {
       key: "selection",
     },
   ]);
+  /*   `${format(dates[0].startDate, "MM/dd/yyyy")}`; */
+  const checkIn = date[0].startDate;
+  const checkOut = date[0].endDate;
+
+  let numberOfnights = "";
+  if (checkIn && checkOut) {
+    numberOfnights = differenceInCalendarDays(checkOut, checkIn);
+  }
+  const handleBooking = () => {
+    const reservationData = {
+      checkIn,
+      checkOut,
+      villaId: id,
+      userId: user.id,
+      total: numberOfnights * villaInfos.price,
+    };
+    try {
+      fetch("https://alimissoum.app.3wa.io/booking", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(reservationData),
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     fetch(`https://alimissoum.app.3wa.io/villas/${id}`)
       .then((resp) => resp.json())
@@ -87,22 +118,6 @@ const Villa_1_bed = () => {
                   <div className="date">
                     {user ? (
                       <>
-                        <div className="header-book">
-                          <FontAwesomeIcon
-                            className="headerIcon"
-                            icon={faCalendarDays}
-                          />
-                          <span
-                            onClick={() => setOpenDate1(!openDate1)}
-                            className="headerSearchText"
-                          >{`${format(
-                            date[0].startDate,
-                            "dd/MM/yyyy"
-                          )} to ${format(
-                            date[0].endDate,
-                            "dd/MM/yyyy"
-                          )}`}</span>
-                        </div>
                         <DateRange
                           editableDateInputs={true}
                           onChange={(item) => setDate([item.selection])}
@@ -121,12 +136,19 @@ const Villa_1_bed = () => {
                   </div>
                 </div>
                 {user ? (
-                  <Link to={"/booking"} className="button-book">
-                    <button id="button">{user ? "book now" : "Login"}</button>
+                  <Link to={"/account/bookings"} className="button-book">
+                    <button id="button" onClick={handleBooking}>
+                      {user ? "Book now   " : "Login"}
+                      {numberOfnights > 0 ? (
+                        <span> : {numberOfnights * villaInfos.price} €</span>
+                      ) : (
+                        ""
+                      )}
+                    </button>
                   </Link>
                 ) : (
                   <Link to={"/login"} className="button-book">
-                    <button id="button">{user ? "book now" : "Login"}</button>
+                    <button id="button">{user ? "Book now" : "Login"}</button>
                   </Link>
                 )}
               </div>

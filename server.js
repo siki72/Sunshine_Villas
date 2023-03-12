@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { createPoolConnexion } from "./config/db/connexion.js";
 import argon2 from "argon2";
+import { checkToken } from "./utils/chekToken.js";
 
 dotenv.config();
 const app = express();
@@ -29,6 +30,12 @@ app.use(function (req, res, next) {
   } else {
     next();
   }
+});
+
+// test
+
+app.get("/test", checkToken, (req, res) => {
+  res.json("vous avez un token ");
 });
 
 /* ************** GET profile **************/
@@ -82,11 +89,23 @@ app.get("/villas/:id", async (req, res) => {
     const [villa_row] = await co.query(`SELECT * FROM villas WHERE id = ? `, [
       id,
     ]);
-    console.log(villa_row);
+
     res.status(200).json(villa_row[0]);
   } catch (e) {
     res.json(e.message);
   }
+});
+
+/****** booking *********/
+
+app.post("/booking", async (req, res) => {
+  const { checkIn, checkOut, villaId, userId, total } = req.body;
+  const co = await createPoolConnexion();
+  const [reservation] = await co.query(
+    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, total_price) VALUES(?, ?, ?, ?, ?)`,
+    [userId, villaId, checkIn, checkOut, total]
+  );
+  res.status(200).json("insered");
 });
 
 /****** POST  NEW USER *********/
