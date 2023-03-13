@@ -176,13 +176,16 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.booking .container h2 {
-  font-family: "font-pop-bold", sans-serif;
-  font-size: 3.688rem;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2274509804);
-  letter-spacing: 10px;
-  line-height: 3.688rem;
+.booking .container .title-choose {
+  margin-top: 25px;
+  padding: 30px;
+  background-color: rgb(237, 237, 237);
+}
+.booking .container .title-choose h3 {
+  font-size: 2.875rem;
+  color: #1c1c1c;
+  line-height: 2.875rem;
+  font-family: "font-pop200", sans-serif;
 }
 .booking .container .choose-villas .choose-villa-card {
   border: 1px solid rgb(255, 255, 255);
@@ -304,21 +307,37 @@ body {
 }
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button {
   font-family: "font-rob300", sans-serif;
-  font-size: 1.3rem;
-  color: rgb(255, 255, 255);
-  background: rgb(1, 1, 1);
+  font-size: 0.938rem;
+  color: rgb(56, 54, 54);
+  background: rgb(255, 255, 255);
   cursor: pointer;
   line-height: 18px;
-  padding: 15px 20px;
+  letter-spacing: 1px;
+  padding: 10px 30px;
   transition: 0.4s;
+  border: 2px solid black;
   border-radius: 5px;
   transition: 0.4s linear;
 }
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button:hover {
   transform: scale(1.1);
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
 }
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button span {
   color: rgb(53, 139, 53);
+}
+.booking .container .title-cards {
+  margin-top: 25px;
+  padding: 30px;
+  background-color: rgb(237, 237, 237);
+}
+.booking .container .title-cards h3 {
+  font-size: 2.875rem;
+  color: #1c1c1c;
+  line-height: 2.875rem;
+  font-family: "font-pop200", sans-serif;
 }
 .booking .container .choose-villas-cards {
   display: flex;

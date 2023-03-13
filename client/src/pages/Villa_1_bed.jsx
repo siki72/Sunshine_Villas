@@ -82,7 +82,9 @@ const Villa_1_bed = () => {
       ></div>
 
       <div className="container">
-        <h2>choose your stay</h2>
+        <div className="title-choose">
+          <h3>Choose your stay</h3>
+        </div>
         <div className="head-div">
           <h3>sunshine villas</h3>
         </div>
@@ -156,6 +158,9 @@ const Villa_1_bed = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="title-cards">
+          <h3>Check our others luxury villas and apartments</h3>
         </div>
         <div className="choose-villas-cards">
           {idReady &&
