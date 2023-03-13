@@ -29,6 +29,7 @@ const Mybookings = () => {
                 backgroundImage: `url(${resa.url})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
+                objectFit: "cover",
               }}
               className="res-img"
             ></div>

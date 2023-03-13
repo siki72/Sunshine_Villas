@@ -741,6 +741,9 @@ body {
   line-height: 3.188rem;
   color: rgb(255, 255, 255);
 }
+.section_4 .get_media ul li a {
+  font-size: 44px;
+}
 .section_4 .get_media ul li a :hover {
   animation: up 0.4s ease forwards;
 }
@@ -1123,7 +1126,6 @@ body {
 .account-container {
   max-width: 100%;
   position: relative;
-  min-height: 1000px;
 }
 .account-container .container {
   max-width: 100%;
@@ -1200,26 +1202,26 @@ body {
   margin: 0 auto;
 }
 .container-bookings .reservation-grid {
-  background-color: rgba(255, 255, 255, 0.56);
   max-width: 70%;
+  background-color: rgba(255, 255, 255, 0.56);
   display: grid;
   grid-template-columns: 30% 70%;
+  grid-template-rows: 320px;
   margin: 25px auto;
   border: 1px solid rgba(50, 84, 96, 0.454);
   box-shadow: 0 0 4px #989d85;
   border-radius: 25px;
-  padding: 10px;
 }
 .container-bookings .reservation-grid .res-img {
   margin: 15px;
   border-radius: 15px;
 }
 .container-bookings .reservation-grid .res-infos {
-  padding: 40px;
+  justify-content: center;
   text-align: center;
 }
 .container-bookings .reservation-grid .res-infos > * {
-  margin-bottom: 15px;
+  margin: 10px;
 }
 .container-bookings .reservation-grid .res-infos h2 {
   font-size: 1rem;
@@ -1279,13 +1281,13 @@ body {
   letter-spacing: 1px;
 }
 .container-bookings .reservation-grid .res-infos .totals div {
-  background-color: #171616;
+  background-color: rgba(23, 22, 22, 0.5254901961);
   max-width: 50%;
-  margin: 30px auto;
+  margin: 10px auto;
   padding: 10px 10px;
   border-radius: 10px;
   font-family: "font-rob300", sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   line-height: 2rem;
   font-size: 1.2rem;
 }/*# sourceMappingURL=index.css.map */
