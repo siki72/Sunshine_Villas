@@ -4,7 +4,9 @@ import { useDispatch } from "react-redux";
 import { setCardsData } from "./feature/cards.slice.js";
 function App() {
   const [cards, setCards] = useState(null);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // fait tout et a la fin incremonte le store
+  //const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
+
   if (!cards) {
     fetch("https://alimissoum.app.3wa.io/villas")
       .then((resp) => resp.json())

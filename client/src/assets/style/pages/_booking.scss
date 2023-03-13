@@ -49,6 +49,8 @@
         display: grid;
         grid-template-columns: 50% 50%;
         .swipe {
+          max-width: 300px;
+          /*           max-height: 200px; */
           .swiper-pagination-bullet-active {
             background-color: rgb(36, 34, 34);
           }
@@ -182,7 +184,7 @@
                 transform: scale(1.1);
                 background-color: black;
                 color: white;
-                font-size: 1.1rem;
+                font-family: 1.1rem;
               }
               span {
                 color: rgb(53, 139, 53);

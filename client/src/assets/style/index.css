@@ -196,6 +196,8 @@ body {
   grid-template-columns: 50% 50%;
 }
 .booking .container .choose-villas .choose-villa-card .swipe {
+  max-width: 300px;
+  /*           max-height: 200px; */
   max-width: 500px;
 }
 .booking .container .choose-villas .choose-villa-card .swipe .swiper-pagination-bullet-active {
@@ -323,7 +325,7 @@ body {
   transform: scale(1.1);
   background-color: black;
   color: white;
-  font-size: 1.1rem;
+  font-family: 1.1rem;
 }
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button span {
   color: rgb(53, 139, 53);
