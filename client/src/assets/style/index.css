@@ -320,6 +320,9 @@ body {
 .booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button span {
   color: rgb(53, 139, 53);
 }
+.booking .container .choose-villas-cards {
+  display: flex;
+}
 
 .navigation {
   z-index: 100;
@@ -1257,13 +1260,13 @@ body {
   letter-spacing: 1px;
 }
 .container-bookings .reservation-grid .res-infos .totals div {
-  background-color: rgba(46, 43, 43, 0.5254901961);
+  background-color: #171616;
   max-width: 50%;
   margin: 30px auto;
   padding: 10px 10px;
   border-radius: 10px;
   font-family: "font-rob300", sans-serif;
-  color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
   line-height: 2rem;
   font-size: 1.2rem;
 }/*# sourceMappingURL=index.css.map */

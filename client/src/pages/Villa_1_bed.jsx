@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import Swiper_img_1 from "../components/swiper/imgs/Swiper_img_1";
 import { differenceInCalendarDays, format } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCalendarDays,
-  faHouse,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -23,6 +19,8 @@ const Villa_1_bed = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
   const [villaInfos, setVillaInfos] = useState([]);
+  const [idReady, setIdReady] = useState(false);
+  const cards = useSelector((state) => state.threeCards.cards);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -30,35 +28,37 @@ const Villa_1_bed = () => {
       key: "selection",
     },
   ]);
-
   const checkIn = date[0].startDate;
   const checkOut = date[0].endDate;
-  console.log(user);
 
   let numberOfnights = "";
   if (checkIn && checkOut) {
     numberOfnights = differenceInCalendarDays(checkOut, checkIn);
   }
   const handleBooking = () => {
-    const reservationData = {
-      checkIn,
-      checkOut,
-      villaId: id,
-      userId: user.id,
-      nights: numberOfnights,
-      total: numberOfnights * villaInfos.price,
-    };
-    try {
-      fetch("https://alimissoum.app.3wa.io/booking", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(reservationData),
-      });
-    } catch (e) {
-      console.log(e);
+    if (checkIn < checkOut) {
+      const reservationData = {
+        checkIn,
+        checkOut,
+        villaId: id,
+        userId: user.id,
+        nights: numberOfnights,
+        total: numberOfnights * villaInfos.price,
+      };
+      try {
+        fetch("https://alimissoum.app.3wa.io/booking", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(reservationData),
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      alert("Please select à chekout !");
     }
   };
 
@@ -66,6 +66,8 @@ const Villa_1_bed = () => {
     fetch(`https://alimissoum.app.3wa.io/villas/${id}`)
       .then((resp) => resp.json())
       .then((data) => setVillaInfos(data));
+    setIdReady(true);
+    console.log("redy");
   }, [id]);
 
   return (
@@ -136,7 +138,7 @@ const Villa_1_bed = () => {
                   </div>
                 </div>
                 {user ? (
-                  <Link to={"/account/bookings"} className="button-book">
+                  <div className="button-book">
                     <button id="button" onClick={handleBooking}>
                       {user ? "Book now   " : "Login"}
                       {numberOfnights > 0 ? (
@@ -145,17 +147,22 @@ const Villa_1_bed = () => {
                         ""
                       )}
                     </button>
-                  </Link>
+                  </div>
                 ) : (
-                  <Link to={"/login"} className="button-book">
+                  <div className="button-book">
                     <button id="button">{user ? "Book now" : "Login"}</button>
-                  </Link>
+                  </div>
                 )}
               </div>
             </div>
           </div>
         </div>
-        {/* <CardVilla /> */}
+        <div className="choose-villas-cards">
+          {idReady &&
+            cards
+              ?.filter((card) => card.id != id)
+              .map((card) => <CardVilla key={card.id} card={card} />)}
+        </div>
       </div>
     </div>
   );
