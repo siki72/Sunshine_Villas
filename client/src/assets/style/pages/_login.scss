@@ -18,11 +18,12 @@ body {
 }
 
 .full-screen-container {
-  margin-top: 40px;
-  background-color: black;
+  margin-top: 10px;
+  background-color: rgba(255, 253, 253, 0.712);
   /*   background-image: url("../img/home/login.jpeg"); */
   height: 100vh;
   width: 100vw;
+  height: 850px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -31,20 +32,17 @@ body {
 }
 
 .login-container {
-  --color: hsl(var(--primary-dark-hsl), 0.7);
-  background-color: hsl(157deg 10% 68% / 19%);
-  box-shadow: 0 0 15px 0 var(--color);
+  backdrop-filter: blur(20px);
   padding: 40px 30px;
   width: 80%;
   max-width: 600px;
-  border-radius: 20px;
 }
 
 .login-title {
   margin: 0;
-  color: white;
+  color: rgb(2, 2, 2);
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: normal;
 }
 
@@ -71,31 +69,34 @@ body {
 }
 
 .input-group label {
-  color: white;
+  color: rgb(10, 10, 10);
   font-weight: lighter;
 }
 
 .input-group input {
+  font-family: $gildas;
+
   font-size: 1.25rem;
   padding: 0.5em;
-  background-color: hsl(var(--primary-light-hsl), 0.3);
+  /*   background-color: hsl(var(--primary-light-hsl), 0.3); */
   border: none;
   outline: none;
-  border-radius: 0.25em;
-  color: white;
-  font-weight: lighter;
+  color: rgb(6, 6, 6);
 }
 
 .input-group.success input {
-  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--success-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group.error input {
-  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--error-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group input:focus {
-  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--primary-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group .msg {
@@ -120,15 +121,16 @@ body {
   padding: 0.5em 1em;
   font-size: 1.5rem;
   font-weight: lighter;
+  max-width: 30%;
+  margin: 0 auto;
   color: white;
-  background-color: hsl(var(--primary-hsl), 0.25);
-  border: 1px solid hsl(var(--primary-hsl));
-  border-radius: 0.25em;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20rem;
   outline: none;
   cursor: pointer;
 }
 
 .login-button:hover,
 .login-button:focus {
-  background-color: hsl(var(--primary-hsl), 0.4);
+  background-color: rgb(107, 102, 102);
 }

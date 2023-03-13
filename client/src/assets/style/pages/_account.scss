@@ -1,13 +1,12 @@
 .account-container {
-  min-width: 100vw;
+  max-width: 100%;
   position: relative;
   min-height: 1000px;
   .container {
-    min-width: 100%;
+    max-width: 100%;
     .header-img {
-      min-width: 100%;
       min-height: 300px;
-      min-width: 100%;
+
       z-index: -1000;
     }
     .nav-book {

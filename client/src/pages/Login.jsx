@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <div className="full-screen-container">
       <div className="login-container">
-        <h1 className="login-title">Welcome</h1>
+        <h1 className="login-title">Login</h1>
         <form
           className="form "
           action="/login"
@@ -55,15 +55,15 @@ const Login = () => {
           onSubmit={handeleLogin}
         >
           <div className="input-group success">
-            <label htmlFor="email"></label>
+            <label htmlFor="email">Email</label>
             <input type="email" name="email" id="email" />
-            <span className="msg">Valid email</span>
+            {/*   <span className="msg">Valid email</span> */}
           </div>
 
           <div className="input-group error">
             <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" />
-            <span className="msg">Incorrect passwordd</span>
+            {/*             <span className="msg">Incorrect passwordd</span> */}
           </div>
           <button type="submit" className="login-button">
             Login

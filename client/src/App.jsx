@@ -9,7 +9,6 @@ function App() {
     fetch("https://alimissoum.app.3wa.io/villas")
       .then((resp) => resp.json())
       .then((data) => {
-        console.log("je suis aprtie chercher la data" + data);
         dispatch(setCardsData(data));
         setCards(true);
       });

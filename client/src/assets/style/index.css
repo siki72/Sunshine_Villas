@@ -834,7 +834,7 @@ body {
 .footer {
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  padding: 40px;
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -981,11 +981,12 @@ body {
 }
 
 .full-screen-container {
-  margin-top: 40px;
-  background-color: black;
+  margin-top: 10px;
+  background-color: rgba(255, 253, 253, 0.712);
   /*   background-image: url("../img/home/login.jpeg"); */
   height: 100vh;
   width: 100vw;
+  height: 850px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -994,20 +995,18 @@ body {
 }
 
 .login-container {
-  --color: hsl(var(--primary-dark-hsl), 0.7);
-  background-color: hsla(157, 10%, 68%, 0.19);
-  box-shadow: 0 0 15px 0 var(--color);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   padding: 40px 30px;
   width: 80%;
   max-width: 600px;
-  border-radius: 20px;
 }
 
 .login-title {
   margin: 0;
-  color: white;
+  color: rgb(2, 2, 2);
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: normal;
 }
 
@@ -1034,31 +1033,33 @@ body {
 }
 
 .input-group label {
-  color: white;
+  color: rgb(10, 10, 10);
   font-weight: lighter;
 }
 
 .input-group input {
+  font-family: "font-gildas", sans-serif;
   font-size: 1.25rem;
   padding: 0.5em;
-  background-color: hsl(var(--primary-light-hsl), 0.3);
+  /*   background-color: hsl(var(--primary-light-hsl), 0.3); */
   border: none;
   outline: none;
-  border-radius: 0.25em;
-  color: white;
-  font-weight: lighter;
+  color: rgb(6, 6, 6);
 }
 
 .input-group.success input {
-  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--success-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group.error input {
-  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--error-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group input:focus {
-  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+  /*   box-shadow: 0 0 0 1px hsl(var(--primary-hsl)); */
+  border-bottom: 1px solid rgb(218, 205, 205);
 }
 
 .input-group .msg {
@@ -1083,31 +1084,30 @@ body {
   padding: 0.5em 1em;
   font-size: 1.5rem;
   font-weight: lighter;
+  max-width: 30%;
+  margin: 0 auto;
   color: white;
-  background-color: hsl(var(--primary-hsl), 0.25);
-  border: 1px solid hsl(var(--primary-hsl));
-  border-radius: 0.25em;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20rem;
   outline: none;
   cursor: pointer;
 }
 
 .login-button:hover,
 .login-button:focus {
-  background-color: hsl(var(--primary-hsl), 0.4);
+  background-color: rgb(107, 102, 102);
 }
 
 .account-container {
-  min-width: 100vw;
+  max-width: 100%;
   position: relative;
   min-height: 1000px;
 }
 .account-container .container {
-  min-width: 100%;
+  max-width: 100%;
 }
 .account-container .container .header-img {
-  min-width: 100%;
   min-height: 300px;
-  min-width: 100%;
   z-index: -1000;
 }
 .account-container .container .nav-book {
@@ -1178,16 +1178,15 @@ body {
   margin: 0 auto;
 }
 .container-bookings .reservation-grid {
-  background-color: rgba(15, 20, 15, 0.5607843137);
+  background-color: rgba(255, 255, 255, 0.56);
+  max-width: 70%;
   display: grid;
   grid-template-columns: 30% 70%;
-  max-width: 70%;
   margin: 25px auto;
   border: 1px solid rgba(50, 84, 96, 0.454);
   box-shadow: 0 0 4px #989d85;
   border-radius: 25px;
   padding: 10px;
-  min-height: 350px;
 }
 .container-bookings .reservation-grid .res-img {
   margin: 15px;
@@ -1201,23 +1200,23 @@ body {
   margin-bottom: 15px;
 }
 .container-bookings .reservation-grid .res-infos h2 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: "font-pop-bold", sans-serif;
-  color: #e3dbdc;
+  color: #605a5b;
   line-height: 1.7rem;
   letter-spacing: 1px;
 }
 .container-bookings .reservation-grid .res-infos h3,
 .container-bookings .reservation-grid .res-infos h3 span {
   font-family: "font-gildas", sans-serif;
-  font-size: 1.3rem;
-  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  color: rgb(2, 2, 2);
 }
 .container-bookings .reservation-grid .res-infos .res-date {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-top: 2rem;
 }
 .container-bookings .reservation-grid .res-infos .res-date .start {
@@ -1236,22 +1235,22 @@ body {
   margin-bottom: 10px;
   color: rgb(5, 5, 5);
   font-family: "font-pop400", sans-serif;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 .container-bookings .reservation-grid .res-infos .res-date h4 {
   margin-bottom: 10px;
-  color: rgb(251, 248, 248);
+  color: rgb(0, 0, 0);
   letter-spacing: 1px;
 }
 .container-bookings .reservation-grid .res-infos .totals p {
   margin-bottom: 10px;
-  color: #cbc9c4;
+  color: #5b5a58;
   font-family: "font-pop400", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 .container-bookings .reservation-grid .res-infos .totals h4 {
   margin-bottom: 10px;
-  color: rgb(255, 255, 255);
+  color: rgb(3, 3, 3);
   font-size: 1.2em;
   line-height: 2rem;
   font-family: "font-pop400", sans-serif;
@@ -1264,7 +1263,7 @@ body {
   padding: 10px 10px;
   border-radius: 10px;
   font-family: "font-rob300", sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   line-height: 2rem;
   font-size: 1.2rem;
 }/*# sourceMappingURL=index.css.map */

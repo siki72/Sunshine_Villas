@@ -96,16 +96,39 @@ app.get("/villas/:id", async (req, res) => {
   }
 });
 
-/****** booking *********/
+/****** add a booking *********/
 
 app.post("/booking", async (req, res) => {
-  const { checkIn, checkOut, villaId, userId, total } = req.body;
+  const { checkIn, checkOut, villaId, userId, nights, total } = req.body;
   const co = await createPoolConnexion();
   const [reservation] = await co.query(
-    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, total_price) VALUES(?, ?, ?, ?, ?)`,
-    [userId, villaId, checkIn, checkOut, total]
+    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price) VALUES(?, ?, ?, ?, ?, ?)`,
+    [userId, villaId, checkIn, checkOut, nights, total]
   );
   res.status(200).json("insered");
+});
+
+/****** Get / bookings  *********/
+
+app.get("/bookings", async (req, res) => {
+  const { karibu } = req.cookies;
+  jwt.verify(karibu, process.env.TOKEN_SECRET, {}, async (err, myTokenData) => {
+    if (err) throw err;
+    const { id } = myTokenData;
+    const co = await createPoolConnexion();
+    const [myBbookings] = await co.query(
+      `SELECT
+    firstname, lastname, name, url,start_date, end_date, total_price, reservations.created_at, reservations.nights
+     FROM reservations
+     INNER JOIN users ON reservations.guest_id = users.id 
+     INNER JOIN villas ON reservations.villa_id = villas.id 
+     WHERE guest_id = ?`,
+      [id]
+    );
+    res.json(myBbookings);
+  });
+
+  const co = await createPoolConnexion();
 });
 
 /****** POST  NEW USER *********/

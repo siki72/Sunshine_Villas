@@ -3,16 +3,16 @@
   margin: 0 auto;
 
   .reservation-grid {
-    background-color: #0f140f8f;
+    background-color: rgb(255 255 255 / 56%);
+    max-width: 70%;
     display: grid;
     grid-template-columns: 30% 70%;
-    max-width: 70%;
     margin: 25px auto;
     border: 1px solid rgba(50, 84, 96, 0.454);
     box-shadow: 0 0 4px #989d85;
     border-radius: 25px;
     padding: 10px;
-    min-height: 350px;
+
     .res-img {
       margin: 15px;
       border-radius: 15px;
@@ -26,24 +26,24 @@
       text-align: center;
 
       h2 {
-        font-size: 2rem;
+        font-size: 1rem;
         font-family: $pop7;
-        color: #e3dbdc;
+        color: #605a5b;
         line-height: 1.7rem;
         letter-spacing: 1px;
       }
       h3,
       h3 span {
         font-family: $gildas;
-        font-size: 1.3rem;
-        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        color: rgb(2, 2, 2);
       }
 
       .res-date {
         display: grid;
         grid-template-columns: 1fr 1fr;
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-top: 2rem;
         .start {
           position: relative;
@@ -61,11 +61,11 @@
           margin-bottom: 10px;
           color: rgb(5, 5, 5);
           font-family: $pop4;
-          font-size: 1rem;
+          font-size: 0.7rem;
         }
         h4 {
           margin-bottom: 10px;
-          color: rgb(251, 248, 248);
+          color: rgb(0, 0, 0);
           letter-spacing: 1px;
         }
       }
@@ -73,13 +73,13 @@
       .totals {
         p {
           margin-bottom: 10px;
-          color: #cbc9c4;
+          color: #5b5a58;
           font-family: $pop4;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
         }
         h4 {
           margin-bottom: 10px;
-          color: rgb(255, 255, 255);
+          color: rgb(3, 3, 3);
           font-size: 1.2em;
           line-height: 2rem;
           font-family: $pop4;
@@ -92,7 +92,7 @@
           padding: 10px 10px;
           border-radius: 10px;
           font-family: $rob3;
-          color: $color1;
+          color: $color2;
           line-height: 2rem;
           font-size: 1.2rem;
         }
