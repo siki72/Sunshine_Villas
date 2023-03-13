@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import index from "../components/Routes/index";
+import { format } from "date-fns";
 
 const Mybookings = () => {
   const { user } = useContext(UserContext);
@@ -40,17 +41,20 @@ const Mybookings = () => {
               <div className="res-date">
                 <div className="start">
                   <p>Check-in</p>
-                  <h4> {resa.start_date}</h4>
+                  <h4>
+                    {" "}
+                    {format(new Date(resa.start_date), "EEEE dd/MM/yyyy")}
+                  </h4>
                   <p>From 4:00 PM</p>
                 </div>
                 <div className="end">
                   <p>Check-out</p>
-                  <h4>{resa.end_date}</h4>
+                  <h4>{format(new Date(resa.end_date), "EEEE dd/MM/yyyy")}</h4>
                   <p>Until 11:00 AM</p>
                 </div>
               </div>
               <div className="totals">
-                <p>Total length of stay</p>
+                <p>Total length of stay : </p>
                 <h4>{resa.nights} nights</h4>
                 <div>Total price : {resa.total_price} euros </div>
               </div>

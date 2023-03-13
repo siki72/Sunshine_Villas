@@ -46,7 +46,7 @@ const Account = () => {
       <div className="container">
         <div
           style={{
-            backgroundImage: `url(./img/home/login.jpeg)`,
+            backgroundImage: `url(../img/home/login.jpeg)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}

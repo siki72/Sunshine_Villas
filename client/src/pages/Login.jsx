@@ -1,10 +1,14 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import userApi from "../users/api";
 import { UserContext } from "../users/UserContext.jsx";
+import { useDispatch } from "react-redux";
+import { setUsers } from "../feature/user.slice.js";
 const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
+  const [tryUser, setTryUser] = useState(null);
+  const dispatch = useDispatch();
 
   //ramener setUser de notre UserCOntext grace au hook useContext
   const { setUser } = useContext(UserContext);

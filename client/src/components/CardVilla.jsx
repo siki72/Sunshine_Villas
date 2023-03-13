@@ -34,9 +34,9 @@ const CardVilla = ({ card }) => {
           <div className="card-desc">{card.infos}</div>
         </div>
         <div className="card-booking">
-          <Link to={"/villas/" + card.id}>
-            <span>Click for more info</span>
-          </Link>
+          {/*    <Link to={"/villas/" + card.id}> */}
+          <span>Click for more info</span>
+          {/*           </Link> */}
         </div>
       </Link>
     </div>

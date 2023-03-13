@@ -33,6 +33,7 @@ const Villa_1_bed = () => {
 
   const checkIn = date[0].startDate;
   const checkOut = date[0].endDate;
+  console.log(user);
 
   let numberOfnights = "";
   if (checkIn && checkOut) {

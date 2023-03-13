@@ -8,14 +8,14 @@ const Home_section2 = () => {
 
   const dispatch = useDispatch(); // fait tout et a la fin incremonte le store
   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
-
+  /* 
   useEffect(() => {
     fetch(`https://alimissoum.app.3wa.io/villas`)
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(setCardsData(data));
       });
-  }, []);
+  }, []); */
 
   return (
     <div className="section_2">
