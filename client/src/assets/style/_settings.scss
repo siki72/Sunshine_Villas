@@ -82,6 +82,14 @@ $color6: #403f3d;
     transform: translateY(-15%);
   }
 }
+
+@keyframes pop {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;

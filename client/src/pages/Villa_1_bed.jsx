@@ -18,6 +18,7 @@ import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
 import CardVilla from "../components/CardVilla.jsx";
 import { useSelector } from "react-redux";
+import ReservationPopUp from "../components/ReservationPopUp.jsx";
 
 const Villa_1_bed = () => {
   const { id } = useParams();
@@ -27,7 +28,8 @@ const Villa_1_bed = () => {
   const cards = useSelector((state) => state.threeCards.cards);
   const [jsonData, setJsonData] = useState([]);
   const [jsonReady, setJsonReady] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [isReserved, setIsReserved] = useState(false);
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -45,6 +47,7 @@ const Villa_1_bed = () => {
   const handleBooking = () => {
     if (checkIn < checkOut) {
       const reservationData = {
+        /*        resaUid: uuidv4(), */
         checkIn,
         checkOut,
         villaId: id,
@@ -70,16 +73,32 @@ const Villa_1_bed = () => {
     } else {
       alert("Please select à chekout !");
     }
+    setIsReserved(true);
   };
+
   useEffect(() => {
-    fetch("https://alimissoum.app.3wa.io/grey")
-      .then((resp) => resp.json())
-      .then((data) => {
-        const t = data.flatMap((item) => JSON.parse(item.selected_dates));
-        setJsonReady(true);
-        setJsonData(t);
-      });
-  }, []);
+    try {
+      const idOfSelectedvilla = {
+        idVilla: id,
+      };
+      fetch("https://alimissoum.app.3wa.io/availableDates", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(idOfSelectedvilla),
+      })
+        .then((resp) => resp.json(resp))
+        .then((data) => {
+          const t = data.flatMap((item) => JSON.parse(item.selected_dates));
+
+          setJsonData(t);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }, [id]);
 
   const selectedDates = date.flatMap((range) =>
     eachDayOfInterval({
@@ -118,6 +137,7 @@ const Villa_1_bed = () => {
               {id == 2 && <Swiper_img_2 />}
               {id == 3 && <Swiper_img_3 />}
             </div>
+            {isReserved && <ReservationPopUp setopen={setIsReserved} />}
             <div className="choose-villa-infos">
               <div className="card-infos">
                 <h2>{villaInfos.name}</h2>
@@ -150,9 +170,7 @@ const Villa_1_bed = () => {
                           onChange={(item) => setDate([item.selection])}
                           moveRangeOnFirstSelection={false}
                           minDate={new Date()}
-                          disabledDates={
-                            jsonReady && jsonData?.map((a) => parseISO(a))
-                          }
+                          disabledDates={jsonData.map((a) => parseISO(a))}
                           ranges={date}
                           className="date"
                         />
