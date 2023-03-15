@@ -99,13 +99,14 @@ app.get("/villas/:id", async (req, res) => {
 /****** add a booking *********/
 
 app.post("/booking", async (req, res) => {
-  const { checkIn, checkOut, villaId, userId, nights, total } = req.body;
+  const { checkIn, checkOut, villaId, userId, nights, total, selectedDates } =
+    req.body;
   const co = await createPoolConnexion();
   const [reservation] = await co.query(
-    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price) VALUES(?, ?, ?, ?, ?, ?)`,
-    [userId, villaId, checkIn, checkOut, nights, total]
+    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price, selected_dates) VALUES(?, ?, ?, ?, ?, ?, ?)`,
+    [userId, villaId, checkIn, checkOut, nights, total, selectedDates]
   );
-  res.status(200).json("insered");
+  res.status(200).json(reservation);
 });
 
 /****** Get / bookings  *********/
@@ -118,7 +119,7 @@ app.get("/bookings", async (req, res) => {
     const co = await createPoolConnexion();
     const [myBbookings] = await co.query(
       `SELECT
-    firstname, lastname, name, url,start_date, end_date, total_price, reservations.created_at, reservations.nights
+    firstname, lastname, name, url,start_date, end_date, total_price, reservations.created_at, reservations.nights, villas.id
      FROM reservations
      INNER JOIN users ON reservations.guest_id = users.id 
      INNER JOIN villas ON reservations.villa_id = villas.id 
@@ -211,8 +212,63 @@ app.get("/logout", (req, res) => {
     .send("cookie cleared");
 });
 
+app.post("/verrif", async (req, res) => {
+  const { checkIn, checkOut, villaId, userId, nights, total } = req.body;
+  const co = await createPoolConnexion();
+  console.log(checkIn);
+
+  try {
+    const [verrif2] = await co.query(
+      ` SELECT * FROM reservations WHERE reservations.start_date = ? AND reservations.end_date = ?`,
+      [checkIn, checkOut]
+    );
+    console.log(verrif2);
+    if (verrif2.length) {
+      res.status(200).json("les dates existent");
+    } else {
+      res.status(400).json("les dates n'existent pas");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+/********************  essais fetch grey cases for best UI ********************/
+
+app.get("/grey", async (req, res) => {
+  const co = await createPoolConnexion();
+
+  const [gresyCases] = await co.query(
+    `SELECT selected_dates FROM reservations WHERE 1`
+  );
+  res.json(gresyCases);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`listen on port ${PORT}`);
 });
+
+/*  const [verrif] = await co.query(`SELECT * FROM reservations  WHERE reservations.villa_id = ? `, [villaId])
+
+    
+    if(verrif.length){
+      
+    
+    if(verrif[0].start_date === checkIn && verrif[0].end_date === checkOut){
+      console.log(verrif[0].start_date)
+      res.status(400).json('villa dejé reservé')
+    }else {
+       const [reservation] = await co.query(
+    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price) VALUES(?, ?, ?, ?, ?, ?)`,
+    [userId, villaId, checkIn, checkOut, nights, total]
+  )
+  res.status(200).json('insered')
+    }
+    }else {
+      const [reservation] = await co.query(
+    ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price) VALUES(?, ?, ?, ?, ?, ?)`,
+    [userId, villaId, checkIn, checkOut, nights, total]
+  )
+    }*/

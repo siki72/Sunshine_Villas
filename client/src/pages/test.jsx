@@ -18,6 +18,7 @@ import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
 import CardVilla from "../components/CardVilla.jsx";
 import { useSelector } from "react-redux";
+import { json } from "body-parser";
 
 const Villa_1_bed = () => {
   const { id } = useParams();
@@ -25,8 +26,15 @@ const Villa_1_bed = () => {
   const [villaInfos, setVillaInfos] = useState([]);
   const [idReady, setIdReady] = useState(false);
   const cards = useSelector((state) => state.threeCards.cards);
-  const [jsonData, setJsonData] = useState([]);
-  const [jsonReady, setJsonReady] = useState(false);
+  const [disableDates, setDisableDates] = useState([]);
+  let resaDates = [];
+  let desDates = [
+    "2023-03-15T23:00:00.000Z",
+    "2023-03-16T23:00:00.000Z",
+    "2023-03-27T23:00:00.000Z",
+    "2023-03-28T23:00:00.000Z",
+  ];
+
   const [loaded, setLoaded] = useState(false);
   const [date, setDate] = useState([
     {
@@ -35,8 +43,13 @@ const Villa_1_bed = () => {
       key: "selection",
     },
   ]);
+
+  // const checkIn = parseISO(format(new Date(date[0].startDate), "yyyy-MM-dd"));
+  // const checkOut = parseISO(format(new Date(date[0].endDate), "yyyy-MM-dd"));
+
   const checkIn = date[0].startDate;
   const checkOut = date[0].endDate;
+
   let numberOfnights = "";
   if (checkIn && checkOut) {
     numberOfnights = differenceInCalendarDays(checkOut, checkIn);
@@ -51,7 +64,6 @@ const Villa_1_bed = () => {
         userId: user.id,
         nights: numberOfnights,
         total: numberOfnights * villaInfos.price,
-        selectedDates: JSON.stringify(selectedDates),
       };
       try {
         fetch("https://alimissoum.app.3wa.io/booking", {
@@ -75,19 +87,23 @@ const Villa_1_bed = () => {
     fetch("https://alimissoum.app.3wa.io/grey")
       .then((resp) => resp.json())
       .then((data) => {
-        const t = data.flatMap((item) => JSON.parse(item.selected_dates));
-        setJsonReady(true);
-        setJsonData(t);
+        const resaDates = [];
+
+        data.map((time) => {
+          resaDates.push(time.start_date, time.end_date);
+        });
+        setDisableDates(resaDates);
       });
   }, []);
 
-  const selectedDates = date.flatMap((range) =>
+  /*   const selectedDates = date.flatMap((range) =>
     eachDayOfInterval({
       start: range.startDate.getTime(),
       end: range.endDate.getTime(),
     })
   );
-
+  console.log(selectedDates);
+ */
   useEffect(() => {
     fetch(`https://alimissoum.app.3wa.io/villas/${id}`)
       .then((resp) => resp.json())
@@ -150,9 +166,7 @@ const Villa_1_bed = () => {
                           onChange={(item) => setDate([item.selection])}
                           moveRangeOnFirstSelection={false}
                           minDate={new Date()}
-                          disabledDates={
-                            jsonReady && jsonData?.map((a) => parseISO(a))
-                          }
+                          disabledDates={disableDates?.map((a) => parseISO(a))}
                           ranges={date}
                           className="date"
                         />

@@ -96,6 +96,7 @@ import { createConnexion } from "./connexion.js";
             end_date VARCHAR(255) NOT NULL,
             nights INT NOT NULL,
             total_price INT NOT NULL,
+            selected_dates VARCHAR(255) NOT NULL,
             created_at DATETIME NOT NULL DEFAULT NOW(),
             FOREIGN KEY(guest_id) REFERENCES users(id),
             FOREIGN KEY(villa_id) REFERENCES villas(id)
