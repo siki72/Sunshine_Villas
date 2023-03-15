@@ -1171,6 +1171,7 @@ body {
 }
 .account-container .container .login {
   padding: 40px;
+  height: 38vh;
   margin-top: 15px;
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
