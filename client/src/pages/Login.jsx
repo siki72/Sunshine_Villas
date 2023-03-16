@@ -1,45 +1,50 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import userApi from "../users/api";
+import { Link, Navigate, useLocation } from "react-router-dom";
+
 import { UserContext } from "../users/UserContext.jsx";
-import { useDispatch } from "react-redux";
-import { setUsers } from "../feature/user.slice.js";
+
 const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
-  const [tryUser, setTryUser] = useState(null);
-  const dispatch = useDispatch();
-
   //ramener setUser de notre UserCOntext grace au hook useContext
-  const { setUser } = useContext(UserContext);
+  const { user, setUser, setReady, ready } = useContext(UserContext);
 
-  const handeleLogin = (e) => {
+  const handeleLogin = async (e) => {
     e.preventDefault();
+    const data = new FormData(formLoginRef.current);
+    const tryLoginUser = {
+      email: data.get("email"),
+      password: data.get("password"),
+    };
     try {
-      const data = new FormData(formLoginRef.current);
-      const tryLoginUser = {
-        email: data.get("email"),
-        password: data.get("password"),
-      };
-
-      /*   userApi.login(tryLoginUser).then((resp) => setUser(resp)); // passer les infos de user depuis node à notre UserCOntext */
-
-      fetch("https://alimissoum.app.3wa.io/login", {
+      const response = await fetch("https://alimissoum.app.3wa.io/login", {
         method: "POST",
         credentials: "include",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify(tryLoginUser),
-      })
-        .then((resp) => resp.json())
-        .then((data) => setUser(data));
-      setRedirect(true);
-      alert("Login successful");
-    } catch (e) {
-      alert("failed");
+      });
+      if (!response.ok) {
+        throw new Error("unable to login");
+      } else {
+        const user = await response.json();
+        setUser(user);
+        setReady(true);
+        console.log(user);
+        setRedirect(true);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
+  useEffect(() => {
+    // Rediriger l'utilisateur vers la page d'accueil s'il est connecté et qu'il accède à la page de connexion
+    if (user && location.pathname === "/login") {
+      setRedirect(true);
+    }
+  }, [user, location]);
+
   if (redirect) {
     return <Navigate to={"/"} />;
   }
@@ -49,7 +54,6 @@ const Login = () => {
         <h1 className="login-title">Login</h1>
         <form
           className="form "
-          action="/login"
           method="POST"
           ref={formLoginRef}
           onSubmit={handeleLogin}

@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
 // CORS
-app.use(function (req, res, next) {
+/*  app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Origin", req.headers.origin);
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
@@ -30,9 +30,18 @@ app.use(function (req, res, next) {
   } else {
     next();
   }
-});
+});*/
 
-// test
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:5174");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  next();
+});
 
 /* ************** GET profile **************/
 
@@ -84,15 +93,18 @@ app.get("/reviews", async (req, res, next) => {
 
 app.get("/villas/:id", async (req, res) => {
   try {
-    const { id } = req.params;
-    const co = await createPoolConnexion();
-    const [villa_row] = await co.query(`SELECT * FROM villas WHERE id = ? `, [
-      id,
-    ]);
+    const id = parseInt(req.params.id);
+    console.log(typeof id);
+    if (typeof id === "number") {
+      const co = await createPoolConnexion();
+      const [villa_row] = await co.query(`SELECT * FROM villas WHERE id = ? `, [
+        id,
+      ]);
 
-    res.status(200).json(villa_row[0]);
+      res.status(200).json(villa_row[0]);
+    }
   } catch (e) {
-    res.json(e.message);
+    res.status(400).json("Bad Request or error id villa");
   }
 });
 
@@ -168,6 +180,8 @@ app.post("/register", bodyParser.json(), async (req, res) => {
           firstname,
         });
       }
+    } else {
+      res.status(400).json("data deficiencies");
     }
   } catch (e) {
     res.status(422).json(e);
@@ -179,40 +193,39 @@ app.post("/register", bodyParser.json(), async (req, res) => {
 app.post("/login", bodyParser.json(), async (req, res, next) => {
   try {
     const { email, password } = req.body;
+    const [user] = await createPoolConnexion().query(
+      ` SELECT * FROM users WHERE email = ?`,
+      [email]
+    );
+    if (user) {
+      const validPass = await argon2.verify(user[0].password, password);
 
-    if (email && password) {
-      const [user] = await createPoolConnexion().query(
-        ` SELECT * FROM users WHERE email = ?`,
-        [email]
-      );
-      if (user) {
-        const validPass = await argon2.verify(user[0].password, password);
-
-        if (validPass) {
-          jwt.sign(
-            { email: user[0].email, id: user[0].id, name: user[0].firstname },
-            process.env.TOKEN_SECRET,
-            {},
-            (err, token) => {
-              if (err) throw err;
-              res
-                .cookie("karibu", token, {
-                  sameSite: "none",
-                  secure: true,
-                  maxAge: maxAge,
-                })
-                .json({ id: user[0].id, name: user[0].firstname });
-              res.status(200);
-            }
-          );
-        } else {
-          res.status(422).json("pass not ok");
-        }
+      if (validPass) {
+        jwt.sign(
+          { email: user[0].email, id: user[0].id, name: user[0].firstname },
+          process.env.TOKEN_SECRET,
+          {},
+          (err, token) => {
+            if (err) throw err;
+            res
+              .cookie("karibu", token, {
+                sameSite: "none",
+                secure: true,
+                maxAge: maxAge,
+              })
+              .json({ id: user[0].id, name: user[0].firstname });
+            res.status(200);
+          }
+        );
       } else {
-        res.json("not found");
+        res.status(422).json("pass not ok");
       }
+    } else {
+      res.json("not found");
     }
-  } catch (err) {}
+  } catch (err) {
+    next(err);
+  }
 });
 
 /******* logout ******/

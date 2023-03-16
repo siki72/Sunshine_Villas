@@ -10,17 +10,19 @@ export function UserContextProvider({ children }) {
     if (!user) {
       fetch("https://alimissoum.app.3wa.io/profile", {
         credentials: "include", // renvoi tes cookie dans la req
-      })
-        .then((resp) => resp.json())
-        .then((data) => {
-          setUser(data);
-          setReady(true);
-        });
+      }).then((resp) => {
+        if (resp.ok) {
+          resp.json().then((data) => {
+            setUser(data);
+            setReady(true);
+          });
+        }
+      });
     }
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, ready }}>
+    <UserContext.Provider value={{ user, setUser, ready, setReady }}>
       {children}
     </UserContext.Provider>
   );
