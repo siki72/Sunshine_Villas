@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import index from "../components/Routes/index";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Mybookings = () => {
   const { user } = useContext(UserContext);
@@ -19,8 +21,19 @@ const Mybookings = () => {
 
   return (
     <div className="container-bookings">
-      {!myBookings ? (
-        <div className="loader">chargement ,,</div>
+      {!myBookings.length ? (
+        <div className="login">
+          <h2>Ooops ! {user.name} ..</h2>
+          you have no reservation for the moment <br />
+          <Link to={"/villas/1"}>
+            <button>
+              click
+              <span>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </button>
+          </Link>
+        </div>
       ) : (
         myBookings.map((resa, index) => (
           <Link to={`/villas/${resa.id}`} key={index}>

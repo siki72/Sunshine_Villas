@@ -63,29 +63,6 @@ import { createConnexion } from "./connexion.js";
             
         ) `);
 
-    /*await co.query("DROP TABLE IF EXISTS  villas");
-
-
-
-        await co.query(`CREATE TABLE IF NOT EXISTS villas(
-            id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-            name VARCHAR(255) NOT NULL,
-            price INT NOT NULL,
-            created_at DATETIME NOT NULL DEFAULT NOW()
-         
-
-
-        ) `);            FOREIGN KEY(reservation_id) REFERENCES reservations(id)  enlevé depuis villas    FOREIGN KEY(guest_id) REFERENCES users(id)
-        co.query(`INSERT INTO villas (name, price)
-            
-            VALUES
-                 ("1 BEDROOM APARTMENT", 75),
-                 ("2 BEDROOM VILLA", 95),
-                 ("3 BEDROOM VILLA", 120)
-
-            
-        `);*/
-
     await co.query("DROP TABLE IF EXISTS  reservations");
 
     await co.query(`CREATE TABLE IF NOT EXISTS reservations(
