@@ -19,13 +19,13 @@ export const checkToken = (req, res, next) => {
     const { id, email } = userData;
     const co = await createPoolConnexion();
     const [user] = await co.query(
-      `SELECT email FROM users WHERE users.id = ?`,
-      [id]
+      `SELECT email FROM users WHERE users.email = ?`,
+      [email]
     );
 
-    if (!user) {
+    if (!user.length) {
       res.clearCookie("karibu", { sameSite: "none", secure: true });
-      return res.status(401).json("you are not authenticated!");
+      return res.status(401).json("invalid token");
     }
 
     next();

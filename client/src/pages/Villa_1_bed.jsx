@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Swiper_img_1 from "../components/swiper/imgs/Swiper_img_1";
 import {
@@ -17,9 +17,14 @@ import Swiper_img_3 from "../components/swiper/imgs/Swiper_img_3.jsx";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
 import CardVilla from "../components/CardVilla.jsx";
-import { useSelector } from "react-redux";
 import ReservationPopUp from "../components/ReservationPopUp.jsx";
-
+import { useSelector } from "react-redux";
+import BarLoader from "react-spinners/BarLoader";
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 const Villa_1_bed = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
@@ -29,6 +34,7 @@ const Villa_1_bed = () => {
   const [jsonData, setJsonData] = useState([]);
   const [jsonReady, setJsonReady] = useState(false);
   const [isReserved, setIsReserved] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [date, setDate] = useState([
     {
@@ -46,6 +52,7 @@ const Villa_1_bed = () => {
 
   const handleBooking = () => {
     if (checkIn < checkOut) {
+      setLoading(true);
       const reservationData = {
         /*        resaUid: uuidv4(), */
         checkIn,
@@ -66,14 +73,16 @@ const Villa_1_bed = () => {
           body: JSON.stringify(reservationData),
         })
           .then((resp) => resp.json())
-          .then((data) => console.log(data));
+          .then((data) => {
+            setLoading(false);
+            setIsReserved(true);
+          });
       } catch (e) {
         console.log(e);
       }
     } else {
       alert("Please select à chekout !");
     }
-    setIsReserved(true);
   };
 
   useEffect(() => {
@@ -186,6 +195,16 @@ const Villa_1_bed = () => {
                 </div>
                 {user ? (
                   <div className="button-book">
+                    {loading && (
+                      <BarLoader
+                        color="#8381a5"
+                        loading={loading}
+                        cssOverride={override}
+                        size={200}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                      />
+                    )}
                     <button id="button" onClick={handleBooking}>
                       {user ? "Book now   " : "Login"}
                       {numberOfnights > 0 ? (

@@ -5,6 +5,8 @@ import { format } from "date-fns";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Mybookings = () => {
   const { user } = useContext(UserContext);
@@ -12,15 +14,29 @@ const Mybookings = () => {
   const [myBookings, setMyBookings] = useState([]);
 
   useEffect(() => {
-    fetch("https://alimissoum.app.3wa.io/bookings", {
-      credentials: "include",
-    })
-      .then((resp) => resp.json())
-      .then((data) => setMyBookings(data));
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://alimissoum.app.3wa.io/bookings", {
+          credentials: "include",
+        });
+        if (!response.ok) {
+          throw new Error("network response fail");
+        }
+        const data = await response.json();
+        setMyBookings(data);
+      } catch (error) {
+        console.error("error fetching bookings: ", error);
+        toast.error(
+          "Une erreur est survenue lors de la récupération des réservations"
+        );
+      }
+    };
+    fetchData();
   }, []);
 
   return (
     <div className="container-bookings">
+      <ToastContainer />
       {!myBookings.length ? (
         <div className="login">
           <h2>Ooops ! {user.name} ..</h2>
@@ -35,7 +51,7 @@ const Mybookings = () => {
           </Link>
         </div>
       ) : (
-        myBookings.map((resa, index) => (
+        myBookings?.map((resa, index) => (
           <Link to={`/villas/${resa.id}`} key={index}>
             <div className="reservation-grid">
               <div

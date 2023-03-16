@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 
 /* ************** GET profile **************/
 
-app.get("/profile", (req, res, next) => {
+app.get("/profile", checkToken, (req, res, next) => {
   try {
     const { karibu } = req.cookies; // ---> on récupére le cookie par le nom qu'on lui attribué
     if (karibu) {
@@ -126,7 +126,7 @@ app.post("/booking", checkToken, async (req, res, next) => {
 
 /****** Get / bookings  *********/
 
-app.get("/bookings", checkToken, async (req, res) => {
+app.get("/bookings", checkToken, async (req, res, next) => {
   try {
     const { karibu } = req.cookies;
     jwt.verify(
@@ -150,7 +150,7 @@ app.get("/bookings", checkToken, async (req, res) => {
       }
     );
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
@@ -171,9 +171,9 @@ app.post("/register", bodyParser.json(), async (req, res) => {
 
         const [userRow] = await createPoolConnexion().query(
           `
-          INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)
+          INSERT INTO users (firstname, lastname, email, password, role) VALUES (?, ?, ?, ?, ?)
         `,
-          [firstname, lastname, email, hashedPassword]
+          [firstname, lastname, email, hashedPassword, "guest"]
         );
         res.status(200).json({
           id: userRow.insertId,
