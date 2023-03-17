@@ -1011,7 +1011,6 @@ body {
 
 body {
   margin: 0;
-  background-color: rgb(93, 156, 45);
 }
 
 .full-screen-container {
@@ -1039,20 +1038,21 @@ body {
   border: 1px solid rgb(59, 54, 54);
   border-radius: 15px;
   background-color: rgba(24, 22, 22, 0.635);
-  padding: 40px 30px;
-  width: 80%;
-  max-width: 600px;
+  padding: 15px;
+  max-width: 70%;
+  width: 500px;
 }
 
 .login-title {
   margin: 0;
   color: rgba(255, 253, 253, 0.839);
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
 }
 
 .form {
+  padding: 0 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1062,7 +1062,7 @@ body {
   text-align: center;
   color: rgba(255, 253, 253, 0.611);
   font-family: "font-rob400", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .form .need-register a {
   color: rgb(32, 141, 32);
@@ -1077,7 +1077,7 @@ body {
 .input-group input {
   font-family: "font-gildas", sans-serif;
   background-color: transparent !important;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0.5em;
   border-bottom: 1px solid rgb(214, 213, 211) !important;
   /*   background-color: hsl(var(--primary-light-hsl), 0.3); */
@@ -1112,7 +1112,7 @@ body {
   color: rgb(255, 255, 255);
 }
 
-span {
+.input-group span {
   visibility: hidden;
 }
 
