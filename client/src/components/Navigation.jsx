@@ -72,9 +72,12 @@ const Navigation = () => {
         <NavLink to="/contact">
           <li>Contact us</li>
         </NavLink>
-        {/*        <NavLink to="/booking" className={"book"}>
-          <li className="li">BOOKINGS</li>
-        </NavLink> */}
+        {user?.role === "admin" && (
+          <NavLink to="/villas/3">
+            <li>Admin</li>
+          </NavLink>
+        )}
+
         <NavLink to={user ? "/account" : "/login"} className={"book"}>
           <li className="li">
             {user ? " Welcome  " + user.name?.toUpperCase() : "Login"}
