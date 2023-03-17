@@ -5,6 +5,10 @@ import userApi from "../users/api";
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const formRegisterRef = useRef();
+  const [focused, setFocused] = useState(false);
+  const handleFocus = () => {
+    setFocused(true);
+  };
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -28,43 +32,85 @@ const Register = () => {
 
   return (
     <div className="full-screen-container">
-      <div className="login-container">
-        <h1 className="login-title">Welcome</h1>
-        <form
-          className="form "
-          ref={formRegisterRef}
-          action="/register"
-          method="POST"
-          onSubmit={registerUser}
-        >
-          <div className="input-group ">
-            <label htmlFor="firstname">First name</label>
-            <input type="text" name="firstname" id="firstname" />
-            <span className="msg">Valid email</span>
-          </div>
-          <div className="input-group ">
-            <label htmlFor="lastname">Last name</label>
-            <input type="text" name="lastname" id="lastname" />
-            <span className="msg">Valid email</span>
-          </div>
-          <div className="input-group ">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
-            <span className="msg">Valid email</span>
-          </div>
+      <div className="grid-container">
+        <div className="login-container">
+          <h1 className="login-title">Welcome</h1>
+          <form
+            className="form "
+            ref={formRegisterRef}
+            action="/register"
+            method="POST"
+            onSubmit={registerUser}
+          >
+            <div className="input-group ">
+              <input
+                placeholder="john"
+                required={true}
+                pattern="^[A-Za-z0-9]{3,16}$"
+                type="text"
+                name="firstname"
+                id="firstname"
+                onBlur={handleFocus}
+                focused={focused.toString()}
+              />
+              <span className="msg">
+                Username should be 3-16 characters and shouldn't include any
+                special character!",
+              </span>
+            </div>
+            <div className="input-group ">
+              <input
+                placeholder="smith"
+                required={true}
+                pattern="^[A-Za-z0-9]{3,16}$"
+                type="text"
+                name="lastname"
+                id="lastname"
+                onBlur={handleFocus}
+                focused={focused.toString()}
+              />
+              <span className="msg">
+                Username should be 3-16 characters and shouldn't include any
+                special character!",
+              </span>
+            </div>
+            <div className="input-group ">
+              <input
+                placeholder="exemple@ex.com"
+                type="email"
+                name="email"
+                id="email"
+                required={true}
+                onBlur={handleFocus}
+                focused={focused.toString()}
+              />
+              <span className="msg">It should be a valid email address!</span>
+            </div>
 
-          <div className="input-group ">
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" />
-            <span className="msg">Incorrect passwordd</span>
-          </div>
-          <button type="submit" className="login-button">
-            Register
-          </button>
-          <div className="need-register">
-            Already a member ? <Link to={"/login"}>Register</Link>
-          </div>
-        </form>
+            <div className="input-group ">
+              <input
+                placeholder="password"
+                required={true}
+                pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+                type="password"
+                name="password"
+                id="password"
+                onBlur={handleFocus}
+                focused={focused.toString()}
+              />
+              <span className="msg">
+                Password should be 8-20 characters and include at least 1
+                letter, 1 number and 1 special character!
+              </span>
+            </div>
+            <button type="submit" className="login-button">
+              Register
+            </button>
+            <div className="need-register">
+              Already a member ? <Link to={"/login"}>Login</Link>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -50,32 +50,42 @@ const Login = () => {
   }
   return (
     <div className="full-screen-container">
-      <div className="login-container">
-        <h1 className="login-title">Login</h1>
-        <form
-          className="form "
-          method="POST"
-          ref={formLoginRef}
-          onSubmit={handeleLogin}
-        >
-          <div className="input-group success">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
-            {/*   <span className="msg">Valid email</span> */}
-          </div>
+      <div className="grid-container">
+        <div className="login-container">
+          <h1 className="login-title">Welcome</h1>
+          <form
+            className="form "
+            method="POST"
+            ref={formLoginRef}
+            onSubmit={handeleLogin}
+          >
+            <div className="input-group">
+              <input
+                placeholder="john"
+                type="email"
+                name="email"
+                id="email"
+                required={true}
+              />
+            </div>
 
-          <div className="input-group error">
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" />
-            {/*             <span className="msg">Incorrect passwordd</span> */}
-          </div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          <div className="need-register">
-            Don't have an account yet ? <Link to={"/register"}>Register</Link>
-          </div>
-        </form>
+            <div className="input-group ">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                required={true}
+                placeholder="password"
+              />
+            </div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <div className="need-register">
+              Don't have an account yet ? <Link to={"/register"}>Register</Link>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

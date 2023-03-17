@@ -195,28 +195,31 @@ const Villa_1_bed = () => {
                 </div>
                 {user ? (
                   <div className="button-book">
-                    {loading && (
+                    {loading ? (
                       <BarLoader
                         color="#8381a5"
                         loading={loading}
                         cssOverride={override}
-                        size={200}
+                        size={300}
                         aria-label="Loading Spinner"
                         data-testid="loader"
                       />
+                    ) : (
+                      <button id="button" onClick={handleBooking}>
+                        {user ? "Book now   " : "Login"}
+                        {numberOfnights > 0 ? (
+                          <span> : {numberOfnights * villaInfos.price} €</span>
+                        ) : (
+                          ""
+                        )}
+                      </button>
                     )}
-                    <button id="button" onClick={handleBooking}>
-                      {user ? "Book now   " : "Login"}
-                      {numberOfnights > 0 ? (
-                        <span> : {numberOfnights * villaInfos.price} €</span>
-                      ) : (
-                        ""
-                      )}
-                    </button>
                   </div>
                 ) : (
                   <div className="button-book">
-                    <button id="button">{user ? "Book now" : "Login"}</button>
+                    <Link to={"/login"}>
+                      <button id="button">{user ? "Book now" : "Login"}</button>
+                    </Link>
                   </div>
                 )}
               </div>
