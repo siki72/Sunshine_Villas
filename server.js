@@ -197,12 +197,17 @@ app.post("/login", bodyParser.json(), async (req, res, next) => {
       ` SELECT * FROM users WHERE email = ?`,
       [email]
     );
-    if (user) {
+    if (user.length) {
       const validPass = await argon2.verify(user[0].password, password);
 
       if (validPass) {
         jwt.sign(
-          { email: user[0].email, id: user[0].id, name: user[0].firstname },
+          {
+            email: user[0].email,
+            id: user[0].id,
+            name: user[0].firstname,
+            role: user[0].role,
+          },
           process.env.TOKEN_SECRET,
           {},
           (err, token) => {
@@ -213,7 +218,12 @@ app.post("/login", bodyParser.json(), async (req, res, next) => {
                 secure: true,
                 maxAge: maxAge,
               })
-              .json({ id: user[0].id, name: user[0].firstname });
+              .json({
+                id: user[0].id,
+                name: user[0].firstname,
+                email: user[0].email,
+                role: user[0].role,
+              });
             res.status(200);
           }
         );

@@ -1128,6 +1128,7 @@ input:invalid:focus ~ span {
 
 .account-container {
   max-width: 100%;
+  min-height: 900px;
   position: relative;
 }
 .account-container .container {
