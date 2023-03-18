@@ -12,6 +12,9 @@
     gap: 40px;
 
     .section_1_img {
+      @media screen and (max-width: 380px) {
+        display: none;
+      }
       box-shadow: 0 0 3px black;
       border-radius: 10px;
     }
@@ -22,12 +25,19 @@
       @media screen and (max-width: 1200px) {
         margin-bottom: 30px;
       }
+      @media screen and (max-width: 400px) {
+        text-align: center;
+      }
 
       h2 {
         @media screen and (max-width: 750px) {
           font-size: 1.9rem;
           text-align: center;
         }
+        @media screen and (max-width: 400px) {
+          font-size: 1rem;
+        }
+
         font-family: $pop2;
         line-height: 46px;
         font-size: 46px;
@@ -37,6 +47,10 @@
           font-size: 0.9rem;
         }
         @media screen and (max-width: 520px) {
+          text-align: center;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 0.8rem;
           text-align: center;
         }
         margin-top: 30px;

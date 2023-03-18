@@ -43,10 +43,16 @@
       }
     }
     .Stars {
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
       margin-bottom: 25px;
     }
   }
   .phone {
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
     margin-bottom: 25px;
     p:first-child {
       font-family: $rob3;
@@ -64,6 +70,9 @@
   }
 
   .gildas {
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
     p {
       font-family: $gildas;
       font-size: 0.938rem;
@@ -73,6 +82,11 @@
   }
 
   .trip-logo {
+    @media screen and (max-width: 550px) {
+      max-width: 80%;
+      max-height: 80%;
+      margin: 0 auto;
+    }
     p:first-of-type {
       font-family: $gildas;
       font-size: 1.25rem;

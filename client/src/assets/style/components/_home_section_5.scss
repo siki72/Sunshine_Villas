@@ -1,4 +1,8 @@
 .section_5 {
+  @media screen and (max-width: 450px) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   margin-top: 70px;
   max-width: 90%;
   margin: 60px auto;
@@ -6,6 +10,10 @@
   min-height: 800px;
 
   .main-section-grid {
+    @media screen and (max-width: 450px) {
+      padding: 0;
+      margin: 0 auto;
+    }
     @media screen and (max-width: 930px) {
       display: grid;
       grid-template-columns: 1fr;
@@ -20,12 +28,20 @@
         margin-bottom: 40px;
       }
       h3 {
+        @media screen and (max-width: 450px) {
+          font-size: 2rem;
+        }
         font-family: $pop2;
         font-size: 2.875rem;
         line-height: 2.875rem;
         color: #1c1c1c;
       }
       p {
+        @media screen and (max-width: 450px) {
+          font-size: 0.7rem;
+          text-align: center;
+        }
+
         text-align: left;
         font-family: $rob4;
         font-size: 0.875rem;

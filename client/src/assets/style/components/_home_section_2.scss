@@ -1,4 +1,14 @@
 .section_2 {
+  @media screen and (max-width: 350px) {
+    padding: 0;
+    max-width: 100%;
+  }
+  a {
+    @media screen and (max-width: 350px) {
+      pointer-events: none;
+      cursor: pointer;
+    }
+  }
   max-width: 90%;
   padding: 40px;
   margin: 0 auto;
@@ -8,6 +18,9 @@
     h2 {
       @media screen and (max-width: 520px) {
         font-size: 2rem;
+      }
+      @media screen and (max-width: 400px) {
+        font-size: 1.3rem;
       }
       font-family: $pop2;
       font-size: 46px;

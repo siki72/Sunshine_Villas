@@ -70,6 +70,7 @@
 body {
   background-color: rgb(255, 255, 255);
 }
+
 .error {
   color: red;
   font-weight: bold;
@@ -138,6 +139,11 @@ body {
     font-size: 1.2rem;
   }
 }
+@media screen and (max-width: 450px) {
+  .header .main_img div {
+    font-size: 1rem;
+  }
+}
 .header .main_img div h2 {
   font-family: "font-gildas", sans-serif;
   font-weight: 200;
@@ -146,6 +152,11 @@ body {
 @media screen and (max-width: 570px) {
   .header .main_img div h2 {
     font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 570px) and (max-width: 450px) {
+  .header .main_img div h2 {
+    font-size: 1rem;
   }
 }
 .header .main_img div .button {
@@ -552,6 +563,11 @@ body {
   box-shadow: 0 0 3px black;
   border-radius: 10px;
 }
+@media screen and (max-width: 380px) {
+  .section_1 .main-villa .section_1_img {
+    display: none;
+  }
+}
 .section_1 .main-villa .text {
   margin-top: 40px;
   padding-top: 50px;
@@ -559,6 +575,11 @@ body {
 @media screen and (max-width: 1200px) {
   .section_1 .main-villa .text {
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section_1 .main-villa .text {
+    text-align: center;
   }
 }
 .section_1 .main-villa .text h2 {
@@ -570,6 +591,11 @@ body {
   .section_1 .main-villa .text h2 {
     font-size: 1.9rem;
     text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section_1 .main-villa .text h2 {
+    font-size: 1rem;
   }
 }
 .section_1 .main-villa .text p {
@@ -587,6 +613,12 @@ body {
 }
 @media screen and (max-width: 520px) {
   .section_1 .main-villa .text p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section_1 .main-villa .text p {
+    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -649,6 +681,18 @@ body {
   padding: 40px;
   margin: 0 auto;
 }
+@media screen and (max-width: 350px) {
+  .section_2 {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .section_2 a {
+    pointer-events: none;
+    cursor: pointer;
+  }
+}
 .section_2 .main_select {
   text-align: center;
 }
@@ -661,6 +705,11 @@ body {
 @media screen and (max-width: 520px) {
   .section_2 .main_select h2 {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section_2 .main_select h2 {
+    font-size: 1.3rem;
   }
 }
 .section_2 .main_select .villas-cards {
@@ -683,6 +732,15 @@ body {
   padding: 15px;
   margin-left: 10px;
   transition: 0.4s;
+}
+@media screen and (max-width: 350px) {
+  .card-container {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+  }
 }
 .card-container:hover {
   box-shadow: 0px 0px 11px 3px #6e6161;
@@ -726,7 +784,14 @@ body {
   line-height: 1.75rem;
   color: #878787;
 }
+@media screen and (max-width: 400px) {
+  .card-container .card-infos .card-desc {
+    font-size: 0.8rem;
+    padding: 0 10px;
+  }
+}
 .card-container .card-booking {
+  min-width: 100%;
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -741,6 +806,11 @@ body {
   border: 2px solid black;
   color: rgb(1, 1, 1);
   transition: 0.4s;
+}
+@media screen and (max-width: 480px) {
+  .card-container .card-booking span {
+    font-size: 0.7rem;
+  }
 }
 .card-container .card-booking span:hover {
   background-color: rgb(1, 1, 1);
@@ -757,6 +827,9 @@ body {
   }
 }
 .section_3 .section_3_grid {
+  /*     @media screen and (max-width: 450px) {
+    display: block;
+  } */
   display: grid;
   grid-template-columns: 70% 30%;
 }
@@ -850,6 +923,11 @@ body {
     font-size: 2.5rem;
   }
 }
+@media screen and (max-width: 340px) {
+  .section_4 .titles_div h2 {
+    font-size: 1.3rem;
+  }
+}
 .section_4 .titles_div p {
   font-family: "font-gildas", sans-serif;
   font-size: 2.75rem;
@@ -860,6 +938,11 @@ body {
 @media screen and (max-width: 1050px) {
   .section_4 .titles_div p {
     font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .section_4 .titles_div p {
+    font-size: 1rem;
   }
 }
 .section_4 .reviews-grid {
@@ -1007,9 +1090,21 @@ body {
   text-align: center;
   min-height: 800px;
 }
+@media screen and (max-width: 450px) {
+  .section_5 {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
 .section_5 .main-section-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 450px) {
+  .section_5 .main-section-grid {
+    padding: 0;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 930px) {
   .section_5 .main-section-grid {
@@ -1030,6 +1125,11 @@ body {
   line-height: 2.875rem;
   color: #1c1c1c;
 }
+@media screen and (max-width: 450px) {
+  .section_5 .main-section-grid .read h3 {
+    font-size: 2rem;
+  }
+}
 .section_5 .main-section-grid .read p {
   text-align: left;
   font-family: "font-rob400", sans-serif;
@@ -1037,6 +1137,12 @@ body {
   line-height: 1.75rem;
   color: #878787;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 450px) {
+  .section_5 .main-section-grid .read p {
+    font-size: 0.7rem;
+    text-align: center;
+  }
 }
 .section_5 .main-section-grid .read a :hover {
   background-color: #1c1c1c;
@@ -1100,8 +1206,18 @@ body {
 .footer .hotel-logo .Stars {
   margin-bottom: 25px;
 }
+@media screen and (max-width: 450px) {
+  .footer .hotel-logo .Stars {
+    display: none;
+  }
+}
 .footer .phone {
   margin-bottom: 25px;
+}
+@media screen and (max-width: 450px) {
+  .footer .phone {
+    display: none;
+  }
 }
 .footer .phone p:first-child {
   font-family: "font-rob300", sans-serif;
@@ -1116,11 +1232,23 @@ body {
   line-height: 0.938rem;
   color: rgb(254, 254, 254);
 }
+@media screen and (max-width: 450px) {
+  .footer .gildas {
+    display: none;
+  }
+}
 .footer .gildas p {
   font-family: "font-gildas", sans-serif;
   font-size: 0.938rem;
   line-height: 1.25rem;
   color: rgb(254, 254, 254);
+}
+@media screen and (max-width: 550px) {
+  .footer .trip-logo {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+  }
 }
 .footer .trip-logo p:first-of-type {
   font-family: "font-gildas", sans-serif;

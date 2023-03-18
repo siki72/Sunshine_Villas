@@ -5,6 +5,9 @@
     margin: 0;
   }
   .section_3_grid {
+    /*     @media screen and (max-width: 450px) {
+      display: block;
+    } */
     @media screen and (max-width: 1250px) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
