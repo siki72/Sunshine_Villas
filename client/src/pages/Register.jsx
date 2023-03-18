@@ -38,7 +38,7 @@ const Register = () => {
           <form
             className="form "
             ref={formRegisterRef}
-            action="/register"
+            action="/user/register"
             method="POST"
             onSubmit={registerUser}
           >
@@ -91,7 +91,7 @@ const Register = () => {
               <input
                 placeholder="password"
                 required={true}
-                pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
+                pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':\\|,.<>/?]{8,20}$"
                 type="password"
                 name="password"
                 id="password"

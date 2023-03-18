@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
-
+import userApi from "../users/api";
 import { UserContext } from "../users/UserContext.jsx";
 
 const Login = () => {
@@ -17,14 +17,7 @@ const Login = () => {
       password: data.get("password"),
     };
     try {
-      const response = await fetch("https://alimissoum.app.3wa.io/login", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(tryLoginUser),
-      });
+      const response = await userApi.login(tryLoginUser);
       if (!response.ok) {
         throw new Error("unable to login");
       } else {

@@ -1,10 +1,8 @@
-import { useState } from "react";
-
-const URL = "https://alimissoum.app.3wa.io/";
+const URL = "https://alimissoum.app.3wa.io/user/";
 
 async function addUser(user) {
   try {
-    const results = await fetch(`${URL}register`, {
+    const response = await fetch(`${URL}register`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(user),
@@ -12,7 +10,7 @@ async function addUser(user) {
         "Content-type": "application/json ; charset=UTF-8",
       },
     });
-    return results.json();
+    return response.json();
   } catch (e) {
     alert("Registration failed. Please try again later");
   }
@@ -20,7 +18,7 @@ async function addUser(user) {
 
 async function login(user) {
   try {
-    const results = await fetch(`${URL}login`, {
+    const response = await fetch(`${URL}login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -28,7 +26,7 @@ async function login(user) {
       },
       body: JSON.stringify(user),
     });
-    return results.json();
+    return response;
   } catch (e) {
     console.log(e);
   }
@@ -38,23 +36,3 @@ export default {
   addUser,
   login,
 };
-
-/* 
-{user && numberOfnights > 0 ?:(
-  <Link to={"/account/bookings"} className="button-book">
-    {user ? "Book Now   " : "Login"}
-    {numberOfnights > 0 ? (
-      <>
-        <button id="button" onClick={handleBooking}></button>
-        <span> : {numberOfnights * villaInfos.price} €</span>
-      </>
-    ) : (
-      ""
-    )}
-  </Link>
-) : (
-  <Link to={"/login"} className="button-book">
-    <button id="button">{user ? "Book Now" : "Login"}</button>
-  </Link>
-)} 
- */
