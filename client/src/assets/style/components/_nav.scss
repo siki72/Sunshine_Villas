@@ -1,6 +1,20 @@
 .navigation {
-  z-index: 100;
+  @media screen and (max-width: 720px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    div {
+      display: none;
+    }
+  }
 
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+  z-index: 100;
   display: grid;
   height: 60px;
   width: 100%;
@@ -11,6 +25,12 @@
   transition: 0.3s linear;
 
   .logo {
+    @media screen and (max-width: 720px) {
+      a {
+        display: none;
+      }
+      display: none;
+    }
     position: absolute;
     left: 15%;
     color: $color2;
@@ -130,7 +150,7 @@
   }
 }
 
-.hidden {
+/* .hidden {
   transition: 0.4s linear;
   z-index: 100;
   display: grid;
@@ -140,4 +160,13 @@
   position: fixed;
   background-color: $color1;
   top: -180px;
+}
+ */
+
+.scroll-up {
+  transform: translate(0, 0);
+}
+
+.scroll-down {
+  transform: translate(0, -100%);
 }

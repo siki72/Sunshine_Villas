@@ -8,8 +8,14 @@
     @include flex;
 
     div {
-      font-family: $pop7;
+      @media screen and (max-width: 1050px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 570px) {
+        font-size: 1.2rem;
+      }
 
+      font-family: $pop7;
       color: rgb(255, 255, 255);
       font-size: 4rem;
       text-align: center;
@@ -19,6 +25,9 @@
       transform: translateY(-500px);
       animation: headeranim 2s ease forwards;
       h2 {
+        @media screen and (max-width: 570px) {
+          font-size: 1.4rem;
+        }
         font-family: $gildas;
         font-weight: 200;
         font-size: 3.5rem;

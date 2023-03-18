@@ -29,7 +29,7 @@ const Navigation = () => {
   }, [lastScrol]);
 
   return (
-    <div className={`navigation  ${show && "hidden"} `}>
+    <div className={`navigation  ${show ? "scroll-down" : "scroll-up"} `}>
       <div></div>
       <div></div>
 
@@ -73,7 +73,7 @@ const Navigation = () => {
           <li>Contact us</li>
         </NavLink>
         {user?.role === "admin" && (
-          <NavLink to="/villas/3">
+          <NavLink to="/admin">
             <li>Admin</li>
           </NavLink>
         )}

@@ -7,6 +7,9 @@
 
   .hotel-logo {
     .logo-footer {
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
       min-width: 100%;
       color: $color1;
       font-family: $gildas;
@@ -108,6 +111,9 @@
   }
 
   .accommodation {
+    @media screen and (max-width: 690px) {
+      display: none;
+    }
     > * {
       margin-bottom: 20px;
     }
@@ -132,6 +138,9 @@
   }
 
   .get-in-touche {
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
     h3 {
       margin-bottom: 30px;
       color: #878787;

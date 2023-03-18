@@ -4,6 +4,9 @@
   margin: 0 auto;
 
   .main-villa {
+    @media screen and (max-width: 1200px) {
+      display: block;
+    }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -16,14 +19,26 @@
     .text {
       margin-top: 40px;
       padding-top: 50px;
+      @media screen and (max-width: 1200px) {
+        margin-bottom: 30px;
+      }
 
       h2 {
+        @media screen and (max-width: 750px) {
+          font-size: 1.9rem;
+          text-align: center;
+        }
         font-family: $pop2;
-
         line-height: 46px;
         font-size: 46px;
       }
       p {
+        @media screen and (max-width: 1200px) {
+          font-size: 0.9rem;
+        }
+        @media screen and (max-width: 520px) {
+          text-align: center;
+        }
         margin-top: 30px;
         font-family: $rob3;
         font-weight: 200;
@@ -33,11 +48,25 @@
       }
 
       .link-villas {
+        @media screen and (max-width: 520px) {
+          display: block;
+          justify-content: center;
+
+          > * {
+            margin-bottom: 20px;
+          }
+        }
         margin-top: 60px;
         display: flex;
         justify-content: flex-end;
 
         .button {
+          @media screen and (max-width: 520px) {
+            display: flex;
+            justify-content: center;
+            max-width: 50%;
+            margin: 0 auto;
+          }
           font-family: $rob3;
           font-size: 18px;
           color: $color1;
@@ -52,6 +81,9 @@
           }
         }
         .check-div {
+          @media screen and (max-width: 400px) {
+            margin-bottom: 20px;
+          }
           @include flex;
         }
 

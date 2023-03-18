@@ -13,7 +13,7 @@ const Admin = () => {
     return () => {};
   }, [user, ready]);
 
-  if (setRedirect) {
+  if (redirect) {
     return <Navigate to={"/"} />;
   }
   return (

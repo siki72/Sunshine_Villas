@@ -97,19 +97,19 @@ $color6: #403f3d;
   list-style-type: none;
   outline: none;
   border: none;
-
   text-decoration: none;
   font-family: $pop;
   scroll-behavior: smooth;
   ::selection {
     color: $color1;
-
     background-color: $color2;
   }
 }
 
 body {
   background-color: $color1;
+  @media screen and (max-width: 538px) {
+  }
 }
 
 .error {

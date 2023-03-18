@@ -6,6 +6,9 @@
   .main_select {
     text-align: center;
     h2 {
+      @media screen and (max-width: 520px) {
+        font-size: 2rem;
+      }
       font-family: $pop2;
       font-size: 46px;
       line-height: 46px;
@@ -13,6 +16,9 @@
     }
 
     .villas-cards {
+      @media screen and (max-width: 1350px) {
+        display: block;
+      }
       display: flex;
     }
   }
