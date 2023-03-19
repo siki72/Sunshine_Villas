@@ -7,7 +7,7 @@ const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
   //ramener setUser de notre UserCOntext grace au hook useContext
-  const { user, setUser, setReady, ready } = useContext(UserContext);
+  const { user, setUser, setReady, setIsAdmin } = useContext(UserContext);
 
   const handeleLogin = async (e) => {
     e.preventDefault();
@@ -23,6 +23,9 @@ const Login = () => {
       } else {
         const user = await response.json();
         setUser(user);
+        if (user.role === "admin") {
+          setIsAdmin(user);
+        }
         setReady(true);
         console.log(user);
         setRedirect(true);

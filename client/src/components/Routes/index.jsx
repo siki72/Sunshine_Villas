@@ -35,7 +35,7 @@ const index = () => {
           <Route path="/explore-zanzibar" element={<Explore_zanzibar />} />
           <Route path="/account/" element={<Account />} />
           <Route path="/account/:pages" element={<Account />} />
-          <Route path="/admin" element={<Admin />} />
+          {/*           <Route path="/account/dashboard" element={<Admin />} /> */}
         </Routes>
         <Footer />
       </UserContextProvider>

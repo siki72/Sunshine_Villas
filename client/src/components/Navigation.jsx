@@ -73,8 +73,8 @@ const Navigation = () => {
           <li>Contact us</li>
         </NavLink>
         {user?.role === "admin" && (
-          <NavLink to="/admin">
-            <li>Admin</li>
+          <NavLink to="/account/dashboard">
+            <li>Dashboard</li>
           </NavLink>
         )}
 

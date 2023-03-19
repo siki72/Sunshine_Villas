@@ -15,12 +15,17 @@ export function UserContextProvider({ children }) {
         if (resp.ok) {
           resp.json().then((data) => {
             setUser(data);
+            if (data.role === "admin") {
+              setIsAdmin(data);
+            }
             setReady(true);
           });
         }
       });
     }
   }, []);
+  console.log(user);
+  console.log(isAdmin);
 
   return (
     <UserContext.Provider

@@ -10,13 +10,13 @@ import {
 import { useState } from "react";
 
 import Mybookings from "./Mybookings.jsx";
+import Admin from "./Admin.jsx";
 
 const Account = () => {
   const { pages } = useParams();
   const [redirect, setRedirect] = useState(false);
   console.log(pages);
-
-  const { user, ready, setUser } = useContext(UserContext);
+  const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
   if (!ready) {
     return "loading";
   }
@@ -25,13 +25,13 @@ const Account = () => {
   }
 
   const handleLogout = () => {
-    fetch("https://alimissoum.app.3wa.io/logout", {
+    fetch("https://alimissoum.app.3wa.io/user/logout", {
       method: "GET",
       credentials: "include",
       headers: {
         "Content-type": "application/json",
       },
-    }).then(setUser(null));
+    }).then(setUser(null), setIsAdmin(null));
   };
 
   function linkClasses(type = null) {
@@ -52,16 +52,19 @@ const Account = () => {
           }}
           className="header-img"
         ></div>
-        <nav className="nav-book">
-          <Link className={linkClasses("")} to={"/account"}>
-            <FontAwesomeIcon icon={faUser} />
-            <span> My profile</span>
-          </Link>
-          <Link className={linkClasses("bookings")} to={"/account/bookings"}>
-            <FontAwesomeIcon icon={faHouse} />
-            <span>My Booking</span>
-          </Link>
-        </nav>
+        {!isAdmin && (
+          <nav className="nav-book">
+            <Link className={linkClasses("")} to={"/account"}>
+              <FontAwesomeIcon icon={faUser} />
+              <span> My profile</span>
+            </Link>
+            <Link className={linkClasses("bookings")} to={"/account/bookings"}>
+              <FontAwesomeIcon icon={faHouse} />
+              <span>My Booking</span>
+            </Link>
+          </nav>
+        )}
+        {pages === "dashboard" && <Admin />}
         {pages === undefined && (
           <div className="login">
             <h2>Welcome Home {user.name} ..</h2>

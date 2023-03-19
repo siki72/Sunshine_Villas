@@ -96,7 +96,7 @@ const Footer = () => {
       </div>
       <div className="rights">
         <h4>ALL RIGHTS RESERVED SUNSHNE VILLAS 2023</h4>
-        <h4>FINAL PROJECT FOR 3WA ACADEMY BY ALI MISSOUM</h4>
+        <h4>FINAL PROJECT FOR 3W ACADEMY BY ALI MISSOUM</h4>
       </div>
     </div>
   );
