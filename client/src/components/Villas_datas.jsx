@@ -27,19 +27,31 @@ const Villas_datas = ({ id }) => {
     <div className="data">
       <table>
         <thead>
+          <tr>
+            <th>id</th>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>email</th>
+            <th>Checkin</th>
+            <th>Checkout</th>
+            <th>Nights</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
           {data.map((row) => (
             <tr key={row.id}>
-              <th>{row.id}</th>
-              <th>{row.firstname}</th>
-              <th>{row.lastname}</th>
-              <th>{row.email}</th>
-              <th>{format(new Date(row.start_date), "dd/MM/yyyy")}</th>
-              <th>{format(new Date(row.end_date), "dd/MM/yyyy")}</th>
-              <th>{row.nights}</th>
-              <th>{row.total_price} euros</th>
+              <td>{row.id}</td>
+              <td>{row.firstname}</td>
+              <td>{row.lastname}</td>
+              <td>{row.email}</td>
+              <td>{format(new Date(row.start_date), "dd/MM/yyyy")}</td>
+              <td>{format(new Date(row.end_date), "dd/MM/yyyy")}</td>
+              <td>{row.nights}</td>
+              <td>{row.total_price} euros</td>
             </tr>
           ))}
-        </thead>
+        </tbody>
       </table>
     </div>
   );
