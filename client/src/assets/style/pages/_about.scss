@@ -1,0 +1,188 @@
+.about-page {
+  .container {
+    .about-header {
+      > * {
+        margin-bottom: 1rem;
+      }
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      text-align: center;
+
+      background-image: url("../img/home/about_page.jpg");
+
+      h1 {
+        font-family: $pop7;
+        font-size: 8.125rem;
+        text-transform: uppercase;
+        line-height: 6.25rem;
+        color: $color1;
+      }
+
+      h2 {
+        font-family: $gildas;
+        font-size: 3.625rem;
+        line-height: 3.625rem;
+        color: $color1;
+      }
+      div {
+        margin: 15px 0;
+        img {
+          width: 13rem;
+          max-width: 20%;
+        }
+      }
+    }
+    .text {
+      > * {
+        margin-bottom: 3rem;
+      }
+      max-width: 50%;
+      margin: 30px auto;
+      text-align: center;
+      h3 {
+        font-family: $pop4;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        color: #1c1c1c;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #878788;
+        font-family: $rob3;
+      }
+    }
+
+    .about-main {
+      > * {
+        margin-bottom: 15px;
+      }
+      text-align: center;
+      h4 {
+        font-size: $rob3;
+        font-size: 1rem;
+        line-height: 1.938rem;
+        color: #878788;
+      }
+      .manager-img img {
+        border-radius: 50%;
+        max-height: 250px;
+      }
+      h5:first-of-type {
+        font-family: $jadyn;
+        font-size: 3rem;
+        color: #939393;
+        line-height: 1.938rem;
+      }
+      h5 {
+        margin-bottom: 15px;
+        font-family: $rob4;
+        font-size: 1.1rem;
+        color: #7a7a7a;
+        line-height: 1.2rem;
+      }
+    }
+    .jambian-infos-grid {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 33.75rem 33.75rem;
+
+      .situation {
+        max-width: 80%;
+        margin: 0 auto;
+        @include flex;
+        flex-direction: column;
+
+        h4 {
+          font-size: 2rem;
+          font-family: $pop4;
+          color: #1c1c1c;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-family: $rob3;
+          font-size: 1rem;
+          color: #878788;
+          line-height: 2rem;
+        }
+      }
+      .situation-img {
+        background-image: url(../img/home/beach-about.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .plan {
+        background-image: url(../img/home/land_contact.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .about-jambiani {
+        padding: 6rem;
+        flex-direction: column;
+
+        background-color: rgb(30, 29, 29);
+        h4 {
+          font-family: $pop2;
+          font-size: 2.875rem;
+          color: $color1;
+          line-height: 2.875rem;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-family: $rob3;
+          font-size: 1rem;
+          line-height: 2rem;
+          color: $color1;
+        }
+      }
+    }
+    .sea-img {
+      @include flex;
+      text-align: center;
+      clip-path: polygon(49% 16%, 100% 0, 100% 100%, 0 100%, 0 0);
+      background-image: url(../img/home/about_center.jpeg);
+      background-position: center;
+      background-size: cover;
+      min-height: 32rem;
+      max-height: 50%;
+      blockquote {
+        padding: 40px;
+        max-width: 80%;
+        margin: 0 auto;
+
+        p {
+          font-size: 3.375rem;
+          line-height: 4rem;
+          color: $color1;
+          font-family: $pop7;
+          &::before {
+            content: "\201C";
+          }
+          &::after {
+            content: "\201D";
+          }
+        }
+        footer {
+          font-family: $gildas;
+          font-size: 2.25rem;
+          line-height: 2.25rem;
+          color: $color1;
+        }
+      }
+    }
+    .reviews {
+      margin-top: 3rem;
+    }
+
+    .ours-villas {
+      text-align: center;
+      padding: 3rem 0;
+      display: flex;
+    }
+  }
+}

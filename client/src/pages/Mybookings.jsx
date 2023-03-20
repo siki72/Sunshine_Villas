@@ -40,7 +40,7 @@ const Mybookings = () => {
       {!myBookings.length ? (
         <div className="login">
           <h2>Ooops ! {user.name} ..</h2>
-          you have no reservation for the moment <br />
+          you have no reservation for the moment
           <Link to={"/villas/1"}>
             <button>
               click

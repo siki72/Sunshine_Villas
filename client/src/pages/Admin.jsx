@@ -16,6 +16,15 @@ const Admin = () => {
   const [showData2, setShowData2] = useState(false);
   const [showData3, setShowData3] = useState(false);
 
+  const handleshow = (setShowData) => {
+    return () => {
+      setShowData1(false);
+      setShowData2(false);
+      setShowData3(false);
+      setShowData(true);
+    };
+  };
+  /* 
   const handleShow1 = () => {
     setShowData1(true);
     setShowData2(false);
@@ -30,7 +39,7 @@ const Admin = () => {
     setShowData1(false);
     setShowData2(false);
     setShowData3(true);
-  };
+  }; */
 
   useEffect(() => {
     // Rediriger l'utilisateur vers la page d'accueil s'il est connecté et qu'il accède à la page de connexion
@@ -52,13 +61,13 @@ const Admin = () => {
             <FontAwesomeIcon icon={faDatabase} /> Dashboard
           </p>
           <ul>
-            <li onClick={handleShow1}>
+            <li onClick={handleshow(setShowData1)}>
               <FontAwesomeIcon icon={faHouseUser} /> Villa 1 bed
             </li>
-            <li onClick={handleShow2}>
+            <li onClick={handleshow(setShowData2)}>
               <FontAwesomeIcon icon={faHouseUser} /> Villa 2 bed
             </li>
-            <li onClick={handleShow3}>
+            <li onClick={handleshow(setShowData3)}>
               <FontAwesomeIcon icon={faHouseUser} /> Villa 3 bed
             </li>
             <li>

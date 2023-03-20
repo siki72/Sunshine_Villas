@@ -33,7 +33,11 @@
   font-family: "font-rob400";
   src: url(../fonts/Roboto-Regular.ttf);
 }
-
+@font-face {
+  font-family: "jadyn";
+  src: url(../fonts/Jadyn.ttf);
+}
+$jadyn: "jadyn", sans-serif;
 $pop: "font-pop", sans-serif;
 $rob: "font-rob", sans-serif;
 $gildas: "font-gildas", sans-serif;

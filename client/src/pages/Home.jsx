@@ -20,9 +20,7 @@ const Home = () => {
           className="main_img"
         >
           <div>
-            <h1>
-              PRIVATE <br /> LUXURY VILLAS
-            </h1>
+            <h1>PRIVATE LUXURY VILLAS</h1>
             <h2>Jambiani beach, Zanzibar.</h2>
             <Link to="/booking">
               <button className="button">Book your Villa</button>
