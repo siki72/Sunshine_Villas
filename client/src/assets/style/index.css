@@ -243,6 +243,7 @@ body {
   font-size: 1rem;
   line-height: 2rem;
   color: rgb(255, 255, 255);
+  text-align: left;
 }
 .about-page .container .sea-img {
   display: flex;
@@ -281,7 +282,18 @@ body {
   color: rgb(255, 255, 255);
 }
 .about-page .container .reviews {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
   margin-top: 3rem;
+}
+.about-page .container .reviews .logo {
+  display: flex;
+  flex-direction: column;
+}
+.about-page .container .reviews .logo img {
+  width: 200px;
 }
 .about-page .container .ours-villas {
   text-align: center;

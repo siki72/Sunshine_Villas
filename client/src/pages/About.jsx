@@ -12,7 +12,7 @@ const About = () => {
           <h1>sunshine villas</h1>
           <h2>In beautiful Zanzibar</h2>
           <div>
-            <img src="../img/logo/with-logo.png" alt="trip-advisor-logo" />
+            <img src="../img/logo/withe-logo.png" alt="trip-advisor-logo" />
           </div>
           <div>
             <img src="../img/logo/stars.png" alt="5-stars-logo" />
@@ -80,6 +80,10 @@ const About = () => {
           </div>
         </div>
         <div className="reviews">
+          <div className="logo">
+            <img src="../img/logo/black-logo.png" alt="" />
+            <img src="../img/logo/stars.png" alt="" />
+          </div>
           <ReviewsSwiper />
         </div>
         <div className="ours-villas">

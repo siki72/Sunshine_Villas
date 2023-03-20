@@ -138,6 +138,7 @@
           font-size: 1rem;
           line-height: 2rem;
           color: $color1;
+          text-align: left;
         }
       }
     }
@@ -176,9 +177,19 @@
       }
     }
     .reviews {
+      max-width: 80%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
       margin-top: 3rem;
+      .logo {
+        display: flex;
+        flex-direction: column;
+        img {
+          width: 200px;
+        }
+      }
     }
-
     .ours-villas {
       text-align: center;
       padding: 3rem 0;
