@@ -71,6 +71,9 @@
   color: rgb(255, 255, 255);
   background-color: rgb(1, 1, 1);
 }
+* textarea {
+  resize: none;
+}
 
 body {
   background-color: rgb(255, 255, 255);
@@ -2154,8 +2157,10 @@ input:invalid:focus ~ span {
   grid-area: message;
 }
 .send-message .send-message-form form #recaptcha {
-  height: 15px;
-  border: 1px solid red;
+  margin: 0 auto;
+  width: 90%;
+  min-height: 100%;
+  margin-bottom: 20px;
   grid-area: recaptcha;
 }
 .send-message .send-message-form form #send {

@@ -112,6 +112,9 @@ $color9: rgb(28, 28, 28);
     color: $color1;
     background-color: $color2;
   }
+  textarea {
+    resize: none;
+  }
 }
 
 body {

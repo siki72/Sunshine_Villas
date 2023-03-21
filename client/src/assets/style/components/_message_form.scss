@@ -77,8 +77,11 @@
         grid-area: message;
       }
       #recaptcha {
-        height: 15px;
-        border: 1px solid red;
+        margin: 0 auto;
+        width: 90%;
+        min-height: 100%;
+        margin-bottom: 20px;
+
         grid-area: recaptcha;
       }
       #send {

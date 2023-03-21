@@ -1,20 +1,23 @@
 import React, { useRef } from "react";
-import { ReCAPTCHA } from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Message_form = () => {
   const refCaptcha = useRef();
+  const formSendMsgRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const recaptchaValue = refCaptcha.current.value();
-    const data = new FormData(formRegisterRef.current);
+    const recaptchaValue = refCaptcha.current;
+    const data = new FormData(formSendMsgRef.current);
 
     const newUser = {
       name: data.get("name"),
       email: data.get("email"),
       message: data.get("message"),
+      recaptchaValue: recaptchaValue,
     };
     console.log(newUser);
   };
+
   return (
     <div className="send-message">
       <div className="send-message-img">
@@ -22,7 +25,13 @@ const Message_form = () => {
       </div>
       <div className="send-message-form">
         <h2>Send us a message</h2>
-        <form action="" method="post" onSubmit={handleSubmit}>
+
+        <form
+          ref={formSendMsgRef}
+          action=""
+          method="post"
+          onSubmit={handleSubmit}
+        >
           <div className="input-groups name">
             <label htmlFor="fullName">Full Name</label>
             <input
@@ -53,15 +62,16 @@ const Message_form = () => {
               id="message"
               cols="30"
               rows="6"
-              onResize="false"
             ></textarea>
           </div>
+
           <ReCAPTCHA
+            size="normal"
+            theme="dark"
             id="recaptcha"
             ref={refCaptcha}
-            sitekey="6LcDgBwlAAAAABJNMZvr04RVA1dTxYlvg7zpoR-k"
+            sitekey="6Lc60B0lAAAAAMfHBQWq5BoMN9a_kXd2s3mLCAvQ"
           />
-
           <button id="send" type="submit">
             Send Message
           </button>
