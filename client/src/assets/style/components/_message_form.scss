@@ -1,0 +1,94 @@
+.send-message {
+  display: flex;
+  min-width: 100%;
+
+  .send-message-img {
+    max-width: 50%;
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .send-message-form {
+    h2 {
+      margin-top: 2rem;
+      font-family: $pop2;
+      font-size: 2.875rem;
+      line-height: 2.875rem;
+      text-align: center;
+      color: $color4;
+    }
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    form {
+      padding: 2rem;
+      .input-groups {
+        > * {
+          margin-bottom: 1.5rem;
+        }
+        label {
+          font-family: $rob4;
+          font-size: 1rem;
+          line-height: 1.7rem;
+          color: #403f3d;
+        }
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        padding: 1rem;
+        background-color: transparent;
+        border: 1px solid $color2;
+        &::placeholder {
+          font-family: $rob3;
+          font-size: 0.9rem;
+          line-height: 1rem;
+          color: #969696;
+        }
+      }
+      textarea {
+        background-color: transparent;
+        border: 1px solid black;
+        &::placeholder {
+          padding: 0.6rem;
+          font-family: $rob3;
+          font-size: 0.9rem;
+          line-height: 1rem;
+          color: #969696;
+        }
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      grid-template-areas:
+        "fullName email"
+        "message message"
+        "recaptcha recaptcha"
+        "send send";
+
+      .name {
+        grid-area: fullName;
+      }
+      .email {
+        grid-area: email;
+      }
+      .message {
+        grid-area: message;
+      }
+      #recaptcha {
+        height: 15px;
+        border: 1px solid red;
+        grid-area: recaptcha;
+      }
+      #send {
+        font-family: $rob4;
+        font-size: 1rem;
+        color: $color1;
+        background-color: $color6;
+        grid-area: send;
+        padding: 1rem;
+      }
+    }
+  }
+}

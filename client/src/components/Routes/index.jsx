@@ -3,7 +3,6 @@ import Navigation from "../Navigation";
 import { BrowserRouter, redirect, Route, Routes } from "react-router-dom";
 import About from "../../pages/About";
 import Villas from "../../pages/Villas";
-import Contact from "../../pages/contact";
 import Booking from "../../pages/Booking";
 import Home from "../../pages/Home";
 import Villa_1_bed from "../../pages/Villa_1_bed";
@@ -16,6 +15,7 @@ import Register from "../../pages/Register";
 import { UserContextProvider } from "../../users/UserContext.jsx";
 import Account from "../../pages/Account.jsx";
 import Admin from "../../pages/Admin.jsx";
+import Contact_page from "../../pages/Contact_page.jsx";
 
 const index = () => {
   return (
@@ -28,8 +28,8 @@ const index = () => {
           <Route path="/villas/:id" element={<Villa_1_bed />} />
           <Route path="/villas/:id" element={<Villa_2_bed />} />
           <Route path="/villas/:id" element={<Villa_3_bed />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/contact" element={<Contact_page />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/explore-zanzibar" element={<Explore_zanzibar />} />

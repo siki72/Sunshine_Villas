@@ -1,0 +1,121 @@
+.contact-page {
+  .contact-header {
+    height: 90vh;
+    text-align: center;
+    @include flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    h1 {
+      max-width: 80%;
+      font-family: $pop7;
+      font-size: 6.25rem;
+      line-height: 6.25rem;
+      color: $color4;
+    }
+
+    .staff-contact-box {
+      @include around;
+      width: 80%;
+      margin-top: 3rem;
+
+      .staff {
+        .staff-avatar {
+          img {
+            border-radius: 50%;
+            width: 9rem;
+          }
+        }
+        .contacts {
+          h3 {
+            font-family: $gildas;
+            font-size: 1.563rem;
+            line-height: 2.813rem;
+            color: $color7;
+          }
+          a {
+            > * {
+              margin-right: 0.4rem;
+            }
+            font-family: $rob4;
+            font-size: 1rem;
+            line-height: 2rem;
+            color: $color8;
+          }
+
+          div {
+            margin-top: 1rem;
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              top: -0.7rem;
+              left: 0;
+              height: 1px;
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+    .style {
+      bottom: 0;
+      position: absolute;
+      height: 5rem;
+      width: 100%;
+      background-color: $color9;
+    }
+  }
+  .contacts-social {
+    min-height: 350px;
+
+    background-color: $color9;
+    @include around;
+    .contact-us {
+      margin-top: 2rem;
+      text-align: center;
+      h3 {
+        font-family: $pop2;
+        color: $color1;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        margin-bottom: 1.8rem;
+      }
+      address {
+        p {
+          font-family: $rob4;
+          font-size: 1rem;
+          text-transform: uppercase;
+          color: $color5;
+          line-height: 2rem;
+        }
+      }
+      ul {
+        li {
+          margin-top: 1rem;
+          font-family: $rob4;
+          font-size: 1rem;
+          text-transform: uppercase;
+          color: $color5;
+        }
+      }
+    }
+    .social {
+      .social-media,
+      a {
+        font-family: $rob4;
+        font-size: 1.2rem;
+        color: $color5;
+        line-height: 2rem;
+        .icon {
+          color: $color1;
+          font-size: 1.3rem;
+        }
+        span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

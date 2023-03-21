@@ -48,7 +48,7 @@
         font-family: $pop4;
         font-size: 2.875rem;
         line-height: 2.875rem;
-        color: #1c1c1c;
+        color: $color4;
       }
 
       p {
@@ -83,7 +83,7 @@
         margin-bottom: 15px;
         font-family: $rob4;
         font-size: 1.1rem;
-        color: #7a7a7a;
+        color: $color7;
         line-height: 1.2rem;
       }
     }
@@ -101,7 +101,7 @@
         h4 {
           font-size: 2rem;
           font-family: $pop4;
-          color: #1c1c1c;
+          color: $color4;
           line-height: 2rem;
           margin-bottom: 2rem;
         }

@@ -303,6 +303,118 @@ body {
   display: flex;
 }
 
+.contact-page .contact-header {
+  height: 90vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+}
+.contact-page .contact-header h1 {
+  max-width: 80%;
+  font-family: "font-pop-bold", sans-serif;
+  font-size: 6.25rem;
+  line-height: 6.25rem;
+  color: #1c1c1c;
+}
+.contact-page .contact-header .staff-contact-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin-top: 3rem;
+}
+.contact-page .contact-header .staff-contact-box .staff .staff-avatar img {
+  border-radius: 50%;
+  width: 9rem;
+}
+.contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.563rem;
+  line-height: 2.813rem;
+  color: #7a7a7a;
+}
+.contact-page .contact-header .staff-contact-box .staff .contacts a {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #54595f;
+}
+.contact-page .contact-header .staff-contact-box .staff .contacts a > * {
+  margin-right: 0.4rem;
+}
+.contact-page .contact-header .staff-contact-box .staff .contacts div {
+  margin-top: 1rem;
+  position: relative;
+}
+.contact-page .contact-header .staff-contact-box .staff .contacts div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: -0.7rem;
+  left: 0;
+  height: 1px;
+  background-color: black;
+}
+.contact-page .contact-header .style {
+  bottom: 0;
+  position: absolute;
+  height: 5rem;
+  width: 100%;
+  background-color: rgb(28, 28, 28);
+}
+.contact-page .contacts-social {
+  min-height: 350px;
+  background-color: rgb(28, 28, 28);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-page .contacts-social .contact-us {
+  margin-top: 2rem;
+  text-align: center;
+}
+.contact-page .contacts-social .contact-us h3 {
+  font-family: "font-pop200", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  margin-bottom: 1.8rem;
+}
+.contact-page .contacts-social .contact-us address p {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #878787;
+  line-height: 2rem;
+}
+.contact-page .contacts-social .contact-us ul li {
+  margin-top: 1rem;
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #878787;
+}
+.contact-page .contacts-social .social .social-media,
+.contact-page .contacts-social .social a {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1.2rem;
+  color: #878787;
+  line-height: 2rem;
+}
+.contact-page .contacts-social .social .social-media .icon,
+.contact-page .contacts-social .social a .icon {
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+}
+.contact-page .contacts-social .social .social-media span,
+.contact-page .contacts-social .social a span {
+  margin-left: 1rem;
+}
+
 .header {
   max-width: 100vw;
   overflow: hidden;
@@ -1320,7 +1432,6 @@ body {
   font-family: "font-pop200", sans-serif;
   font-size: 2.875rem;
   line-height: 2.875rem;
-  color: #1c1c1c;
 }
 @media screen and (max-width: 450px) {
   .section_5 .main-section-grid .read h3 {
@@ -1953,4 +2064,105 @@ input:invalid:focus ~ span {
   padding: 5px;
   background: #ffffff;
   color: #313030;
+}
+
+.send-message {
+  display: flex;
+  min-width: 100%;
+}
+.send-message .send-message-img {
+  max-width: 50%;
+}
+.send-message .send-message-img img {
+  height: 100%;
+  max-width: 100%;
+}
+.send-message .send-message-form {
+  background-color: rgb(244, 244, 244);
+  width: 100%;
+}
+.send-message .send-message-form h2 {
+  margin-top: 2rem;
+  font-family: "font-pop200", sans-serif;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  text-align: center;
+  color: #1c1c1c;
+}
+.send-message .send-message-form form {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  grid-template-areas: "fullName email" "message message" "recaptcha recaptcha" "send send";
+}
+.send-message .send-message-form form .input-groups {
+  display: flex;
+  flex-direction: column;
+}
+.send-message .send-message-form form .input-groups > * {
+  margin-bottom: 1.5rem;
+}
+.send-message .send-message-form form .input-groups label {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: #403f3d;
+}
+.send-message .send-message-form form input {
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid rgb(1, 1, 1);
+}
+.send-message .send-message-form form input::-moz-placeholder {
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #969696;
+}
+.send-message .send-message-form form input::placeholder {
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #969696;
+}
+.send-message .send-message-form form textarea {
+  background-color: transparent;
+  border: 1px solid black;
+}
+.send-message .send-message-form form textarea::-moz-placeholder {
+  padding: 0.6rem;
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #969696;
+}
+.send-message .send-message-form form textarea::placeholder {
+  padding: 0.6rem;
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #969696;
+}
+.send-message .send-message-form form .name {
+  grid-area: fullName;
+}
+.send-message .send-message-form form .email {
+  grid-area: email;
+}
+.send-message .send-message-form form .message {
+  grid-area: message;
+}
+.send-message .send-message-form form #recaptcha {
+  height: 15px;
+  border: 1px solid red;
+  grid-area: recaptcha;
+}
+.send-message .send-message-form form #send {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: #403f3d;
+  grid-area: send;
+  padding: 1rem;
 }/*# sourceMappingURL=index.css.map */
