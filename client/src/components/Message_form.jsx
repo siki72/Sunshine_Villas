@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "@emailjs/browser";
 
 const Message_form = () => {
   const refCaptcha = useRef();
@@ -15,7 +16,21 @@ const Message_form = () => {
       message: data.get("message"),
       recaptchaValue: recaptchaValue,
     };
-    console.log(newUser);
+    emailjs
+      .sendForm(
+        "service_cgeo4ys",
+        "template_znm3cd9",
+        formSendMsgRef.current,
+        "H8UNba3j5-DBrjR1E"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   };
 
   return (

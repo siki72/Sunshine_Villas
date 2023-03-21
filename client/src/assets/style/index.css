@@ -2078,7 +2078,9 @@ input:invalid:focus ~ span {
 }
 .send-message .send-message-img img {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .send-message .send-message-form {
   background-color: rgb(244, 244, 244);
@@ -2157,7 +2159,9 @@ input:invalid:focus ~ span {
   grid-area: message;
 }
 .send-message .send-message-form form #recaptcha {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   min-height: 100%;
   margin-bottom: 20px;

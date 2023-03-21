@@ -6,7 +6,8 @@
     max-width: 50%;
     img {
       height: 100%;
-      max-width: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -77,7 +78,7 @@
         grid-area: message;
       }
       #recaptcha {
-        margin: 0 auto;
+        @include flex;
         width: 90%;
         min-height: 100%;
         margin-bottom: 20px;
