@@ -68,7 +68,9 @@ const Account = () => {
         {pages === undefined && (
           <div className="login">
             <h2>Welcome Home {user.name} ..</h2>
-            logged in as {user.name} {user.email}
+            <h3>
+              logged in as {user.name} {user.email}
+            </h3>
             <button onClick={handleLogout}>
               Logout{" "}
               <span>

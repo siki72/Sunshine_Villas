@@ -16,7 +16,6 @@
       align-items: center;
       border: 1px solid transparent;
       padding: 50px;
-
       border-radius: 5px;
       height: 40px;
       max-width: 500px;
@@ -24,6 +23,7 @@
       span {
         margin-left: 1rem;
       }
+
       a {
         border: 2px solid black;
         padding: 15px 30px;
@@ -52,6 +52,12 @@
         font-family: $gildas;
         font-size: 3.5rem;
         line-height: 7rem;
+      }
+      h3 {
+        font-family: $gildas;
+        font-size: 2.5rem;
+        line-height: 2rem;
+        color: $color4;
       }
 
       button {

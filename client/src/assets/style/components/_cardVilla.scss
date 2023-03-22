@@ -10,16 +10,15 @@
   height: 950px;
   margin-top: 40px;
   width: 100%;
-  border: 1px solid $color1;
-  box-shadow: 0px 0px 6px #6e6161;
+  border: 1px solid rgb(239, 234, 234);
   border-radius: 10px;
   padding: 15px;
-  margin-left: 10px;
+  margin-left: 2rem;
   transition: 0.4s;
 
   &:hover {
-    box-shadow: 0px 0px 11px 3px #6e6161;
-    transform: scale(1.02);
+    box-shadow: 0px 0px 6px 0px #424141;
+    transform: scale(1.05);
   }
 
   .card-infos {

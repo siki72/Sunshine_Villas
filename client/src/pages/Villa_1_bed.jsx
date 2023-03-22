@@ -8,7 +8,11 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleCheck,
+  faHouse,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -17,9 +21,11 @@ import Swiper_img_3 from "../components/swiper/imgs/Swiper_img_3.jsx";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { UserContext } from "../users/UserContext.jsx";
 import CardVilla from "../components/CardVilla.jsx";
-import ReservationPopUp from "../components/ReservationPopUp.jsx";
 import { useSelector } from "react-redux";
 import BarLoader from "react-spinners/BarLoader";
+import ReactModal from "react-modal";
+import Modal_content from "../components/Modal_content.jsx";
+
 const override = {
   display: "block",
   margin: "0 auto",
@@ -49,12 +55,20 @@ const Villa_1_bed = () => {
   if (checkIn && checkOut) {
     numberOfnights = differenceInCalendarDays(checkOut, checkIn);
   }
+  function closeModal() {
+    setIsReserved(false);
+    window.location.reload(false);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#aaa1a1";
+  }
 
   const handleBooking = () => {
     if (checkIn < checkOut) {
       setLoading(true);
       const reservationData = {
-        /*        resaUid: uuidv4(), */
         checkIn,
         checkOut,
         villaId: id,
@@ -123,6 +137,15 @@ const Villa_1_bed = () => {
     setIdReady(true);
   }, [id]);
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isReserved) {
+      body.classList.add("no-scroll");
+    } else {
+      body.classList.remove("no-scroll");
+    }
+  }, [isReserved]);
+
   return (
     <div className="booking">
       <div
@@ -146,7 +169,20 @@ const Villa_1_bed = () => {
               {id == 2 && <Swiper_img_2 />}
               {id == 3 && <Swiper_img_3 />}
             </div>
-            {isReserved && <ReservationPopUp setopen={setIsReserved} />}
+            {isReserved && (
+              <ReactModal
+                closeTimeoutMS="4000"
+                className="modale"
+                isOpen={isReserved}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                contentLabel="confirmation of sending a message"
+              >
+                <Modal_content user={user} closeModal={closeModal} />
+              </ReactModal>
+            )}
+            {/*     <ReservationPopUp setopen={setIsReserved} /> */}
+            {}
             <div className="choose-villa-infos">
               <div className="card-infos">
                 <h2>{villaInfos.name}</h2>

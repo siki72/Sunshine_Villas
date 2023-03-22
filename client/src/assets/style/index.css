@@ -52,6 +52,12 @@
     transform: translateY(0);
   }
 }
+@keyframes popBooking {
+  to {
+    opacity: 1;
+    transform: translate(-100%, 420%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -112,6 +118,58 @@ body {
 }
 .active-nav > * {
   color: rgb(255, 255, 255);
+}
+
+.modale {
+  background-color: rgba(0, 0, 0, 0.865);
+  color: grey;
+  text-align: center;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  top: -20rem;
+  left: 90%;
+  width: 40%;
+  border-radius: 2rem;
+  padding: 20px;
+  position: absolute;
+  min-width: 20rem;
+  opacity: 0;
+  animation: popBooking 1s ease-in-out forwards;
+}
+.modale .container {
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.modale .container button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.865);
+}
+.modale .first-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modale h2 {
+  color: rgb(244, 244, 244);
+}
+.modale h2 span {
+  color: #015706;
+}
+.modale span {
+  color: rgb(13, 124, 13);
+  margin-right: 1rem;
+  font-family: "font-gildas", sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .about-page .container .about-header {
@@ -1038,11 +1096,10 @@ body {
   height: 950px;
   margin-top: 40px;
   width: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  box-shadow: 0px 0px 6px #6e6161;
+  border: 1px solid rgb(239, 234, 234);
   border-radius: 10px;
   padding: 15px;
-  margin-left: 10px;
+  margin-left: 2rem;
   transition: 0.4s;
 }
 @media screen and (max-width: 350px) {
@@ -1055,8 +1112,8 @@ body {
   }
 }
 .card-container:hover {
-  box-shadow: 0px 0px 11px 3px #6e6161;
-  transform: scale(1.02);
+  box-shadow: 0px 0px 6px 0px #424141;
+  transform: scale(1.05);
 }
 .card-container .card-infos > * {
   margin-top: 1.5rem;
@@ -1826,6 +1883,12 @@ input:invalid:focus ~ span {
   font-family: "font-gildas", sans-serif;
   font-size: 3.5rem;
   line-height: 7rem;
+}
+.account-container .container .login h3 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.5rem;
+  line-height: 2rem;
+  color: #1c1c1c;
 }
 .account-container .container .login button {
   border-radius: 5px;
