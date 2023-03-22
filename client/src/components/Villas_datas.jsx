@@ -17,7 +17,6 @@ const Villas_datas = ({ id }) => {
         },
       });
       return response.json().then((data) => {
-        console.log(data);
         setData(data);
       });
     };

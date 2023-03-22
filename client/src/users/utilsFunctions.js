@@ -32,7 +32,33 @@ async function login(user) {
   }
 }
 
+function getFormData(refer, names = []) {
+  const data = new FormData(refer.current);
+  let newUser = {};
+  for (let a of names) {
+    newUser[a] = data.get(a);
+  }
+  return newUser;
+}
+
+const registerUser = (e) => {
+  e.preventDefault();
+  const data = new FormData(formRegisterRef.current);
+
+  const newUser = {
+    firstname: data.get("firstname"),
+    lastname: data.get("lastname"),
+    email: data.get("email"),
+    password: data.get("password"),
+  };
+
+  userApi.addUser(newUser).then((resp) => {
+    setRedirect(true);
+  });
+};
+
 export default {
   addUser,
   login,
+  getFormData,
 };

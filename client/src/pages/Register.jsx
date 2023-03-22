@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import userApi from "../users/api";
+import utils from "../users/utilsFunctions";
 
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
@@ -12,16 +12,13 @@ const Register = () => {
 
   const registerUser = (e) => {
     e.preventDefault();
-    const data = new FormData(formRegisterRef.current);
-
-    const newUser = {
-      firstname: data.get("firstname"),
-      lastname: data.get("lastname"),
-      email: data.get("email"),
-      password: data.get("password"),
-    };
-
-    userApi.addUser(newUser).then((resp) => {
+    const formData = utils.getFormData(formRegisterRef, [
+      "firstname",
+      "lastname",
+      "email",
+      "password",
+    ]);
+    utils.addUser(formData).then((resp) => {
       setRedirect(true);
     });
   };

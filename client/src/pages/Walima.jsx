@@ -1,9 +1,12 @@
 import React from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import Swiper_walima from "../components/swiper/walima/Swiper_walima.jsx";
+import utils from "../users/utilsFunctions.js";
 
 const Walima = () => {
   const [date, setDate] = useState(getTodayDate());
+  const formRef = useRef();
 
   function getTodayDate() {
     const today = new Date();
@@ -12,6 +15,16 @@ const Walima = () => {
     const day = ("0" + today.getDate()).slice(-2);
     return `${year}-${month}-${day}`;
   }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = utils.getFormData(formRef, [
+      "email",
+      "name",
+      "date",
+      "guests",
+    ]);
+  };
 
   return (
     <div className="walima-page">
@@ -65,7 +78,7 @@ const Walima = () => {
           </p>
           <span>Book a table </span>
         </div>
-        <form action="" method="post">
+        <form ref={formRef} action="" method="post" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -90,7 +103,7 @@ const Walima = () => {
             <option value="1">1 person</option>
             <option value="2">2 person</option>
             <option value="3">3 person</option>
-            <option value="4">1 person</option>
+            <option value="4">4 person</option>
             <option value="5+"> 5+ person</option>
           </select>
           <button type="submit">Send</button>

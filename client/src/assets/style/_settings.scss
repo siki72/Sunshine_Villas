@@ -215,3 +215,13 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.send-notAllowed {
+  cursor: not-allowed;
+  font-family: $rob4;
+  font-size: 1rem;
+  color: $color1;
+  background-color: $color6;
+  grid-area: send;
+  padding: 1rem;
+}

@@ -1,17 +1,19 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import ReactModal from "react-modal";
 
 const Message_form = () => {
+  const [pending, setPending] = useState(false);
   const refCaptcha = useRef();
   const formSendMsgRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
+    setPending(true);
     const recaptchaValue = refCaptcha.current;
     const data = new FormData(formSendMsgRef.current);
 
-    const newUser = {
+    const messageData = {
       name: data.get("name"),
       email: data.get("email"),
       message: data.get("message"),
@@ -31,7 +33,8 @@ const Message_form = () => {
         (error) => {
           console.log(error);
         }
-      );
+      )
+      .finally(() => setPending(false));
   };
 
   return (
@@ -88,8 +91,11 @@ const Message_form = () => {
             ref={refCaptcha}
             sitekey="6Lc60B0lAAAAAMfHBQWq5BoMN9a_kXd2s3mLCAvQ"
           />
-          <button id="send" type="submit">
-            Send Message
+          <button
+            className={pending ? "send-notAllowed" : "send"}
+            type="submit"
+          >
+            {pending ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

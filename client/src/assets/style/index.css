@@ -172,6 +172,16 @@ body {
   overflow: hidden;
 }
 
+.send-notAllowed {
+  cursor: not-allowed;
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: #403f3d;
+  grid-area: send;
+  padding: 1rem;
+}
+
 .about-page .container .about-header {
   height: 100vh;
   display: flex;
@@ -2106,6 +2116,11 @@ input:invalid:focus ~ span {
 .admin-page .admin-container .dashboard ul li {
   cursor: pointer;
   font-size: 1rem;
+  color: rebeccapurple;
+}
+.admin-page .admin-container .dashboard ul li span {
+  color: #ffffff;
+  margin-left: 1rem;
 }
 .admin-page .admin-container .datas {
   min-width: 100%;
@@ -2230,13 +2245,14 @@ input:invalid:focus ~ span {
   margin-bottom: 20px;
   grid-area: recaptcha;
 }
-.send-message .send-message-form form #send {
+.send-message .send-message-form form .send {
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   color: rgb(255, 255, 255);
   background-color: #403f3d;
   grid-area: send;
   padding: 1rem;
+  cursor: pointer;
 }
 
 .walima-page .walima-header {
@@ -2358,6 +2374,12 @@ input:invalid:focus ~ span {
   grid-gap: 2rem;
   grid-template-areas: "firstname email" "date guests " "btn btn";
 }
+.walima-page .reservation form input {
+  font-family: "font-rob400", sans-serif;
+  letter-spacing: 1px;
+  color: rgb(1, 1, 1);
+  font-size: 1.2rem;
+}
 .walima-page .reservation form input::-moz-placeholder {
   font-size: 1rem;
   color: #878787;
@@ -2390,4 +2412,9 @@ input:invalid:focus ~ span {
   padding: 1rem;
   color: rgb(255, 255, 255);
   background-color: rgb(61, 62, 61);
+}
+
+.recap {
+  font-size: 2rem;
+  color: red;
 }/*# sourceMappingURL=index.css.map */

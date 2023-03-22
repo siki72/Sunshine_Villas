@@ -85,13 +85,14 @@
 
         grid-area: recaptcha;
       }
-      #send {
+      .send {
         font-family: $rob4;
         font-size: 1rem;
         color: $color1;
         background-color: $color6;
         grid-area: send;
         padding: 1rem;
+        cursor: pointer;
       }
     }
   }

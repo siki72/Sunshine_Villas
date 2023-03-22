@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
-import userApi from "../users/api";
+import utils from "../users/utilsFunctions.js";
 import { UserContext } from "../users/UserContext.jsx";
 
 const Login = () => {
@@ -11,13 +11,9 @@ const Login = () => {
 
   const handeleLogin = async (e) => {
     e.preventDefault();
-    const data = new FormData(formLoginRef.current);
-    const tryLoginUser = {
-      email: data.get("email"),
-      password: data.get("password"),
-    };
+    const formData = utils.getFormData(formLoginRef, ["email", "password"]);
     try {
-      const response = await userApi.login(tryLoginUser);
+      const response = await utils.login(formData);
       if (!response.ok) {
         throw new Error("unable to login");
       } else {

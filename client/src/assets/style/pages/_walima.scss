@@ -116,6 +116,12 @@
         "firstname email"
         "date guests "
         "btn btn";
+      input {
+        font-family: $rob4;
+        letter-spacing: 1px;
+        color: $color2;
+        font-size: 1.2rem;
+      }
       input::placeholder,
       [type="date"],
       select {
