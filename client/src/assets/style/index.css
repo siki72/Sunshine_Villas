@@ -2237,4 +2237,85 @@ input:invalid:focus ~ span {
   background-color: #403f3d;
   grid-area: send;
   padding: 1rem;
+}
+
+.walima-page .walima-header {
+  background-image: url("../img/walima/1.png");
+  background-size: cover;
+  background-position: center;
+  height: 37rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.walima-page .walima-header h1 {
+  text-align: center;
+  font-family: "font-pop-bold", sans-serif;
+  font-size: 8.125rem;
+  line-height: 6.25rem;
+  color: rgb(255, 255, 255);
+}
+.walima-page .walima-main {
+  display: flex;
+  max-width: 80%;
+  margin: 5rem auto;
+}
+.walima-page .walima-main .text {
+  max-width: 60%;
+  padding: 0 4rem;
+}
+.walima-page .walima-main .text h3 {
+  font-family: "font-pop200", sans-serif;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  color: #1c1c1c;
+  margin-bottom: 2rem;
+}
+.walima-page .walima-main .text p {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+  line-height: 1.938rem;
+  color: #878787;
+}
+.walima-page .walima-main .walima-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.walima-page .walima-img-swiper {
+  margin: 4rem;
+}
+.walima-page .walima-img-swiper img {
+  max-height: 100%;
+  width: 100%;
+}
+.walima-page .swahili {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem;
+}
+.walima-page .swahili .swahili-img {
+  background-image: url("../img/walima/swahili.jpeg");
+  height: 30rem;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.walima-page .swahili .swahili-text {
+  padding: 40px;
+}
+.walima-page .swahili .swahili-text h4 {
+  font-family: "font-pop200", sans-serif;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  color: #1c1c1c;
+  margin-bottom: 3rem;
+}
+.walima-page .swahili .swahili-text p {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #878787;
 }/*# sourceMappingURL=index.css.map */

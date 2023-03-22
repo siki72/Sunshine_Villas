@@ -72,7 +72,11 @@ $color9: rgb(28, 28, 28);
   justify-content: space-around;
   align-items: center;
 }
-
+@mixin between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 @mixin hover-nav {
   background-color: $color2;
   color: $color1;

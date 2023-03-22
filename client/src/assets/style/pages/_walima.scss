@@ -1,0 +1,80 @@
+.walima-page {
+  .walima-header {
+    background-image: url("../img/walima/1.png");
+    background-size: cover;
+    background-position: center;
+    height: 37rem;
+    @include flex;
+    h1 {
+      text-align: center;
+      font-family: $pop7;
+      font-size: 8.125rem;
+      line-height: 6.25rem;
+      color: $color1;
+    }
+  }
+  .walima-main {
+    display: flex;
+    max-width: 80%;
+    margin: 5rem auto;
+
+    .text {
+      max-width: 60%;
+      padding: 0 4rem;
+      h3 {
+        font-family: $pop2;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        color: $color4;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-family: $rob3;
+        font-size: 1rem;
+        line-height: 1.938rem;
+        color: $color5;
+      }
+    }
+    .walima-img {
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .walima-img-swiper {
+    margin: 4rem;
+    img {
+      max-height: 100%;
+      width: 100%;
+    }
+  }
+  .swahili {
+    @include between;
+    margin: 4rem;
+    .swahili-img {
+      background-image: url("../img/walima/swahili.jpeg");
+      height: 30rem;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+    .swahili-text {
+      padding: 40px;
+      h4 {
+        font-family: $pop2;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        color: $color4;
+        margin-bottom: 3rem;
+      }
+      p {
+        font-family: $rob4;
+        font-size: 1rem;
+        line-height: 2rem;
+        color: $color5;
+      }
+    }
+  }
+}
