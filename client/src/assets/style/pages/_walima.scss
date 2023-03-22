@@ -77,4 +77,73 @@
       }
     }
   }
+  .reservation {
+    padding: 3rem;
+    @include flex;
+    flex-direction: column;
+    background-color: $color2;
+    div {
+      margin-bottom: 3rem;
+      text-align: left;
+      h4 {
+        font-family: $pop2;
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        color: $color1;
+      }
+      p {
+        margin-top: 2rem;
+        font-family: $rob4;
+        font-size: 1rem;
+        height: 3rem;
+        color: $color1;
+      }
+      span {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $color1;
+      }
+    }
+
+    form {
+      width: 70%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 2rem;
+      grid-template-areas:
+        "firstname email"
+        "date guests "
+        "btn btn";
+      input::placeholder,
+      [type="date"],
+      select {
+        font-size: 1rem;
+        color: $color5;
+        padding: 0 1rem;
+      }
+      .name {
+        grid-area: firstname;
+      }
+      .email {
+        grid-area: email;
+      }
+      #date {
+        grid-area: date;
+      }
+      #num-guests {
+        grid-area: guests;
+      }
+      button {
+        font-family: $rob4;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        grid-area: btn;
+        padding: 1rem;
+        color: $color1;
+        background-color: rgb(61, 62, 61);
+      }
+    }
+  }
 }

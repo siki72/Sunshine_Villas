@@ -2318,4 +2318,76 @@ input:invalid:focus ~ span {
   font-size: 1rem;
   line-height: 2rem;
   color: #878787;
+}
+.walima-page .reservation {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(1, 1, 1);
+}
+.walima-page .reservation div {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+.walima-page .reservation div h4 {
+  font-family: "font-pop200", sans-serif;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  color: rgb(255, 255, 255);
+}
+.walima-page .reservation div p {
+  margin-top: 2rem;
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  height: 3rem;
+  color: rgb(255, 255, 255);
+}
+.walima-page .reservation div span {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: rgb(255, 255, 255);
+}
+.walima-page .reservation form {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  grid-template-areas: "firstname email" "date guests " "btn btn";
+}
+.walima-page .reservation form input::-moz-placeholder {
+  font-size: 1rem;
+  color: #878787;
+  padding: 0 1rem;
+}
+.walima-page .reservation form input::placeholder,
+.walima-page .reservation form [type=date],
+.walima-page .reservation form select {
+  font-size: 1rem;
+  color: #878787;
+  padding: 0 1rem;
+}
+.walima-page .reservation form .name {
+  grid-area: firstname;
+}
+.walima-page .reservation form .email {
+  grid-area: email;
+}
+.walima-page .reservation form #date {
+  grid-area: date;
+}
+.walima-page .reservation form #num-guests {
+  grid-area: guests;
+}
+.walima-page .reservation form button {
+  font-family: "font-rob400", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  grid-area: btn;
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 62, 61);
 }/*# sourceMappingURL=index.css.map */

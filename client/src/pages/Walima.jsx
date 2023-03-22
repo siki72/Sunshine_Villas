@@ -1,7 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import Swiper_walima from "../components/swiper/walima/Swiper_walima.jsx";
 
 const Walima = () => {
+  const [date, setDate] = useState(getTodayDate());
+
+  function getTodayDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ("0" + (today.getMonth() + 1)).slice(-2);
+    const day = ("0" + today.getDate()).slice(-2);
+    return `${year}-${month}-${day}`;
+  }
+
   return (
     <div className="walima-page">
       <div className="walima-header">
@@ -46,12 +57,14 @@ const Walima = () => {
         </div>
       </div>
       <div className="reservation">
-        <h4>Come and try fresh food</h4>
-        <p>
-          Simply book your table now online, it only takes 1 minute, then let
-          our teams take care of the rest.
-        </p>
-        <span>Book a table </span>
+        <div>
+          <h4>Come and try fresh food</h4>
+          <p>
+            Simply book your table now online, it only takes 1 minute, then let
+            our teams take care of the rest.
+          </p>
+          <span>Book a table </span>
+        </div>
         <form action="" method="post">
           <input
             type="text"
@@ -65,7 +78,14 @@ const Walima = () => {
             className="email"
             placeholder="Your Email"
           />
-          <input type="date" name="date" id="date" min={new Date()} />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            min={getTodayDate()}
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
           <select name="guests" id="num-guests">
             <option value="1">1 person</option>
             <option value="2">2 person</option>
