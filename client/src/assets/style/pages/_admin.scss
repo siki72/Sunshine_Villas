@@ -1,5 +1,4 @@
 .admin-page {
-  min-height: 100vh;
   background-color: rgb(255, 255, 255);
   h1 {
     text-align: center;
@@ -8,14 +7,13 @@
     padding-top: 50px;
   }
   .admin-container {
-    min-height: 100%;
     display: grid;
     grid-template-columns: 15% 85%;
     background-color: rgb(120, 139, 162);
 
     .dashboard {
       color: $color1;
-      min-height: 100vh;
+
       background-color: rgb(120, 139, 162);
       margin-left: 2rem;
 
@@ -73,13 +71,14 @@
         text-transform: uppercase;
         border: 1px solid #888282;
         padding: 1rem;
-        background: #717089;
+        background: rgb(120, 139, 162);
         color: #fafafa;
       }
       table td {
         border: 1px solid #b3adad;
         text-align: center;
-        padding: 5px;
+        padding: 1rem;
+
         background: #ffffff;
         color: #313030;
       }

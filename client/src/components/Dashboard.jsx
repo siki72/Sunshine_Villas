@@ -2,6 +2,7 @@ import React, { Profiler, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTrendUp, faHotel } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import Recharts from "./Recharts.jsx";
 const Dashboard = () => {
   const [profits, setProfits] = useState([]);
   const [somme, setSomme] = useState(0);
@@ -34,6 +35,20 @@ const Dashboard = () => {
           </span>
           <h3>We have : {profits.length}</h3>
           <h5>reservation(s) today</h5>
+        </div>
+      </div>
+      <div className="recharts">
+        <Recharts />
+        <div className="legend">
+          <div className="legend-flex villa-1-bed">
+            <div></div> <span>Villa 1 bed</span>
+          </div>
+          <div className="legend-flex villa-2-bed">
+            <div></div> <span>Villa 2 bed</span>
+          </div>
+          <div className="legend-flex villa-3-bed">
+            <div></div> <span>Villa 3 bed</span>
+          </div>
         </div>
       </div>
     </div>

@@ -112,6 +112,11 @@ body {
   background-color: rgb(159, 149, 149);
 }
 
+.recharts-responsive-container {
+  min-width: 200px;
+  min-height: 200px;
+}
+
 .active-nav {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
@@ -2078,7 +2083,6 @@ input:invalid:focus ~ span {
 }
 
 .admin-page {
-  min-height: 100vh;
   background-color: rgb(255, 255, 255);
 }
 .admin-page h1 {
@@ -2088,14 +2092,12 @@ input:invalid:focus ~ span {
   padding-top: 50px;
 }
 .admin-page .admin-container {
-  min-height: 100%;
   display: grid;
   grid-template-columns: 15% 85%;
   background-color: rgb(120, 139, 162);
 }
 .admin-page .admin-container .dashboard {
   color: rgb(255, 255, 255);
-  min-height: 100vh;
   background-color: rgb(120, 139, 162);
   margin-left: 2rem;
 }
@@ -2148,13 +2150,13 @@ input:invalid:focus ~ span {
   text-transform: uppercase;
   border: 1px solid #888282;
   padding: 1rem;
-  background: #717089;
+  background: rgb(120, 139, 162);
   color: #fafafa;
 }
 .admin-page .admin-container .datas table td {
   border: 1px solid #b3adad;
   text-align: center;
-  padding: 5px;
+  padding: 1rem;
   background: #ffffff;
   color: #313030;
 }
@@ -2441,15 +2443,6 @@ input:invalid:focus ~ span {
   color: rgb(49, 49, 192);
   background-color: rgb(189, 219, 253);
   padding: 1rem 3rem;
-  /*       clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 75%,
-    75% 75%,
-    75% 100%,
-    50% 75%,
-    0% 75%
-  ); */
 }
 .dashboard-main .dashboard-header .widget span {
   font-size: 2rem;
@@ -2471,4 +2464,35 @@ input:invalid:focus ~ span {
 }
 .dashboard-main .dashboard-header .reservation span {
   color: rgb(86, 80, 80);
+}
+.dashboard-main .recharts {
+  border: 1px solid black;
+  width: 50%;
+  min-height: 300px;
+}
+.dashboard-main .recharts .legend {
+  color: black;
+}
+.dashboard-main .recharts .legend .legend-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-main .recharts .legend .villa-1-bed div {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: #0088fe;
+}
+.dashboard-main .recharts .legend .villa-2-bed div {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: #00c49f;
+}
+.dashboard-main .recharts .legend .villa-3-bed div {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: #ff8042;
 }/*# sourceMappingURL=index.css.map */

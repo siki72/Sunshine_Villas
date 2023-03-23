@@ -156,6 +156,10 @@ body {
 .swiper-pagination-bullet-active {
   background-color: rgb(159, 149, 149);
 }
+.recharts-responsive-container {
+  min-width: 200px;
+  min-height: 200px;
+}
 
 .active-nav {
   background-color: $color2;

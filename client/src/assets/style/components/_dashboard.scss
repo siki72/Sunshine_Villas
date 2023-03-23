@@ -28,20 +28,46 @@
         line-height: 1rem;
         color: rgb(91, 113, 128);
       }
-      /*       clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% 75%,
-        75% 75%,
-        75% 100%,
-        50% 75%,
-        0% 75%
-      ); */
     }
     .reservation {
       background-color: rgb(255, 202, 203);
       span {
         color: rgb(86, 80, 80);
+      }
+    }
+  }
+  .recharts {
+    border: 1px solid black;
+    width: 50%;
+    min-height: 300px;
+    .legend {
+      color: black;
+      .legend-flex {
+        @include flex;
+      }
+      .villa-1-bed {
+        div {
+          margin-right: 1rem;
+          height: 2rem;
+          width: 2rem;
+          background-color: #0088fe;
+        }
+      }
+      .villa-2-bed {
+        div {
+          margin-right: 1rem;
+          height: 2rem;
+          width: 2rem;
+          background-color: #00c49f;
+        }
+      }
+      .villa-3-bed {
+        div {
+          margin-right: 1rem;
+          height: 2rem;
+          width: 2rem;
+          background-color: #ff8042;
+        }
       }
     }
   }
