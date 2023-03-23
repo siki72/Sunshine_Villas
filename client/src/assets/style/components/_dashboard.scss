@@ -10,12 +10,12 @@
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 0 5px #b3a8a8;
-      color: rgb(49, 49, 192);
-      background-color: rgb(189, 219, 253);
+      color: $color1;
+      background-color: rgb(16, 202, 240);
       padding: 1rem 3rem;
       span {
         font-size: 2rem;
-        color: rgb(25, 166, 41);
+        color: rgb(42, 173, 42);
         padding-bottom: 1rem;
       }
       h3 {
@@ -26,13 +26,13 @@
         font-family: $pop4;
         font-size: 0.9rem;
         line-height: 1rem;
-        color: rgb(91, 113, 128);
+        color: rgba(223, 226, 228, 0.762);
       }
     }
     .reservation {
-      background-color: rgb(255, 202, 203);
+      background-color: rgb(171, 71, 188);
       span {
-        color: rgb(86, 80, 80);
+        color: rgb(42, 173, 42);
       }
     }
   }

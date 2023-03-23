@@ -1,8 +1,9 @@
-const URL = "https://alimissoum.app.3wa.io/user/";
+const userURL = "https://alimissoum.app.3wa.io/user/";
+const adminURL = "https://alimissoum.app.3wa.io/admin/";
 
 async function addUser(user) {
   try {
-    const response = await fetch(`${URL}register`, {
+    const response = await fetch(`${userURL}register`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(user),
@@ -18,7 +19,7 @@ async function addUser(user) {
 
 async function login(user) {
   try {
-    const response = await fetch(`${URL}login`, {
+    const response = await fetch(`${userURL}login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -40,8 +41,38 @@ function getFormData(refer, names = []) {
   }
   return newUser;
 }
+async function handleBookTable(guest) {
+  try {
+    const response = await fetch(`${adminURL}walima`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(guest),
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
 
-const registerUser = (e) => {
+async function fetchAdminDatas(a) {
+  try {
+    const response = await fetch(`${adminURL}` + a, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+/* const registerUser = (e) => {
   e.preventDefault();
   const data = new FormData(formRegisterRef.current);
 
@@ -56,9 +87,11 @@ const registerUser = (e) => {
     setRedirect(true);
   });
 };
-
+ */
 export default {
   addUser,
   login,
   getFormData,
+  handleBookTable,
+  fetchAdminDatas,
 };

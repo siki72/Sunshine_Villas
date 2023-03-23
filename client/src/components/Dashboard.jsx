@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTrendUp, faHotel } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import Recharts from "./Recharts.jsx";
+import utils from "../users/utilsFunctions.js";
 const Dashboard = () => {
   const [profits, setProfits] = useState([]);
   const [somme, setSomme] = useState(0);
+  const [bookingTable, setBookingTable] = useState([]);
   useEffect(() => {
     fetch("https://alimissoum.app.3wa.io/admin/widgets")
       .then((resp) => resp.json())
@@ -17,9 +19,36 @@ const Dashboard = () => {
     setSomme(sum);
   }, [profits]);
 
+  useEffect(() => {
+    const handleGetReservation = async () => {
+      try {
+        const response = await utils.fetchAdminDatas("walima");
+        if (!response.ok) {
+          throw new Error("unable to fetch table's reservation");
+        } else {
+          const data = await response.json();
+          console.log(data);
+          setBookingTable(data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    handleGetReservation();
+  }, []);
+
   return (
     <div className="dashboard-main">
       <div className="dashboard-header">
+        <div className="widget profit">
+          <span>
+            <FontAwesomeIcon icon={faArrowTrendUp} />
+          </span>
+
+          <h3>{bookingTable.length} </h3>
+
+          <h5>reservations for walima today</h5>
+        </div>
         <div className="widget profit">
           <span>
             <FontAwesomeIcon icon={faArrowTrendUp} />
@@ -33,8 +62,8 @@ const Dashboard = () => {
           <span>
             <FontAwesomeIcon icon={faHotel} />
           </span>
-          <h3>We have : {profits.length}</h3>
-          <h5>reservation(s) today</h5>
+          <h3>{profits.length} / 3 </h3>
+          <h5>villas are booked today</h5>
         </div>
       </div>
       <div className="recharts">

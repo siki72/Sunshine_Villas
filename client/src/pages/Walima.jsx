@@ -18,13 +18,23 @@ const Walima = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = utils.getFormData(formRef, [
-      "email",
-      "name",
-      "date",
-      "guests",
-    ]);
-    console.log(formData);
+
+    try {
+      const formData = utils.getFormData(formRef, [
+        "email",
+        "name",
+        "date",
+        "guests",
+      ]);
+      const response = await utils.handleBookTable(formData);
+      if (!response.ok) {
+        throw new Error("unable to book a table");
+      } else {
+        console.log(response.json());
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
