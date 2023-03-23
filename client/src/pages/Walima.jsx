@@ -24,6 +24,7 @@ const Walima = () => {
       "date",
       "guests",
     ]);
+    console.log(formData);
   };
 
   return (

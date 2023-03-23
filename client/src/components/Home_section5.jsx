@@ -23,7 +23,7 @@ const Home_section5 = () => {
             meals based on fresh ingredients accompanied by a good selection of
             wines and cocktails.
           </p>
-          <Link to="/walima-restaurent">
+          <Link to="/walima">
             <button>Read more</button>
           </Link>
         </div>

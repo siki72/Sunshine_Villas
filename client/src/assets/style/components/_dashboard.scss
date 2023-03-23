@@ -1,4 +1,48 @@
-.recap {
-  font-size: 2rem;
-  color: red;
+.dashboard-main {
+  .dashboard-header {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    > * {
+      margin: 0 3rem;
+    }
+    .widget {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 5px #b3a8a8;
+      color: rgb(49, 49, 192);
+      background-color: rgb(189, 219, 253);
+      padding: 1rem 3rem;
+      span {
+        font-size: 2rem;
+        color: rgb(25, 166, 41);
+        padding-bottom: 1rem;
+      }
+      h3 {
+        font-family: $pop4;
+        font-size: 2rem;
+      }
+      h5 {
+        font-family: $pop4;
+        font-size: 0.9rem;
+        line-height: 1rem;
+        color: rgb(91, 113, 128);
+      }
+      /*       clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        75% 75%,
+        75% 100%,
+        50% 75%,
+        0% 75%
+      ); */
+    }
+    .reservation {
+      background-color: rgb(255, 202, 203);
+      span {
+        color: rgb(86, 80, 80);
+      }
+    }
+  }
 }

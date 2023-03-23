@@ -34,6 +34,7 @@ const Villas_datas = ({ id }) => {
             <th>Checkin</th>
             <th>Checkout</th>
             <th>Nights</th>
+            <th>date of reservation</th>
             <th>Total</th>
           </tr>
         </thead>
@@ -47,6 +48,7 @@ const Villas_datas = ({ id }) => {
               <td>{format(new Date(row.start_date), "dd/MM/yyyy")}</td>
               <td>{format(new Date(row.end_date), "dd/MM/yyyy")}</td>
               <td>{row.nights}</td>
+              <td>{format(new Date(row.created_at), "dd/MM/yyyy")}</td>
               <td>{row.total_price} euros</td>
             </tr>
           ))}

@@ -3,21 +3,26 @@
   background-color: rgb(255, 255, 255);
   h1 {
     text-align: center;
-    color: $color1;
+    color: $color2;
     font-family: $pop4;
     padding-top: 50px;
   }
   .admin-container {
     min-height: 100%;
     display: grid;
-    grid-template-columns: 20% 85%;
+    grid-template-columns: 15% 85%;
+    background-color: rgb(120, 139, 162);
 
     .dashboard {
-      background-color: rgb(0, 0, 0);
-
       color: $color1;
-      min-height: 100%;
-      padding: 35px;
+      min-height: 100vh;
+      background-color: rgb(120, 139, 162);
+      margin-left: 2rem;
+
+      h2 {
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+      }
 
       p {
         font-size: 1.4rem;
@@ -25,7 +30,6 @@
       }
 
       ul {
-        margin-top: 30px;
         > * {
           font-family: $pop4;
           margin-bottom: 30px;
@@ -33,12 +37,16 @@
         min-height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+
+        .active-li {
+          background-color: #ffffff;
+          color: darkblue;
+        }
 
         li {
           cursor: pointer;
           font-size: 1rem;
-          color: rebeccapurple;
+          color: rgb(255, 255, 255);
           span {
             color: #ffffff;
             margin-left: 1rem;
@@ -46,21 +54,26 @@
         }
       }
     }
-
     .datas {
-      min-width: 100%;
+      margin: 2rem;
+      border-radius: 30px;
       background-color: rgb(255, 255, 255);
       color: $color1;
+
       table {
-        width: 90%;
+        border-radius: 1rem;
+        max-width: 90%;
+        margin: 2rem auto;
+        width: 100%;
         border: 1px solid darkgray;
         border-collapse: collapse;
         padding: 5px;
       }
       table th {
+        text-transform: uppercase;
         border: 1px solid #888282;
-        padding: 5px;
-        background: #000000;
+        padding: 1rem;
+        background: #717089;
         color: #fafafa;
       }
       table td {

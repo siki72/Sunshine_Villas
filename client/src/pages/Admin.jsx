@@ -10,15 +10,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Villas_datas from "../components/Villas_datas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
+import { useRef } from "react";
 
 const Admin = () => {
+  const dashRef = useRef();
+  const villa1Ref = useRef();
+  const villa2Ref = useRef();
+  const villa3Ref = useRef();
+  const walimaRef = useRef();
+  const guetsRef = useRef();
   const { user, ready } = useContext(UserContext);
   const [redirect, setRedirect] = useState(false);
   const [showData1, setShowData1] = useState(false);
   const [showData2, setShowData2] = useState(false);
   const [showData3, setShowData3] = useState(false);
   const [dashboard, setDashboard] = useState(true);
-
+  // a refactoriser
   const handleshow = (setShowData) => {
     return () => {
       setShowData1(false);
@@ -34,22 +41,6 @@ const Admin = () => {
     setShowData2(false);
     setShowData3(false);
   };
-  /* 
-  const handleShow1 = () => {
-    setShowData1(true);
-    setShowData2(false);
-    setShowData3(false);
-  };
-  const handleShow2 = () => {
-    setShowData1(false);
-    setShowData2(true);
-    setShowData3(false);
-  };
-  const handleShow3 = () => {
-    setShowData1(false);
-    setShowData2(false);
-    setShowData3(true);
-  }; */
 
   useEffect(() => {
     // Rediriger l'utilisateur vers la page d'accueil s'il est connecté et qu'il accède à la page de connexion
@@ -64,28 +55,28 @@ const Admin = () => {
   }
   return (
     <div className="admin-page">
-      <h1>Booking Listing</h1>
       <div className="admin-container">
         <div className="dashboard">
+          <h2>Weclom Admin</h2>
           <ul>
-            <li onClick={handleShowDashboard}>
+            <li onClick={handleShowDashboard} ref={dashRef}>
               <FontAwesomeIcon icon={faDatabase} /> Dashboard
             </li>
 
-            <li onClick={handleshow(setShowData1)}>
+            <li onClick={handleshow(setShowData1)} ref={villa1Ref}>
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 1 bed</span>
             </li>
-            <li onClick={handleshow(setShowData2)}>
+            <li onClick={handleshow(setShowData2)} ref={villa2Ref}>
               <FontAwesomeIcon icon={faHouseUser} />
               <span>Villa 2 bed</span>
             </li>
-            <li onClick={handleshow(setShowData3)}>
+            <li onClick={handleshow(setShowData3)} ref={villa3Ref}>
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 3 bed</span>
             </li>
-            <li onClick={handleshow(setShowData3)}>
+            <li ref={walimaRef}>
               <FontAwesomeIcon icon={faUtensils} /> <span>Walima </span>
             </li>
-            <li>
+            <li ref={guetsRef}>
               <FontAwesomeIcon icon={faUsers} /> <span>Guests</span>
             </li>
             <li>
