@@ -2436,6 +2436,7 @@ input:invalid:focus ~ span {
   justify-content: space-around;
 }
 .dashboard-main .dashboard-header .widget {
+  max-width: 100%;
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -2459,7 +2460,7 @@ input:invalid:focus ~ span {
   font-family: "font-pop400", sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: rgb(200, 225, 254);
+  color: rgb(34, 34, 34);
 }
 .dashboard-main .dashboard-header .widget .icon {
   top: 50%;
@@ -2470,19 +2471,19 @@ input:invalid:focus ~ span {
   color: rgba(0, 0, 0, 0.676);
 }
 .dashboard-main .dashboard-header .walima {
-  background-color: rgb(251, 138, 22);
+  background-image: linear-gradient(176.4deg, rgb(237, 135, 33) 28.8%, rgb(244, 62, 62) 99%);
 }
-.dashboard-main .dashboard-header .proft {
-  background-color: rgb(135, 104, 231);
+.dashboard-main .dashboard-header .profit {
+  background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(240, 30, 92) 0%, rgb(244, 49, 74) 30.5%, rgb(249, 75, 37) 56.1%, rgb(250, 88, 19) 75.6%, rgb(253, 102, 2) 100.2%);
 }
 .dashboard-main .dashboard-header .villa {
-  background-color: rgb(248, 83, 108);
+  background-image: linear-gradient(83.2deg, rgb(150, 93, 233) 10.8%, rgb(99, 88, 238) 94.3%);
 }
 .dashboard-main .dashboard-header .villa span {
   color: rgb(255, 255, 255);
 }
 .dashboard-main .dashboard-header .users {
-  background-color: rgb(125, 100, 227);
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(14, 174, 87) 0%, rgb(12, 116, 117) 90%);
 }
 .dashboard-main .recharts {
   border: 1px solid black;

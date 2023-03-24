@@ -110,20 +110,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="recharts">
-        <Recharts />
-        <div className="legend">
-          <div className="legend-flex villa-1-bed">
-            <div></div> <span>Villa 1 bed</span>
-          </div>
-          <div className="legend-flex villa-2-bed">
-            <div></div> <span>Villa 2 bed</span>
-          </div>
-          <div className="legend-flex villa-3-bed">
-            <div></div> <span>Villa 3 bed</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
