@@ -68,6 +68,9 @@ const Navigation = () => {
             </NavLink>
           </ul>
         </li>
+        <NavLink to="/walima">
+          <li>Walima</li>
+        </NavLink>
 
         <NavLink to="/contact">
           <li>Contact us</li>

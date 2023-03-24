@@ -12,8 +12,9 @@
     background-color: rgb(34, 34, 34);
 
     .dashboard {
+      margin-top: 4rem;
       color: $color1;
-      min-height: 100vh;
+      min-height: 50vh;
       background-color: rgb(34, 34, 34);
       margin-left: 2rem;
 
@@ -23,7 +24,7 @@
       }
 
       p {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         color: darkcyan;
       }
 
@@ -36,27 +37,25 @@
         display: flex;
         flex-direction: column;
 
-        .active-li {
-          background-color: #ffffff;
-          color: darkblue;
+        li:first-child {
+          font-size: 1.5rem;
         }
 
         li {
           cursor: pointer;
-          font-size: 0.9rem;
+          font-size: 1rem;
           line-height: 2rem;
-          color: rgb(255, 255, 255);
+          color: rgb(121, 116, 116);
           span {
-            color: #ffffff;
             margin-left: 1rem;
           }
         }
       }
     }
     .datas {
-      margin: 2rem;
+      margin: 2rem 2rem 2rem 0;
       border-radius: 30px;
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(230, 230, 230);
       color: $color1;
 
       table {
@@ -72,7 +71,7 @@
         text-transform: uppercase;
         border: 1px solid #888282;
         padding: 1rem;
-        background: rgb(120, 139, 162);
+        background: rgb(34, 34, 34);
         color: #fafafa;
       }
       table td {

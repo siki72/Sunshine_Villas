@@ -10,8 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect } from "react";
-import Recharts from "./Recharts.jsx";
 import utils from "../users/utilsFunctions.js";
+
 const Dashboard = () => {
   const [profits, setProfits] = useState([]);
   const [somme, setSomme] = useState(0);

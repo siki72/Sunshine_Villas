@@ -1,9 +1,10 @@
 .account-container {
   max-width: 100%;
-  min-height: 100vh;
+
   position: relative;
   .container {
     max-width: 100%;
+
     .header-img {
       min-height: 300px;
 
@@ -41,7 +42,7 @@
 
     .login {
       padding: 40px;
-      height: 38vh;
+      height: 70vh;
       margin-top: 15px;
       font-family: $pop2;
       font-size: 1.875rem;

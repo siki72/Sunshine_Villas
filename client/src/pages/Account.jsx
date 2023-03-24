@@ -65,6 +65,7 @@ const Account = () => {
           </nav>
         )}
         {pages === "dashboard" && <Admin />}
+
         {pages === undefined && (
           <div className="login">
             <h2>Welcome Home {user.name} ..</h2>

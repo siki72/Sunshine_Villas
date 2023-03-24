@@ -125,6 +125,16 @@ body {
   color: rgb(255, 255, 255);
 }
 
+.btn {
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
 .modale {
   background-color: rgba(0, 0, 0, 0.865);
   color: grey;
@@ -185,6 +195,19 @@ body {
   background-color: rgba(64, 63, 61, 0.458);
   grid-area: send;
   padding: 1rem;
+}
+
+.li-active {
+  padding: 0.6rem;
+  background-color: rgb(230, 230, 230);
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.li-active span {
+  font-family: "font-pop400", sans-serif;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
 }
 
 .about-page .container .about-header {
@@ -1847,7 +1870,6 @@ input:invalid:focus ~ span {
 
 .account-container {
   max-width: 100%;
-  min-height: 100vh;
   position: relative;
 }
 .account-container .container {
@@ -1886,7 +1908,7 @@ input:invalid:focus ~ span {
 }
 .account-container .container .login {
   padding: 40px;
-  height: 38vh;
+  height: 70vh;
   margin-top: 15px;
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
@@ -2097,8 +2119,9 @@ input:invalid:focus ~ span {
   background-color: rgb(34, 34, 34);
 }
 .admin-page .admin-container .dashboard {
+  margin-top: 4rem;
   color: rgb(255, 255, 255);
-  min-height: 100vh;
+  min-height: 50vh;
   background-color: rgb(34, 34, 34);
   margin-left: 2rem;
 }
@@ -2107,7 +2130,7 @@ input:invalid:focus ~ span {
   margin-bottom: 2rem;
 }
 .admin-page .admin-container .dashboard p {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   color: darkcyan;
 }
 .admin-page .admin-container .dashboard ul {
@@ -2119,24 +2142,22 @@ input:invalid:focus ~ span {
   font-family: "font-pop400", sans-serif;
   margin-bottom: 30px;
 }
-.admin-page .admin-container .dashboard ul .active-li {
-  background-color: #ffffff;
-  color: darkblue;
+.admin-page .admin-container .dashboard ul li:first-child {
+  font-size: 1.5rem;
 }
 .admin-page .admin-container .dashboard ul li {
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(121, 116, 116);
 }
 .admin-page .admin-container .dashboard ul li span {
-  color: #ffffff;
   margin-left: 1rem;
 }
 .admin-page .admin-container .datas {
-  margin: 2rem;
+  margin: 2rem 2rem 2rem 0;
   border-radius: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(230, 230, 230);
   color: rgb(255, 255, 255);
 }
 .admin-page .admin-container .datas table {
@@ -2152,7 +2173,7 @@ input:invalid:focus ~ span {
   text-transform: uppercase;
   border: 1px solid #888282;
   padding: 1rem;
-  background: rgb(120, 139, 162);
+  background: rgb(34, 34, 34);
   color: #fafafa;
 }
 .admin-page .admin-container .datas table td {

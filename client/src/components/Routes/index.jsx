@@ -16,6 +16,7 @@ import Account from "../../pages/Account.jsx";
 import Admin from "../../pages/Admin.jsx";
 import Contact_page from "../../pages/Contact_page.jsx";
 import Walima from "../../pages/Walima.jsx";
+import Errorpage from "../../pages/Errorpage";
 
 const index = () => {
   return (
@@ -34,6 +35,8 @@ const index = () => {
           <Route path="/explore-zanzibar" element={<Explore_zanzibar />} />
           <Route path="/account/" element={<Account />} />
           <Route path="/account/:pages" element={<Account />} />
+          <Route path="/account/dashboard/:pages" element={<Account />} />
+          <Route path="*" element={<Errorpage />} />
           {/*           <Route path="/account/dashboard" element={<Admin />} /> */}
         </Routes>
         <Footer />

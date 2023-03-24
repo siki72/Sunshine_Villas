@@ -168,6 +168,16 @@ body {
     color: $color1;
   }
 }
+
+.btn {
+  padding: 1rem;
+  color: $color1;
+  background-color: $color2;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
 .modale {
   .container {
     button {
@@ -228,4 +238,16 @@ body {
   background-color: rgba(64, 63, 61, 0.458);
   grid-area: send;
   padding: 1rem;
+}
+.li-active {
+  padding: 0.6rem;
+  background-color: rgb(230, 230, 230);
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  span {
+    font-family: $pop4;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+  }
 }

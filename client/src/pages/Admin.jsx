@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Villas_datas from "../components/Villas_datas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
+import Walima_datas from "../components/walima_datas.jsx";
 
 const Admin = () => {
   const { user, ready } = useContext(UserContext);
@@ -17,13 +18,16 @@ const Admin = () => {
   const [showData1, setShowData1] = useState(false);
   const [showData2, setShowData2] = useState(false);
   const [showData3, setShowData3] = useState(false);
+  const [showData4, setShowData4] = useState(false);
   const [dashboard, setDashboard] = useState(true);
+
   // a refactoriser
   const handleshow = (setShowData) => {
     return () => {
       setShowData1(false);
       setShowData2(false);
       setShowData3(false);
+      setShowData4(false);
       setShowData(true);
       setDashboard(false);
     };
@@ -50,30 +54,38 @@ const Admin = () => {
     <div className="admin-page">
       <div className="admin-container">
         <div className="dashboard">
-          <h2>Weclom Admin</h2>
           <ul>
-            <li onClick={handleShowDashboard}>
+            <li
+              onClick={handleShowDashboard}
+              className={dashboard ? "li-active" : ""}
+            >
               <FontAwesomeIcon icon={faDatabase} /> Dashboard
             </li>
 
-            <li onClick={handleshow(setShowData1)}>
+            <li
+              onClick={handleshow(setShowData1)}
+              className={showData1 ? "li-active" : ""}
+            >
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 1 bed</span>
             </li>
-            <li onClick={handleshow(setShowData2)}>
+            <li
+              onClick={handleshow(setShowData2)}
+              className={showData2 ? "li-active" : ""}
+            >
               <FontAwesomeIcon icon={faHouseUser} />
               <span>Villa 2 bed</span>
             </li>
-            <li onClick={handleshow(setShowData3)}>
+            <li
+              onClick={handleshow(setShowData3)}
+              className={showData3 ? "li-active" : ""}
+            >
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 3 bed</span>
             </li>
-            <li>
-              <FontAwesomeIcon icon={faUtensils} /> <span>Walima </span>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faUsers} /> <span>Guests</span>
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faUsers} /> <span>Logout</span>
+            <li
+              onClick={handleshow(setShowData4)}
+              className={showData4 ? "li-active" : ""}
+            >
+              <FontAwesomeIcon icon={faHouseUser} /> <span>walima</span>
             </li>
           </ul>
         </div>
@@ -82,6 +94,7 @@ const Admin = () => {
           {showData1 && <Villas_datas id={1} />}
           {showData2 && <Villas_datas id={2} />}
           {showData3 && <Villas_datas id={3} />}
+          {showData4 && <Walima_datas />}
         </div>
       </div>
     </div>

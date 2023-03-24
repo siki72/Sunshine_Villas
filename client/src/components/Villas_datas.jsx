@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 const Villas_datas = ({ id }) => {
-  console.log(id);
   const [data, setData] = useState([]);
   useEffect(() => {
     const body = {
