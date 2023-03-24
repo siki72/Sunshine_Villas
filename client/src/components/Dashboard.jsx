@@ -1,6 +1,14 @@
 import React, { Profiler, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowTrendUp, faHotel } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowTrendUp,
+  faChartGantt,
+  faEuroSign,
+  faHotel,
+  faUser,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { useEffect } from "react";
 import Recharts from "./Recharts.jsx";
 import utils from "../users/utilsFunctions.js";
@@ -8,6 +16,7 @@ const Dashboard = () => {
   const [profits, setProfits] = useState([]);
   const [somme, setSomme] = useState(0);
   const [bookingTable, setBookingTable] = useState([]);
+  const [guests, setGuests] = useState([]);
   useEffect(() => {
     fetch("https://alimissoum.app.3wa.io/admin/widgets")
       .then((resp) => resp.json())
@@ -36,34 +45,69 @@ const Dashboard = () => {
     };
     handleGetReservation();
   }, []);
+  useEffect(() => {
+    const handleGetReservation = async () => {
+      try {
+        const response = await utils.fetchAdminDatas("users");
+        if (!response.ok) {
+          throw new Error("unable to fetch table's reservation");
+        } else {
+          const data = await response.json();
+          setGuests(data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    handleGetReservation();
+  }, []);
 
   return (
     <div className="dashboard-main">
       <div className="dashboard-header">
-        <div className="widget profit">
-          <span>
-            <FontAwesomeIcon icon={faArrowTrendUp} />
-          </span>
+        <div className="widget walima">
+          <div className="items">
+            <span></span>
 
-          <h3>{bookingTable.length} </h3>
+            <h3>{bookingTable.length} </h3>
 
-          <h5>reservations for walima today</h5>
+            <h5>Walima reservation</h5>
+          </div>
+          <div className="icon">
+            <FontAwesomeIcon icon={faUtensils} />
+          </div>
         </div>
         <div className="widget profit">
-          <span>
-            <FontAwesomeIcon icon={faArrowTrendUp} />
-          </span>
+          <div className="items">
+            <span></span>
 
-          <h3>{somme} euros</h3>
+            <h3>{somme} euros</h3>
 
-          <h5>profit today</h5>
+            <h5>profit today</h5>
+          </div>
+          <div className="icon">
+            <FontAwesomeIcon icon={faEuroSign} />
+          </div>
         </div>
-        <div className="widget reservation">
-          <span>
+        <div className="widget villa">
+          <div className="items">
+            <span></span>
+            <h3>{profits.length} / 3 </h3>
+            <h5>villas are booked today</h5>
+          </div>
+          <div className="icon">
             <FontAwesomeIcon icon={faHotel} />
-          </span>
-          <h3>{profits.length} / 3 </h3>
-          <h5>villas are booked today</h5>
+          </div>
+        </div>
+        <div className="widget users">
+          <div className="items">
+            <span></span>
+            <h3>{guests.length} </h3>
+            <h5>registered users</h5>
+          </div>
+          <div className="icon">
+            <FontAwesomeIcon icon={faUser} />
+          </div>
         </div>
       </div>
       <div className="recharts">
