@@ -1932,8 +1932,9 @@ input:invalid:focus ~ span {
 .account-container .container .login .row {
   margin-bottom: 1rem;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 2rem auto;
   border-bottom: 1px solid rgb(217, 210, 210);
 }
 .account-container .container .login .row h4 {
@@ -1942,7 +1943,13 @@ input:invalid:focus ~ span {
 }
 .account-container .container .login .row p {
   font-size: 1rem;
-  margin-left: 5rem;
+}
+.account-container .container .login .row label {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+}
+.account-container .container .login .row input {
+  font-size: 1rem;
 }
 .account-container .container .login h2 {
   font-family: "font-gildas", sans-serif;

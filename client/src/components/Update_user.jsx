@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import utils from "../users/utilsFunctions.js";
-const Update_user = () => {
-  const { user } = useContext(UserContext); // je recupére la data de user depuis
+const Update_user = ({ data, edit }) => {
+  /*   const { user } = useContext(UserContext); // je recupére la data de user depuis */
 
   const formRef = useRef();
 
   const handleUpdateUser = async (e) => {
     e.preventDefault();
     try {
-      const formData = utils.getFormData(formRegisterRef, [
+      const formData = utils.getFormData(formRef, [
         "firstname",
         "lastname",
         "phone",
@@ -28,46 +28,65 @@ const Update_user = () => {
         }
       )
         .then((resp) => resp.json())
-        .then((data) => console.log(data));
+        .then((data) => edit(false));
     } catch (err) {
       console.error(err);
     }
   };
 
+  console.log(data);
+
   return (
-    <div className="update-container">
+    <div className="login">
+      <h3>Update your profile</h3>
       <form action="" method="post" ref={formRef} onSubmit={handleUpdateUser}>
-        <label htmlFor="firstname">First name</label>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="First name"
-          id="firstname"
-        />
+        <div className="row">
+          <label htmlFor="firstname">First name</label>
+          <input
+            type="text"
+            name="firstname"
+            defaultValue={data?.firstname}
+            id="firstname"
+          />
+        </div>
+        <div className="row">
+          <label htmlFor="lastname">Last name</label>
+          <input
+            type="text"
+            name="lastname"
+            defaultValue={data?.lastname}
+            id="lastname"
+          />
+        </div>
+        <div className="row">
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="text"
+            name="phone"
+            defaultValue={data?.phone}
+            id="phone"
+          />
+        </div>
 
-        <label htmlFor="lastname">Last name</label>
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Last name"
-          id="lastname"
-        />
-
-        <label htmlFor="phone">Phone</label>
-        <input type="text" name="phone" placeholder="Phone" id="phone" />
-
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" placeholder="Email" id="email" />
-
-        <label htmlFor="location">location</label>
-        <input
-          type="text"
-          name="location"
-          placeholder="location"
-          id="location"
-        />
-        <button type="submit"></button>
-        <input type="button" value="Reset" />
+        <div className="row">
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            defaultValue={data?.email}
+            id="email"
+          />
+        </div>
+        <div className="row">
+          <label htmlFor="location">Location</label>
+          <input
+            type="text"
+            name="location"
+            defaultValue={data?.location}
+            id="location"
+          />
+        </div>
+        <button type="submit">Save</button>
       </form>
     </div>
   );
