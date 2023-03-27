@@ -5,11 +5,10 @@
   .container {
     max-width: 100%;
     height: 100vh;
-    background-color: rgb(213, 207, 207);
+    background-color: rgb(237, 230, 230);
 
     .header-img {
       min-height: 300px;
-
       z-index: -1000;
     }
     .nav-book {
@@ -43,7 +42,7 @@
         }
       }
       button {
-        background-color: rgb(213, 207, 207);
+        background-color: rgb(237, 230, 230);
       }
     }
 

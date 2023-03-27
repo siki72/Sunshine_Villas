@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useRef } from "react";
+import { useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import utils from "../users/utilsFunctions.js";
 const Update_user = ({ data, edit }) => {
-  /*   const { user } = useContext(UserContext); // je recupére la data de user depuis */
+  const [pending, setPending] = useState(false);
 
   const formRef = useRef();
 
   const handleUpdateUser = async (e) => {
     e.preventDefault();
+    setPending(true);
     try {
       const formData = utils.getFormData(formRef, [
         "firstname",
@@ -28,7 +30,8 @@ const Update_user = ({ data, edit }) => {
         }
       )
         .then((resp) => resp.json())
-        .then((data) => edit(false));
+        .then((data) => edit(false))
+        .finally(() => setPending(false));
     } catch (err) {
       console.error(err);
     }
@@ -86,7 +89,9 @@ const Update_user = ({ data, edit }) => {
             id="location"
           />
         </div>
-        <button type="submit">Save</button>
+        <button className={pending ? "send-notAllowed" : "send"} type="submit">
+          {pending ? "Saving datas.." : "Save"}
+        </button>
       </form>
     </div>
   );

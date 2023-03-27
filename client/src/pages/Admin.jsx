@@ -3,6 +3,7 @@ import { UserContext } from "../users/UserContext.jsx";
 import { Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowRightToBracket,
   faDatabase,
   faHouseUser,
   faUsers,
@@ -12,7 +13,7 @@ import Villas_datas from "../components/Villas_datas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
 import Walima_datas from "../components/walima_datas.jsx";
 
-const Admin = () => {
+const Admin = ({ logout }) => {
   const { user, ready } = useContext(UserContext);
   const [redirect, setRedirect] = useState(false);
   const [showData1, setShowData1] = useState(false);
@@ -87,6 +88,11 @@ const Admin = () => {
               className={showData4 ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faHouseUser} /> <span>walima</span>
+            </li>
+
+            <li onClick={logout}>
+              <FontAwesomeIcon icon={faArrowRightToBracket} />{" "}
+              <span>Logout</span>
             </li>
           </ul>
         </div>

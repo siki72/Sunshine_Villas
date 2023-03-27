@@ -1875,7 +1875,7 @@ input:invalid:focus ~ span {
 .account-container .container {
   max-width: 100%;
   height: 100vh;
-  background-color: rgb(213, 207, 207);
+  background-color: rgb(237, 230, 230);
 }
 .account-container .container .header-img {
   min-height: 300px;
@@ -1911,7 +1911,7 @@ input:invalid:focus ~ span {
   animation: up 0.4s ease forwards;
 }
 .account-container .container .nav-book button {
-  background-color: rgb(213, 207, 207);
+  background-color: rgb(237, 230, 230);
 }
 .account-container .container .login {
   padding: 4rem;
@@ -2150,7 +2150,7 @@ input:invalid:focus ~ span {
 .admin-page .admin-container .dashboard {
   margin-top: 4rem;
   color: rgb(255, 255, 255);
-  min-height: 50vh;
+  height: 50vh;
   background-color: rgb(34, 34, 34);
   margin-left: 2rem;
 }
@@ -2534,35 +2534,4 @@ input:invalid:focus ~ span {
 }
 .dashboard-main .dashboard-header .users {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(14, 174, 87) 0%, rgb(12, 116, 117) 90%);
-}
-.dashboard-main .recharts {
-  border: 1px solid black;
-  width: 50%;
-  min-height: 300px;
-}
-.dashboard-main .recharts .legend {
-  color: black;
-}
-.dashboard-main .recharts .legend .legend-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dashboard-main .recharts .legend .villa-1-bed div {
-  margin-right: 1rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: #0088fe;
-}
-.dashboard-main .recharts .legend .villa-2-bed div {
-  margin-right: 1rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: #00c49f;
-}
-.dashboard-main .recharts .legend .villa-3-bed div {
-  margin-right: 1rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: #ff8042;
 }/*# sourceMappingURL=index.css.map */

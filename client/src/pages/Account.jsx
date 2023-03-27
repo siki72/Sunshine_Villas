@@ -75,7 +75,7 @@ const Account = () => {
             </button>
           </nav>
         )}
-        {pages === "dashboard" && <Admin />}
+        {pages === "dashboard" && <Admin logout={handleLogout} />}
 
         {pages === undefined && <User_profile />}
         {pages === "bookings" && <Mybookings />}
