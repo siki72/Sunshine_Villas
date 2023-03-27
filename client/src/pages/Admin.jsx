@@ -37,6 +37,7 @@ const Admin = () => {
     setShowData1(false);
     setShowData2(false);
     setShowData3(false);
+    setShowData4(false);
   };
 
   useEffect(() => {

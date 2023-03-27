@@ -11,11 +11,13 @@ import { useState } from "react";
 
 import Mybookings from "./Mybookings.jsx";
 import Admin from "./Admin.jsx";
+import { useEffect } from "react";
+import User_profile from "../components/User_profile.jsx";
 
 const Account = () => {
   const { pages } = useParams();
   const [redirect, setRedirect] = useState(false);
-  console.log(pages);
+
   const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
   if (!ready) {
     return "loading";
@@ -31,7 +33,10 @@ const Account = () => {
       headers: {
         "Content-type": "application/json",
       },
-    }).then(setUser(null), setIsAdmin(null));
+    }).then(() => {
+      setUser(null);
+      setIsAdmin(null);
+    });
   };
 
   function linkClasses(type = null) {
@@ -62,24 +67,17 @@ const Account = () => {
               <FontAwesomeIcon icon={faHouse} />
               <span>My Booking</span>
             </Link>
-          </nav>
-        )}
-        {pages === "dashboard" && <Admin />}
-
-        {pages === undefined && (
-          <div className="login">
-            <h2>Welcome Home {user.name} ..</h2>
-            <h3>
-              logged in as {user.name} {user.email}
-            </h3>
             <button onClick={handleLogout}>
               Logout{" "}
               <span>
                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
               </span>
             </button>
-          </div>
+          </nav>
         )}
+        {pages === "dashboard" && <Admin />}
+
+        {pages === undefined && <User_profile />}
         {pages === "bookings" && <Mybookings />}
       </div>
     </div>

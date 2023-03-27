@@ -56,7 +56,20 @@ async function handleBookTable(guest) {
     console.log(e);
   }
 }
-
+async function fetchUserDatas(a) {
+  try {
+    const response = await fetch(`${userURL}` + a, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
 async function fetchAdminDatas(a) {
   try {
     const response = await fetch(`${adminURL}` + a, {
@@ -94,4 +107,5 @@ export default {
   getFormData,
   handleBookTable,
   fetchAdminDatas,
+  fetchUserDatas,
 };

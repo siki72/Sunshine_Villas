@@ -4,6 +4,8 @@
   position: relative;
   .container {
     max-width: 100%;
+    height: 100vh;
+    background-color: rgb(213, 207, 207);
 
     .header-img {
       min-height: 300px;
@@ -11,7 +13,7 @@
       z-index: -1000;
     }
     .nav-book {
-      margin: 40px auto;
+      margin: 4rem auto;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -19,13 +21,14 @@
       padding: 50px;
       border-radius: 5px;
       height: 40px;
-      max-width: 500px;
+
       padding: 20px;
       span {
         margin-left: 1rem;
       }
 
-      a {
+      a,
+      button {
         border: 2px solid black;
         padding: 15px 30px;
         border-radius: 5px;
@@ -33,17 +36,45 @@
         color: $color2;
         font-family: $rob3;
         transition: 0.4s;
+        cursor: pointer;
 
         &:hover {
           animation: up 0.4s ease forwards;
         }
       }
+      button {
+        background-color: rgb(213, 207, 207);
+      }
     }
 
     .login {
-      padding: 40px;
-      height: 70vh;
-      margin-top: 15px;
+      h3 {
+        color: darkcyan;
+      }
+      padding: 4rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      .row {
+        margin-bottom: 1rem;
+
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        border-bottom: 1px solid rgb(217, 210, 210);
+        h4 {
+          font-family: $rob3;
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 1rem;
+          margin-left: 5rem;
+        }
+      }
+      border-radius: 2rem;
+      background-color: $color1;
+      max-width: 60%;
+      margin: 1rem auto;
       font-family: $pop2;
       font-size: 1.875rem;
       line-height: 2.875rem;
@@ -53,12 +84,6 @@
         font-family: $gildas;
         font-size: 3.5rem;
         line-height: 7rem;
-      }
-      h3 {
-        font-family: $gildas;
-        font-size: 2.5rem;
-        line-height: 2rem;
-        color: $color4;
       }
 
       button {

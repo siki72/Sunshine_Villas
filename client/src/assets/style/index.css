@@ -1874,13 +1874,15 @@ input:invalid:focus ~ span {
 }
 .account-container .container {
   max-width: 100%;
+  height: 100vh;
+  background-color: rgb(213, 207, 207);
 }
 .account-container .container .header-img {
   min-height: 300px;
   z-index: -1000;
 }
 .account-container .container .nav-book {
-  margin: 40px auto;
+  margin: 4rem auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1888,13 +1890,13 @@ input:invalid:focus ~ span {
   padding: 50px;
   border-radius: 5px;
   height: 40px;
-  max-width: 500px;
   padding: 20px;
 }
 .account-container .container .nav-book span {
   margin-left: 1rem;
 }
-.account-container .container .nav-book a {
+.account-container .container .nav-book a,
+.account-container .container .nav-book button {
   border: 2px solid black;
   padding: 15px 30px;
   border-radius: 5px;
@@ -1902,30 +1904,50 @@ input:invalid:focus ~ span {
   color: rgb(1, 1, 1);
   font-family: "font-rob300", sans-serif;
   transition: 0.4s;
+  cursor: pointer;
 }
-.account-container .container .nav-book a:hover {
+.account-container .container .nav-book a:hover,
+.account-container .container .nav-book button:hover {
   animation: up 0.4s ease forwards;
 }
+.account-container .container .nav-book button {
+  background-color: rgb(213, 207, 207);
+}
 .account-container .container .login {
-  padding: 40px;
-  height: 70vh;
-  margin-top: 15px;
+  padding: 4rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 2rem;
+  background-color: rgb(255, 255, 255);
+  max-width: 60%;
+  margin: 1rem auto;
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
   line-height: 2.875rem;
   color: #1c1c1c;
   text-align: center;
 }
+.account-container .container .login h3 {
+  color: darkcyan;
+}
+.account-container .container .login .row {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: 1px solid rgb(217, 210, 210);
+}
+.account-container .container .login .row h4 {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+}
+.account-container .container .login .row p {
+  font-size: 1rem;
+  margin-left: 5rem;
+}
 .account-container .container .login h2 {
   font-family: "font-gildas", sans-serif;
   font-size: 3.5rem;
   line-height: 7rem;
-}
-.account-container .container .login h3 {
-  font-family: "font-gildas", sans-serif;
-  font-size: 2.5rem;
-  line-height: 2rem;
-  color: #1c1c1c;
 }
 .account-container .container .login button {
   border-radius: 5px;
