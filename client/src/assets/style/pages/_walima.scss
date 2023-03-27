@@ -115,7 +115,8 @@
       grid-template-areas:
         "firstname email"
         "date guests "
-        "btn btn";
+        "btn btn"
+        "msg msg";
       input {
         font-family: $rob4;
         letter-spacing: 1px;
@@ -143,13 +144,17 @@
       }
       button {
         font-family: $rob4;
-
+        cursor: pointer;
         letter-spacing: 1px;
         font-size: 1rem;
         grid-area: btn;
         padding: 1rem;
         color: $color1;
         background-color: rgb(61, 62, 61);
+      }
+      .success-message {
+        color: rgb(255, 255, 255);
+        background-color: darkgreen;
       }
     }
   }

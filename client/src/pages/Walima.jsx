@@ -6,7 +6,9 @@ import utils from "../users/utilsFunctions.js";
 
 const Walima = () => {
   const [date, setDate] = useState(getTodayDate());
+  const [pending, setPending] = useState(false);
   const formRef = useRef();
+  const [success, setSuccess] = useState(true);
 
   function getTodayDate() {
     const today = new Date();
@@ -18,6 +20,7 @@ const Walima = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     try {
       const formData = utils.getFormData(formRef, [
@@ -30,7 +33,11 @@ const Walima = () => {
       if (!response.ok) {
         throw new Error("unable to book a table");
       } else {
-        console.log(response.json());
+        setSuccess(true);
+        setPending(false);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 2000);
       }
     } catch (error) {
       console.error(error);
@@ -117,7 +124,9 @@ const Walima = () => {
             <option value="4">4 person</option>
             <option value="5+"> 5+ person</option>
           </select>
-          <button type="submit">Send</button>
+          <button type="submit" className={success && "success-message"}>
+            {success ? "Your message has been sent successfully!" : "Send"}
+          </button>
         </form>
       </div>
     </div>

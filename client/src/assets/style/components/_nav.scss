@@ -1,5 +1,14 @@
 .navigation {
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1120px) {
+    display: block;
+    div {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+  /*   @media screen and (max-width: 720px) {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -9,12 +18,12 @@
     div {
       display: none;
     }
-  }
+  } */
 
   @media screen and (max-width: 500px) {
     display: none;
   }
-  z-index: 100;
+
   display: grid;
   height: 60px;
   width: 100%;
@@ -25,11 +34,11 @@
   transition: 0.3s linear;
 
   .logo {
-    @media screen and (max-width: 720px) {
-      a {
+    @media screen and (max-width: 1120px) {
+      display: none;
+      div {
         display: none;
       }
-      display: none;
     }
     position: absolute;
     left: 15%;
@@ -150,23 +159,68 @@
   }
 }
 
-/* .hidden {
-  transition: 0.4s linear;
-  z-index: 100;
-  display: grid;
-  height: 60px;
-  width: 100%;
-  grid-template-columns: 10% 30% 60%;
-  position: fixed;
-  background-color: $color1;
-  top: -180px;
-}
- */
-
 .scroll-up {
   transform: translate(0, 0);
 }
 
 .scroll-down {
   transform: translate(0, -100%);
+}
+
+.hamburguer {
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+  top: 40px;
+  right: 25px;
+  min-width: 100%;
+  background-color: $color2;
+  font-size: 2rem;
+  cursor: pointer;
+  span {
+    color: $color2;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .ham-white {
+    color: $color1;
+  }
+  .ham-black {
+    color: $color2;
+  }
+}
+.hidden-nav {
+  transition: 0.4s;
+  @include flex;
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+  height: 100vh;
+  top: 0rem;
+  width: 100%;
+  /*   backdrop-filter: blur(10px); */
+  background-color: rgb(255, 255, 255);
+  div {
+    position: absolute;
+    top: 1.4rem;
+    right: 2px;
+    width: 2rem;
+    font-size: 1.3rem;
+  }
+  ul {
+    text-align: center;
+    li {
+      margin: 2rem auto;
+      font-size: 1.5rem;
+      color: $color2;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    .admin-li {
+      background-color: $color2;
+      padding: 1rem;
+      color: $color1;
+    }
+  }
 }

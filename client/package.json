@@ -24,6 +24,8 @@
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.8.0",
     "react-modal": "^3.16.1",
+    "react-notifications": "^1.7.4",
+    "react-notifications-component": "^4.0.1",
     "react-router-dom": "^6.8.2",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.1",

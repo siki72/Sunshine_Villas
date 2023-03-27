@@ -785,7 +785,17 @@ body {
 }
 
 .navigation {
-  z-index: 100;
+  /*   @media screen and (max-width: 720px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    div {
+      display: none;
+    }
+  } */
   display: grid;
   height: 60px;
   width: 100%;
@@ -795,16 +805,16 @@ body {
   top: 0;
   transition: 0.3s linear;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1120px) {
   .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
+    display: block;
   }
   .navigation div {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .navigation {
     display: none;
   }
 }
@@ -824,11 +834,11 @@ body {
   padding: 10px 10px;
   background-color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1120px) {
   .navigation .logo {
     display: none;
   }
-  .navigation .logo a {
+  .navigation .logo div {
     display: none;
   }
 }
@@ -932,24 +942,77 @@ body {
     opacity: 1;
   }
 }
-/* .hidden {
-  transition: 0.4s linear;
-  z-index: 100;
-  display: grid;
-  height: 60px;
-  width: 100%;
-  grid-template-columns: 10% 30% 60%;
-  position: fixed;
-  background-color: $color1;
-  top: -180px;
-}
- */
 .scroll-up {
   transform: translate(0, 0);
 }
 
 .scroll-down {
   transform: translate(0, -100%);
+}
+
+.hamburguer {
+  top: 40px;
+  right: 25px;
+  min-width: 100%;
+  background-color: rgb(1, 1, 1);
+  font-size: 2rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+  .hamburguer {
+    display: none;
+  }
+}
+.hamburguer span {
+  color: rgb(1, 1, 1);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.hamburguer .ham-white {
+  color: rgb(255, 255, 255);
+}
+.hamburguer .ham-black {
+  color: rgb(1, 1, 1);
+}
+
+.hidden-nav {
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  top: 0rem;
+  width: 100%;
+  /*   backdrop-filter: blur(10px); */
+  background-color: rgb(255, 255, 255);
+}
+@media screen and (min-width: 900px) {
+  .hidden-nav {
+    display: none;
+  }
+}
+.hidden-nav div {
+  position: absolute;
+  top: 1.4rem;
+  right: 2px;
+  width: 2rem;
+  font-size: 1.3rem;
+}
+.hidden-nav ul {
+  text-align: center;
+}
+.hidden-nav ul li {
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  color: rgb(1, 1, 1);
+  opacity: 0.8;
+  font-weight: 300;
+}
+.hidden-nav ul .admin-li {
+  background-color: rgb(1, 1, 1);
+  padding: 1rem;
+  color: rgb(255, 255, 255);
 }
 
 .section_1 {
@@ -1874,7 +1937,7 @@ input:invalid:focus ~ span {
 }
 .account-container .container {
   max-width: 100%;
-  height: 100vh;
+  padding-bottom: 2rem;
   background-color: rgb(237, 230, 230);
 }
 .account-container .container .header-img {
@@ -1914,11 +1977,11 @@ input:invalid:focus ~ span {
   background-color: rgb(237, 230, 230);
 }
 .account-container .container .login {
-  padding: 4rem;
+  max-width: 40%;
+  padding: 1rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
   background-color: rgb(255, 255, 255);
-  max-width: 60%;
   margin: 1rem auto;
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
@@ -1930,12 +1993,11 @@ input:invalid:focus ~ span {
   color: darkcyan;
 }
 .account-container .container .login .row {
+  width: 60%;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
-  width: 50%;
   margin: 2rem auto;
-  border-bottom: 1px solid rgb(217, 210, 210);
 }
 .account-container .container .login .row h4 {
   font-family: "font-rob300", sans-serif;
@@ -1949,14 +2011,17 @@ input:invalid:focus ~ span {
   font-size: 1rem;
 }
 .account-container .container .login .row input {
+  padding-left: 1rem;
+  width: 60%;
   font-size: 1rem;
+  background-color: rgb(237, 230, 230);
 }
 .account-container .container .login h2 {
   font-family: "font-gildas", sans-serif;
   font-size: 3.5rem;
   line-height: 7rem;
 }
-.account-container .container .login button {
+.account-container .container .login .send {
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   margin-top: 40px;
@@ -1969,12 +2034,12 @@ input:invalid:focus ~ span {
   cursor: pointer;
   transition: 0.4s;
 }
-.account-container .container .login button:hover {
+.account-container .container .login .send:hover {
   animation: up 0.4s ease forwards;
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
 }
-.account-container .container .login button span {
+.account-container .container .login .send span {
   margin-left: 15px;
 }
 
@@ -2438,7 +2503,7 @@ input:invalid:focus ~ span {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 2rem;
-  grid-template-areas: "firstname email" "date guests " "btn btn";
+  grid-template-areas: "firstname email" "date guests " "btn btn" "msg msg";
 }
 .walima-page .reservation form input {
   font-family: "font-rob400", sans-serif;
@@ -2472,12 +2537,17 @@ input:invalid:focus ~ span {
 }
 .walima-page .reservation form button {
   font-family: "font-rob400", sans-serif;
+  cursor: pointer;
   letter-spacing: 1px;
   font-size: 1rem;
   grid-area: btn;
   padding: 1rem;
   color: rgb(255, 255, 255);
   background-color: rgb(61, 62, 61);
+}
+.walima-page .reservation form .success-message {
+  color: rgb(255, 255, 255);
+  background-color: darkgreen;
 }
 
 .dashboard-main .dashboard-header {

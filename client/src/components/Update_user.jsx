@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../users/UserContext.jsx";
 import utils from "../users/utilsFunctions.js";
 const Update_user = ({ data, edit }) => {
@@ -9,6 +10,21 @@ const Update_user = ({ data, edit }) => {
 
   const handleUpdateUser = async (e) => {
     e.preventDefault();
+
+    const requiredFields = [
+      "firstname",
+      "lastname",
+      "phone",
+      "email",
+      "location",
+    ];
+    // Vérifier que tous les champs requis sont remplis
+    for (const field of requiredFields) {
+      if (!formRef.current[field].value) {
+        alert(`Field ${field} cannot be empty`);
+        return;
+      }
+    }
     setPending(true);
     try {
       const formData = utils.getFormData(formRef, [
@@ -30,8 +46,13 @@ const Update_user = ({ data, edit }) => {
         }
       )
         .then((resp) => resp.json())
-        .then((data) => edit(false))
-        .finally(() => setPending(false));
+        .then((data) => {
+          edit(false);
+        })
+        .finally(() => {
+          setPending(false);
+          window.location.reload(false);
+        });
     } catch (err) {
       console.error(err);
     }
