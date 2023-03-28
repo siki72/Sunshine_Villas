@@ -84,7 +84,7 @@ const About = () => {
             <img src="../img/logo/black-logo.png" alt="" />
             <img src="../img/logo/stars.png" alt="" />
           </div>
-          <ReviewsSwiper />
+          <ReviewsSwiper className="reviews-swiper" />
         </div>
         <div className="ours-villas">
           {!data ? (

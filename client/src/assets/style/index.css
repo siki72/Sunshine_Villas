@@ -230,11 +230,41 @@ body {
   line-height: 6.25rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 1200px) {
+  .about-page .container .about-header h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .about-page .container .about-header h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .about-page .container .about-header h1 {
+    font-size: 2.5rem;
+  }
+}
 .about-page .container .about-header h2 {
   font-family: "font-gildas", sans-serif;
   font-size: 3.625rem;
   line-height: 3.625rem;
   color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1200px) {
+  .about-page .container .about-header h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .about-page .container .about-header h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .about-page .container .about-header h2 {
+    font-size: 1.7rem;
+  }
 }
 .about-page .container .about-header div {
   margin: 15px 0;
@@ -242,6 +272,11 @@ body {
 .about-page .container .about-header div img {
   width: 13rem;
   max-width: 20%;
+}
+@media screen and (max-width: 1200px) {
+  .about-page .container .about-header div img {
+    width: 11rem;
+  }
 }
 .about-page .container .text {
   max-width: 50%;
@@ -257,10 +292,40 @@ body {
   line-height: 2.875rem;
   color: #1c1c1c;
 }
+@media screen and (max-width: 1200px) {
+  .about-page .container .text h3 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .about-page .container .text h3 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .about-page .container .text h3 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .about-page .container .text h3 {
+    font-size: 1rem;
+  }
+}
 .about-page .container .text p {
   font-size: 1.1rem;
   color: #878788;
   font-family: "font-rob300", sans-serif;
+}
+@media screen and (max-width: 1200px) {
+  .about-page .container .text p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .about-page .container .text p {
+    font-size: 0.8rem;
+  }
 }
 .about-page .container .about-main {
   text-align: center;
@@ -278,11 +343,22 @@ body {
   border-radius: 50%;
   max-height: 250px;
 }
+@media screen and (max-width: 630px) {
+  .about-page .container .about-main .manager-img img {
+    font-size: 1.2rem;
+    width: 9rem;
+  }
+}
 .about-page .container .about-main h5:first-of-type {
   font-family: "jadyn", sans-serif;
   font-size: 3rem;
   color: #939393;
   line-height: 1.938rem;
+}
+@media screen and (max-width: 630px) {
+  .about-page .container .about-main h5:first-of-type {
+    font-size: 2rem;
+  }
 }
 .about-page .container .about-main h5 {
   margin-bottom: 15px;
@@ -291,10 +367,23 @@ body {
   color: #7a7a7a;
   line-height: 1.2rem;
 }
+@media screen and (max-width: 630px) {
+  .about-page .container .about-main h5 {
+    font-size: 0.9rem;
+  }
+}
 .about-page .container .jambian-infos-grid {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 33.75rem 33.75rem;
+}
+@media screen and (max-width: 950px) {
+  .about-page .container .jambian-infos-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 .about-page .container .jambian-infos-grid .situation {
   max-width: 80%;
@@ -311,21 +400,59 @@ body {
   line-height: 2rem;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 1000px) {
+  .about-page .container .jambian-infos-grid .situation h4 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .about-page .container .jambian-infos-grid .situation h4 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .about-page .container .jambian-infos-grid .situation h4 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
 .about-page .container .jambian-infos-grid .situation p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   color: #878788;
   line-height: 2rem;
 }
+@media screen and (max-width: 1000px) {
+  .about-page .container .jambian-infos-grid .situation p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .about-page .container .jambian-infos-grid .situation p {
+    font-size: 0.7rem;
+    text-align: center;
+    max-width: 80%;
+  }
+}
 .about-page .container .jambian-infos-grid .situation-img {
   background-image: url(../img/home/beach-about.jpg);
   background-size: cover;
   background-position: center;
 }
+@media screen and (max-width: 420px) {
+  .about-page .container .jambian-infos-grid .situation-img {
+    display: none;
+  }
+}
 .about-page .container .jambian-infos-grid .plan {
   background-image: url(../img/home/land_contact.jpg);
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width: 420px) {
+  .about-page .container .jambian-infos-grid .plan {
+    display: none;
+  }
 }
 .about-page .container .jambian-infos-grid .about-jambiani {
   padding: 6rem;
@@ -339,12 +466,24 @@ body {
   line-height: 2.875rem;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 1000px) {
+  .about-page .container .jambian-infos-grid .about-jambiani h4 {
+    font-size: 1.5rem;
+  }
+}
 .about-page .container .jambian-infos-grid .about-jambiani p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   line-height: 2rem;
   color: rgb(255, 255, 255);
   text-align: left;
+}
+@media screen and (max-width: 1000px) {
+  .about-page .container .jambian-infos-grid .about-jambiani p {
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.5rem;
+  }
 }
 .about-page .container .sea-img {
   display: flex;
@@ -370,6 +509,26 @@ body {
   color: rgb(255, 255, 255);
   font-family: "font-pop-bold", sans-serif;
 }
+@media screen and (max-width: 1230px) {
+  .about-page .container .sea-img blockquote p {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 830px) {
+  .about-page .container .sea-img blockquote p {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .about-page .container .sea-img blockquote p {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 270px) {
+  .about-page .container .sea-img blockquote p {
+    display: none;
+  }
+}
 .about-page .container .sea-img blockquote p::before {
   content: "“";
 }
@@ -382,12 +541,43 @@ body {
   line-height: 2.25rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 1230px) {
+  .about-page .container .sea-img blockquote footer {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 830px) {
+  .about-page .container .sea-img blockquote footer {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .about-page .container .sea-img blockquote footer {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 270px) {
+  .about-page .container .sea-img blockquote footer {
+    display: none;
+  }
+}
 .about-page .container .reviews {
   max-width: 80%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   margin-top: 3rem;
+}
+@media screen and (max-width: 1220px) {
+  .about-page .container .reviews {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 906px) {
+  .about-page .container .reviews {
+    display: none;
+  }
 }
 .about-page .container .reviews .logo {
   display: flex;
@@ -396,10 +586,36 @@ body {
 .about-page .container .reviews .logo img {
   width: 200px;
 }
+@media screen and (max-width: 1220px) {
+  .about-page .container .reviews .logo img {
+    margin-bottom: 4rem;
+  }
+}
 .about-page .container .ours-villas {
   text-align: center;
   padding: 3rem 0;
   display: flex;
+}
+@media screen and (max-width: 1036px) {
+  .about-page .container .ours-villas {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    margin: 2rem auto;
+  }
+}
+@media screen and (max-width: 448px) {
+  .about-page .container .ours-villas .card-booking {
+    display: none;
+  }
+  .about-page .container .ours-villas .card-desc {
+    display: none;
+  }
+}
+@media screen and (max-width: 358px) {
+  .about-page .container .ours-villas {
+    display: none;
+  }
 }
 
 .contact-page .contact-header {
