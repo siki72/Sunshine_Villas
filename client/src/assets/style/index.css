@@ -813,6 +813,21 @@ body {
   max-width: 90%;
   margin: 0 auto;
 }
+.booking .container .choose-villas-cards {
+  display: flex;
+}
+@media screen and (max-width: 830px) {
+  .booking .container .choose-villas-cards {
+    display: block;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 496px) {
+  .booking .container .choose-villas-cards {
+    display: none;
+  }
+}
 .booking .container > * {
   margin-bottom: 40px;
 }
@@ -842,82 +857,156 @@ body {
   line-height: 2.875rem;
   font-family: "font-pop200", sans-serif;
 }
-.booking .container .choose-villas .choose-villa-card {
+@media screen and (max-width: 430px) {
+  .booking .container .title-choose h3 {
+    font-size: 1.5rem;
+  }
+}
+.booking .container .title-cards {
+  margin-top: 25px;
+  padding: 30px;
+  background-color: rgb(237, 237, 237);
+}
+.booking .container .title-cards h3 {
+  font-size: 2.875rem;
+  color: #1c1c1c;
+  line-height: 2.875rem;
+  font-family: "font-pop200", sans-serif;
+}
+@media screen and (max-width: 1244px) {
+  .booking .container .title-cards h3 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 890px) {
+  .booking .container .title-cards h3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 690px) {
+  .booking .container .title-cards h3 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .booking .container .title-cards h3 {
+    font-size: 0.9rem;
+  }
+}
+.booking .container .choose-villa-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid rgb(255, 255, 255);
   box-shadow: 0px 0px 6px #6e6161;
   border-radius: 10px;
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  max-width: 80%;
+  margin: 1.5rem auto;
 }
-.booking .container .choose-villas .choose-villa-card .swipe {
+@media screen and (max-width: 920px) {
+  .booking .container .choose-villa-card {
+    display: block;
+  }
+}
+@media screen and (max-width: 377px) {
+  .booking .container .choose-villa-card {
+    box-shadow: none;
+  }
+}
+.booking .container .choose-villa-card .swipe {
   max-width: 300px;
   /*           max-height: 200px; */
   max-width: 500px;
 }
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-pagination-bullet-active {
+@media screen and (max-width: 920px) {
+  .booking .container .choose-villa-card .swipe {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 680px) {
+  .booking .container .choose-villa-card .swipe {
+    display: none;
+  }
+}
+.booking .container .choose-villa-card .swipe .swiper-pagination-bullet-active {
   background-color: rgb(36, 34, 34);
 }
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-wrapper {
+.booking .container .choose-villa-card .swipe .swiper-wrapper {
   width: 500px;
 }
-.booking .container .choose-villas .choose-villa-card .swipe .swiper,
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-initialized,
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-horizontal,
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-backface-hidden,
-.booking .container .choose-villas .choose-villa-card .swipe .mySwiper {
+.booking .container .choose-villa-card .swipe .swiper,
+.booking .container .choose-villa-card .swipe .swiper-initialized,
+.booking .container .choose-villa-card .swipe .swiper-horizontal,
+.booking .container .choose-villa-card .swipe .swiper-backface-hidden,
+.booking .container .choose-villa-card .swipe .mySwiper {
   width: 100%;
 }
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-slide .swiper-slide-active {
+.booking .container .choose-villa-card .swipe .swiper-slide .swiper-slide-active {
   min-width: 100%;
 }
-.booking .container .choose-villas .choose-villa-card .swipe div {
+.booking .container .choose-villa-card .swipe div {
   border-radius: 5px;
   min-width: 100%;
 }
-.booking .container .choose-villas .choose-villa-card .swipe .swiper .swiper-initialized,
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-horizontal,
-.booking .container .choose-villas .choose-villa-card .swipe .swiper-backface-hidden,
-.booking .container .choose-villas .choose-villa-card .swipe .mySwiper {
+.booking .container .choose-villa-card .swipe .swiper .swiper-initialized,
+.booking .container .choose-villa-card .swipe .swiper-horizontal,
+.booking .container .choose-villa-card .swipe .swiper-backface-hidden,
+.booking .container .choose-villa-card .swipe .mySwiper {
   max-width: 300px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos {
+.booking .container .choose-villa-card .choose-villa-infos {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos {
+@media screen and (max-width: 430px) {
+  .booking .container .choose-villa-card .choose-villa-infos {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+.booking .container .choose-villa-card .choose-villa-infos .card-infos {
   padding: 15px 0;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos > * {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos > * {
   margin-bottom: 15px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos h2 {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos h2 {
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
   line-height: 2.875rem;
   color: #1c1c1c;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests > * {
+@media screen and (max-width: 430px) {
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos h2 {
+    font-size: 1.3rem;
+  }
+}
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests > * {
   margin-bottom: 15px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos {
   font-size: 1rem;
   font-family: "font-gildas", sans-serif;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos div {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos div {
   width: 50%;
   margin: 15px auto;
   display: flex;
   justify-content: space-around;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos > * {
+@media screen and (max-width: 430px) {
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos div {
+    font-size: 0.8rem;
+  }
+}
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos > * {
   margin-left: 25px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house {
   position: relative;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house::before {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos .house::before {
   position: absolute;
   content: "";
   width: 2px;
@@ -926,14 +1015,27 @@ body {
   left: -8px;
   bottom: 0;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .infos .price {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos .price {
   position: relative;
   font-family: "font-pop200", sans-serif;
   font-size: 1.375rem;
   color: #1c1c1c;
   line-height: 1.375rem;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .header-book {
+@media screen and (max-width: 430px) {
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .infos .price {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 377px) {
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .rdrMonth,
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .rdrMonthAndYearWrapper,
+  .booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .rdrDateDisplayWrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .header-book {
   margin-top: 1rem;
   font-size: 1rem;
   max-width: 80%;
@@ -941,7 +1043,7 @@ body {
   box-shadow: 0 0 5px #746b6b;
   padding: 10px 15px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .header-book .headerSearchText {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .header-book .headerSearchText {
   margin: 40px 20px;
   font-family: "font-gildas", sans-serif;
   font-weight: 700;
@@ -949,20 +1051,20 @@ body {
   letter-spacing: 2px;
   color: #767575;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .link {
   margin: 20px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link p {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .link p {
   font-size: 1rem;
   font-family: "font-rob300", sans-serif;
   color: #878788;
   line-height: 2rem;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos .guests .date .link button {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos .guests .date .link button {
   cursor: pointer;
   padding: 10px 20px;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos #button {
   font-family: "font-rob300", sans-serif;
   font-size: 0.938rem;
   color: rgb(56, 54, 54);
@@ -976,28 +1078,14 @@ body {
   border-radius: 5px;
   transition: 0.4s linear;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button:hover {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos #button:hover {
   transform: scale(1.1);
   background-color: black;
   color: white;
   font-family: 1.1rem;
 }
-.booking .container .choose-villas .choose-villa-card .choose-villa-infos .card-infos #button span {
+.booking .container .choose-villa-card .choose-villa-infos .card-infos #button span {
   color: rgb(53, 139, 53);
-}
-.booking .container .title-cards {
-  margin-top: 25px;
-  padding: 30px;
-  background-color: rgb(237, 237, 237);
-}
-.booking .container .title-cards h3 {
-  font-size: 2.875rem;
-  color: #1c1c1c;
-  line-height: 2.875rem;
-  font-family: "font-pop200", sans-serif;
-}
-.booking .container .choose-villas-cards {
-  display: flex;
 }
 
 .navigation {
