@@ -14,6 +14,9 @@
   margin: 0 auto;
 
   .main_select {
+    @media screen and (max-width: 890px) {
+      display: none;
+    }
     text-align: center;
     h2 {
       @media screen and (max-width: 520px) {
@@ -31,7 +34,10 @@
     .villas-cards {
       @media screen and (max-width: 1350px) {
         display: block;
+        max-width: 50%;
+        margin: 0 auto;
       }
+
       display: flex;
     }
   }

@@ -2,18 +2,15 @@ import React from "react";
 import Navigation from "../Navigation";
 import { BrowserRouter, redirect, Route, Routes } from "react-router-dom";
 import About from "../../pages/About";
-import Villas from "../../pages/Villas";
 import Booking from "../../pages/Booking";
 import Home from "../../pages/Home";
 import Villa_1_bed from "../../pages/Villa_1_bed";
-
 import Explore_zanzibar from "../../pages/Explore_zanzibar";
 import Footer from "../Footer";
 import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 import { UserContextProvider } from "../../users/UserContext.jsx";
 import Account from "../../pages/Account.jsx";
-import Admin from "../../pages/Admin.jsx";
 import Contact_page from "../../pages/Contact_page.jsx";
 import Walima from "../../pages/Walima.jsx";
 import Errorpage from "../../pages/Errorpage";

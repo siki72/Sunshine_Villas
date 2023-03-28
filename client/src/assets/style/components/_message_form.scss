@@ -1,8 +1,14 @@
 .send-message {
+  @media screen and (max-width: 1040px) {
+    display: block;
+  }
   display: flex;
   min-width: 100%;
 
   .send-message-img {
+    @media screen and (max-width: 1040px) {
+      min-width: 100%;
+    }
     max-width: 50%;
     img {
       height: 100%;
@@ -12,7 +18,16 @@
   }
 
   .send-message-form {
+    @media screen and (max-width: 349px) {
+      display: none;
+    }
     h2 {
+      @media screen and (max-width: 720px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 584px) {
+        font-size: 1.4rem;
+      }
       margin-top: 2rem;
       font-family: $pop2;
       font-size: 2.875rem;
@@ -25,8 +40,9 @@
     form {
       padding: 2rem;
       .input-groups {
-        > * {
-          margin-bottom: 1.5rem;
+        @media screen and (max-width: 385px) {
+          max-width: 80%;
+          margin: 0 auto;
         }
         label {
           font-family: $rob4;
@@ -59,6 +75,16 @@
           color: #969696;
         }
       }
+      @media screen and (max-width: 584px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "fullName"
+          "email"
+          "message"
+          "recaptcha"
+          "send";
+      }
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
@@ -80,12 +106,17 @@
       #recaptcha {
         @include flex;
         width: 90%;
+        margin: 0 auto;
         min-height: 100%;
-        margin-bottom: 20px;
 
         grid-area: recaptcha;
       }
       .send {
+        @media screen and (max-width: 584px) {
+          width: 90%;
+          margin: 0 auto;
+          height: 4rem;
+        }
         font-family: $rob4;
         font-size: 1rem;
         color: $color1;

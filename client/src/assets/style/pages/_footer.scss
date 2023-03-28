@@ -113,6 +113,9 @@
   }
 
   .socials-medias {
+    @media screen and (max-width: 550px) {
+      margin: 2rem auto;
+    }
     ul {
       display: flex;
       justify-content: space-around;
@@ -129,6 +132,10 @@
   }
 
   .accommodation {
+    @media screen and (max-width: 550px) {
+      margin: 2rem auto;
+    }
+
     align-items: center;
 
     > * {

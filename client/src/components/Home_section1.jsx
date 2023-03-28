@@ -31,17 +31,7 @@ const Home_section1 = () => {
             </Link>
           </div>
         </div>
-        <div
-          style={{
-            backgroundImage: `url(./img/home/section_1.jpeg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right",
-            backgroundSize: "cover",
-            height: "800px",
-            /*  width: "600px", */
-          }}
-          className="section_1_img"
-        ></div>
+        <div className="section_1_img"></div>
       </div>
     </div>
   );

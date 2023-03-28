@@ -626,7 +626,14 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  position: relative;
+}
+.contact-page .contact-header .heder-color {
+  height: 3.5rem;
+  width: 100%;
+  background-color: #1c1c1c;
+  position: absolute;
+  top: 0;
+  z-index: -500;
 }
 .contact-page .contact-header h1 {
   max-width: 80%;
@@ -635,6 +642,26 @@ body {
   line-height: 6.25rem;
   color: #1c1c1c;
 }
+@media screen and (max-width: 1320px) {
+  .contact-page .contact-header h1 {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 1036px) {
+  .contact-page .contact-header h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 856px) {
+  .contact-page .contact-header h1 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 385px) {
+  .contact-page .contact-header h1 {
+    margin-top: 2rem;
+  }
+}
 .contact-page .contact-header .staff-contact-box {
   display: flex;
   justify-content: space-around;
@@ -642,15 +669,50 @@ body {
   width: 80%;
   margin-top: 3rem;
 }
+@media screen and (max-width: 1320px) {
+  .contact-page .contact-header .staff-contact-box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 483px) {
+  .contact-page .contact-header .staff-contact-box {
+    display: block;
+  }
+}
+@media screen and (max-width: 483px) {
+  .contact-page .contact-header .staff-contact-box .staff {
+    margin-bottom: 2rem;
+  }
+}
 .contact-page .contact-header .staff-contact-box .staff .staff-avatar img {
   border-radius: 50%;
   width: 9rem;
+}
+@media screen and (max-width: 1036px) {
+  .contact-page .contact-header .staff-contact-box .staff .staff-avatar img {
+    width: 7rem;
+  }
+}
+@media screen and (max-width: 856px) {
+  .contact-page .contact-header .staff-contact-box .staff .staff-avatar img {
+    width: 5rem;
+  }
 }
 .contact-page .contact-header .staff-contact-box .staff .contacts h3 {
   font-family: "font-gildas", sans-serif;
   font-size: 1.563rem;
   line-height: 2.813rem;
   color: #7a7a7a;
+}
+@media screen and (max-width: 1036px) {
+  .contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 856px) {
+  .contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+    font-size: 1rem;
+  }
 }
 .contact-page .contact-header .staff-contact-box .staff .contacts a {
   font-family: "font-rob400", sans-serif;
@@ -661,9 +723,19 @@ body {
 .contact-page .contact-header .staff-contact-box .staff .contacts a > * {
   margin-right: 0.4rem;
 }
+@media screen and (max-width: 856px) {
+  .contact-page .contact-header .staff-contact-box .staff .contacts a {
+    font-size: 0.8rem;
+  }
+}
 .contact-page .contact-header .staff-contact-box .staff .contacts div {
   margin-top: 1rem;
   position: relative;
+}
+@media screen and (max-width: 856px) {
+  .contact-page .contact-header .staff-contact-box .staff .contacts div {
+    font-size: 0.8rem;
+  }
 }
 .contact-page .contact-header .staff-contact-box .staff .contacts div::before {
   content: "";
@@ -673,6 +745,11 @@ body {
   left: 0;
   height: 1px;
   background-color: black;
+}
+@media screen and (max-width: 483px) {
+  .contact-page .contact-header .staff-contact-box .staff .contacts div::before {
+    display: none;
+  }
 }
 .contact-page .contact-header .style {
   bottom: 0;
@@ -688,16 +765,32 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social {
+    display: block;
+  }
+}
 .contact-page .contacts-social .contact-us {
+  padding: 3rem 0;
   margin-top: 2rem;
   text-align: center;
 }
-.contact-page .contacts-social .contact-us h3 {
+.contact-page .contacts-social .contact-us h2 {
   font-family: "font-pop200", sans-serif;
   color: rgb(255, 255, 255);
   font-size: 2.875rem;
   line-height: 2.875rem;
   margin-bottom: 1.8rem;
+}
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .contact-us h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact-page .contacts-social .contact-us h2 {
+    font-size: 1.5rem;
+  }
 }
 .contact-page .contacts-social .contact-us address p {
   font-family: "font-rob400", sans-serif;
@@ -706,12 +799,38 @@ body {
   color: #878787;
   line-height: 2rem;
 }
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .contact-us address p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact-page .contacts-social .contact-us address p {
+    font-size: 0.7rem;
+  }
+}
 .contact-page .contacts-social .contact-us ul li {
   margin-top: 1rem;
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
   color: #878787;
+}
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .contact-us ul li {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact-page .contacts-social .contact-us ul li {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .social {
+    padding-bottom: 3rem;
+    text-align: center;
+  }
 }
 .contact-page .contacts-social .social .social-media,
 .contact-page .contacts-social .social a {
@@ -720,10 +839,34 @@ body {
   color: #878787;
   line-height: 2rem;
 }
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .social .social-media,
+  .contact-page .contacts-social .social a {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact-page .contacts-social .social .social-media,
+  .contact-page .contacts-social .social a {
+    font-size: 0.7rem;
+  }
+}
 .contact-page .contacts-social .social .social-media .icon,
 .contact-page .contacts-social .social a .icon {
   color: rgb(255, 255, 255);
   font-size: 1.3rem;
+}
+@media screen and (max-width: 875px) {
+  .contact-page .contacts-social .social .social-media .icon,
+  .contact-page .contacts-social .social a .icon {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact-page .contacts-social .social .social-media .icon,
+  .contact-page .contacts-social .social a .icon {
+    font-size: 0.8rem;
+  }
 }
 .contact-page .contacts-social .social .social-media span,
 .contact-page .contacts-social .social a span {
@@ -1402,6 +1545,13 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+@media screen and (max-width: 1200px) {
+  .section_1 .main-villa .text .link-villas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media screen and (max-width: 520px) {
   .section_1 .main-villa .text .link-villas {
     display: block;
@@ -1450,6 +1600,22 @@ body {
   line-height: 24px;
   color: #1c1c1c;
 }
+.section_1 .main-villa .section_1_img {
+  background-image: url("../img/home/section_1.jpeg");
+  background-position: center;
+  height: 50rem;
+}
+@media screen and (max-width: 1067px) {
+  .section_1 .main-villa .section_1_img {
+    background-position: left;
+  }
+}
+@media screen and (max-width: 607px) {
+  .section_1 .main-villa .section_1_img {
+    background-position: left;
+    height: 30rem;
+  }
+}
 
 .section_2 {
   max-width: 90%;
@@ -1470,6 +1636,11 @@ body {
 }
 .section_2 .main_select {
   text-align: center;
+}
+@media screen and (max-width: 890px) {
+  .section_2 .main_select {
+    display: none;
+  }
 }
 .section_2 .main_select h2 {
   font-family: "font-pop200", sans-serif;
@@ -1493,6 +1664,8 @@ body {
 @media screen and (max-width: 1350px) {
   .section_2 .main_select .villas-cards {
     display: block;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }
 
@@ -2040,6 +2213,11 @@ body {
 .footer .trip-logo .trip-logo-img img {
   max-width: 100px;
 }
+@media screen and (max-width: 550px) {
+  .footer .socials-medias {
+    margin: 2rem auto;
+  }
+}
 .footer .socials-medias ul {
   display: flex;
   justify-content: space-around;
@@ -2056,6 +2234,11 @@ body {
 }
 .footer .accommodation {
   align-items: center;
+}
+@media screen and (max-width: 550px) {
+  .footer .accommodation {
+    margin: 2rem auto;
+  }
 }
 .footer .accommodation > * {
   margin-bottom: 10px;
@@ -2586,8 +2769,18 @@ input:invalid:focus ~ span {
   display: flex;
   min-width: 100%;
 }
+@media screen and (max-width: 1040px) {
+  .send-message {
+    display: block;
+  }
+}
 .send-message .send-message-img {
   max-width: 50%;
+}
+@media screen and (max-width: 1040px) {
+  .send-message .send-message-img {
+    min-width: 100%;
+  }
 }
 .send-message .send-message-img img {
   height: 100%;
@@ -2599,6 +2792,11 @@ input:invalid:focus ~ span {
   background-color: rgb(244, 244, 244);
   width: 100%;
 }
+@media screen and (max-width: 349px) {
+  .send-message .send-message-form {
+    display: none;
+  }
+}
 .send-message .send-message-form h2 {
   margin-top: 2rem;
   font-family: "font-pop200", sans-serif;
@@ -2606,6 +2804,16 @@ input:invalid:focus ~ span {
   line-height: 2.875rem;
   text-align: center;
   color: #1c1c1c;
+}
+@media screen and (max-width: 720px) {
+  .send-message .send-message-form h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 584px) {
+  .send-message .send-message-form h2 {
+    font-size: 1.4rem;
+  }
 }
 .send-message .send-message-form form {
   padding: 2rem;
@@ -2618,8 +2826,11 @@ input:invalid:focus ~ span {
   display: flex;
   flex-direction: column;
 }
-.send-message .send-message-form form .input-groups > * {
-  margin-bottom: 1.5rem;
+@media screen and (max-width: 385px) {
+  .send-message .send-message-form form .input-groups {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 .send-message .send-message-form form .input-groups label {
   font-family: "font-rob400", sans-serif;
@@ -2662,6 +2873,13 @@ input:invalid:focus ~ span {
   line-height: 1rem;
   color: #969696;
 }
+@media screen and (max-width: 584px) {
+  .send-message .send-message-form form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "fullName" "email" "message" "recaptcha" "send";
+  }
+}
 .send-message .send-message-form form .name {
   grid-area: fullName;
 }
@@ -2676,8 +2894,8 @@ input:invalid:focus ~ span {
   justify-content: center;
   align-items: center;
   width: 90%;
+  margin: 0 auto;
   min-height: 100%;
-  margin-bottom: 20px;
   grid-area: recaptcha;
 }
 .send-message .send-message-form form .send {
@@ -2688,6 +2906,13 @@ input:invalid:focus ~ span {
   grid-area: send;
   padding: 1rem;
   cursor: pointer;
+}
+@media screen and (max-width: 584px) {
+  .send-message .send-message-form form .send {
+    width: 90%;
+    margin: 0 auto;
+    height: 4rem;
+  }
 }
 
 .walima-page .walima-header {

@@ -30,7 +30,7 @@ const Home_section5 = () => {
         <div className="read" id="susta-read">
           <h3>Sustainability</h3>
           <p>
-            The Jambiani Villas project is much more than a tourist venture. We
+            The Sunshine Villas project is much more than a tourist venture. We
             give top priority to the local community through a variety of social
             and environmental support measures.
           </p>

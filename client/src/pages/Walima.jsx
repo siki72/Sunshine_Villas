@@ -6,9 +6,8 @@ import utils from "../users/utilsFunctions.js";
 
 const Walima = () => {
   const [date, setDate] = useState(getTodayDate());
-  const [pending, setPending] = useState(false);
   const formRef = useRef();
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   function getTodayDate() {
     const today = new Date();
@@ -20,7 +19,6 @@ const Walima = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setPending(true);
 
     try {
       const formData = utils.getFormData(formRef, [
@@ -34,7 +32,6 @@ const Walima = () => {
         throw new Error("unable to book a table");
       } else {
         setSuccess(true);
-        setPending(false);
         setTimeout(() => {
           setSuccess(false);
         }, 2000);

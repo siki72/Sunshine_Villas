@@ -10,12 +10,13 @@ const Contact_page = () => {
   return (
     <div className="contact-page">
       <div className="contact-header">
+        <div className="heder-color"></div>
         <h1>LET US CREATE YOUR DREAM HOLIDAY!</h1>
         <Staff />
       </div>
       <div className="contacts-social">
         <div className="contact-us">
-          <h3>Contact us</h3>
+          <h2>Contact us</h2>
           <address>
             <p>MAIN STREET BEACH(sunshine Villas)</p>
             <p> BOX 5412, Zanzibar, Tanzania</p>
