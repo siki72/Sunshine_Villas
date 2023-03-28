@@ -2706,14 +2706,52 @@ input:invalid:focus ~ span {
   line-height: 6.25rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 900px) {
+  .walima-page .walima-header h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 456px) {
+  .walima-page .walima-header h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .walima-page .walima-header h1 {
+    font-size: 2rem;
+  }
+}
 .walima-page .walima-main {
   display: flex;
   max-width: 80%;
   margin: 5rem auto;
 }
+@media screen and (max-width: 1250px) {
+  .walima-page .walima-main {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 530px) {
+  .walima-page .walima-main {
+    min-width: 100%;
+  }
+}
 .walima-page .walima-main .text {
   max-width: 60%;
   padding: 0 4rem;
+}
+@media screen and (max-width: 1250px) {
+  .walima-page .walima-main .text {
+    text-align: center;
+    min-width: 80%;
+    margin: 2rem auto;
+  }
+}
+@media screen and (max-width: 530px) {
+  .walima-page .walima-main .text {
+    font-size: 1rem;
+    min-width: 80%;
+  }
 }
 .walima-page .walima-main .text h3 {
   font-family: "font-pop200", sans-serif;
@@ -2722,11 +2760,32 @@ input:invalid:focus ~ span {
   color: #1c1c1c;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 900px) {
+  .walima-page .walima-main .text h3 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 730px) {
+  .walima-page .walima-main .text h3 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .walima-page .walima-main .text h3 {
+    font-size: 1rem;
+  }
+}
 .walima-page .walima-main .text p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   line-height: 1.938rem;
   color: #878787;
+}
+@media screen and (max-width: 900px) {
+  .walima-page .walima-main .text p {
+    font-size: 0.8rem;
+    min-width: 100%;
+  }
 }
 .walima-page .walima-main .walima-img img {
   -o-object-fit: cover;
@@ -2737,6 +2796,11 @@ input:invalid:focus ~ span {
 .walima-page .walima-img-swiper {
   margin: 4rem;
 }
+@media screen and (max-width: 930px) {
+  .walima-page .walima-img-swiper {
+    display: none;
+  }
+}
 .walima-page .walima-img-swiper img {
   max-height: 100%;
   width: 100%;
@@ -2746,6 +2810,11 @@ input:invalid:focus ~ span {
   justify-content: space-between;
   align-items: center;
   margin: 4rem;
+}
+@media screen and (max-width: 930px) {
+  .walima-page .swahili {
+    display: block;
+  }
 }
 .walima-page .swahili .swahili-img {
   background-image: url("../img/walima/swahili.jpeg");
@@ -2764,11 +2833,22 @@ input:invalid:focus ~ span {
   color: #1c1c1c;
   margin-bottom: 3rem;
 }
+@media screen and (max-width: 930px) {
+  .walima-page .swahili .swahili-text h4 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
 .walima-page .swahili .swahili-text p {
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   line-height: 2rem;
   color: #878787;
+}
+@media screen and (max-width: 930px) {
+  .walima-page .swahili .swahili-text p {
+    font-size: 0.8rem;
+  }
 }
 .walima-page .reservation {
   padding: 3rem;
@@ -2777,6 +2857,11 @@ input:invalid:focus ~ span {
   align-items: center;
   flex-direction: column;
   background-color: rgb(1, 1, 1);
+}
+@media screen and (max-width: 860px) {
+  .walima-page .reservation h4 {
+    font-size: 1rem;
+  }
 }
 .walima-page .reservation div {
   margin-bottom: 3rem;
@@ -2788,6 +2873,12 @@ input:invalid:focus ~ span {
   line-height: 2.875rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 860px) {
+  .walima-page .reservation div h4 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
 .walima-page .reservation div p {
   margin-top: 2rem;
   font-family: "font-rob400", sans-serif;
@@ -2795,11 +2886,21 @@ input:invalid:focus ~ span {
   height: 3rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 860px) {
+  .walima-page .reservation div p {
+    display: none;
+  }
+}
 .walima-page .reservation div span {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.4rem;
   line-height: 2rem;
   color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 860px) {
+  .walima-page .reservation div span {
+    display: none;
+  }
 }
 .walima-page .reservation form {
   width: 70%;
@@ -2807,7 +2908,15 @@ input:invalid:focus ~ span {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 2rem;
-  grid-template-areas: "firstname email" "date guests " "btn btn" "msg msg";
+  grid-template-areas: "firstname email" "date guests " "btn btn";
+}
+@media screen and (max-width: 860px) {
+  .walima-page .reservation form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "firstname" "email" "date" "guests" "btn";
+  }
 }
 .walima-page .reservation form input {
   font-family: "font-rob400", sans-serif;
@@ -2827,11 +2936,39 @@ input:invalid:focus ~ span {
   color: #878787;
   padding: 0 1rem;
 }
+@media screen and (max-width: 690px) {
+  .walima-page .reservation form input::-moz-placeholder {
+    font-size: 0.8rem;
+    padding: 0;
+    height: 3rem;
+  }
+  .walima-page .reservation form input::placeholder,
+  .walima-page .reservation form [type=date],
+  .walima-page .reservation form select {
+    font-size: 0.8rem;
+    padding: 0;
+    height: 3rem;
+  }
+}
 .walima-page .reservation form .name {
   grid-area: firstname;
 }
+@media screen and (max-width: 690px) {
+  .walima-page .reservation form .name {
+    font-size: 0.8rem;
+    padding: 0;
+    height: 3rem;
+  }
+}
 .walima-page .reservation form .email {
   grid-area: email;
+}
+@media screen and (max-width: 690px) {
+  .walima-page .reservation form .email {
+    font-size: 0.8rem;
+    padding: 0;
+    height: 3rem;
+  }
 }
 .walima-page .reservation form #date {
   grid-area: date;
@@ -2852,6 +2989,11 @@ input:invalid:focus ~ span {
 .walima-page .reservation form .success-message {
   color: rgb(255, 255, 255);
   background-color: darkgreen;
+}
+@media screen and (max-width: 690px) {
+  .walima-page .reservation form .success-message {
+    font-size: 0.6rem;
+  }
 }
 
 .dashboard-main .dashboard-header {
