@@ -5,6 +5,7 @@ import ReactModal from "react-modal";
 
 const Message_form = () => {
   const [pending, setPending] = useState(false);
+  const [success, setSuccess] = useState(true);
   const refCaptcha = useRef();
   const formSendMsgRef = useRef();
   const handleSubmit = (e) => {
@@ -29,12 +30,18 @@ const Message_form = () => {
       .then(
         (result) => {
           console.log(result);
+          setPending(false);
+          setSuccess(true);
         },
         (error) => {
           console.log(error);
         }
       )
-      .finally(() => setPending(false));
+      .finally(() => {
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      });
   };
 
   return (
@@ -43,7 +50,9 @@ const Message_form = () => {
         <img src="../img/home/message-page.jpeg" alt="" />
       </div>
       <div className="send-message-form">
-        <h2>Send us a message</h2>
+        <h2 className={success ? "succes-send-mgs" : "h2-send"}>
+          {success ? "message sent successfully" : "Send us a message"}
+        </h2>
 
         <form
           ref={formSendMsgRef}

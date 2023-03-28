@@ -2797,7 +2797,7 @@ input:invalid:focus ~ span {
     display: none;
   }
 }
-.send-message .send-message-form h2 {
+.send-message .send-message-form .h2-send {
   margin-top: 2rem;
   font-family: "font-pop200", sans-serif;
   font-size: 2.875rem;
@@ -2806,12 +2806,12 @@ input:invalid:focus ~ span {
   color: #1c1c1c;
 }
 @media screen and (max-width: 720px) {
-  .send-message .send-message-form h2 {
+  .send-message .send-message-form .h2-send {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 584px) {
-  .send-message .send-message-form h2 {
+  .send-message .send-message-form .h2-send {
     font-size: 1.4rem;
   }
 }
@@ -2913,6 +2913,15 @@ input:invalid:focus ~ span {
     margin: 0 auto;
     height: 4rem;
   }
+}
+.send-message .succes-send-mgs {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: "font-pop200", sans-serif;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  color: darkgreen;
+  transition: 0.4s;
 }
 
 .walima-page .walima-header {

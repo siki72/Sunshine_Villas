@@ -21,7 +21,7 @@
     @media screen and (max-width: 349px) {
       display: none;
     }
-    h2 {
+    .h2-send {
       @media screen and (max-width: 720px) {
         font-size: 2rem;
       }
@@ -126,5 +126,16 @@
         cursor: pointer;
       }
     }
+  }
+  .succes-send-mgs {
+    text-align: center;
+    margin-top: 2rem;
+    font-family: $pop2;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
+
+    color: darkgreen;
+
+    transition: 0.4s;
   }
 }
