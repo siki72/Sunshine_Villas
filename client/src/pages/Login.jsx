@@ -6,6 +6,7 @@ import { UserContext } from "../users/UserContext.jsx";
 const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
+  const [errorLog, setErrorLOg] = useState(false);
   //ramener setUser de notre UserCOntext grace au hook useContext
   const { user, setUser, setReady, setIsAdmin } = useContext(UserContext);
 
@@ -15,6 +16,7 @@ const Login = () => {
     try {
       const response = await utils.login(formData);
       if (!response.ok) {
+        setErrorLOg(true);
         throw new Error("unable to login");
       } else {
         const user = await response.json();
@@ -70,6 +72,9 @@ const Login = () => {
                 placeholder="password"
               />
             </div>
+            <span className={errorLog ? "show-error-msg" : "error-msg"}>
+              wrong email or password
+            </span>
             <button type="submit" className="login-button">
               Login
             </button>

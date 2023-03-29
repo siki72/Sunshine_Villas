@@ -84,7 +84,20 @@ async function fetchAdminDatas(a) {
     console.log(e);
   }
 }
-
+async function deleteDatas(a) {
+  try {
+    const response = await fetch(`${adminURL}/users/` + a, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
 /* const registerUser = (e) => {
   e.preventDefault();
   const data = new FormData(formRegisterRef.current);
@@ -108,4 +121,5 @@ export default {
   handleBookTable,
   fetchAdminDatas,
   fetchUserDatas,
+  deleteDatas,
 };

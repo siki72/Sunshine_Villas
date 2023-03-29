@@ -1,5 +1,6 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { format } from "date-fns";
 import utils from "../users/utilsFunctions.js";
 const Walima_datas = () => {
   const [data, setData] = useState([]);
@@ -22,6 +23,10 @@ const Walima_datas = () => {
     handleGetReservation();
   }, []);
 
+  const handleDeleteRow = async (id) => {
+    await fetch("");
+  };
+
   return (
     <div className="data">
       <table>
@@ -32,6 +37,7 @@ const Walima_datas = () => {
             <th>email</th>
             <th>guests</th>
             <th>date</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
@@ -41,8 +47,12 @@ const Walima_datas = () => {
               <td>{row.name}</td>
               <td>{row.email}</td>
               <td>{row.guests}</td>
-              {/*               <td>{format(new Date(row.date), "dd/MM/yyyy")}</td> */}
               <td>{row.date}</td>
+              <td className="dlt-td" onClick={() => handleDeleteRow(row.id)}>
+                <span>
+                  <FontAwesomeIcon icon={faTrash} />
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>

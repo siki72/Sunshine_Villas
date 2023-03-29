@@ -67,7 +67,7 @@ const Walima = () => {
           </p>
         </div>
         <div className="walima-img">
-          <img src="../img/walima/2.jpeg" alt="" />
+          <img src="../img/walima/2.jpeg" alt="walima restaurent picture" />
         </div>
       </div>
       <div className="walima-img-swiper">

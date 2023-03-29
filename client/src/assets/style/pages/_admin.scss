@@ -66,6 +66,14 @@
         border: 1px solid darkgray;
         border-collapse: collapse;
         padding: 5px;
+        .red-background {
+          background-color: rgb(206, 67, 67);
+          color: rgb(230, 224, 213);
+        }
+        .green-background {
+          background-color: darkgreen;
+          color: rgb(230, 224, 213);
+        }
       }
       table th {
         text-transform: uppercase;
@@ -81,6 +89,9 @@
 
         background: #ffffff;
         color: #313030;
+      }
+      table td.dlt-td span {
+        cursor: pointer;
       }
     }
   }

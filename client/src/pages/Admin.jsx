@@ -12,6 +12,7 @@ import {
 import Villas_datas from "../components/Villas_datas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
 import Walima_datas from "../components/walima_datas.jsx";
+import Users_table from "../components/Users_table.jsx";
 
 const Admin = ({ logout }) => {
   const { user, ready } = useContext(UserContext);
@@ -20,6 +21,7 @@ const Admin = ({ logout }) => {
   const [showData2, setShowData2] = useState(false);
   const [showData3, setShowData3] = useState(false);
   const [showData4, setShowData4] = useState(false);
+  const [showData5, setShowData5] = useState(false);
   const [dashboard, setDashboard] = useState(true);
 
   // a refactoriser
@@ -29,6 +31,7 @@ const Admin = ({ logout }) => {
       setShowData2(false);
       setShowData3(false);
       setShowData4(false);
+      setShowData5(false);
       setShowData(true);
       setDashboard(false);
     };
@@ -39,6 +42,7 @@ const Admin = ({ logout }) => {
     setShowData2(false);
     setShowData3(false);
     setShowData4(false);
+    setShowData5(false);
   };
 
   useEffect(() => {
@@ -87,7 +91,13 @@ const Admin = ({ logout }) => {
               onClick={handleshow(setShowData4)}
               className={showData4 ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>walima</span>
+              <FontAwesomeIcon icon={faHouseUser} /> <span>Walima</span>
+            </li>
+            <li
+              onClick={handleshow(setShowData5)}
+              className={showData5 ? "li-active" : ""}
+            >
+              <FontAwesomeIcon icon={faHouseUser} /> <span>User</span>
             </li>
 
             <li onClick={logout}>
@@ -102,6 +112,7 @@ const Admin = ({ logout }) => {
           {showData2 && <Villas_datas id={2} />}
           {showData3 && <Villas_datas id={3} />}
           {showData4 && <Walima_datas />}
+          {showData5 && <Users_table />}
         </div>
       </div>
     </div>

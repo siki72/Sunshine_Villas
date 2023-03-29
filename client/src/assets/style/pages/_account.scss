@@ -1,16 +1,12 @@
 .account-container {
   max-width: 100%;
-
-  position: relative;
   .container {
     max-width: 100%;
     padding-bottom: 2rem;
     background-color: rgb(237, 230, 230);
 
     .header-img {
-      min-height: 300px;
-
-      z-index: -1000;
+      min-height: 15rem;
     }
     .nav-book {
       margin: 4rem auto;
@@ -21,7 +17,6 @@
       padding: 50px;
       border-radius: 5px;
       height: 40px;
-
       padding: 20px;
       span {
         margin-left: 1rem;

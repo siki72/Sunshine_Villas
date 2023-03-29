@@ -81,8 +81,11 @@ const About = () => {
         </div>
         <div className="reviews">
           <div className="logo">
-            <img src="../img/logo/black-logo.png" alt="" />
-            <img src="../img/logo/stars.png" alt="" />
+            <img
+              src="../img/logo/black-logo.png"
+              alt="trip advisor black version"
+            />
+            <img src="../img/logo/stars.png" alt="5 yellow stars picture" />
           </div>
           <ReviewsSwiper className="reviews-swiper" />
         </div>

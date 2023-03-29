@@ -2329,7 +2329,7 @@ body {
 .login-container {
   border: 1px solid rgb(59, 54, 54);
   border-radius: 15px;
-  background-color: rgba(24, 22, 22, 0.635);
+  background-color: rgba(0, 0, 0, 0.927);
   padding: 15px;
   max-width: 70%;
   width: 500px;
@@ -2418,9 +2418,23 @@ input:invalid:focus ~ span {
   visibility: visible;
 }
 
+.error-msg {
+  visibility: hidden;
+  width: 100%;
+  color: darkred;
+  text-align: center;
+}
+
+.show-error-msg {
+  text-transform: uppercase;
+  visibility: visible;
+  width: 100%;
+  color: darkred;
+  text-align: center;
+}
+
 .account-container {
   max-width: 100%;
-  position: relative;
 }
 .account-container .container {
   max-width: 100%;
@@ -2428,8 +2442,7 @@ input:invalid:focus ~ span {
   background-color: rgb(237, 230, 230);
 }
 .account-container .container .header-img {
-  min-height: 300px;
-  z-index: -1000;
+  min-height: 15rem;
 }
 .account-container .container .nav-book {
   margin: 4rem auto;
@@ -2750,6 +2763,14 @@ input:invalid:focus ~ span {
   border-collapse: collapse;
   padding: 5px;
 }
+.admin-page .admin-container .datas table .red-background {
+  background-color: rgb(206, 67, 67);
+  color: rgb(230, 224, 213);
+}
+.admin-page .admin-container .datas table .green-background {
+  background-color: darkgreen;
+  color: rgb(230, 224, 213);
+}
 .admin-page .admin-container .datas table th {
   text-transform: uppercase;
   border: 1px solid #888282;
@@ -2763,6 +2784,9 @@ input:invalid:focus ~ span {
   padding: 1rem;
   background: #ffffff;
   color: #313030;
+}
+.admin-page .admin-container .datas table td.dlt-td span {
+  cursor: pointer;
 }
 
 .send-message {

@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { format } from "date-fns";
+import { format, compareAsc } from "date-fns";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteBookDatas, setBookDatas } from "../feature/villa1.slice.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const Villas_datas = ({ id }) => {
-  const [data, setData] = useState([]);
+  const data = useSelector((state) => state.villa_1_book.book); // ramener la da
+  const dispatch = useDispatch();
+  const [ready, setReady] = useState(false);
+  const [oldbooking, SetOldBooking] = useState(false);
+  const actuelDate = new Date();
+  const date = actuelDate.toISOString().slice(0, 10);
+
   useEffect(() => {
     const body = {
       id,
@@ -15,12 +25,47 @@ const Villas_datas = ({ id }) => {
           "Content-type": "application/json ; charset=UTF-8",
         },
       });
-      return response.json().then((data) => {
-        setData(data);
-      });
+      return response
+        .json()
+        .then((data) => {
+          data.flatMap((date) => console.log(date.start_date.split("T", 1)));
+          dispatch(setBookDatas(data));
+        })
+        .finally(() => setReady(true));
     };
     getDatas();
   }, [id]);
+  console.log(new Date("2023-03-28T22:00:00.000Z"));
+  console.log(new Date(date));
+
+  const compareDates = (date1, date2) => {
+    return compareAsc(new Date(date1), new Date(date2));
+  };
+
+  const handleDeleteRow = async (id) => {
+    try {
+      const response = await fetch(
+        `https://alimissoum.app.3wa.io/admin/data/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("unable to delelte datas");
+      } else {
+        dispatch(deleteBookDatas(id));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  console.log(format(new Date(date), "dd/MM/yyyy"));
+  console.log(format(new Date("2023-03-27T22:00:00.000Z"), "dd/MM/yyyy"));
   return (
     <div className="data">
       <table>
@@ -35,22 +80,56 @@ const Villas_datas = ({ id }) => {
             <th>Nights</th>
             <th>date of reservation</th>
             <th>Total</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
-            <tr key={row.id}>
-              <td>{row.id}</td>
-              <td>{row.firstname}</td>
-              <td>{row.lastname}</td>
-              <td>{row.email}</td>
-              <td>{format(new Date(row.start_date), "dd/MM/yyyy")}</td>
-              <td>{format(new Date(row.end_date), "dd/MM/yyyy")}</td>
-              <td>{row.nights}</td>
-              <td>{format(new Date(row.created_at), "dd/MM/yyyy")}</td>
-              <td>{row.total_price} euros</td>
-            </tr>
-          ))}
+          {ready &&
+            data.map((row) => (
+              <tr key={row.id}>
+                <td>{row.id}</td>
+                <td>{row.firstname}</td>
+                <td>{row.lastname}</td>
+                <td>{row.email}</td>
+
+                <td
+                  className={
+                    compareDates(row.start_date, date) === -1
+                      ? "red-background"
+                      : "green-background"
+                  }
+                >
+                  {format(new Date(row.start_date), "dd/MM/yyyy")}
+                </td>
+                <td
+                  className={
+                    compareDates(row.end_date, date) === -1
+                      ? "red-background"
+                      : "green-background"
+                  }
+                >
+                  {format(new Date(row.end_date), "dd/MM/yyyy")}
+                </td>
+                <td>{row.nights}</td>
+                <td>{format(new Date(row.created_at), "dd/MM/yyyy")}</td>
+                <td>{row.total_price} euros</td>
+                <td
+                  className="dlt-td"
+                  onClick={() => {
+                    if (
+                      window.confirm(
+                        "do you really want to remove this booking ?"
+                      )
+                    )
+                      handleDeleteRow(row.id);
+                  }}
+                >
+                  <span>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </span>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
