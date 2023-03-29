@@ -63,9 +63,17 @@ const Users_table = () => {
               <td>{row.email}</td>
               <td>{row.role}</td>
               <td>{row.phone}</td>
-              <td>{row.location}</td>
-              <td>{row.reservations_count}</td>
-              <td>{row.profits}</td>
+              <td>{!row.location ? "Empty" : row.location}</td>
+              <td
+                className={
+                  !row.reservations_count
+                    ? "red-background"
+                    : "green-background"
+                }
+              >
+                {!row.reservations_count ? "0" : row.reservations_count}
+              </td>
+              <td>{!row.profits ? "0" : row.profits}</td>
 
               <td
                 className="dlt-td"
