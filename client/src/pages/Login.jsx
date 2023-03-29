@@ -20,6 +20,7 @@ const Login = () => {
         throw new Error("unable to login");
       } else {
         const user = await response.json();
+        console.log(user);
         setUser(user);
         if (user.role === "admin") {
           setIsAdmin(user);

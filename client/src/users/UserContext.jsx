@@ -23,7 +23,7 @@ export function UserContextProvider({ children }) {
         }
       });
     }
-  }, []);
+  }, [user]);
   console.log(user);
   console.log(isAdmin);
 

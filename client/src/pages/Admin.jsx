@@ -97,7 +97,7 @@ const Admin = ({ logout }) => {
               onClick={handleshow(setShowData5)}
               className={showData5 ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>User</span>
+              <FontAwesomeIcon icon={faUsers} /> <span>Users</span>
             </li>
 
             <li onClick={logout}>

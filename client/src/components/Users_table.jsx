@@ -5,7 +5,7 @@ import utils from "../users/utilsFunctions.js";
 
 const Users_table = () => {
   const [data, setData] = useState([]);
-
+  const [isDeleting, setIsDeleting] = useState(false);
   useEffect(() => {
     const handleGetAllUsers = async () => {
       try {
@@ -16,21 +16,21 @@ const Users_table = () => {
           const data = await response.json();
           console.log(data);
           setData(data);
+          setIsDeleting(false);
         }
       } catch (error) {
         console.error(error);
       }
     };
     handleGetAllUsers();
-  }, []);
+  }, [isDeleting]);
   const handleDeleteRow = async (id) => {
     try {
       const response = await utils.deleteDatas(id);
       if (!response.ok) {
         throw new Error("unable to delete user");
       } else {
-        const data = await response.json();
-        console.log(data);
+        setIsDeleting(true);
       }
     } catch (error) {
       console.error(error);
@@ -62,7 +62,7 @@ const Users_table = () => {
               <td>{row.lastname}</td>
               <td>{row.email}</td>
               <td>{row.role}</td>
-              <td>{row.phone}</td>
+              <td>{!row.phone ? "Empty" : row.phone}</td>
               <td>{!row.location ? "Empty" : row.location}</td>
               <td
                 className={
