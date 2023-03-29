@@ -198,7 +198,7 @@ body {
 }
 
 .li-active {
-  padding: 0.6rem;
+  padding: 0.4rem;
   background-color: rgb(230, 230, 230);
   width: 100%;
   border-top-left-radius: 1rem;
@@ -3177,6 +3177,7 @@ input:invalid:focus ~ span {
   }
 }
 .walima-page .reservation form input {
+  padding: 0 1rem;
   font-family: "font-rob400", sans-serif;
   letter-spacing: 1px;
   color: rgb(1, 1, 1);
@@ -3185,14 +3186,12 @@ input:invalid:focus ~ span {
 .walima-page .reservation form input::-moz-placeholder {
   font-size: 1rem;
   color: #878787;
-  padding: 0 1rem;
 }
 .walima-page .reservation form input::placeholder,
 .walima-page .reservation form [type=date],
 .walima-page .reservation form select {
   font-size: 1rem;
   color: #878787;
-  padding: 0 1rem;
 }
 @media screen and (max-width: 690px) {
   .walima-page .reservation form input::-moz-placeholder {

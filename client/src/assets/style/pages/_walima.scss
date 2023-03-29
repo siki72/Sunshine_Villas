@@ -193,6 +193,7 @@
         "date guests "
         "btn btn";
       input {
+        padding: 0 1rem;
         font-family: $rob4;
         letter-spacing: 1px;
         color: $color2;
@@ -208,7 +209,6 @@
         }
         font-size: 1rem;
         color: $color5;
-        padding: 0 1rem;
       }
       .name {
         @media screen and (max-width: 690px) {

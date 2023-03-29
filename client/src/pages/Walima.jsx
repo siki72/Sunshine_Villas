@@ -31,6 +31,7 @@ const Walima = () => {
       if (!response.ok) {
         throw new Error("unable to book a table");
       } else {
+        formRef.current.reset();
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);

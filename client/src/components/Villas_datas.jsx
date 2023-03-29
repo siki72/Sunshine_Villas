@@ -45,7 +45,7 @@ const Villas_datas = ({ id }) => {
   const handleDeleteRow = async (id) => {
     try {
       const response = await fetch(
-        `https://alimissoum.app.3wa.io/admin/data/${id}`,
+        `https://alimissoum.app.3wa.io/admin/bookings/${id}`,
         {
           method: "DELETE",
           credentials: "include",

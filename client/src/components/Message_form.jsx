@@ -30,6 +30,7 @@ const Message_form = () => {
       .then(
         (result) => {
           console.log(result);
+          formSendMsgRef.current.reset();
           setPending(false);
           setSuccess(true);
         },
