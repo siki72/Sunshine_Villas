@@ -98,6 +98,21 @@ async function deleteDatas(a) {
     console.log(e);
   }
 }
+async function updateUserRole(body) {
+  try {
+    const response = await fetch(`${adminURL}users/role/`, {
+      method: "PUT",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
 /* const registerUser = (e) => {
   e.preventDefault();
   const data = new FormData(formRegisterRef.current);
@@ -122,4 +137,5 @@ export default {
   fetchAdminDatas,
   fetchUserDatas,
   deleteDatas,
+  updateUserRole,
 };

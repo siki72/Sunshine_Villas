@@ -2753,6 +2753,7 @@ input:invalid:focus ~ span {
   border-radius: 30px;
   background-color: rgb(230, 230, 230);
   color: rgb(255, 255, 255);
+  height: 100vh;
 }
 .admin-page .admin-container .datas table {
   border-radius: 1rem;
@@ -2770,6 +2771,9 @@ input:invalid:focus ~ span {
 .admin-page .admin-container .datas table .green-background {
   background-color: darkgreen;
   color: rgb(230, 224, 213);
+}
+.admin-page .admin-container .datas table .blue-background {
+  background: darkblue;
 }
 .admin-page .admin-container .datas table th {
   text-transform: uppercase;

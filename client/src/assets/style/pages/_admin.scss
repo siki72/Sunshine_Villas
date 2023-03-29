@@ -57,6 +57,7 @@
       border-radius: 30px;
       background-color: rgb(230, 230, 230);
       color: $color1;
+      height: 100vh;
 
       table {
         border-radius: 1rem;
@@ -73,6 +74,9 @@
         .green-background {
           background-color: darkgreen;
           color: rgb(230, 224, 213);
+        }
+        .blue-background {
+          background: darkblue;
         }
       }
       table th {
