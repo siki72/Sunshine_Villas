@@ -36,14 +36,14 @@ const Home_section4 = () => {
             <h4>#Let's get social</h4>
           </li>
           <li>
-            <a href="https://www.instagram.com">
-              <FontAwesomeIcon className="media-icons" icon={faInstagram} />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com">
-              <FontAwesomeIcon className="media-icons" icon={faFacebook} />
-            </a>
+            <div>
+              <a href="https://www.facebook.com">
+                <FontAwesomeIcon className="media-icons" icon={faFacebook} />
+              </a>
+              <a href="https://www.instagram.com">
+                <FontAwesomeIcon className="media-icons" icon={faInstagram} />
+              </a>
+            </div>
           </li>
         </ul>
       </div>

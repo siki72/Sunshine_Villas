@@ -24,7 +24,9 @@
       text-align: center;
       @media screen and (min-width: $breakPoint-Desktop) {
         display: inline-flex;
-        gap: 0.5rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 80%;
       }
     }
   }

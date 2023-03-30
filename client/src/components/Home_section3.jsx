@@ -5,15 +5,7 @@ const Home_section3 = () => {
   return (
     <div className="section_3">
       <div className="section_3_grid">
-        <div
-          className="img"
-          style={{
-            backgroundImage: `url(./img/home/section_2.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div className="img"></div>
         <div className="text">
           <h2>Discover Zanzibar</h2>
           <p>

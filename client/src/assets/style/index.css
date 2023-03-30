@@ -1592,7 +1592,9 @@ body {
 @media screen and (min-width: 1024px) {
   .section_2 .main_select .villas-cards {
     display: inline-flex;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 80%;
   }
 }
 
@@ -1615,7 +1617,7 @@ body {
   }
   .card-container:hover {
     box-shadow: 0px 0px 6px 0px #424141;
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 }
 .card-container img {
@@ -1730,37 +1732,36 @@ body {
 }
 
 .section_3 {
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 8px #515a5b;
-  margin-top: 40px;
-}
-@media screen and (max-width: 538px) {
-  .section_3 {
-    margin: 0;
-  }
 }
 .section_3 .section_3_grid {
-  /*     @media screen and (max-width: 450px) {
-    display: block;
-  } */
-  display: grid;
-  grid-template-columns: 70% 30%;
+  /*     display: grid;
+  grid-template-columns: 70% 30%; */
 }
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 1024px) {
   .section_3 .section_3_grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 60% 40%;
   }
 }
 .section_3 .section_3_grid .img {
+  background-image: url("../img/home/section_2.jpg");
   width: 100%;
-  height: 100%;
+  height: 25rem;
+  background-size: 175%;
+  background-repeat: no-repeat;
+  background-position: left;
 }
-@media screen and (max-width: 630px) {
+@media screen and (min-width: 1024px) {
   .section_3 .section_3_grid .img {
-    display: none;
+    height: 100%;
+    background-size: 148%;
+    background-position: center;
   }
 }
 .section_3 .section_3_grid .text {
+  text-align: center;
   padding: 55px;
   background-color: rgb(30, 29, 29);
   color: #878787;
@@ -1768,18 +1769,8 @@ body {
   font-family: "font-rob400", sans-serif;
   line-height: 1.75rem;
 }
-@media screen and (max-width: 690px) {
-  .section_3 .section_3_grid .text {
-    text-align: center;
-  }
-}
 .section_3 .section_3_grid .text > * {
   margin-top: 40px;
-}
-@media screen and (max-width: 538px) {
-  .section_3 .section_3_grid .text {
-    padding: 15px;
-  }
 }
 .section_3 .section_3_grid .text h2 {
   font-family: "font-pop200", sans-serif;
@@ -1787,20 +1778,10 @@ body {
   line-height: 2.875rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 630px) {
-  .section_3 .section_3_grid .text h2 {
-    font-size: 2rem;
-  }
-}
 .section_3 .section_3_grid .text p {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
-}
-@media screen and (max-width: 630px) {
-  .section_3 .section_3_grid .text p {
-    font-size: 0.7rem;
-  }
 }
 .section_3 .section_3_grid .text .explore-tours button {
   background-color: transparent;
@@ -1820,77 +1801,76 @@ body {
 }
 
 .section_4 {
-  margin: 60px auto;
+  background-color: rgb(255, 255, 255);
   text-align: center;
+  margin: 2rem 0;
+  padding: 2rem 0;
 }
 .section_4 .titles_div h2 {
   font-family: "font-pop-bold", sans-serif;
-  font-size: 4.375rem;
-  line-height: 6.25rem;
+  font-size: 2.5rem;
   color: #403f3d;
   text-transform: uppercase;
 }
-@media screen and (max-width: 1050px) {
+@media screen and (min-width: 1024px) {
   .section_4 .titles_div h2 {
-    font-size: 2.5rem;
-  }
-}
-@media screen and (max-width: 340px) {
-  .section_4 .titles_div h2 {
-    font-size: 1.3rem;
+    font-size: 4.375rem;
+    line-height: 6.25rem;
   }
 }
 .section_4 .titles_div p {
   font-family: "font-gildas", sans-serif;
-  font-size: 2.75rem;
-  line-height: 2.75rem;
-  font-weight: 100;
+  font-size: 1.8rem;
   color: #403f3d;
 }
-@media screen and (max-width: 1050px) {
+@media screen and (min-width: 1024px) {
   .section_4 .titles_div p {
-    font-size: 1.8rem;
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+    font-weight: 100;
   }
 }
-@media screen and (max-width: 350px) {
-  .section_4 .titles_div p {
-    font-size: 1rem;
-  }
-}
-.section_4 .reviews-grid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 70% 30%;
-}
-@media screen and (max-width: 1050px) {
+@media screen and (min-width: 768px) {
   .section_4 .reviews-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section_4 .reviews-grid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
   }
 }
 .section_4 .reviews-grid .swiper {
+  display: none;
   transition: 0.7s;
 }
-@media screen and (max-width: 670px) {
+@media screen and (min-width: 1024px) {
   .section_4 .reviews-grid .swiper {
-    display: none;
+    margin: 1rem auto;
+    width: 100%;
+    display: block;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 768px) {
   .section_4 .reviews-grid .swiper {
-    max-width: 80%;
+    margin: 1rem auto;
+    width: 100%;
+    display: block;
   }
 }
 .section_4 .reviews-grid .swiper:hover {
   box-shadow: 0px 0px 10px 2px #989393;
 }
+.section_4 .reviews-grid .trip-logo {
+  margin: 2rem 0;
+}
 .section_4 .reviews-grid .stars img {
   width: 11rem;
   transition: 0.4s;
-}
-@media screen and (max-width: 1050px) {
-  .section_4 .reviews-grid .stars img {
-    margin-top: 30px;
-  }
 }
 .section_4 .reviews-grid .stars img:hover {
   transform: scale(1.2);
@@ -1905,39 +1885,38 @@ body {
           clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 70%);
 }
 .section_4 .get_media ul {
-  min-width: 60%;
   display: flex;
-  justify-content: space-around;
-}
-@media screen and (max-width: 1090px) {
-  .section_4 .get_media ul {
-    min-width: 100%;
-  }
-}
-@media screen and (max-width: 1090px) {
-  .section_4 .get_media ul {
-    display: block;
-  }
-  .section_4 .get_media ul > * {
-    margin-top: 20px;
-  }
+  flex-direction: column;
 }
 .section_4 .get_media ul li h4 {
   font-family: "font-pop200", sans-serif;
-  font-size: 3.188rem;
-  line-height: 3.188rem;
+  font-size: 2.188rem;
+  line-height: 2.188rem;
   color: rgb(255, 255, 255);
 }
+@media screen and (min-width: 768px) {
+  .section_4 .get_media ul li h4 {
+    font-size: 3.188rem;
+    line-height: 3.188rem;
+  }
+}
 .section_4 .get_media ul li a {
-  font-size: 44px;
+  font-size: 1rem;
 }
 .section_4 .get_media ul li a :hover {
   animation: up 0.4s ease forwards;
 }
 .section_4 .get_media ul .media-icons {
-  font-size: 2.813rem;
+  font-size: 1.813rem;
   line-height: 2.813rem;
   color: rgb(255, 255, 255);
+  margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .section_4 .get_media ul .media-icons {
+    font-size: 2.888rem;
+    line-height: 2.988rem;
+  }
 }
 
 .swiper {
