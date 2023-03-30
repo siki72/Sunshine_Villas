@@ -2428,9 +2428,12 @@ input:invalid:focus ~ span {
 .show-error-msg {
   text-transform: uppercase;
   visibility: visible;
-  width: 100%;
-  color: darkred;
+  width: 60%;
+  margin: 1rem auto;
+  color: rgb(245, 0, 0);
   text-align: center;
+  font-size: 1rem;
+  border-radius: 2rem;
 }
 
 .account-container {
@@ -2477,48 +2480,62 @@ input:invalid:focus ~ span {
   background-color: rgb(237, 230, 230);
 }
 .account-container .container .login {
-  max-width: 40%;
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  border-radius: 2rem;
+  width: 40%;
   background-color: rgb(255, 255, 255);
-  margin: 1rem auto;
+  border-radius: 2rem;
+  margin: 3rem auto;
   font-family: "font-pop200", sans-serif;
   font-size: 1.875rem;
   line-height: 2.875rem;
   color: #1c1c1c;
   text-align: center;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
-.account-container .container .login h3 {
-  color: darkcyan;
+.account-container .container .login h1 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.5rem;
+  line-height: 7rem;
 }
 .account-container .container .login .row {
-  width: 60%;
-  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
-  margin: 2rem auto;
+  align-items: center;
+  background-color: rgb(39, 149, 54);
+  width: 80%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  border-radius: 2rem;
 }
-.account-container .container .login .row h4 {
+.account-container .container .login .row h2 {
   font-family: "font-rob300", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
 }
 .account-container .container .login .row p {
-  font-size: 1rem;
+  font-family: "font-rob300", sans-serif;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
 }
 .account-container .container .login .row label {
   font-family: "font-rob300", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
 }
 .account-container .container .login .row input {
-  padding-left: 1rem;
+  margin: 1rem 0;
+  padding: 0.2rem 0.2rem 0.3rem 1rem;
   width: 60%;
   font-size: 1rem;
-  background-color: rgb(237, 230, 230);
+  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
 }
-.account-container .container .login h2 {
+.account-container .container .login h1 {
   font-family: "font-gildas", sans-serif;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 7rem;
 }
 .account-container .container .login .send {
@@ -2715,7 +2732,6 @@ input:invalid:focus ~ span {
 .admin-page .admin-container .dashboard {
   margin-top: 4rem;
   color: rgb(255, 255, 255);
-  height: 50vh;
   background-color: rgb(34, 34, 34);
   margin-left: 2rem;
 }
@@ -2753,7 +2769,6 @@ input:invalid:focus ~ span {
   border-radius: 30px;
   background-color: rgb(230, 230, 230);
   color: rgb(255, 255, 255);
-  height: 100vh;
 }
 .admin-page .admin-container .datas table {
   border-radius: 1rem;

@@ -26,25 +26,25 @@ const User_profile = () => {
     <div>
       {!isEditing ? (
         <div className="login">
-          <h3>Your profile :</h3>
+          <h1>Your profile :</h1>
           <div className="row">
-            <h4>Firstname :</h4>
+            <h2>Firstname :</h2>
             <p> {userDatas.firstname} </p>
           </div>
           <div className="row">
-            <h4>Last name :</h4>
+            <h2>Last name :</h2>
             <p> {userDatas.lastname} </p>
           </div>
           <div className="row">
-            <h4>Email :</h4>
+            <h2>Email :</h2>
             <p> {userDatas.email} </p>
           </div>
           <div className="row">
-            <h4>Phone :</h4>
+            <h2>Phone :</h2>
             <p> {userDatas?.phone} </p>
           </div>
           <div className="row">
-            <h4>Location :</h4>
+            <h2>Location :</h2>
             <p> {userDatas?.location} </p>
           </div>
           <button className="send" onClick={() => setIsEditng(true)}>

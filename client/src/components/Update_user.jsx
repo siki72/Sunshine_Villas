@@ -5,6 +5,8 @@ import { UserContext } from "../users/UserContext.jsx";
 import utils from "../users/utilsFunctions.js";
 const Update_user = ({ data, edit }) => {
   const [pending, setPending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [showError, setShowError] = useState("");
 
   const formRef = useRef();
 
@@ -21,7 +23,8 @@ const Update_user = ({ data, edit }) => {
     // Vérifier que tous les champs requis sont remplis
     for (const field of requiredFields) {
       if (!formRef.current[field].value) {
-        alert(`Field ${field} cannot be empty`);
+        setErrorMsg(true);
+        setShowError(`Field ${field} cannot be empty`);
         return;
       }
     }
@@ -62,8 +65,14 @@ const Update_user = ({ data, edit }) => {
 
   return (
     <div className="login">
-      <h3>Update your profile</h3>
-      <form action="" method="post" ref={formRef} onSubmit={handleUpdateUser}>
+      <h1>Update your profile</h1>
+      <form
+        action=""
+        method="post"
+        ref={formRef}
+        onChange={() => setShowError(false)}
+        onSubmit={handleUpdateUser}
+      >
         <div className="row">
           <label htmlFor="firstname">First name</label>
           <input
@@ -110,6 +119,7 @@ const Update_user = ({ data, edit }) => {
             id="location"
           />
         </div>
+        {errorMsg && <div className="show-error-msg">{showError}</div>}
         <button className={pending ? "send-notAllowed" : "send"} type="submit">
           {pending ? "Saving datas.." : "Save"}
         </button>

@@ -43,52 +43,65 @@
     }
 
     .login {
-      max-width: 40%;
-      h3 {
-        color: darkcyan;
-      }
-      padding: 1rem;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-        0 1px 2px 0 rgba(0, 0, 0, 0.06);
-      .row {
-        width: 60%;
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: space-between;
-        margin: 2rem auto;
-
-        h4 {
-          font-family: $rob3;
-          font-size: 1rem;
-        }
-
-        p {
-          font-size: 1rem;
-        }
-        label {
-          font-family: $rob3;
-          font-size: 1rem;
-        }
-
-        input {
-          padding-left: 1rem;
-          width: 60%;
-          font-size: 1rem;
-          background-color: rgb(237, 230, 230);
-        }
-      }
-      border-radius: 2rem;
+      width: 40%;
       background-color: $color1;
-
-      margin: 1rem auto;
+      border-radius: 2rem;
+      margin: 3rem auto;
       font-family: $pop2;
       font-size: 1.875rem;
       line-height: 2.875rem;
       color: $color4;
       text-align: center;
-      h2 {
+      padding: 1rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      h1 {
         font-family: $gildas;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
+        line-height: 7rem;
+      }
+
+      .row {
+        @include between;
+        background-color: rgb(39, 149, 54);
+        width: 80%;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        border-radius: 2rem;
+
+        h2 {
+          font-family: $rob3;
+          font-size: 1.2rem;
+          color: $color1;
+          font-weight: 900;
+        }
+
+        p {
+          font-family: $rob3;
+          font-size: 1.2rem;
+          color: $color1;
+          font-weight: 900;
+        }
+        label {
+          font-family: $rob3;
+          font-size: 1.2rem;
+          color: $color1;
+          font-weight: 900;
+        }
+
+        input {
+          margin: 1rem 0;
+          padding: 0.2rem 0.2rem 0.3rem 1rem;
+          width: 60%;
+          font-size: 1rem;
+          background-color: rgb(255, 255, 255);
+          border-radius: 2rem;
+        }
+      }
+
+      h1 {
+        font-family: $gildas;
+        font-size: 2.5rem;
         line-height: 7rem;
       }
 
