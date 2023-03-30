@@ -30,12 +30,16 @@
     }
 
     .text {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        padding: 3rem 0 0 3rem;
+      }
       h2 {
         @media screen and (min-width: $breakPoint-Tablet) {
           text-align: left;
           font-size: 2.875rem;
           line-height: 2.75rem;
         }
+
         font-family: $pop2;
         line-height: 2.5rem;
         font-size: 2.5rem;

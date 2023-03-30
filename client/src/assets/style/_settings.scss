@@ -163,6 +163,12 @@ body {
   min-width: 200px;
   min-height: 200px;
 }
+.swiper-pagination,
+.swiper-pagination-clickable,
+.swiper-pagination-bullets,
+.swiper-pagination-horizontal {
+  height: 2rem;
+}
 
 .active-nav {
   background-color: $color2;

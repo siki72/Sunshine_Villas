@@ -117,6 +117,13 @@ body {
   min-height: 200px;
 }
 
+.swiper-pagination,
+.swiper-pagination-clickable,
+.swiper-pagination-bullets,
+.swiper-pagination-horizontal {
+  height: 2rem;
+}
+
 .active-nav {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
@@ -1495,6 +1502,11 @@ body {
     margin-top: 6rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .section_1 .main-villa .text {
+    padding: 3rem 0 0 3rem;
+  }
+}
 .section_1 .main-villa .text h2 {
   font-family: "font-pop200", sans-serif;
   line-height: 2.5rem;
@@ -1805,6 +1817,11 @@ body {
   text-align: center;
   margin: 2rem 0 0 0;
   padding: 2rem 0;
+}
+@media screen and (min-width: 1024px) {
+  .section_4 {
+    margin: 0 auto;
+  }
 }
 .section_4 .titles_div h2 {
   font-family: "font-pop-bold", sans-serif;

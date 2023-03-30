@@ -1,4 +1,7 @@
 .section_4 {
+  @media screen and (min-width: $breakPoint-Desktop) {
+    margin: 0 auto;
+  }
   background-color: $color1;
   text-align: center;
   margin: 2rem 0 0 0;
