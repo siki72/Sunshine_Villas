@@ -3,40 +3,41 @@
   overflow: hidden;
   height: 100vh;
   .main_img {
+    background-image: url("../img/home/zanzibar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
     height: 100%;
     width: 100%;
     @include flex;
 
     div {
-      @media screen and (max-width: 1050px) {
-        font-size: 2rem;
-      }
-      @media screen and (max-width: 570px) {
-        font-size: 1.2rem;
-      }
-      @media screen and (max-width: 450px) {
-        font-size: 1rem;
-      }
-
-      font-family: $pop7;
-      color: rgb(255, 255, 255);
-      font-size: 4rem;
       text-align: center;
-      line-height: 7rem;
-      font-weight: 900;
+      h1 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 8.125rem;
+          line-height: 6.25rem;
+        }
+        font-family: $pop7;
+        color: rgb(255, 255, 255);
+        font-size: 3rem;
+        line-height: 4rem;
+        font-weight: 300;
+      }
       opacity: 0;
       transform: translateY(-500px);
       animation: headeranim 2s ease forwards;
       h2 {
-        @media screen and (max-width: 570px) {
-          font-size: 1.4rem;
-          @media screen and (max-width: 450px) {
-            font-size: 1rem;
-          }
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 3.625rem;
+          line-height: 3.625rem;
         }
         font-family: $gildas;
         font-weight: 200;
-        font-size: 3.5rem;
+        font-size: 2.1rem;
+        color: rgb(255, 255, 255);
+        font-weight: 300;
+        margin: 3rem 0;
       }
 
       .button {

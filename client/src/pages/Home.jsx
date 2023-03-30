@@ -11,14 +11,7 @@ const Home = () => {
   return (
     <div>
       <div className="header">
-        <div
-          style={{
-            backgroundImage: `url(../img/home/zanzibar.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="main_img"
-        >
+        <div className="main_img">
           <div>
             <h1>PRIVATE LUXURY VILLAS</h1>
             <h2>Jambiani beach, Zanzibar.</h2>

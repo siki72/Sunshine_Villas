@@ -82,7 +82,7 @@
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(237, 230, 230);
 }
 
 .error {
@@ -879,6 +879,10 @@ body {
   height: 100vh;
 }
 .header .main_img {
+  background-image: url("../img/home/zanzibar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
   height: 100%;
   width: 100%;
   display: flex;
@@ -886,44 +890,36 @@ body {
   align-items: center;
 }
 .header .main_img div {
-  font-family: "font-pop-bold", sans-serif;
-  color: rgb(255, 255, 255);
-  font-size: 4rem;
   text-align: center;
-  line-height: 7rem;
-  font-weight: 900;
   opacity: 0;
   transform: translateY(-500px);
   animation: headeranim 2s ease forwards;
 }
-@media screen and (max-width: 1050px) {
-  .header .main_img div {
-    font-size: 2rem;
-  }
+.header .main_img div h1 {
+  font-family: "font-pop-bold", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 300;
 }
-@media screen and (max-width: 570px) {
-  .header .main_img div {
-    font-size: 1.2rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  .header .main_img div {
-    font-size: 1rem;
+@media screen and (min-width: 768px) {
+  .header .main_img div h1 {
+    font-size: 8.125rem;
+    line-height: 6.25rem;
   }
 }
 .header .main_img div h2 {
   font-family: "font-gildas", sans-serif;
   font-weight: 200;
-  font-size: 3.5rem;
+  font-size: 2.1rem;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  margin: 3rem 0;
 }
-@media screen and (max-width: 570px) {
+@media screen and (min-width: 768px) {
   .header .main_img div h2 {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (max-width: 570px) and (max-width: 450px) {
-  .header .main_img div h2 {
-    font-size: 1rem;
+    font-size: 3.625rem;
+    line-height: 3.625rem;
   }
 }
 .header .main_img div .button {
@@ -1463,105 +1459,80 @@ body {
 }
 
 .section_1 {
-  max-width: 90%;
-  padding: 40px;
-  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: rgb(255, 255, 255);
 }
 .section_1 .main-villa {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display: block;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .section_1 .main-villa {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 }
 .section_1 .main-villa .section_1_img {
-  box-shadow: 0 0 3px black;
-  border-radius: 10px;
+  background-image: url("../img/home/section_1.jpeg");
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 30rem;
+  width: 100%;
+  background-size: 180%;
+  border-radius: 1rem;
 }
-@media screen and (max-width: 380px) {
+@media screen and (min-width: 768px) {
   .section_1 .main-villa .section_1_img {
-    display: none;
+    background-position: center;
+    background-size: 110%;
   }
 }
-.section_1 .main-villa .text {
-  margin-top: 40px;
-  padding-top: 50px;
-}
-@media screen and (max-width: 1200px) {
-  .section_1 .main-villa .text {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .section_1 .main-villa .text {
-    text-align: center;
+@media screen and (min-width: 1024px) {
+  .section_1 .main-villa .section_1_img {
+    background-size: cover;
+    background-position: left;
+    height: 40rem;
+    margin-top: 6rem;
   }
 }
 .section_1 .main-villa .text h2 {
   font-family: "font-pop200", sans-serif;
-  line-height: 46px;
-  font-size: 46px;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  text-align: center;
 }
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 768px) {
   .section_1 .main-villa .text h2 {
-    font-size: 1.9rem;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 400px) {
-  .section_1 .main-villa .text h2 {
-    font-size: 1rem;
+    text-align: left;
+    font-size: 2.875rem;
+    line-height: 2.75rem;
   }
 }
 .section_1 .main-villa .text p {
-  margin-top: 30px;
+  margin-top: 1.875rem;
   font-family: "font-rob300", sans-serif;
   font-weight: 200;
-  font-size: 16px;
-  line-height: 31px;
+  font-size: 1rem;
+  line-height: 1.938rem;
   color: rgb(102, 102, 102);
-}
-@media screen and (max-width: 1200px) {
-  .section_1 .main-villa .text p {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 520px) {
-  .section_1 .main-villa .text p {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 400px) {
-  .section_1 .main-villa .text p {
-    font-size: 0.8rem;
-    text-align: center;
-  }
+  text-align: left;
 }
 .section_1 .main-villa .text .link-villas {
-  margin-top: 60px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .section_1 .main-villa .text .link-villas {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 520px) {
-  .section_1 .main-villa .text .link-villas {
-    display: block;
-    justify-content: center;
-  }
-  .section_1 .main-villa .text .link-villas > * {
-    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
   }
 }
 .section_1 .main-villa .text .link-villas .button {
+  margin: 1rem auto;
   font-family: "font-rob300", sans-serif;
   font-size: 18px;
   color: rgb(255, 255, 255);
@@ -1572,26 +1543,11 @@ body {
   transition: 0.4s;
   font-size: 14px;
 }
-@media screen and (max-width: 520px) {
-  .section_1 .main-villa .text .link-villas .button {
-    display: flex;
-    justify-content: center;
-    max-width: 50%;
-    margin: 0 auto;
-  }
-}
 .section_1 .main-villa .text .link-villas .button:hover {
   transform: scale(1.15);
 }
-.section_1 .main-villa .text .link-villas .check-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (max-width: 400px) {
-  .section_1 .main-villa .text .link-villas .check-div {
-    margin-bottom: 20px;
-  }
+.section_1 .main-villa .text .link-villas .button span {
+  margin: 0 auto;
 }
 .section_1 .main-villa .text .link-villas .check {
   margin-right: 20px;
@@ -1600,98 +1556,86 @@ body {
   line-height: 24px;
   color: #1c1c1c;
 }
-.section_1 .main-villa .section_1_img {
-  background-image: url("../img/home/section_1.jpeg");
-  background-position: center;
-  height: 50rem;
-}
-@media screen and (max-width: 1067px) {
-  .section_1 .main-villa .section_1_img {
-    background-position: left;
-  }
-}
-@media screen and (max-width: 607px) {
-  .section_1 .main-villa .section_1_img {
-    background-position: left;
-    height: 30rem;
-  }
-}
 
 .section_2 {
-  max-width: 90%;
-  padding: 40px;
-  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 350px) {
+@media screen and (min-width: 768px) {
   .section_2 {
-    padding: 0;
-    max-width: 100%;
-  }
-}
-@media screen and (max-width: 350px) {
-  .section_2 a {
-    pointer-events: none;
-    cursor: pointer;
+    padding-top: 2rem;
   }
 }
 .section_2 .main_select {
   text-align: center;
 }
-@media screen and (max-width: 890px) {
-  .section_2 .main_select {
-    display: none;
-  }
-}
 .section_2 .main_select h2 {
+  text-align: center;
   font-family: "font-pop200", sans-serif;
-  font-size: 46px;
-  line-height: 46px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   color: #1c1c1c;
 }
-@media screen and (max-width: 520px) {
+@media screen and (min-width: 768px) {
   .section_2 .main_select h2 {
-    font-size: 2rem;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 1024px) {
   .section_2 .main_select h2 {
-    font-size: 1.3rem;
+    margin-bottom: 2rem;
   }
 }
 .section_2 .main_select .villas-cards {
-  display: flex;
+  text-align: center;
 }
-@media screen and (max-width: 1350px) {
+@media screen and (min-width: 1024px) {
   .section_2 .main_select .villas-cards {
-    display: block;
-    max-width: 50%;
-    margin: 0 auto;
+    display: inline-flex;
+    gap: 0.5rem;
   }
 }
 
 .card-container {
   position: relative;
-  height: 950px;
-  margin-top: 40px;
+  min-height: 32rem;
   width: 100%;
-  border: 1px solid rgb(239, 234, 234);
-  border-radius: 10px;
-  padding: 15px;
-  margin-left: 2rem;
-  transition: 0.4s;
+  transition: 0.5s;
 }
-@media screen and (max-width: 350px) {
+@media screen and (min-width: 768px) {
   .card-container {
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
+    height: 48rem;
   }
 }
-.card-container:hover {
-  box-shadow: 0px 0px 6px 0px #424141;
-  transform: scale(1.05);
+@media screen and (min-width: 1024px) {
+  .card-container {
+    min-height: 100%;
+    height: 60rem;
+    box-shadow: 0px 0px 6px 1px #c7bdbd;
+  }
+  .card-container:hover {
+    box-shadow: 0px 0px 6px 0px #424141;
+    transform: scale(1.05);
+  }
+}
+.card-container img {
+  padding: 0.3rem;
+  width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .card-container img {
+    width: 90%;
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 60%;
+    -o-object-position: left;
+       object-position: left;
+  }
 }
 .card-container .card-infos > * {
   margin-top: 1.5rem;
@@ -1730,12 +1674,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.75rem;
   color: #878787;
-}
-@media screen and (max-width: 400px) {
-  .card-container .card-infos .card-desc {
-    font-size: 0.8rem;
-    padding: 0 10px;
-  }
+  max-width: 90%;
+  margin: 2rem auto;
 }
 .card-container .card-booking {
   min-width: 100%;
@@ -1754,14 +1694,39 @@ body {
   color: rgb(1, 1, 1);
   transition: 0.4s;
 }
-@media screen and (max-width: 480px) {
-  .card-container .card-booking span {
-    font-size: 0.7rem;
-  }
-}
 .card-container .card-booking span:hover {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
+}
+
+.card-container:first-child {
+  min-height: 47rem;
+}
+@media screen and (min-width: 768px) {
+  .card-container:first-child {
+    height: 80rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-container:first-child {
+    min-height: 100%;
+    height: 60rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-container:first-child img {
+    height: 80%;
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-container:first-child img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 60%;
+    -o-object-position: left;
+       object-position: left;
+  }
 }
 
 .section_3 {

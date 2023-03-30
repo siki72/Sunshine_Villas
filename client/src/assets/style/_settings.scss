@@ -47,6 +47,9 @@ $rob3: "font-rob300", sans-serif;
 $rob4: "font-rob400", sans-serif;
 $pop4: "font-pop400", sans-serif;
 
+$breakPoint-Tablet: 768px;
+$breakPoint-Desktop: 1024px;
+
 $color1: rgb(255, 255, 255);
 $color2: rgb(1, 1, 1);
 $color3: rgb(102, 102, 102);
@@ -128,7 +131,7 @@ $color9: rgb(28, 28, 28);
 }
 
 body {
-  background-color: $color1;
+  background-color: rgb(237, 230, 230);
 }
 
 .error {

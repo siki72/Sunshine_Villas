@@ -7,16 +7,8 @@ const CardVilla = ({ card }) => {
   return (
     <div className="card-container">
       <Link to={"/villas/" + card.id}>
-        <div
-          className="villa-pic"
-          style={{
-            backgroundImage: `url(${card.url})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "left",
-            backgroundSize: "cover",
-            height: "600px",
-          }}
-        ></div>
+        <img src={card.url} alt="villas pcitures" />
+        <div className="villa-pic"></div>
         <div className="card-infos">
           <p>{card.name}</p>
           <div className="guests">
