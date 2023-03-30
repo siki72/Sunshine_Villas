@@ -69,6 +69,7 @@ const Message_form = () => {
               id="fullName"
               autoComplete="false"
               placeholder="Your Name"
+              required={true}
             />
           </div>
           <div className="input-groups email">
@@ -79,6 +80,7 @@ const Message_form = () => {
               id="email"
               autoComplete="false"
               placeholder="Your Email"
+              required={true}
             />
           </div>
           <div className="input-groups message">
@@ -91,6 +93,7 @@ const Message_form = () => {
               id="message"
               cols="30"
               rows="6"
+              required={true}
             ></textarea>
           </div>
 

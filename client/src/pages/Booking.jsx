@@ -4,12 +4,10 @@ import Swiper_img_1 from "../components/swiper/imgs/Swiper_img_1";
 import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2";
 import Swiper_img_3 from "../components/swiper/imgs/Swiper_img_3";
 import { format } from "date-fns";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
   faHouse,
-  faPerson,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";

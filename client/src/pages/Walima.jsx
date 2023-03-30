@@ -49,10 +49,10 @@ const Walima = () => {
       </div>
       <div className="walima-main">
         <div className="text">
-          <h3>
+          <h2>
             Our restaurant ‘Walima’ stays with the coastal theme and means
             ‘sail’ in English, inspired by the awnings that cover the building,
-          </h3>
+          </h2>
           <p>
             The concept envisages serving meals based on fresh ingredients
             accompanied by a good selection of wines and cocktails, in
@@ -77,7 +77,7 @@ const Walima = () => {
       <div className="swahili">
         <div className="swahili-img"></div>
         <div className="swahili-text">
-          <h4>Sunshine Villas Swahili</h4>
+          <h3>Sunshine Villas Swahili</h3>
           <p>
             The perfect opportunity to try authentic local cuisine! Book a table
             at La Shira Restaurant for a delicious all-you-can-eat buffet
@@ -87,7 +87,7 @@ const Walima = () => {
       </div>
       <div className="reservation">
         <div>
-          <h4>Come and try fresh food</h4>
+          <h3>Come and try fresh food</h3>
           <p>
             Simply book your table now online, it only takes 1 minute, then let
             our teams take care of the rest.
@@ -100,12 +100,14 @@ const Walima = () => {
             name="name"
             placeholder="Your Name"
             className="name"
+            required={true}
           />
           <input
             type="email"
             name="email"
             className="email"
             placeholder="Your Email"
+            required={true}
           />
           <input
             type="date"
@@ -114,8 +116,9 @@ const Walima = () => {
             min={getTodayDate()}
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            required={true}
           />
-          <select name="guests" id="num-guests">
+          <select name="guests" id="num-guests" required={true}>
             <option value="1">1 person</option>
             <option value="2">2 person</option>
             <option value="3">3 person</option>

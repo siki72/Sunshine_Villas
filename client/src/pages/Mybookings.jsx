@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
-import index from "../components/Routes/index";
 import { format } from "date-fns";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
@@ -39,7 +38,7 @@ const Mybookings = () => {
       <ToastContainer />
       {!myBookings.length ? (
         <div className="login">
-          <h2>Ooops ! {user.name} ..</h2>
+          <h1>Ooops ! {user.name} ..</h1>
           you have no reservation for the moment
           <Link to={"/villas/1"}>
             <button>

@@ -159,7 +159,7 @@ const Villa_1_bed = () => {
 
       <div className="container">
         <div className="title-choose">
-          <h3>Choose your stay</h3>
+          <h1>Choose your stay</h1>
         </div>
 
         <div className="choose-villas">

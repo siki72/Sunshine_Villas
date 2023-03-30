@@ -10,7 +10,7 @@ const Staff = () => {
           <img src="../img/home/manager.png" alt="manager_pic" />
         </div>
         <div className="contacts">
-          <h3>Ali Missoum</h3>
+          <h2>Ali Missoum</h2>
           <a href="mailto:admin@admin.com">
             <FontAwesomeIcon icon={faEnvelope} />
             admin@admin.com
@@ -25,7 +25,7 @@ const Staff = () => {
           <img src="../img/home/assistante.jpg" alt="manager_pic" />
         </div>
         <div className="contacts">
-          <h3>Alicia Missoum</h3>
+          <h2>Alicia Missoum</h2>
           <a href="mailto:admin@admin.com">
             <FontAwesomeIcon icon={faEnvelope} />
             Alicia@sunshine.com

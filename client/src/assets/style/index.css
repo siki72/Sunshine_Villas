@@ -698,19 +698,19 @@ body {
     width: 5rem;
   }
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+.contact-page .contact-header .staff-contact-box .staff .contacts h2 {
   font-family: "font-gildas", sans-serif;
   font-size: 1.563rem;
   line-height: 2.813rem;
   color: #7a7a7a;
 }
 @media screen and (max-width: 1036px) {
-  .contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+  .contact-page .contact-header .staff-contact-box .staff .contacts h2 {
     font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 856px) {
-  .contact-page .contact-header .staff-contact-box .staff .contacts h3 {
+  .contact-page .contact-header .staff-contact-box .staff .contacts h2 {
     font-size: 1rem;
   }
 }
@@ -994,14 +994,14 @@ body {
   padding: 30px;
   background-color: rgb(237, 237, 237);
 }
-.booking .container .title-choose h3 {
+.booking .container .title-choose h1 {
   font-size: 2.875rem;
   color: #1c1c1c;
   line-height: 2.875rem;
   font-family: "font-pop200", sans-serif;
 }
 @media screen and (max-width: 430px) {
-  .booking .container .title-choose h3 {
+  .booking .container .title-choose h1 {
     font-size: 1.5rem;
   }
 }
@@ -2586,7 +2586,7 @@ input:invalid:focus ~ span {
 .container-bookings .reservation-grid .res-infos > * {
   margin: 10px;
 }
-.container-bookings .reservation-grid .res-infos h2 {
+.container-bookings .reservation-grid .res-infos h1 {
   font-size: 1rem;
   font-family: "font-pop-bold", sans-serif;
   color: #605a5b;
@@ -3030,7 +3030,7 @@ input:invalid:focus ~ span {
     min-width: 80%;
   }
 }
-.walima-page .walima-main .text h3 {
+.walima-page .walima-main .text h2 {
   font-family: "font-pop200", sans-serif;
   font-size: 2.875rem;
   line-height: 2.875rem;
@@ -3038,17 +3038,17 @@ input:invalid:focus ~ span {
   margin-bottom: 2rem;
 }
 @media screen and (max-width: 900px) {
-  .walima-page .walima-main .text h3 {
+  .walima-page .walima-main .text h2 {
     font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 730px) {
-  .walima-page .walima-main .text h3 {
+  .walima-page .walima-main .text h2 {
     font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 530px) {
-  .walima-page .walima-main .text h3 {
+  .walima-page .walima-main .text h2 {
     font-size: 1rem;
   }
 }
@@ -3103,7 +3103,7 @@ input:invalid:focus ~ span {
 .walima-page .swahili .swahili-text {
   padding: 40px;
 }
-.walima-page .swahili .swahili-text h4 {
+.walima-page .swahili .swahili-text h3 {
   font-family: "font-pop200", sans-serif;
   font-size: 2.875rem;
   line-height: 2.875rem;
@@ -3111,7 +3111,7 @@ input:invalid:focus ~ span {
   margin-bottom: 3rem;
 }
 @media screen and (max-width: 930px) {
-  .walima-page .swahili .swahili-text h4 {
+  .walima-page .swahili .swahili-text h3 {
     font-size: 2rem;
     text-align: center;
   }
