@@ -1803,7 +1803,7 @@ body {
 .section_4 {
   background-color: rgb(255, 255, 255);
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   padding: 2rem 0;
 }
 .section_4 .titles_div h2 {
@@ -1975,63 +1975,60 @@ body {
 }
 
 .section_5 {
-  margin-top: 70px;
-  max-width: 90%;
-  margin: 60px auto;
+  background-color: rgb(255, 255, 255);
   text-align: center;
   min-height: 800px;
 }
-@media screen and (max-width: 450px) {
-  .section_5 {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
-.section_5 .main-section-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-@media screen and (max-width: 450px) {
-  .section_5 .main-section-grid {
-    padding: 0;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 930px) {
+@media screen and (min-width: 1024px) {
   .section_5 .main-section-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
-.section_5 .main-section-grid .read {
-  padding: 30px 50px;
+.section_5 .main-section-grid .walima {
+  background-image: url("../img/home/restaurent.jpeg");
+  height: 25rem;
+  width: 100%;
+  background-size: cover;
+}
+.section_5 .main-section-grid .sansibility {
+  background-image: url("../img/home/children.jpeg");
+  height: 25rem;
+  width: 100%;
+  background-size: cover;
+}
+@media screen and (min-width: 1024px) {
+  .section_5 .main-section-grid .read {
+    padding: 30px 50px;
+  }
 }
 .section_5 .main-section-grid .read > * {
-  margin-bottom: 40px;
+  margin-top: 2rem;
 }
 .section_5 .main-section-grid .read h3 {
   font-family: "font-pop200", sans-serif;
-  font-size: 2.875rem;
-  line-height: 2.875rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 1024px) {
   .section_5 .main-section-grid .read h3 {
-    font-size: 2rem;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
   }
 }
 .section_5 .main-section-grid .read p {
-  text-align: left;
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
   color: #878787;
-  letter-spacing: 1px;
+  width: 90%;
+  margin: 1rem auto;
 }
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 1024px) {
   .section_5 .main-section-grid .read p {
-    font-size: 0.7rem;
-    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
   }
 }
 .section_5 .main-section-grid .read a :hover {
@@ -2040,6 +2037,7 @@ body {
   animation: up 0.4s ease forwards;
 }
 .section_5 .main-section-grid .read button {
+  margin: 2rem 0;
   cursor: pointer;
   transition: 0.4s;
   font-family: "font-rob300", sans-serif;

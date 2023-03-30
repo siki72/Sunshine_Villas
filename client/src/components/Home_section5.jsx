@@ -5,15 +5,7 @@ const Home_section5 = () => {
   return (
     <div className="section_5">
       <div className="main-section-grid">
-        <div
-          id="restaurent-img"
-          className="walima"
-          style={{
-            backgroundImage: `url(./img/home/restaurent.jpeg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div id="restaurent-img" className="walima"></div>
         <div className="read" id="restaurent-read">
           <h3>Walima ...</h3>
           <p>
@@ -38,15 +30,7 @@ const Home_section5 = () => {
             <button>Read more</button>
           </Link>
         </div>
-        <div
-          className="sansibility"
-          id="susta-img"
-          style={{
-            backgroundImage: `url(./img/home/children.jpeg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div className="sansibility" id="susta-img"></div>
       </div>
     </div>
   );

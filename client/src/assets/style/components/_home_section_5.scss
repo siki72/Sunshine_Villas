@@ -1,52 +1,53 @@
 .section_5 {
-  @media screen and (max-width: 450px) {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  margin-top: 70px;
-  max-width: 90%;
-  margin: 60px auto;
+  background-color: $color1;
   text-align: center;
   min-height: 800px;
 
   .main-section-grid {
-    @media screen and (max-width: 450px) {
-      padding: 0;
-      margin: 0 auto;
-    }
-    @media screen and (max-width: 930px) {
+    @media screen and (min-width: $breakPoint-Desktop) {
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    .walima {
+      background-image: url("../img/home/restaurent.jpeg");
+      height: 25rem;
+      width: 100%;
+      background-size: cover;
+    }
+    .sansibility {
+      background-image: url("../img/home/children.jpeg");
+      height: 25rem;
+      width: 100%;
+      background-size: cover;
+    }
     .read {
-      padding: 30px 50px;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        padding: 30px 50px;
+      }
       > * {
-        margin-bottom: 40px;
+        margin-top: 2rem;
       }
       h3 {
-        @media screen and (max-width: 450px) {
-          font-size: 2rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
         }
         font-family: $pop2;
-        font-size: 2.875rem;
-        line-height: 2.875rem;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
       }
       p {
-        @media screen and (max-width: 450px) {
-          font-size: 0.7rem;
-          text-align: center;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 0.875rem;
+          line-height: 1.75rem;
+          letter-spacing: 1px;
         }
-
-        text-align: left;
         font-family: $rob4;
         font-size: 0.875rem;
         line-height: 1.75rem;
         color: #878787;
-        letter-spacing: 1px;
+        width: 90%;
+        margin: 1rem auto;
       }
 
       a {
@@ -57,6 +58,7 @@
         }
       }
       button {
+        margin: 2rem 0;
         cursor: pointer;
         transition: 0.4s;
         font-family: $rob3;
