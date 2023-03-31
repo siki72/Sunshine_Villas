@@ -25,49 +25,39 @@ const Swiper_img_2 = () => {
       className="mySwiper"
     >
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/2_bed/1.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img">
+          <img
+            src="../img/choose_book/2_bed/1.jpg"
+            alt="picture 2 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/2_bed/2.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img">
+          <img
+            src="../img/choose_book/2_bed/2.jpg"
+            alt="picture 2 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/2_bed/3.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img">
+          <img
+            src="../img/choose_book/2_bed/3.jpg"
+            alt="picture 2 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/2_bed/4.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img">
+          <img
+            src="../img/choose_book/2_bed/4.jpg"
+            alt="picture 2 bed appartement"
+          />
+        </div>
       </SwiperSlide>
     </Swiper>
   );

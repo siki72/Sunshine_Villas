@@ -25,49 +25,39 @@ const Swiper_img_1 = () => {
       className="mySwiper"
     >
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/1_bed/1.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img swipe1">
+          <img
+            src="../img/choose_book/1_bed/1.jpg"
+            alt="picture 1 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/1_bed/2.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img swipe1">
+          <img
+            src="../img/choose_book/1_bed/2.jpg"
+            alt="picture 1 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/1_bed/3.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img swipe1">
+          <img
+            src="../img/choose_book/1_bed/3.jpg"
+            alt="picture 1 bed appartement"
+          />
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <div
-          style={{
-            backgroundImage: `url(../img/choose_book/1_bed/4.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="main_img"
-        ></div>
+        <div className="main_img swipe1">
+          <img
+            src="../img/choose_book/1_bed/4.jpg"
+            alt="picture 1 bed appartement"
+          />
+        </div>
       </SwiperSlide>
     </Swiper>
   );

@@ -148,14 +148,9 @@ const Villa_1_bed = () => {
 
   return (
     <div className="booking">
-      <div
-        style={{
-          backgroundImage: `url(../img/home/choose_villas.jpeg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-        className="main_img"
-      ></div>
+      <div className="header_img">
+        <img src="../img/home/choose_villas.jpeg" alt="general villas view" />
+      </div>
 
       <div className="container">
         <div className="title-choose">

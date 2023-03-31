@@ -1,254 +1,232 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-import jwt from "jsonwebtoken";
-import bodyParser from "body-parser";
-import cookieParser from "cookie-parser";
-import { createPoolConnexion } from "./config/db/connexion.js";
-import argon2 from "argon2";
-import { checkToken } from "./utils/chekToken.js";
+.booking {
+  background-color: $color1;
+  text-align: center;
 
-dotenv.config();
-const app = express();
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-const maxAge = 3 * 24 * 60 * 60 * 1000;
-
-// CORS
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Origin", req.headers.origin);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept"
-  );
-  if ("OPTIONS" == req.method) {
-    res.status(200);
-  } else {
-    next();
+  .main_img img {
+    width: 100%;
+    height: 100%;
   }
-});
-
-// test
-
-/* ************** GET profile **************/
-
-app.get("/profile", (req, res, next) => {
-  try {
-    const { karibu } = req.cookies; // ---> on récupére le cookie par le nom qu'on lui attribué
-    if (karibu) {
-      jwt.verify(
-        karibu,
-        process.env.TOKEN_SECRET,
-        {},
-        async (err, karibuData) => {
-          if (err) throw err;
-          const { name, email, id } = karibuData; // --> on récupére l'ID de notre utilisateur depuis le cookie qui ont été passé dans l'objet JWT
-          res.status(200).json({ name, email, id });
+  .container {
+    .choose-villas-cards {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        display: flex;
+      }
+    }
+    max-width: 90%;
+    margin: 0 auto;
+    > * {
+      margin-bottom: 40px;
+    }
+    .head-div {
+      height: 60px;
+      background-color: rgb(91, 94, 97);
+      width: 100%;
+      h3 {
+        margin-left: 5rem;
+        text-align: left;
+        font-family: $rob4;
+        color: $color1;
+        padding: 10px 0;
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+    .title-choose {
+      margin-top: 25px;
+      padding: 30px;
+      background-color: rgb(237, 237, 237);
+      h1 {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
         }
-      );
-    } else {
-      res.status(404).json("you are not authentificated");
-    }
-  } catch (err) {
-    next(err);
-  }
-});
-
-/****** GET  all villas for card components  *****/
-app.get("/villas", async (req, res, next) => {
-  try {
-    const co = await createPoolConnexion();
-    const [table] = await co.query(`SELECT * FROM villas WHERE 1`);
-    res.json(table);
-  } catch (err) {
-    next(err);
-  }
-});
-
-/***** GET REVIEWS ****/
-app.get("/reviews", async (req, res, next) => {
-  try {
-    const co = await createPoolConnexion();
-    const [table] = await co.query(`SELECT * FROM reveiws WHERE 1`);
-    res.json(table);
-  } catch (err) {
-    next(err);
-  }
-});
-
-/****** get  villa by id *********/
-
-app.get("/villas/:id", async (req, res) => {
-  try {
-    const id = parseInt(req.params.id);
-    console.log(typeof id);
-    if (typeof id === "number") {
-      const co = await createPoolConnexion();
-      const [villa_row] = await co.query(`SELECT * FROM villas WHERE id = ? `, [
-        id,
-      ]);
-
-      res.status(200).json(villa_row[0]);
-    }
-  } catch (e) {
-    res.status(400).json("Bad Request or error id villa");
-  }
-});
-
-/****** add a booking *********/
-app.post("/booking", checkToken, async (req, res, next) => {
-  try {
-    const { checkIn, checkOut, villaId, userId, nights, total, selectedDates } =
-      req.body;
-    const co = await createPoolConnexion();
-    const [reservation] = await co.query(
-      ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price, selected_dates) VALUES(?, ?, ?, ?, ?, ?, ?)`,
-      [userId, villaId, checkIn, checkOut, nights, total, selectedDates]
-    );
-    res.status(200).json(reservation);
-  } catch (err) {
-    next(err);
-  }
-});
-
-/****** Get / bookings  *********/
-
-app.get("/bookings", checkToken, async (req, res) => {
-  try {
-    const { karibu } = req.cookies;
-    jwt.verify(
-      karibu,
-      process.env.TOKEN_SECRET,
-      {},
-      async (err, myTokenData) => {
-        if (err) throw err;
-        const { id } = myTokenData;
-        const co = await createPoolConnexion();
-        const [myBbookings] = await co.query(
-          `SELECT
-    firstname, lastname, name, url,start_date, end_date, total_price, reservations.created_at, reservations.nights, villas.id
-     FROM reservations
-     INNER JOIN users ON reservations.guest_id = users.id 
-     INNER JOIN villas ON reservations.villa_id = villas.id 
-     WHERE guest_id = ?`,
-          [id]
-        );
-        res.json(myBbookings);
+        font-size: 2rem;
+        color: $color4;
+        line-height: 2rem;
+        font-family: $pop2;
       }
-    );
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-/****** POST  NEW USER *********/
-
-app.post("/register", bodyParser.json(), async (req, res) => {
-  const { firstname, lastname, email, password } = req.body;
-
-  try {
-    if (firstname && lastname && email && password) {
-      const [user] = await createPoolConnexion().query(
-        `SELECT email FROM users WHERE email = ?`,
-        [email]
-      );
-
-      if (!user.length) {
-        const hashedPassword = await argon2.hash(password);
-
-        const [userRow] = await createPoolConnexion().query(
-          `
-          INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)
-        `,
-          [firstname, lastname, email, hashedPassword]
-        );
-        res.status(200).json({
-          id: userRow.insertId,
-          firstname,
-        });
-      }
-    } else {
-      res.status(400).json("data deficiencies");
     }
-  } catch (e) {
-    res.status(422).json(e);
-  }
-});
 
-/******* LOGIN ******/
+    .choose-villas {
+    }
+    .title-cards {
+      margin-top: 25px;
+      padding: 30px;
+      background-color: rgb(237, 237, 237);
+      h3 {
+        font-size: 2.875rem;
+        color: $color4;
 
-app.post("/login", bodyParser.json(), async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const [user] = await createPoolConnexion().query(
-      ` SELECT * FROM users WHERE email = ?`,
-      [email]
-    );
-    if (user) {
-      const validPass = await argon2.verify(user[0].password, password);
+        line-height: 2.875rem;
+        font-family: $pop2;
+      }
+    }
+    .choose-villa-card {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        @include around;
+        max-width: 80%;
+      }
+      @include around;
+      max-width: 80%;
+      border: 1px solid $color1;
+      box-shadow: 0px 0px 6px #6e6161;
+      border-radius: 10px;
+      margin: 1.5rem auto;
+      .swipe {
+        height: 40rem;
+        width: 100%;
 
-      if (validPass) {
-        jwt.sign(
-          { email: user[0].email, id: user[0].id, name: user[0].firstname },
-          process.env.TOKEN_SECRET,
-          {},
-          (err, token) => {
-            if (err) throw err;
-            res
-              .cookie("karibu", token, {
-                sameSite: "none",
-                secure: true,
-                maxAge: maxAge,
-              })
-              .json({ id: user[0].id, name: user[0].firstname });
-            res.status(200);
+        /*           max-height: 200px; */
+        .swiper-pagination-bullet-active {
+          background-color: rgb(36, 34, 34);
+        }
+        .swiper-wrapper {
+          width: 500px;
+        }
+        .swiper,
+        .swiper-initialized,
+        .swiper-horizontal,
+        .swiper-backface-hidden,
+        .mySwiper {
+          width: 100%;
+        }
+        max-width: 500px;
+        .swiper-slide .swiper-slide-active {
+          min-width: 100%;
+        }
+        div {
+          border-radius: 5px;
+          min-width: 100%;
+        }
+        .swiper .swiper-initialized,
+        .swiper-horizontal,
+        .swiper-backface-hidden,
+        .mySwiper {
+          max-width: 300px;
+        }
+      }
+
+      //calendar
+      .choose-villa-infos {
+        @include flex;
+        .card-infos {
+          padding: 15px 0;
+          > * {
+            margin-bottom: 15px;
           }
-        );
-      } else {
-        res.status(422).json("pass not ok");
+          h2 {
+            font-family: $pop2;
+            font-size: 1.875rem;
+            line-height: 2.875rem;
+            color: $color4;
+          }
+
+          .guests {
+            > * {
+              margin-bottom: 15px;
+            }
+            .infos {
+              div {
+                width: 50%;
+                margin: 15px auto;
+                display: flex;
+                justify-content: space-around;
+              }
+
+              font-size: 1rem;
+              font-family: $gildas;
+              > * {
+                margin-left: 25px;
+              }
+              .house {
+                position: relative;
+                &::before {
+                  position: absolute;
+                  content: "";
+                  width: 2px;
+                  height: 100%;
+                  background-color: #8a2525;
+                  left: -8px;
+                  bottom: 0;
+                }
+              }
+              .price {
+                position: relative;
+                font-family: $pop2;
+                font-size: 1.375rem;
+                color: $color4;
+                line-height: 1.375rem;
+              }
+            }
+
+            .date {
+              /*  @media screen and (max-width: 377px) {
+                .rdrMonth,
+                .rdrMonthAndYearWrapper,
+                .rdrDateDisplayWrapper {
+                  width: 80%;
+                  margin: 0 auto;
+                }
+              } */
+              .header-book {
+                margin-top: 1rem;
+                font-size: 1rem;
+
+                max-width: 80%;
+                margin: 20px auto;
+                box-shadow: 0 0 5px #746b6b;
+                padding: 10px 15px;
+                .headerSearchText {
+                  margin: 40px 20px;
+                  font-family: $gildas;
+                  font-weight: 700;
+                  font-size: 1.2rem;
+                  letter-spacing: 2px;
+                  color: #767575;
+                }
+              }
+              .link {
+                margin: 20px;
+                p {
+                  font-size: 1rem;
+                  font-family: $rob3;
+                  color: #878788;
+                  line-height: 2rem;
+                }
+
+                button {
+                  cursor: pointer;
+                  padding: 10px 20px;
+                }
+              }
+            }
+          }
+          #button {
+            font-family: "font-rob300", sans-serif;
+            font-size: 0.938rem;
+            color: rgb(56, 54, 54);
+            background: rgb(255, 255, 255);
+            cursor: pointer;
+            line-height: 18px;
+            letter-spacing: 1px;
+            padding: 10px 30px;
+            transition: 0.4s;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: 0.4s linear;
+            &:hover {
+              transform: scale(1.1);
+              background-color: black;
+              color: white;
+              font-family: 1.1rem;
+            }
+            span {
+              color: rgb(53, 139, 53);
+            }
+          }
+        }
       }
-    } else {
-      res.json("not found");
     }
-  } catch (err) {
-    next(err);
   }
-});
-
-/******* logout ******/
-
-app.get("/logout", (req, res) => {
-  res
-    .status(202)
-    .clearCookie("karibu", { sameSite: "none", secure: true })
-    .send("cookie cleared");
-});
-
-/********************  Get availables dates on run for each villa********************/
-
-app.post("/availableDates", async (req, res) => {
-  const { idVilla } = req.body;
-  console.log(idVilla);
-  const co = await createPoolConnexion();
-
-  const [gresyCases] = await co.query(
-    `SELECT selected_dates FROM reservations WHERE villa_id = ?`,
-    [idVilla]
-  );
-  res.json(gresyCases);
-});
-
-app.use(function (err, req, res, next) {
-  console.log(err);
-  res.status(500).json({ message: "internal server error" });
-});
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`listen on port ${PORT}`);
-});
+}
