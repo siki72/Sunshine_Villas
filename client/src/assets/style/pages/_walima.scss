@@ -1,4 +1,5 @@
 .walima-page {
+  background-color: $color1;
   .walima-header {
     background-image: url("../img/walima/1.png");
     background-size: cover;
@@ -6,97 +7,117 @@
     height: 37rem;
     @include flex;
     h1 {
-      @media screen and (max-width: 900px) {
-        font-size: 6rem;
-      }
-      @media screen and (max-width: 456px) {
-        font-size: 4rem;
-      }
-      @media screen and (max-width: 300px) {
-        font-size: 2rem;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 8.125rem;
+        line-height: 6.25rem;
       }
       text-align: center;
       font-family: $pop7;
-      font-size: 8.125rem;
-      line-height: 6.25rem;
+      font-size: 4.125rem;
+      line-height: 4.25rem;
       color: $color1;
     }
   }
   .walima-main {
-    display: flex;
-    max-width: 80%;
-    margin: 5rem auto;
-    @media screen and (max-width: 1250px) {
-      flex-direction: column;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      display: flex;
+      max-width: 80%;
+      margin: 5rem auto;
     }
-    @media screen and (max-width: 530px) {
-      min-width: 100%;
-    }
-
+    width: 80%;
+    margin: 2rem auto;
     .text {
-      @media screen and (max-width: 1250px) {
-        text-align: center;
-        min-width: 80%;
-        margin: 2rem auto;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        max-width: 60%;
+        padding: 0 4rem;
       }
-      @media screen and (max-width: 530px) {
-        font-size: 1rem;
-        min-width: 80%;
-      }
-      max-width: 60%;
-      padding: 0 4rem;
+
       h2 {
-        @media screen and (max-width: 900px) {
-          font-size: 1.8rem;
-        }
-        @media screen and (max-width: 730px) {
-          font-size: 1.4rem;
-        }
-        @media screen and (max-width: 530px) {
-          font-size: 1rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
         }
         font-family: $pop2;
-        font-size: 2.875rem;
-        line-height: 2.875rem;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
         color: $color4;
         margin-bottom: 2rem;
       }
       p {
-        @media screen and (max-width: 900px) {
-          font-size: 0.8rem;
-          min-width: 100%;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 1rem;
+          line-height: 2rem;
+        }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1rem;
+          line-height: 2rem;
         }
         font-family: $rob3;
-        font-size: 1rem;
-        line-height: 1.938rem;
+        font-size: 0.9rem;
+        line-height: 1.98rem;
         color: $color5;
       }
     }
     .walima-img {
+      @media screen and (min-width: $breakPoint-Desktop) {
+      }
       img {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          display: block;
+          height: 40rem;
+          margin: 5rem 0;
+        }
         object-fit: cover;
+        object-position: calc(90%);
         width: 100%;
         height: 100%;
+        display: none;
       }
     }
   }
   .walima-img-swiper {
-    @media screen and (max-width: 930px) {
-      display: none;
+    .swiper {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        width: 40rem;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        width: 90%;
+      }
+      width: 23rem;
+      margin: 0 auto;
     }
-    margin: 4rem;
+    .swiper div {
+      z-index: 0;
+      padding: 0;
+      margin: 0rem 1rem 4rem 0rem;
+      background-color: $color1; //paginations container
+      .swiper-pagination {
+        margin: 2rem auto;
+      }
+    }
     img {
       max-height: 100%;
       width: 100%;
     }
   }
   .swahili {
-    @include between;
-    @media screen and (max-width: 930px) {
-      display: block;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      @include around;
     }
-    margin: 4rem;
+    width: 80%;
+    margin: 0 auto;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      margin: 4rem;
+    }
+
     .swahili-img {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        height: 40rem;
+        width: 170%;
+      }
       background-image: url("../img/walima/swahili.jpeg");
       height: 30rem;
       width: 100%;
@@ -106,54 +127,51 @@
     .swahili-text {
       padding: 40px;
       h3 {
-        @media screen and (max-width: 930px) {
-          font-size: 2rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
           text-align: center;
         }
         font-family: $pop2;
-        font-size: 2.875rem;
-        line-height: 2.875rem;
+        font-size: 1.875rem;
+        line-height: 1.875rem;
         color: $color4;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
       }
       p {
-        @media screen and (max-width: 930px) {
-          font-size: 0.8rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1rem;
+          line-height: 2rem;
+          text-align: center;
         }
         font-family: $rob4;
-        font-size: 1rem;
-        line-height: 2rem;
+        font-size: 0.8rem;
+        line-height: 1.8rem;
         color: $color5;
       }
     }
   }
   .reservation {
-    @media screen and (max-width: 860px) {
-      h4 {
-        font-size: 1rem;
-      }
+    @media screen and (min-width: $breakPoint-Desktop) {
+      padding: 3rem;
+      @include flex;
+      flex-direction: column;
     }
-    padding: 3rem;
-    @include flex;
-    flex-direction: column;
     background-color: $color2;
     div {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        margin-bottom: 3rem;
+        text-align: left;
+      }
       margin-bottom: 3rem;
-      text-align: left;
+      text-align: center;
       h4 {
-        @media screen and (max-width: 860px) {
-          font-size: 2rem;
-          text-align: center;
-        }
         font-family: $pop2;
-        font-size: 2.875rem;
+        font-size: 1.875rem;
         line-height: 2.875rem;
         color: $color1;
       }
       p {
-        @media screen and (max-width: 860px) {
-          display: none;
-        }
         margin-top: 2rem;
         font-family: $rob4;
         font-size: 1rem;
@@ -161,9 +179,6 @@
         color: $color1;
       }
       span {
-        @media screen and (max-width: 860px) {
-          display: none;
-        }
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         font-size: 1.4rem;
         line-height: 2rem;
@@ -172,7 +187,8 @@
     }
 
     form {
-      @media screen and (max-width: 860px) {
+      padding-bottom: 2rem;
+      /*      @media screen and (max-width: 860px) {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -182,17 +198,37 @@
           "date"
           "guests"
           "btn";
+      } */
+      @media screen and (min-width: $breakPoint-Desktop) {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+        grid-template-areas:
+          "firstname email"
+          "date guests "
+          "btn btn";
       }
-      width: 70%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       grid-gap: 2rem;
       grid-template-areas:
-        "firstname email"
-        "date guests "
-        "btn btn";
+        "firstname"
+        "email "
+        "date"
+        "guests"
+        "btn";
+
       input {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          @include flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        width: 80%;
+        margin: 0 auto;
         padding: 0 1rem;
         font-family: $rob4;
         letter-spacing: 1px;
@@ -202,28 +238,19 @@
       input::placeholder,
       [type="date"],
       select {
-        @media screen and (max-width: 690px) {
-          font-size: 0.8rem;
-          padding: 0;
-          height: 3rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          width: 100%;
         }
+        width: 80%;
+        padding: 0 1rem;
+        margin: 0 auto;
         font-size: 1rem;
         color: $color5;
       }
       .name {
-        @media screen and (max-width: 690px) {
-          font-size: 0.8rem;
-          padding: 0;
-          height: 3rem;
-        }
         grid-area: firstname;
       }
       .email {
-        @media screen and (max-width: 690px) {
-          font-size: 0.8rem;
-          padding: 0;
-          height: 3rem;
-        }
         grid-area: email;
       }
       #date {
@@ -233,6 +260,11 @@
         grid-area: guests;
       }
       button {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          width: 100%;
+        }
+        width: 80%;
+        margin: 0 auto;
         font-family: $rob4;
         cursor: pointer;
         letter-spacing: 1px;
@@ -243,9 +275,6 @@
         background-color: rgb(61, 62, 61);
       }
       .success-message {
-        @media screen and (max-width: 690px) {
-          font-size: 0.6rem;
-        }
         color: rgb(255, 255, 255);
         background-color: darkgreen;
       }

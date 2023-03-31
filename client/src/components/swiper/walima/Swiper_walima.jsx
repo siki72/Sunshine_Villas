@@ -28,9 +28,9 @@ const Swiper_walima = () => {
         <img src="../img/walima/p2.png" alt="food picture" />
       </SwiperSlide>
 
-      <SwiperSlide>
+      {/*      <SwiperSlide>
         <img src="../img/walima/p3.png" alt="food picture" />
-      </SwiperSlide>
+      </SwiperSlide> */}
 
       <SwiperSlide>
         <img src="../img/walima/p4.png" alt="food picture" />

@@ -30,6 +30,7 @@
     padding: 0.3rem;
     width: 90%;
   }
+
   .card-infos {
     > * {
       margin-top: 1.5rem;
@@ -100,18 +101,10 @@
     }
   }
 }
-/* .card-container:first-child {
-  @media screen and (min-width: $breakPoint-Desktop) {
-    min-height: 100%;
-    height: 60rem;
-  }
-
+.card-container:nth-child(2) {
   img {
     @media screen and (min-width: $breakPoint-Desktop) {
-      object-fit: cover;
-      height: 60%;
-      object-position: left;
+      object-position: calc(20%);
     }
   }
 }
- */

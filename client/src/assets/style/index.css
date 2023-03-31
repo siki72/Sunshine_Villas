@@ -1651,21 +1651,13 @@ body {
   color: rgb(255, 255, 255);
 }
 
-/* .card-container:first-child {
-  @media screen and (min-width: $breakPoint-Desktop) {
-    min-height: 100%;
-    height: 60rem;
-  }
-
-  img {
-    @media screen and (min-width: $breakPoint-Desktop) {
-      object-fit: cover;
-      height: 60%;
-      object-position: left;
-    }
+@media screen and (min-width: 1024px) {
+  .card-container:nth-child(2) img {
+    -o-object-position: 20%;
+       object-position: 20%;
   }
 }
- */
+
 .section_3 {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 8px #515a5b;
@@ -2910,6 +2902,9 @@ input:invalid:focus ~ span {
   transition: 0.4s;
 }
 
+.walima-page {
+  background-color: rgb(255, 255, 255);
+}
 .walima-page .walima-header {
   background-image: url("../img/walima/1.png");
   background-size: cover;
@@ -2922,118 +2917,125 @@ input:invalid:focus ~ span {
 .walima-page .walima-header h1 {
   text-align: center;
   font-family: "font-pop-bold", sans-serif;
-  font-size: 8.125rem;
-  line-height: 6.25rem;
+  font-size: 4.125rem;
+  line-height: 4.25rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 1024px) {
   .walima-page .walima-header h1 {
-    font-size: 6rem;
-  }
-}
-@media screen and (max-width: 456px) {
-  .walima-page .walima-header h1 {
-    font-size: 4rem;
-  }
-}
-@media screen and (max-width: 300px) {
-  .walima-page .walima-header h1 {
-    font-size: 2rem;
+    font-size: 8.125rem;
+    line-height: 6.25rem;
   }
 }
 .walima-page .walima-main {
-  display: flex;
-  max-width: 80%;
-  margin: 5rem auto;
+  width: 80%;
+  margin: 2rem auto;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 1024px) {
   .walima-page .walima-main {
-    flex-direction: column;
+    display: flex;
+    max-width: 80%;
+    margin: 5rem auto;
   }
 }
-@media screen and (max-width: 530px) {
-  .walima-page .walima-main {
-    min-width: 100%;
-  }
-}
-.walima-page .walima-main .text {
-  max-width: 60%;
-  padding: 0 4rem;
-}
-@media screen and (max-width: 1250px) {
+@media screen and (min-width: 1024px) {
   .walima-page .walima-main .text {
-    text-align: center;
-    min-width: 80%;
-    margin: 2rem auto;
-  }
-}
-@media screen and (max-width: 530px) {
-  .walima-page .walima-main .text {
-    font-size: 1rem;
-    min-width: 80%;
+    max-width: 60%;
+    padding: 0 4rem;
   }
 }
 .walima-page .walima-main .text h2 {
   font-family: "font-pop200", sans-serif;
-  font-size: 2.875rem;
-  line-height: 2.875rem;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
   color: #1c1c1c;
   margin-bottom: 2rem;
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 1024px) {
   .walima-page .walima-main .text h2 {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (max-width: 730px) {
-  .walima-page .walima-main .text h2 {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (max-width: 530px) {
-  .walima-page .walima-main .text h2 {
-    font-size: 1rem;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
   }
 }
 .walima-page .walima-main .text p {
   font-family: "font-rob300", sans-serif;
-  font-size: 1rem;
-  line-height: 1.938rem;
+  font-size: 0.9rem;
+  line-height: 1.98rem;
   color: #878787;
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 768px) {
   .walima-page .walima-main .text p {
-    font-size: 0.8rem;
-    min-width: 100%;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .walima-main .text p {
+    font-size: 1rem;
+    line-height: 2rem;
   }
 }
 .walima-page .walima-main .walima-img img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 90%;
+     object-position: 90%;
   width: 100%;
   height: 100%;
+  display: none;
 }
-.walima-page .walima-img-swiper {
-  margin: 4rem;
-}
-@media screen and (max-width: 930px) {
-  .walima-page .walima-img-swiper {
-    display: none;
+@media screen and (min-width: 1024px) {
+  .walima-page .walima-main .walima-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    height: 40rem;
+    margin: 5rem 0;
   }
+}
+.walima-page .walima-img-swiper .swiper {
+  width: 23rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .walima-page .walima-img-swiper .swiper {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .walima-img-swiper .swiper {
+    width: 90%;
+  }
+}
+.walima-page .walima-img-swiper .swiper div {
+  z-index: 0;
+  padding: 0;
+  margin: 0rem 1rem 4rem 0rem;
+  background-color: rgb(255, 255, 255);
+}
+.walima-page .walima-img-swiper .swiper div .swiper-pagination {
+  margin: 2rem auto;
 }
 .walima-page .walima-img-swiper img {
   max-height: 100%;
   width: 100%;
 }
 .walima-page .swahili {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 4rem;
+  width: 80%;
+  margin: 0 auto;
 }
-@media screen and (max-width: 930px) {
+@media screen and (min-width: 1024px) {
   .walima-page .swahili {
-    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .swahili {
+    margin: 4rem;
   }
 }
 .walima-page .swahili .swahili-img {
@@ -3043,61 +3045,69 @@ input:invalid:focus ~ span {
   background-position: center;
   background-size: cover;
 }
+@media screen and (min-width: 1024px) {
+  .walima-page .swahili .swahili-img {
+    height: 40rem;
+    width: 170%;
+  }
+}
 .walima-page .swahili .swahili-text {
   padding: 40px;
 }
 .walima-page .swahili .swahili-text h3 {
   font-family: "font-pop200", sans-serif;
-  font-size: 2.875rem;
-  line-height: 2.875rem;
+  font-size: 1.875rem;
+  line-height: 1.875rem;
   color: #1c1c1c;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
-@media screen and (max-width: 930px) {
+@media screen and (min-width: 1024px) {
   .walima-page .swahili .swahili-text h3 {
-    font-size: 2rem;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
     text-align: center;
   }
 }
 .walima-page .swahili .swahili-text p {
   font-family: "font-rob400", sans-serif;
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: 0.8rem;
+  line-height: 1.8rem;
   color: #878787;
 }
-@media screen and (max-width: 930px) {
+@media screen and (min-width: 1024px) {
   .walima-page .swahili .swahili-text p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
   }
 }
 .walima-page .reservation {
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: rgb(1, 1, 1);
 }
-@media screen and (max-width: 860px) {
-  .walima-page .reservation h4 {
-    font-size: 1rem;
+@media screen and (min-width: 1024px) {
+  .walima-page .reservation {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 .walima-page .reservation div {
   margin-bottom: 3rem;
-  text-align: left;
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .reservation div {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
 }
 .walima-page .reservation div h4 {
   font-family: "font-pop200", sans-serif;
-  font-size: 2.875rem;
+  font-size: 1.875rem;
   line-height: 2.875rem;
   color: rgb(255, 255, 255);
-}
-@media screen and (max-width: 860px) {
-  .walima-page .reservation div h4 {
-    font-size: 2rem;
-    text-align: center;
-  }
 }
 .walima-page .reservation div p {
   margin-top: 2rem;
@@ -3106,88 +3116,90 @@ input:invalid:focus ~ span {
   height: 3rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 860px) {
-  .walima-page .reservation div p {
-    display: none;
-  }
-}
 .walima-page .reservation div span {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.4rem;
   line-height: 2rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 860px) {
-  .walima-page .reservation div span {
-    display: none;
-  }
-}
 .walima-page .reservation form {
-  width: 70%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 2rem;
-  grid-template-areas: "firstname email" "date guests " "btn btn";
-}
-@media screen and (max-width: 860px) {
-  .walima-page .reservation form {
+  padding-bottom: 2rem;
+  /*      @media screen and (max-width: 860px) {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "firstname" "email" "date" "guests" "btn";
+    grid-template-areas:
+      "firstname"
+      "email"
+      "date"
+      "guests"
+      "btn";
+  } */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  grid-template-areas: "firstname" "email " "date" "guests" "btn";
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .reservation form {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-areas: "firstname email" "date guests " "btn btn";
   }
 }
 .walima-page .reservation form input {
+  width: 80%;
+  margin: 0 auto;
   padding: 0 1rem;
   font-family: "font-rob400", sans-serif;
   letter-spacing: 1px;
   color: rgb(1, 1, 1);
   font-size: 1.2rem;
 }
+@media screen and (min-width: 1024px) {
+  .walima-page .reservation form input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .walima-page .reservation form input::-moz-placeholder {
+  width: 80%;
+  padding: 0 1rem;
+  margin: 0 auto;
   font-size: 1rem;
   color: #878787;
 }
 .walima-page .reservation form input::placeholder,
 .walima-page .reservation form [type=date],
 .walima-page .reservation form select {
+  width: 80%;
+  padding: 0 1rem;
+  margin: 0 auto;
   font-size: 1rem;
   color: #878787;
 }
-@media screen and (max-width: 690px) {
+@media screen and (min-width: 1024px) {
   .walima-page .reservation form input::-moz-placeholder {
-    font-size: 0.8rem;
-    padding: 0;
-    height: 3rem;
+    width: 100%;
   }
   .walima-page .reservation form input::placeholder,
   .walima-page .reservation form [type=date],
   .walima-page .reservation form select {
-    font-size: 0.8rem;
-    padding: 0;
-    height: 3rem;
+    width: 100%;
   }
 }
 .walima-page .reservation form .name {
   grid-area: firstname;
 }
-@media screen and (max-width: 690px) {
-  .walima-page .reservation form .name {
-    font-size: 0.8rem;
-    padding: 0;
-    height: 3rem;
-  }
-}
 .walima-page .reservation form .email {
   grid-area: email;
-}
-@media screen and (max-width: 690px) {
-  .walima-page .reservation form .email {
-    font-size: 0.8rem;
-    padding: 0;
-    height: 3rem;
-  }
 }
 .walima-page .reservation form #date {
   grid-area: date;
@@ -3196,6 +3208,8 @@ input:invalid:focus ~ span {
   grid-area: guests;
 }
 .walima-page .reservation form button {
+  width: 80%;
+  margin: 0 auto;
   font-family: "font-rob400", sans-serif;
   cursor: pointer;
   letter-spacing: 1px;
@@ -3205,14 +3219,14 @@ input:invalid:focus ~ span {
   color: rgb(255, 255, 255);
   background-color: rgb(61, 62, 61);
 }
+@media screen and (min-width: 1024px) {
+  .walima-page .reservation form button {
+    width: 100%;
+  }
+}
 .walima-page .reservation form .success-message {
   color: rgb(255, 255, 255);
   background-color: darkgreen;
-}
-@media screen and (max-width: 690px) {
-  .walima-page .reservation form .success-message {
-    font-size: 0.6rem;
-  }
 }
 
 .dashboard-main .dashboard-header {
