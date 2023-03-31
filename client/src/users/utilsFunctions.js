@@ -86,7 +86,7 @@ async function fetchAdminDatas(a) {
 }
 async function deleteDatas(a) {
   try {
-    const response = await fetch(`${adminURL}/users/` + a, {
+    const response = await fetch(`${adminURL}users/` + a, {
       method: "DELETE",
       credentials: "include",
       headers: {
