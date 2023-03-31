@@ -2357,20 +2357,38 @@ input:invalid:focus ~ span {
 .account-container .container .nav-book button {
   background-color: rgb(237, 230, 230);
 }
-.account-container .container .login {
-  width: 40%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 2rem;
-  margin: 3rem auto;
-  font-family: "font-pop200", sans-serif;
-  font-size: 1.875rem;
-  line-height: 2.875rem;
-  color: #1c1c1c;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+@media screen and (min-width: 768px) {
+  .account-container .container .login {
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    margin: 3rem auto;
+    font-family: "font-pop200", sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.875rem;
+    color: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .account-container .container .login {
+    width: 40%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    margin: 3rem auto;
+    font-family: "font-pop200", sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.875rem;
+    color: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
 }
 .account-container .container .login h1 {
+  text-align: center;
   font-family: "font-gildas", sans-serif;
   font-size: 2.5rem;
   line-height: 7rem;
@@ -2379,8 +2397,8 @@ input:invalid:focus ~ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(39, 149, 54);
-  width: 80%;
+  background-color: rgb(252, 252, 252);
+  width: 90%;
   margin: 1rem auto;
   padding: 0 1rem;
   border-radius: 2rem;
@@ -2388,19 +2406,19 @@ input:invalid:focus ~ span {
 .account-container .container .login .row h2 {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   font-weight: 900;
 }
 .account-container .container .login .row p {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   font-weight: 900;
 }
 .account-container .container .login .row label {
   font-family: "font-rob300", sans-serif;
-  font-size: 1.2rem;
-  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  color: rgb(1, 1, 1);
   font-weight: 900;
 }
 .account-container .container .login .row input {
@@ -2416,25 +2434,25 @@ input:invalid:focus ~ span {
   font-size: 2.5rem;
   line-height: 7rem;
 }
-.account-container .container .login .send {
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+.account-container .container .login .send-div {
+  text-align: center;
+}
+.account-container .container .login .send-div .send {
   margin-top: 40px;
   border: 2px solid #1c1c1c;
   padding: 15px 30px;
   font-size: 1rem;
   font-family: "font-rob300", sans-serif;
   line-height: 1rem;
-  color: rgb(1, 1, 1);
-  cursor: pointer;
   transition: 0.4s;
+  margin-bottom: 1rem;
 }
-.account-container .container .login .send:hover {
+.account-container .container .login .send-div .send:hover {
   animation: up 0.4s ease forwards;
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
 }
-.account-container .container .login .send span {
+.account-container .container .login .send-div .send span {
   margin-left: 15px;
 }
 
@@ -2936,7 +2954,7 @@ input:invalid:focus ~ span {
 }
 @media screen and (min-width: 1024px) {
   .walima-page .walima-main .text p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 2rem;
   }
 }
@@ -2971,7 +2989,7 @@ input:invalid:focus ~ span {
 }
 @media screen and (min-width: 1024px) {
   .walima-page .walima-img-swiper .swiper {
-    width: 90%;
+    width: 50%;
   }
 }
 .walima-page .walima-img-swiper .swiper div {
@@ -2986,6 +3004,11 @@ input:invalid:focus ~ span {
 .walima-page .walima-img-swiper img {
   max-height: 100%;
   width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .walima-page .walima-img-swiper img {
+    width: 100%;
+  }
 }
 .walima-page .swahili {
   width: 80%;

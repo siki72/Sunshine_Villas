@@ -47,9 +47,11 @@ const User_profile = () => {
             <h2>Location :</h2>
             <p> {userDatas?.location} </p>
           </div>
-          <button className="send" onClick={() => setIsEditng(true)}>
-            Edit
-          </button>
+          <div className="send-div">
+            <button className="btn send" onClick={() => setIsEditng(true)}>
+              Edit
+            </button>
+          </div>
         </div>
       ) : (
         <Update_user data={userDatas} edit={setIsEditng} />

@@ -49,7 +49,7 @@
           line-height: 2rem;
         }
         @media screen and (min-width: $breakPoint-Desktop) {
-          font-size: 1rem;
+          font-size: 1.3rem;
           line-height: 2rem;
         }
         font-family: $rob3;
@@ -84,7 +84,7 @@
         width: 40rem;
       }
       @media screen and (min-width: $breakPoint-Desktop) {
-        width: 90%;
+        width: 50%;
       }
       width: 23rem;
       margin: 0 auto;
@@ -99,6 +99,9 @@
       }
     }
     img {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        width: 100%;
+      }
       max-height: 100%;
       width: 100%;
     }

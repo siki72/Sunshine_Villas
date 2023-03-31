@@ -120,9 +120,14 @@ const Update_user = ({ data, edit }) => {
           />
         </div>
         {errorMsg && <div className="show-error-msg">{showError}</div>}
-        <button className={pending ? "send-notAllowed" : "send"} type="submit">
-          {pending ? "Saving datas.." : "Save"}
-        </button>
+        <div className="send-div">
+          <button
+            className={pending ? "send-notAllowed" : "btn send"}
+            type="submit"
+          >
+            {pending ? "Saving datas.." : "Save"}
+          </button>
+        </div>
       </form>
     </div>
   );

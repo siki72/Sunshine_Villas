@@ -43,19 +43,37 @@
     }
 
     .login {
-      width: 40%;
-      background-color: $color1;
-      border-radius: 2rem;
-      margin: 3rem auto;
-      font-family: $pop2;
-      font-size: 1.875rem;
-      line-height: 2.875rem;
-      color: $color4;
-      text-align: center;
-      padding: 1rem;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      @media screen and (min-width: $breakPoint-Tablet) {
+        width: 90%;
+        background-color: $color1;
+        border-radius: 2rem;
+        margin: 3rem auto;
+        font-family: $pop2;
+        font-size: 1.875rem;
+        line-height: 2.875rem;
+        color: $color4;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        width: 40%;
+        background-color: $color1;
+        border-radius: 2rem;
+        margin: 3rem auto;
+        font-family: $pop2;
+        font-size: 1.875rem;
+        line-height: 2.875rem;
+        color: $color4;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+
       h1 {
+        text-align: center;
         font-family: $gildas;
         font-size: 2.5rem;
         line-height: 7rem;
@@ -63,8 +81,8 @@
 
       .row {
         @include between;
-        background-color: rgb(39, 149, 54);
-        width: 80%;
+        background-color: rgb(252, 252, 252);
+        width: 90%;
         margin: 1rem auto;
         padding: 0 1rem;
         border-radius: 2rem;
@@ -72,20 +90,20 @@
         h2 {
           font-family: $rob3;
           font-size: 1.2rem;
-          color: $color1;
+          color: $color2;
           font-weight: 900;
         }
 
         p {
           font-family: $rob3;
           font-size: 1.2rem;
-          color: $color1;
+          color: $color2;
           font-weight: 900;
         }
         label {
           font-family: $rob3;
-          font-size: 1.2rem;
-          color: $color1;
+          font-size: 1rem;
+          color: $color2;
           font-weight: 900;
         }
 
@@ -104,26 +122,25 @@
         font-size: 2.5rem;
         line-height: 7rem;
       }
-
-      .send {
-        border-radius: 5px;
-        background-color: $color1;
-        margin-top: 40px;
-        border: 2px solid $color4;
-        padding: 15px 30px;
-        font-size: 1rem;
-        font-family: $rob3;
-        line-height: 1rem;
-        color: $color2;
-        cursor: pointer;
-        transition: 0.4s;
-        &:hover {
-          animation: up 0.4s ease forwards;
-          background-color: $color2;
-          color: $color1;
-        }
-        span {
-          margin-left: 15px;
+      .send-div {
+        text-align: center;
+        .send {
+          margin-top: 40px;
+          border: 2px solid $color4;
+          padding: 15px 30px;
+          font-size: 1rem;
+          font-family: $rob3;
+          line-height: 1rem;
+          transition: 0.4s;
+          margin-bottom: 1rem;
+          &:hover {
+            animation: up 0.4s ease forwards;
+            background-color: $color2;
+            color: $color1;
+          }
+          span {
+            margin-left: 15px;
+          }
         }
       }
     }
