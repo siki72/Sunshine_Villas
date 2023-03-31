@@ -20,7 +20,7 @@ const About = () => {
         </div>
         <div className="text">
           <h3>
-            Jambiani Villas was created from the combination of our great love
+            Sunshine Villas was created from the combination of our great love
             for local African culture and hospitality of the highest quality.
           </h3>
           <p>
@@ -36,7 +36,7 @@ const About = () => {
           </div>
           <h5>Ali missoum</h5>
           <h5>Ali Missoum</h5>
-          <h5>Genral manager</h5>
+          <h6>Genral manager</h6>
         </div>
 
         <div className="sea-img">
@@ -53,7 +53,7 @@ const About = () => {
         <div className="jambian-infos-grid">
           <div className="situation">
             <h4>
-              Jambiani Villas, situated on Zanzibar’s East coast right next to
+              Sunshine Villas, situated on Zanzibar’s East coast right next to
               the crystal clear waters of the Indian Ocean, is the perfect
               destination for a holiday.
             </h4>
@@ -70,7 +70,7 @@ const About = () => {
           <div className="about-jambiani">
             <h4>About Jambiani</h4>
             <p>
-              Jambiani Villas is located on 3 properties, around 400 m from each
+              Sunshine Villas is located on 3 properties, around 400 m from each
               other. Breakfast is served in our middle - Kati Kati - property.
               Our villa layout was intentionally designed to ensure a more
               private experience. Our guests can enjoy a pleasant, 4 minute walk

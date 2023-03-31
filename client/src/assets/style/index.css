@@ -217,128 +217,118 @@ body {
   color: rgb(0, 0, 0);
 }
 
+.about-page .container {
+  background-color: rgb(255, 255, 255);
+}
 .about-page .container .about-header {
+  padding-top: 2rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   background-image: url("../img/home/about_page.jpg");
   background-size: cover;
   background-position: center;
 }
-.about-page .container .about-header > * {
-  margin-bottom: 1rem;
-}
 .about-page .container .about-header h1 {
   font-family: "font-pop-bold", sans-serif;
-  font-size: 8.125rem;
+  font-size: 4rem;
   text-transform: uppercase;
-  line-height: 6.25rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px) {
   .about-page .container .about-header h1 {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .about-header h1 {
-    font-size: 4rem;
-  }
-}
-@media screen and (max-width: 580px) {
-  .about-page .container .about-header h1 {
-    font-size: 2.5rem;
+    font-size: 6.125rem;
+    line-height: 5.85rem;
   }
 }
 .about-page .container .about-header h2 {
   font-family: "font-gildas", sans-serif;
-  font-size: 3.625rem;
-  line-height: 3.625rem;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .about-header h2 {
-    font-size: 2.5rem;
-  }
-}
-@media screen and (max-width: 880px) {
-  .about-page .container .about-header h2 {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 580px) {
-  .about-page .container .about-header h2 {
-    font-size: 1.7rem;
+    font-size: 3.625rem;
+    line-height: 3.625rem;
   }
 }
 .about-page .container .about-header div {
   margin: 15px 0;
 }
 .about-page .container .about-header div img {
-  width: 13rem;
-  max-width: 20%;
-}
-@media screen and (max-width: 1200px) {
-  .about-page .container .about-header div img {
-    width: 11rem;
-  }
+  width: 15rem;
+  max-width: 45%;
 }
 .about-page .container .text {
-  max-width: 50%;
-  margin: 30px auto;
+  padding: 1rem;
+  /*   @media screen and (min-width: $breakPoint-Desktop) {
+    font-size: 2.875rem;
+    line-height: 2.875rem;
+    max-width: 50%;
+    margin: 30px auto;
+    text-align: center;
+  } */
   text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .about-page .container .text {
+    font-size: 2.875rem;
+    line-height: 2.875rem;
+    text-align: center;
+  }
 }
 .about-page .container .text > * {
   margin-bottom: 3rem;
 }
+@media screen and (min-width: 768px) {
+  .about-page .container .text > * {
+    max-width: 60%;
+    margin: 2rem auto;
+  }
+}
 .about-page .container .text h3 {
   font-family: "font-pop400", sans-serif;
-  font-size: 2.875rem;
-  line-height: 2.875rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   color: #1c1c1c;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px) {
   .about-page .container .text h3 {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 880px) {
-  .about-page .container .text h3 {
-    font-size: 1.6rem;
-  }
-}
-@media screen and (max-width: 630px) {
-  .about-page .container .text h3 {
-    font-size: 1.2rem;
-  }
-}
-@media screen and (max-width: 300px) {
-  .about-page .container .text h3 {
-    font-size: 1rem;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
+    text-align: center;
   }
 }
 .about-page .container .text p {
   font-size: 1.1rem;
   color: #878788;
   font-family: "font-rob300", sans-serif;
+  max-width: 90%;
+  margin: 0 auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px) {
   .about-page .container .text p {
     font-size: 1rem;
+    line-height: 2rem;
   }
 }
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .text p {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
 }
 .about-page .container .about-main {
   text-align: center;
 }
 .about-page .container .about-main > * {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 .about-page .container .about-main h4 {
   font-size: "font-rob300", sans-serif;
@@ -348,13 +338,7 @@ body {
 }
 .about-page .container .about-main .manager-img img {
   border-radius: 50%;
-  max-height: 250px;
-}
-@media screen and (max-width: 630px) {
-  .about-page .container .about-main .manager-img img {
-    font-size: 1.2rem;
-    width: 9rem;
-  }
+  max-height: 11rem;
 }
 .about-page .container .about-main h5:first-of-type {
   font-family: "jadyn", sans-serif;
@@ -362,34 +346,32 @@ body {
   color: #939393;
   line-height: 1.938rem;
 }
-@media screen and (max-width: 630px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .about-main h5:first-of-type {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 .about-page .container .about-main h5 {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-family: "font-rob400", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #7a7a7a;
   line-height: 1.2rem;
 }
-@media screen and (max-width: 630px) {
-  .about-page .container .about-main h5 {
-    font-size: 0.9rem;
-  }
+.about-page .container .about-main h6 {
+  font-family: "font-rob300", sans-serif;
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  line-height: 1.2rem;
 }
 .about-page .container .jambian-infos-grid {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 33.75rem 33.75rem;
+  padding: 4rem 0;
 }
-@media screen and (max-width: 950px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .jambian-infos-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    max-width: 80%;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 33.75rem 33.75rem;
   }
 }
 .about-page .container .jambian-infos-grid .situation {
@@ -407,20 +389,10 @@ body {
   line-height: 2rem;
   margin-bottom: 2rem;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .jambian-infos-grid .situation h4 {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .about-page .container .jambian-infos-grid .situation h4 {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 340px) {
-  .about-page .container .jambian-infos-grid .situation h4 {
-    font-size: 0.8rem;
-    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 }
 .about-page .container .jambian-infos-grid .situation p {
@@ -429,40 +401,35 @@ body {
   color: #878788;
   line-height: 2rem;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 768px) {
   .about-page .container .jambian-infos-grid .situation p {
-    font-size: 0.8rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .about-page .container .jambian-infos-grid .situation p {
-    font-size: 0.7rem;
-    text-align: center;
-    max-width: 80%;
+    margin-bottom: 2rem;
   }
 }
 .about-page .container .jambian-infos-grid .situation-img {
+  height: 30rem;
   background-image: url(../img/home/beach-about.jpg);
   background-size: cover;
   background-position: center;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 768px) {
   .about-page .container .jambian-infos-grid .situation-img {
-    display: none;
+    height: auto;
   }
 }
 .about-page .container .jambian-infos-grid .plan {
+  height: 30rem;
   background-image: url(../img/home/land_contact.jpg);
   background-size: cover;
   background-position: center;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 768px) {
   .about-page .container .jambian-infos-grid .plan {
-    display: none;
+    height: auto;
   }
 }
 .about-page .container .jambian-infos-grid .about-jambiani {
-  padding: 6rem;
+  padding: 3rem;
   flex-direction: column;
   background-color: rgb(30, 29, 29);
 }
@@ -473,24 +440,12 @@ body {
   line-height: 2.875rem;
   margin-bottom: 2rem;
 }
-@media screen and (max-width: 1000px) {
-  .about-page .container .jambian-infos-grid .about-jambiani h4 {
-    font-size: 1.5rem;
-  }
-}
 .about-page .container .jambian-infos-grid .about-jambiani p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   line-height: 2rem;
   color: rgb(255, 255, 255);
   text-align: left;
-}
-@media screen and (max-width: 1000px) {
-  .about-page .container .jambian-infos-grid .about-jambiani p {
-    font-size: 0.8rem;
-    text-align: center;
-    line-height: 1.5rem;
-  }
 }
 .about-page .container .sea-img {
   display: flex;
@@ -511,29 +466,15 @@ body {
   margin: 0 auto;
 }
 .about-page .container .sea-img blockquote p {
-  font-size: 3.375rem;
+  font-size: 2.375rem;
   line-height: 4rem;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.66);
   font-family: "font-pop-bold", sans-serif;
 }
-@media screen and (max-width: 1230px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .sea-img blockquote p {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 830px) {
-  .about-page .container .sea-img blockquote p {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (max-width: 380px) {
-  .about-page .container .sea-img blockquote p {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 270px) {
-  .about-page .container .sea-img blockquote p {
-    display: none;
+    font-size: 3.375rem;
+    line-height: 4rem;
   }
 }
 .about-page .container .sea-img blockquote p::before {
@@ -548,80 +489,56 @@ body {
   line-height: 2.25rem;
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 1230px) {
-  .about-page .container .sea-img blockquote footer {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 830px) {
-  .about-page .container .sea-img blockquote footer {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 380px) {
-  .about-page .container .sea-img blockquote footer {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 270px) {
-  .about-page .container .sea-img blockquote footer {
-    display: none;
-  }
-}
 .about-page .container .reviews {
-  max-width: 80%;
-  margin: 0 auto;
-  display: flex;
   align-items: center;
-  margin-top: 3rem;
+  margin: 3rem;
 }
-@media screen and (max-width: 1220px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .reviews {
+    max-width: 80%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 906px) {
-  .about-page .container .reviews {
-    display: none;
+    align-items: center;
   }
 }
 .about-page .container .reviews .logo {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .about-page .container .reviews .logo img {
   width: 200px;
 }
-@media screen and (max-width: 1220px) {
-  .about-page .container .reviews .logo img {
-    margin-bottom: 4rem;
+.about-page .container .reviews .swiper {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .about-page .container .reviews .swiper {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-page .container .reviews .swiper {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
   }
 }
 .about-page .container .ours-villas {
+  max-width: 100%;
   text-align: center;
-  padding: 3rem 0;
-  display: flex;
 }
-@media screen and (max-width: 1036px) {
+@media screen and (min-width: 1024px) {
   .about-page .container .ours-villas {
+    text-align: center;
+    padding: 3rem 0;
     display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    margin: 2rem auto;
-  }
-}
-@media screen and (max-width: 448px) {
-  .about-page .container .ours-villas .card-booking {
-    display: none;
-  }
-  .about-page .container .ours-villas .card-desc {
-    display: none;
-  }
-}
-@media screen and (max-width: 358px) {
-  .about-page .container .ours-villas {
-    display: none;
+    gap: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -1235,17 +1152,6 @@ body {
 }
 
 .navigation {
-  /*   @media screen and (max-width: 720px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    div {
-      display: none;
-    }
-  } */
   display: grid;
   height: 60px;
   width: 100%;

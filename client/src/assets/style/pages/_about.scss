@@ -1,106 +1,102 @@
 .about-page {
   .container {
+    background-color: $color1;
     .about-header {
-      > * {
-        margin-bottom: 1rem;
-      }
+      padding-top: 2rem;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-
+      justify-content: space-around;
       text-align: center;
-
       background-image: url("../img/home/about_page.jpg");
       background-size: cover;
       background-position: center;
 
       h1 {
-        @media screen and (max-width: 1200px) {
-          font-size: 6rem;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 5rem;
         }
-        @media screen and (max-width: 880px) {
-          font-size: 4rem;
-        }
-        @media screen and (max-width: 580px) {
-          font-size: 2.5rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 6.125rem;
+          line-height: 5.85rem;
         }
         font-family: $pop7;
-        font-size: 8.125rem;
+        font-size: 4rem;
         text-transform: uppercase;
-        line-height: 6.25rem;
         color: $color1;
       }
 
       h2 {
-        @media screen and (max-width: 1200px) {
-          font-size: 2.5rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 3.625rem;
+          line-height: 3.625rem;
         }
-        @media screen and (max-width: 880px) {
-          font-size: 2rem;
-        }
-        @media screen and (max-width: 580px) {
-          font-size: 1.7rem;
-        }
-
         font-family: $gildas;
-        font-size: 3.625rem;
-        line-height: 3.625rem;
+        font-size: 2rem;
         color: $color1;
       }
       div {
         margin: 15px 0;
         img {
-          @media screen and (max-width: 1200px) {
-            width: 11rem;
-          }
-          width: 13rem;
-          max-width: 20%;
+          width: 15rem;
+          max-width: 45%;
         }
       }
     }
     .text {
-      > * {
-        margin-bottom: 3rem;
-      }
-      max-width: 50%;
-      margin: 30px auto;
-      text-align: center;
-      h3 {
-        @media screen and (max-width: 1200px) {
-          font-size: 2rem;
-        }
-        @media screen and (max-width: 880px) {
-          font-size: 1.6rem;
-        }
-        @media screen and (max-width: 630px) {
-          font-size: 1.2rem;
-        }
-        @media screen and (max-width: 300px) {
-          font-size: 1rem;
-        }
-        font-family: $pop4;
+      padding: 1rem;
+      @media screen and (min-width: $breakPoint-Desktop) {
         font-size: 2.875rem;
         line-height: 2.875rem;
+        text-align: center;
+      }
+      /*   @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+        max-width: 50%;
+        margin: 30px auto;
+        text-align: center;
+      } */
+      > * {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          max-width: 60%;
+          margin: 2rem auto;
+        }
+        margin-bottom: 3rem;
+      }
+      text-align: center;
+      h3 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
+          text-align: center;
+        }
+        font-family: $pop4;
+        font-size: 2rem;
+        line-height: 2.5rem;
         color: $color4;
       }
 
       p {
-        @media screen and (max-width: 1200px) {
+        @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 1rem;
+          line-height: 2rem;
         }
-        @media screen and (max-width: 880px) {
-          font-size: 0.8rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1.1rem;
         }
+
         font-size: 1.1rem;
         color: #878788;
         font-family: $rob3;
+        max-width: 90%;
+        margin: 0 auto;
       }
     }
 
     .about-main {
       > * {
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
       }
       text-align: center;
       h4 {
@@ -110,16 +106,12 @@
         color: #878788;
       }
       .manager-img img {
-        @media screen and (max-width: 630px) {
-          font-size: 1.2rem;
-          width: 9rem;
-        }
         border-radius: 50%;
-        max-height: 250px;
+        max-height: 11rem;
       }
       h5:first-of-type {
-        @media screen and (max-width: 630px) {
-          font-size: 2rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 3rem;
         }
         font-family: $jadyn;
         font-size: 3rem;
@@ -127,28 +119,26 @@
         line-height: 1.938rem;
       }
       h5 {
-        @media screen and (max-width: 630px) {
-          font-size: 0.9rem;
-        }
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
         font-family: $rob4;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        color: $color7;
+        line-height: 1.2rem;
+      }
+      h6 {
+        font-family: $rob3;
+        font-size: 0.9rem;
         color: $color7;
         line-height: 1.2rem;
       }
     }
     .jambian-infos-grid {
-      @media screen and (max-width: 950px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        max-width: 80%;
-        margin: 0 auto;
+      padding: 4rem 0;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 33.75rem 33.75rem;
       }
-
-      display: grid;
-      grid-template-columns: 60% 40%;
-      grid-template-rows: 33.75rem 33.75rem;
-
       .situation {
         max-width: 80%;
         margin: 0 auto;
@@ -156,15 +146,9 @@
         flex-direction: column;
 
         h4 {
-          @media screen and (max-width: 1000px) {
-            font-size: 1.5rem;
-          }
-          @media screen and (max-width: 400px) {
-            font-size: 1rem;
-          }
-          @media screen and (max-width: 340px) {
-            font-size: 0.8rem;
-            text-align: center;
+          @media screen and (min-width: $breakPoint-Desktop) {
+            font-size: 2rem;
+            line-height: 2rem;
           }
           font-size: 2rem;
           font-family: $pop4;
@@ -173,13 +157,8 @@
           margin-bottom: 2rem;
         }
         p {
-          @media screen and (max-width: 1000px) {
-            font-size: 0.8rem;
-          }
-          @media screen and (max-width: 400px) {
-            font-size: 0.7rem;
-            text-align: center;
-            max-width: 80%;
+          @media screen and (min-width: $breakPoint-Tablet) {
+            margin-bottom: 2rem;
           }
           font-family: $rob3;
           font-size: 1rem;
@@ -189,31 +168,30 @@
       }
 
       .situation-img {
-        @media screen and (max-width: 420px) {
-          display: none;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          height: auto;
         }
+        height: 30rem;
         background-image: url(../img/home/beach-about.jpg);
         background-size: cover;
         background-position: center;
       }
       .plan {
-        @media screen and (max-width: 420px) {
-          display: none;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          height: auto;
         }
+        height: 30rem;
         background-image: url(../img/home/land_contact.jpg);
         background-size: cover;
         background-position: center;
       }
 
       .about-jambiani {
-        padding: 6rem;
+        padding: 3rem;
         flex-direction: column;
 
         background-color: rgb(30, 29, 29);
         h4 {
-          @media screen and (max-width: 1000px) {
-            font-size: 1.5rem;
-          }
           font-family: $pop2;
           font-size: 2.875rem;
           color: $color1;
@@ -221,11 +199,6 @@
           margin-bottom: 2rem;
         }
         p {
-          @media screen and (max-width: 1000px) {
-            font-size: 0.8rem;
-            text-align: center;
-            line-height: 1.5rem;
-          }
           font-family: $rob3;
           font-size: 1rem;
           line-height: 2rem;
@@ -249,21 +222,13 @@
         margin: 0 auto;
 
         p {
-          @media screen and (max-width: 1230px) {
-            font-size: 2rem;
+          @media screen and (min-width: $breakPoint-Desktop) {
+            font-size: 3.375rem;
+            line-height: 4rem;
           }
-          @media screen and (max-width: 830px) {
-            font-size: 1.4rem;
-          }
-          @media screen and (max-width: 380px) {
-            font-size: 0.9rem;
-          }
-          @media screen and (max-width: 270px) {
-            display: none;
-          }
-          font-size: 3.375rem;
+          font-size: 2.375rem;
           line-height: 4rem;
-          color: $color1;
+          color: rgba(255, 255, 255, 0.66);
           font-family: $pop7;
           &::before {
             content: "\201C";
@@ -273,18 +238,6 @@
           }
         }
         footer {
-          @media screen and (max-width: 1230px) {
-            font-size: 2rem;
-          }
-          @media screen and (max-width: 830px) {
-            font-size: 1.5rem;
-          }
-          @media screen and (max-width: 380px) {
-            font-size: 1rem;
-          }
-          @media screen and (max-width: 270px) {
-            display: none;
-          }
           font-family: $gildas;
           font-size: 2.25rem;
           line-height: 2.25rem;
@@ -293,50 +246,48 @@
       }
     }
     .reviews {
-      @media screen and (max-width: 1220px) {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        max-width: 80%;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
+        align-items: center;
       }
-      @media screen and (max-width: 906px) {
-        display: none;
-      }
-      max-width: 80%;
-      margin: 0 auto;
-      display: flex;
       align-items: center;
-      margin-top: 3rem;
+      margin: 3rem;
       .logo {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         img {
-          @media screen and (max-width: 1220px) {
-            margin-bottom: 4rem;
-          }
           width: 200px;
         }
       }
+      .swiper {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          display: block;
+          width: 100%;
+          margin-top: 2rem;
+        }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          display: block;
+          width: 100%;
+          margin-top: 2rem;
+        }
+        display: none; // swiper comments
+      }
     }
     .ours-villas {
-      text-align: center;
-      padding: 3rem 0;
-      display: flex;
-      @media screen and (max-width: 1036px) {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        text-align: center;
+        padding: 3rem 0;
         display: flex;
-        flex-direction: column;
-        max-width: 40%;
-        margin: 2rem auto;
+        gap: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
       }
-      @media screen and (max-width: 448px) {
-        .card-booking {
-          display: none;
-        }
-        .card-desc {
-          display: none;
-        }
-      }
-      @media screen and (max-width: 358px) {
-        display: none;
-      }
+      max-width: 100%;
+      text-align: center;
     }
   }
 }
