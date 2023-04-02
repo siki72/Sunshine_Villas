@@ -100,7 +100,7 @@ const Villa_1_bed = () => {
       alert("Please select à chekout !");
     }
   };
-
+  console.log(slug);
   useEffect(() => {
     try {
       const idOfSelectedvilla = {
@@ -151,7 +151,10 @@ const Villa_1_bed = () => {
   return (
     <div className="booking">
       <div className="header_img">
-        <img src="../img/home/choose_villas.jpeg" alt="general villas view" />
+        <img
+          src="../../img/home/choose_villas.jpeg"
+          alt="general villas view"
+        />
       </div>
 
       <div className="container">
@@ -162,9 +165,9 @@ const Villa_1_bed = () => {
         <div className="choose-villas">
           <div className="choose-villa-card">
             <div className="swipe">
-              {slug == 1 && <Swiper_img_1 />}
-              {id == 2 && <Swiper_img_2 />}
-              {id == 3 && <Swiper_img_3 />}
+              {slug === "1-BED-APARTEMENT" && <Swiper_img_1 />}
+              {slug === "2-BED-VILLA" && <Swiper_img_2 />}
+              {slug === "3-BED-VILLA" && <Swiper_img_3 />}
             </div>
             {isReserved && (
               <ReactModal

@@ -770,7 +770,7 @@ body {
   height: 100vh;
 }
 .header .main_img {
-  background-image: url("../img/home/zanzibar.jpg");
+  background-image: url("../../img/home/zanzibar.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;

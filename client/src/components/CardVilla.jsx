@@ -6,7 +6,7 @@ import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
 const CardVilla = ({ card }) => {
   return (
     <div className="card-container">
-      <Link to={"/villas/" + card.id}>
+      <Link to={`/villas/${card.name}/${card.id}`}>
         <img src={card.url} alt="villas pcitures" />
         <div className="villa-pic"></div>
         <div className="card-infos">
