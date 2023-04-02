@@ -2281,7 +2281,7 @@ body {
   font-size: 0.8rem;
   font-weight: lighter;
   width: 50%;
-  margin: 0 auto;
+  margin: 1rem auto;
   color: rgba(255, 253, 253, 0.839);
   background-color: rgba(173, 165, 165, 0.639);
   border-radius: 20rem;
@@ -2302,7 +2302,7 @@ body {
 }
 
 .input-group span {
-  display: none;
+  visibility: hidden;
   transition: 0.4s;
 }
 @media screen and (min-width: 1024px) {
@@ -2312,12 +2312,12 @@ body {
 }
 
 input:invalid:focus {
-  border-bottom: 1px solid rgb(142, 27, 27) !important;
+  border-bottom: 1px solid rgb(142, 27, 27);
 }
 
 input:invalid:focus ~ span {
   color: darkred;
-  font-size: 1.1rem;
+  font-size: 0.5rem;
   display: block;
 }
 
@@ -2328,8 +2328,13 @@ input:invalid:focus ~ span {
   margin: 1rem auto;
   color: rgb(245, 0, 0);
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.7rem;
   border-radius: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .error-msg {
+    font-size: 1rem;
+  }
 }
 
 .show-error-msg {
@@ -2339,8 +2344,23 @@ input:invalid:focus ~ span {
   margin: 1rem auto;
   color: rgb(245, 0, 0);
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.6rem;
   border-radius: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .show-error-msg {
+    font-size: 1rem;
+  }
+}
+
+.msg {
+  visibility: hidden;
+  font-size: 0.4rem;
+  color: red;
+}
+
+.invalidField {
+  visibility: visible;
 }
 
 .account-container {

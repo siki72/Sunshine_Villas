@@ -105,7 +105,7 @@
   font-size: 0.8rem;
   font-weight: lighter;
   width: 50%;
-  margin: 0 auto;
+  margin: 1rem auto;
   color: rgba(255, 253, 253, 0.839);
   background-color: rgba(173, 165, 165, 0.639);
   border-radius: 20rem;
@@ -123,36 +123,51 @@
   @media screen and (min-width: $breakPoint-Desktop) {
     visibility: hidden;
   }
-  display: none;
+  visibility: hidden;
   transition: 0.4s;
 }
 input:invalid:focus {
-  border-bottom: 1px solid rgb(142, 27, 27) !important;
+  border-bottom: 1px solid rgb(142, 27, 27);
 }
 input:invalid:focus ~ span {
   color: darkred;
-  font-size: 1.1rem;
+  font-size: 0.5rem;
   display: block;
 }
 
 .error-msg {
+  @media screen and (min-width: $breakPoint-Tablet) {
+    font-size: 1rem;
+  }
   text-transform: uppercase;
   visibility: hidden;
   width: 60%;
   margin: 1rem auto;
   color: rgb(245, 0, 0);
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.7rem;
   border-radius: 2rem;
 }
 
 .show-error-msg {
+  @media screen and (min-width: $breakPoint-Tablet) {
+    font-size: 1rem;
+  }
   text-transform: uppercase;
   visibility: visible;
   width: 60%;
   margin: 1rem auto;
   color: rgb(245, 0, 0);
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.6rem;
   border-radius: 2rem;
+}
+
+.msg {
+  visibility: hidden;
+  font-size: 0.4rem;
+  color: red;
+}
+.invalidField {
+  visibility: visible;
 }
