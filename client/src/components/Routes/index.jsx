@@ -2,7 +2,6 @@ import React from "react";
 import Navigation from "../Navigation";
 import { BrowserRouter, redirect, Route, Routes } from "react-router-dom";
 import About from "../../pages/About";
-import Booking from "../../pages/Booking";
 import Home from "../../pages/Home";
 import Villa_1_bed from "../../pages/Villa_1_bed";
 import Explore_zanzibar from "../../pages/Explore_zanzibar";
@@ -23,8 +22,7 @@ const index = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/villas/:id" element={<Villa_1_bed />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/villas/:slug/:id" element={<Villa_1_bed />} />
           <Route path="/contact" element={<Contact_page />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -34,7 +32,6 @@ const index = () => {
           <Route path="/account/:pages" element={<Account />} />
           <Route path="/account/dashboard/:pages" element={<Account />} />
           <Route path="*" element={<Errorpage />} />
-          {/*           <Route path="/account/dashboard" element={<Admin />} /> */}
         </Routes>
         <Footer />
       </UserContextProvider>

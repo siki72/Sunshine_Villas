@@ -852,6 +852,13 @@ body {
   width: 100%;
   height: 100%;
 }
+@media screen and (min-width: 768px) {
+  .booking .header_img img {
+    height: 37rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .booking .container {
   max-width: 90%;
   margin: 0 auto;
@@ -863,8 +870,11 @@ body {
     padding-bottom: 2rem;
   }
 }
-.booking .container .choose-villas-cards .card-container {
-  height: 40rem;
+@media screen and (min-width: 1024px) {
+  .booking .container .choose-villas-cards .card-container {
+    box-shadow: 0px 0px 6px 1px #c7bdbd;
+    border: 1px solid w;
+  }
 }
 .booking .container .choose-villas-cards .card-container img {
   height: auto;

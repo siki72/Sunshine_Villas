@@ -14,6 +14,10 @@
     width: 15rem;
   }
   .header_img img {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      height: 37rem;
+      object-fit: cover;
+    }
     width: 100%;
     height: 100%;
   }
@@ -25,7 +29,10 @@
         padding-bottom: 2rem;
       }
       .card-container {
-        height: 40rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          box-shadow: 0px 0px 6px 1px #c7bdbd;
+          border: 1px solid w;
+        }
         img {
           height: auto;
           height: auto;

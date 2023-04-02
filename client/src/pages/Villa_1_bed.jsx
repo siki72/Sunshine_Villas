@@ -32,6 +32,7 @@ const override = {
   borderColor: "red",
 };
 const Villa_1_bed = () => {
+  const { slug } = useParams();
   const { id } = useParams();
   const { user } = useContext(UserContext);
   const [villaInfos, setVillaInfos] = useState([]);
@@ -69,6 +70,7 @@ const Villa_1_bed = () => {
     if (checkIn < checkOut) {
       setLoading(true);
       const reservationData = {
+        slug,
         checkIn,
         checkOut,
         villaId: id,
@@ -160,7 +162,7 @@ const Villa_1_bed = () => {
         <div className="choose-villas">
           <div className="choose-villa-card">
             <div className="swipe">
-              {id == 1 && <Swiper_img_1 />}
+              {slug == 1 && <Swiper_img_1 />}
               {id == 2 && <Swiper_img_2 />}
               {id == 3 && <Swiper_img_3 />}
             </div>

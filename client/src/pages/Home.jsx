@@ -15,7 +15,7 @@ const Home = () => {
           <div>
             <h1>PRIVATE LUXURY VILLAS</h1>
             <h2>Jambiani beach, Zanzibar.</h2>
-            <Link to="/booking">
+            <Link to="/villas/1">
               <button className="button">Book your Villa</button>
             </Link>
           </div>
