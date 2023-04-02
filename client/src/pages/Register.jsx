@@ -9,6 +9,7 @@ const Register = () => {
   const formRegisterRef = useRef();
   const [focused, setFocused] = useState(false);
   const [invalidField, setInvalidField] = useState(false);
+  const [existEmail, setExistEmail] = useState(false);
   const handleFocus = () => {
     setFocused(true);
   };
@@ -26,9 +27,13 @@ const Register = () => {
       return;
     }
 
-    const response = utils.addUser(formData).then((resp) => {
-      console.log(response);
-      setRedirect(true);
+    utils.addUser(formData).then((resp) => {
+      console.log(resp.status);
+      if (resp.status === 200) {
+        setRedirect(true);
+      } else if (resp.status === 400) {
+        setExistEmail(true);
+      }
     });
   };
 
@@ -40,13 +45,18 @@ const Register = () => {
     <div className="full-screen-container">
       <div className="grid-container">
         <div className="login-container">
-          <h1 className="login-title">Welcome</h1>
+          <h1
+            className={existEmail ? "error-email login-title" : "login-title"}
+          >
+            {existEmail ? "email already registered please login" : "Welcome"}
+          </h1>
           <form
             className="form "
             ref={formRegisterRef}
             action="/user/register"
             method="POST"
             onSubmit={registerUser}
+            onClick={() => setExistEmail(false)}
           >
             <div className="input-group ">
               <FontAwesomeIcon className="icon" icon={faUser} />

@@ -61,9 +61,7 @@ const Login = () => {
           >
             <div className="input-group">
               <FontAwesomeIcon className="icon" icon={faUser} />
-              <span class="icon">
-                <i class="bx bxs-envelope"></i>
-              </span>
+
               <label htmlFor="email">Email</label>
               <input type="email" name="email" id="email" required={true} />
             </div>

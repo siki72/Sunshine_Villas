@@ -11,7 +11,8 @@ async function addUser(user) {
         "Content-type": "application/json ; charset=UTF-8",
       },
     });
-    return response.json();
+
+    return response;
   } catch (e) {
     alert("Registration failed. Please try again later");
   }
