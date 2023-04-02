@@ -58,6 +58,12 @@
     transform: translate(-50%, -50%);
   }
 }
+@keyframes showNav {
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -563,14 +569,21 @@ body {
   }
 }
 
+.contact-page {
+  background-color: rgb(255, 255, 255);
+}
 .contact-page .contact-header {
-  height: 90vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  .contact-page .contact-header {
+    min-height: 90vh;
+  }
 }
 .contact-page .contact-header .heder-color {
   height: 3.5rem;
@@ -1270,10 +1283,13 @@ body {
 }
 
 .hamburguer {
+  height: 3rem;
+  width: 100%;
   top: 40px;
   right: 25px;
   min-width: 100%;
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -1285,26 +1301,28 @@ body {
 .hamburguer span {
   color: rgb(1, 1, 1);
   position: absolute;
-  top: 1rem;
+  top: 0.1rem;
   left: 1rem;
 }
 .hamburguer .ham-white {
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
 }
 .hamburguer .ham-black {
-  color: rgb(1, 1, 1);
+  color: rgb(255, 255, 255);
 }
 
 .hidden-nav {
-  transition: 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  opacity: 0;
+  height: 0;
+  height: 0;
   top: 0rem;
   width: 100%;
-  /*   backdrop-filter: blur(10px); */
+  transition: 0.3s;
   background-color: rgb(255, 255, 255);
+  animation: showNav 1s forwards;
 }
 @media screen and (min-width: 900px) {
   .hidden-nav {
@@ -1934,6 +1952,7 @@ body {
   }
 }
 .footer .flex {
+  background-color: black;
   padding: 10px;
   min-width: 100%;
   display: flex;
@@ -2166,8 +2185,6 @@ body {
 
 .full-screen-container {
   background-color: rgba(255, 253, 253, 0.712);
-  height: 100vh;
-  width: 100vw;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -2175,14 +2192,19 @@ body {
   align-items: center;
 }
 .full-screen-container .grid-container {
-  min-width: 100vw;
-  min-height: 100vh;
+  padding: 5rem 0;
+  min-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("../img/home/side-login-pic.jpeg");
+}
+@media screen and (min-width: 1024px) {
+  .full-screen-container .grid-container {
+    height: 100vh;
+  }
 }
 
 .login-container {
@@ -2191,6 +2213,11 @@ body {
   padding: 1rem;
   max-width: 60%;
   width: 30rem;
+}
+@media screen and (min-width: 1024px) {
+  .login-container {
+    margin: 2rem;
+  }
 }
 
 .login-title {
@@ -2297,8 +2324,8 @@ body {
 
 .login-button:hover,
 .login-button:focus {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
 }
 
 .input-group span {
@@ -2364,8 +2391,13 @@ input:invalid:focus ~ span {
 }
 
 .error-email {
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   color: red;
+}
+@media screen and (min-width: 768px) {
+  .error-email {
+    font-size: 1.3rem;
+  }
 }
 
 .account-container {
@@ -2779,20 +2811,9 @@ input:invalid:focus ~ span {
   cursor: pointer;
 }
 
-.send-message {
-  display: flex;
-  min-width: 100%;
-}
-@media screen and (max-width: 1040px) {
+@media screen and (min-width: 1024px) {
   .send-message {
-    display: block;
-  }
-}
-.send-message .send-message-img {
-  max-width: 50%;
-}
-@media screen and (max-width: 1040px) {
-  .send-message .send-message-img {
+    display: flex;
     min-width: 100%;
   }
 }
@@ -2806,45 +2827,41 @@ input:invalid:focus ~ span {
   background-color: rgb(244, 244, 244);
   width: 100%;
 }
-@media screen and (max-width: 349px) {
+@media screen and (min-width: 768px) {
   .send-message .send-message-form {
-    display: none;
+    font-size: 2.875rem;
+    line-height: 2.875rem;
   }
 }
 .send-message .send-message-form .h2-send {
-  margin-top: 2rem;
+  padding-top: 2rem;
   font-family: "font-pop200", sans-serif;
-  font-size: 2.875rem;
-  line-height: 2.875rem;
+  font-size: 1.875rem;
+  line-height: 0.875rem;
   text-align: center;
   color: #1c1c1c;
 }
-@media screen and (max-width: 720px) {
-  .send-message .send-message-form .h2-send {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 584px) {
-  .send-message .send-message-form .h2-send {
-    font-size: 1.4rem;
-  }
-}
 .send-message .send-message-form form {
+  max-height: 40rem;
   padding: 2rem;
+  /*  @media screen and (max-width: 584px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "fullName"
+      "email"
+      "message"
+      "recaptcha"
+      "send";
+  } */
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  grid-template-areas: "fullName email" "message message" "recaptcha recaptcha" "send send";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 6.25rem);
+  grid-template-areas: "fullName " "email" "message " "recaptcha " "send ";
 }
 .send-message .send-message-form form .input-groups {
   display: flex;
   flex-direction: column;
-}
-@media screen and (max-width: 385px) {
-  .send-message .send-message-form form .input-groups {
-    max-width: 80%;
-    margin: 0 auto;
-  }
 }
 .send-message .send-message-form form .input-groups label {
   font-family: "font-rob400", sans-serif;
@@ -2887,11 +2904,20 @@ input:invalid:focus ~ span {
   line-height: 1rem;
   color: #969696;
 }
-@media screen and (max-width: 584px) {
+@media screen and (min-width: 768px) {
   .send-message .send-message-form form {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "fullName" "email" "message" "recaptcha" "send";
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-areas: "fullName email" "message message" "recaptcha recaptcha" "send send";
+  }
+}
+@media screen and (min-width: 1024px) {
+  .send-message .send-message-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    grid-template-areas: "fullName email" "message message" "recaptcha recaptcha" "send send";
   }
 }
 .send-message .send-message-form form .name {
@@ -2913,6 +2939,11 @@ input:invalid:focus ~ span {
   grid-area: recaptcha;
 }
 .send-message .send-message-form form .send {
+  /*      @media screen and (max-width: 584px) {
+    width: 90%;
+    margin: 0 auto;
+    height: 4rem;
+  } */
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   color: rgb(255, 255, 255);
@@ -2920,13 +2951,6 @@ input:invalid:focus ~ span {
   grid-area: send;
   padding: 1rem;
   cursor: pointer;
-}
-@media screen and (max-width: 584px) {
-  .send-message .send-message-form form .send {
-    width: 90%;
-    margin: 0 auto;
-    height: 4rem;
-  }
 }
 .send-message .succes-send-mgs {
   text-align: center;

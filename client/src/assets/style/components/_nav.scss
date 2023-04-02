@@ -160,36 +160,42 @@
   @media screen and (min-width: 900px) {
     display: none;
   }
+
+  height: 3rem;
+  width: 100%;
   top: 40px;
   right: 25px;
   min-width: 100%;
-  background-color: $color2;
+  background-color: $color1;
+  color: $color2;
   font-size: 2rem;
   cursor: pointer;
   span {
     color: $color2;
     position: absolute;
-    top: 1rem;
+    top: 0.1rem;
     left: 1rem;
   }
   .ham-white {
-    color: $color1;
+    color: $color2;
   }
   .ham-black {
-    color: $color2;
+    color: $color1;
   }
 }
 .hidden-nav {
-  transition: 0.4s;
   @include flex;
   @media screen and (min-width: 900px) {
     display: none;
   }
-  height: 100vh;
+  opacity: 0;
+  height: 0;
+  height: 0;
   top: 0rem;
   width: 100%;
-  /*   backdrop-filter: blur(10px); */
-  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+  background-color: $color1;
+  animation: showNav 1s forwards;
   div {
     position: absolute;
     top: 1.4rem;

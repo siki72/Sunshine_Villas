@@ -1,6 +1,9 @@
 .contact-page {
+  background-color: $color1;
   .contact-header {
-    height: 90vh;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      min-height: 90vh;
+    }
     text-align: center;
     @include flex;
     flex-direction: column;
