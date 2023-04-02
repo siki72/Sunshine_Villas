@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import utils from "../users/utilsFunctions.js";
 import { UserContext } from "../users/UserContext.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const formLoginRef = useRef();
@@ -17,6 +19,9 @@ const Login = () => {
       const response = await utils.login(formData);
       if (!response.ok) {
         setErrorLOg(true);
+        setTimeout(() => {
+          setErrorLOg(false);
+        }, 2500);
         throw new Error("unable to login");
       } else {
         const user = await response.json();
@@ -47,7 +52,7 @@ const Login = () => {
     <div className="full-screen-container">
       <div className="grid-container">
         <div className="login-container">
-          <h1 className="login-title">Welcome</h1>
+          <h1 className="login-title">Sign In</h1>
           <form
             className="form "
             method="POST"
@@ -55,22 +60,22 @@ const Login = () => {
             onSubmit={handeleLogin}
           >
             <div className="input-group">
-              <input
-                placeholder="john"
-                type="email"
-                name="email"
-                id="email"
-                required={true}
-              />
+              <FontAwesomeIcon className="icon" icon={faUser} />
+              <span class="icon">
+                <i class="bx bxs-envelope"></i>
+              </span>
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" required={true} />
             </div>
 
             <div className="input-group ">
+              <FontAwesomeIcon className="icon" icon={faLock} />
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 required={true}
-                placeholder="password"
               />
             </div>
             <span className={errorLog ? "show-error-msg" : "error-msg"}>
