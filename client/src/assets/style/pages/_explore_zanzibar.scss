@@ -1,0 +1,154 @@
+.explore-zanzibar-container {
+  background-color: $color1;
+  .header-container {
+    background-image: url("../img/home/explore.jpg");
+    padding: 3rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header-content {
+      margin: 5rem 0;
+      h1 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 3.625rem;
+          line-height: 3.625rem;
+        }
+        font-family: $gildas;
+        font-size: 2rem;
+        line-height: 2rem;
+        color: $color1;
+        margin-bottom: 3rem;
+      }
+      h2 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 8.125rem;
+          line-height: 7.25rem;
+        }
+        font-family: $pop7;
+        font-size: 3.188rem;
+        line-height: 2.875rem;
+        color: $color1;
+        text-transform: uppercase;
+      }
+    }
+  }
+  main {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    padding: 2rem 0;
+    text-align: center;
+    p:first-child {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 2.125rem;
+        line-height: 2.125rem;
+        max-width: 60%;
+        margin: 3rem auto;
+      }
+      font-family: $gildas;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: $color4;
+      padding: 2rem;
+    }
+    article {
+      > * {
+        margin-bottom: 1rem;
+      }
+      max-width: 90%;
+      margin: 0 auto;
+      figure img {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          padding: 0.4rem;
+        }
+        width: 100%;
+      }
+      h3 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 1.3rem;
+        }
+        font-family: $pop4;
+        font-size: 1.875rem;
+        line-height: 1.875rem;
+        color: $color4;
+      }
+      p {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 0.8rem;
+          line-height: normal;
+        }
+        font-family: $rob3;
+        font-size: 1rem;
+        line-height: 2rem;
+        color: $color5;
+      }
+    }
+  }
+  aside {
+    background-color: rgb(45, 45, 45);
+    padding: 2rem 0;
+    .staff {
+      width: 80%;
+      margin: 0 auto;
+      .staff-avatar {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          width: 30%;
+        }
+        width: 70%;
+        margin: 2rem auto;
+        img {
+          border-radius: 50%;
+          width: 100%;
+        }
+      }
+      .contacts {
+        text-align: center;
+        margin-top: 3rem;
+
+        p {
+          font-family: $pop4;
+          font-size: 1rem;
+          line-height: 2rem;
+          color: $color5;
+        }
+        h2 {
+          font-family: $gildas;
+          font-size: 2.563rem;
+          line-height: 2.813rem;
+          color: $color1;
+          margin: 1rem 0;
+        }
+
+        a {
+          font-family: $rob4;
+          font-size: 1rem;
+          line-height: 2.5rem;
+          color: $color1;
+        }
+
+        div {
+          @media screen and (min-width: $breakPoint-Desktop) {
+            display: block;
+          }
+          display: none;
+          margin-top: 1rem;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: -0.7rem;
+            left: 0;
+            height: 1px;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}

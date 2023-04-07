@@ -1,0 +1,29 @@
+.error-page {
+  height: 100vh;
+  background-color: $color1;
+  text-align: center;
+  @include around;
+  .error-message {
+    margin: 6rem 0;
+    h1 {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 5rem;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 7rem;
+        margin: 4rem 0;
+      }
+      font-family: $rob3;
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+    p {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1.3rem;
+      }
+      font-family: $pop2;
+      width: 80%;
+      margin: 2rem auto;
+    }
+  }
+}

@@ -3364,4 +3364,212 @@ input:invalid:focus ~ span {
 }
 .dashboard-main .dashboard-header .users {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(14, 174, 87) 0%, rgb(12, 116, 117) 90%);
+}
+
+.error-page {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.error-page .error-message {
+  margin: 6rem 0;
+}
+.error-page .error-message h1 {
+  font-family: "font-rob300", sans-serif;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .error-page .error-message h1 {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .error-page .error-message h1 {
+    font-size: 7rem;
+    margin: 4rem 0;
+  }
+}
+.error-page .error-message p {
+  font-family: "font-pop200", sans-serif;
+  width: 80%;
+  margin: 2rem auto;
+}
+@media screen and (min-width: 768px) {
+  .error-page .error-message p {
+    font-size: 1.3rem;
+  }
+}
+
+.explore-zanzibar-container {
+  background-color: rgb(255, 255, 255);
+}
+.explore-zanzibar-container .header-container {
+  background-image: url("../img/home/explore.jpg");
+  padding: 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.explore-zanzibar-container .header-container .header-content {
+  margin: 5rem 0;
+}
+.explore-zanzibar-container .header-container .header-content h1 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: rgb(255, 255, 255);
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container .header-container .header-content h1 {
+    font-size: 3.625rem;
+    line-height: 3.625rem;
+  }
+}
+.explore-zanzibar-container .header-container .header-content h2 {
+  font-family: "font-pop-bold", sans-serif;
+  font-size: 3.188rem;
+  line-height: 2.875rem;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container .header-container .header-content h2 {
+    font-size: 8.125rem;
+    line-height: 7.25rem;
+  }
+}
+.explore-zanzibar-container main {
+  padding: 2rem 0;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.explore-zanzibar-container main p:first-child {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #1c1c1c;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container main p:first-child {
+    font-size: 2.125rem;
+    line-height: 2.125rem;
+    max-width: 60%;
+    margin: 3rem auto;
+  }
+}
+.explore-zanzibar-container main article {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.explore-zanzibar-container main article > * {
+  margin-bottom: 1rem;
+}
+.explore-zanzibar-container main article figure img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container main article figure img {
+    padding: 0.4rem;
+  }
+}
+.explore-zanzibar-container main article h3 {
+  font-family: "font-pop400", sans-serif;
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+  color: #1c1c1c;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container main article h3 {
+    font-size: 1.3rem;
+  }
+}
+.explore-zanzibar-container main article p {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #878787;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container main article p {
+    font-size: 0.8rem;
+    line-height: normal;
+  }
+}
+.explore-zanzibar-container aside {
+  background-color: rgb(45, 45, 45);
+  padding: 2rem 0;
+}
+.explore-zanzibar-container aside .staff {
+  width: 80%;
+  margin: 0 auto;
+}
+.explore-zanzibar-container aside .staff .staff-avatar {
+  width: 70%;
+  margin: 2rem auto;
+}
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container aside .staff .staff-avatar {
+    width: 30%;
+  }
+}
+.explore-zanzibar-container aside .staff .staff-avatar img {
+  border-radius: 50%;
+  width: 100%;
+}
+.explore-zanzibar-container aside .staff .contacts {
+  text-align: center;
+  margin-top: 3rem;
+}
+.explore-zanzibar-container aside .staff .contacts p {
+  font-family: "font-pop400", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #878787;
+}
+.explore-zanzibar-container aside .staff .contacts h2 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.563rem;
+  line-height: 2.813rem;
+  color: rgb(255, 255, 255);
+  margin: 1rem 0;
+}
+.explore-zanzibar-container aside .staff .contacts a {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  color: rgb(255, 255, 255);
+}
+.explore-zanzibar-container aside .staff .contacts div {
+  display: none;
+  margin-top: 1rem;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .explore-zanzibar-container aside .staff .contacts div {
+    display: block;
+  }
+}
+.explore-zanzibar-container aside .staff .contacts div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: -0.7rem;
+  left: 0;
+  height: 1px;
+  background-color: black;
 }/*# sourceMappingURL=index.css.map */

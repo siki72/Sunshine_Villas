@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ReviewsSwiper from "./swiper/reviews/ReviewsSwiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faFacebook } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Home_section4 = () => {
+  const [scrollY, setScrollY] = useState(window.scrollY);
+
   return (
     <div className="section_4">
       <div className="titles_div">

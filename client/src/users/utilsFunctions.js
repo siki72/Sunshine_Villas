@@ -114,22 +114,7 @@ async function updateUserRole(body) {
     console.log(e);
   }
 }
-/* const registerUser = (e) => {
-  e.preventDefault();
-  const data = new FormData(formRegisterRef.current);
 
-  const newUser = {
-    firstname: data.get("firstname"),
-    lastname: data.get("lastname"),
-    email: data.get("email"),
-    password: data.get("password"),
-  };
-
-  userApi.addUser(newUser).then((resp) => {
-    setRedirect(true);
-  });
-};
- */
 export default {
   addUser,
   login,

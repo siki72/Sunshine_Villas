@@ -122,7 +122,7 @@
         line-height: 0.813rem;
         font-weight: 500;
         letter-spacing: 2px;
-        color: #878787;
+        color: $color5;
         margin-bottom: 20px;
       }
       .trip-logo-img img {
@@ -160,7 +160,7 @@
           font-size: 0.8rem;
         }
         text-transform: uppercase;
-        color: #878787;
+        color: $color5;
       }
       ul a {
         > * {
@@ -175,7 +175,7 @@
           transition: 0.4s;
 
           &:hover {
-            color: #878787;
+            color: $color5;
           }
         }
       }
@@ -187,7 +187,7 @@
           font-size: 0.8rem;
         }
         margin-bottom: 10px;
-        color: #878787;
+        color: $color5;
         text-transform: uppercase;
       }
       ul a {
@@ -203,7 +203,7 @@
           transition: 0.4s;
 
           &:hover {
-            color: #878787;
+            color: $color5;
           }
         }
       }
