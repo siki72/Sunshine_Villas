@@ -13,10 +13,10 @@ const Explore_zanzibar = () => {
         </div>
       </header>
       <main className="ours-tours">
-        {/*        <p>
+        <p>
           Our hotel’s location makes it a perfect base to explore all the
           activities that Zanzibar has to offer.
-        </p> */}
+        </p>
         {elements.map((tour) => (
           <article key={tour.id}>
             <figure>

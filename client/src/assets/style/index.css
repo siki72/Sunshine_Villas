@@ -3456,6 +3456,12 @@ input:invalid:focus ~ span {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .explore-zanzibar-container main > *:not(p) {
+    grid-column: span 1;
+  }
+  .explore-zanzibar-container main > p {
+    grid-column: 1/-1;
+  }
 }
 .explore-zanzibar-container main p:first-child {
   font-family: "font-gildas", sans-serif;
@@ -3470,6 +3476,13 @@ input:invalid:focus ~ span {
     line-height: 2.125rem;
     max-width: 60%;
     margin: 3rem auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .explore-zanzibar-container main p:first-child {
+    font-size: 3rem;
+    line-height: 3rem;
+    max-width: 65%;
   }
 }
 .explore-zanzibar-container main article {
@@ -3498,6 +3511,11 @@ input:invalid:focus ~ span {
     font-size: 1.3rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .explore-zanzibar-container main article h3 {
+    font-size: 1.5rem;
+  }
+}
 .explore-zanzibar-container main article p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
@@ -3508,6 +3526,12 @@ input:invalid:focus ~ span {
   .explore-zanzibar-container main article p {
     font-size: 0.8rem;
     line-height: normal;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .explore-zanzibar-container main article p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
   }
 }
 .explore-zanzibar-container aside {
@@ -3525,6 +3549,11 @@ input:invalid:focus ~ span {
 @media screen and (min-width: 768px) {
   .explore-zanzibar-container aside .staff .staff-avatar {
     width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .explore-zanzibar-container aside .staff .staff-avatar {
+    width: 20%;
   }
 }
 .explore-zanzibar-container aside .staff .staff-avatar img {

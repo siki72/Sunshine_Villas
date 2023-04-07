@@ -40,6 +40,13 @@
     @media screen and (min-width: $breakPoint-Tablet) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+
+      > *:not(p) {
+        grid-column: span 1;
+      }
+      > p {
+        grid-column: 1/-1;
+      }
     }
     padding: 2rem 0;
     text-align: center;
@@ -49,6 +56,11 @@
         line-height: 2.125rem;
         max-width: 60%;
         margin: 3rem auto;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 3rem;
+        line-height: 3rem;
+        max-width: 65%;
       }
       font-family: $gildas;
       font-size: 1.5rem;
@@ -72,6 +84,9 @@
         @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 1.3rem;
         }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1.5rem;
+        }
         font-family: $pop4;
         font-size: 1.875rem;
         line-height: 1.875rem;
@@ -81,6 +96,10 @@
         @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 0.8rem;
           line-height: normal;
+        }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 0.95rem;
+          line-height: 1.4rem;
         }
         font-family: $rob3;
         font-size: 1rem;
@@ -98,6 +117,9 @@
       .staff-avatar {
         @media screen and (min-width: $breakPoint-Tablet) {
           width: 30%;
+        }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          width: 20%;
         }
         width: 70%;
         margin: 2rem auto;
