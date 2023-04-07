@@ -64,6 +64,12 @@
     height: 100vh;
   }
 }
+@keyframes autoScroll {
+  to {
+    opacity: 1;
+    bottom: 4rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -455,19 +461,19 @@ body {
     height: auto;
   }
 }
-.about-page .container .jambian-infos-grid .about-jambiani {
+.about-page .container .jambian-infos-grid .about-Sunshine {
   padding: 3rem;
   flex-direction: column;
   background-color: rgb(30, 29, 29);
 }
-.about-page .container .jambian-infos-grid .about-jambiani h4 {
+.about-page .container .jambian-infos-grid .about-Sunshine h4 {
   font-family: "font-pop200", sans-serif;
   font-size: 2.875rem;
   color: rgb(255, 255, 255);
   line-height: 2.875rem;
   margin-bottom: 2rem;
 }
-.about-page .container .jambian-infos-grid .about-jambiani p {
+.about-page .container .jambian-infos-grid .about-Sunshine p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   line-height: 2rem;
@@ -1137,7 +1143,32 @@ body {
   color: rgb(53, 139, 53);
 }
 
-.navigation {
+nav .auto-scroll {
+  position: absolute;
+  bottom: -30rem;
+  opacity: 0;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .auto-scroll .scroll-icon {
+  height: 40%;
+  color: rgb(192, 190, 190);
+}
+nav .show-scroll-button {
+  opacity: 1;
+  position: fixed;
+  animation: autoScroll 1s forwards;
+  z-index: 100;
+}
+nav .navigation {
   display: grid;
   height: 60px;
   width: 100%;
@@ -1148,24 +1179,24 @@ body {
   transition: 0.3s linear;
 }
 @media screen and (max-width: 1120px) {
-  .navigation {
+  nav .navigation {
     display: block;
   }
-  .navigation div {
+  nav .navigation div {
     display: none;
   }
 }
 @media screen and (max-width: 900px) {
-  .navigation {
+  nav .navigation {
     display: none;
   }
 }
 @media screen and (max-width: 500px) {
-  .navigation {
+  nav .navigation {
     display: none;
   }
 }
-.navigation .logo {
+nav .navigation .logo {
   position: absolute;
   left: 15%;
   color: rgb(1, 1, 1);
@@ -1177,14 +1208,14 @@ body {
   background-color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 1120px) {
-  .navigation .logo {
+  nav .navigation .logo {
     display: none;
   }
-  .navigation .logo div {
+  nav .navigation .logo div {
     display: none;
   }
 }
-.navigation .logo p {
+nav .navigation .logo p {
   color: rgb(1, 1, 1);
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -1194,29 +1225,29 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
 }
-.navigation .logo p:last-child {
+nav .navigation .logo p:last-child {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
   font-size: 0.7rem;
 }
-.navigation .logo .line {
+nav .navigation .logo .line {
   width: 100%;
   border-bottom: 1px solid black;
 }
-.navigation ul {
+nav .navigation ul {
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.navigation ul li {
+nav .navigation ul li {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 10px;
 }
-.navigation ul li.villas {
+nav .navigation ul li.villas {
   color: rgb(102, 102, 102);
   letter-spacing: 1px;
   font-size: 14px;
@@ -1224,11 +1255,11 @@ body {
   height: 100%;
   cursor: pointer;
 }
-.navigation ul li.villas:hover .nav-our-villas,
-.navigation ul li.villas .nav-our-villas:hover {
+nav .navigation ul li.villas:hover .nav-our-villas,
+nav .navigation ul li.villas .nav-our-villas:hover {
   display: block;
 }
-.navigation ul li.villas .nav-our-villas {
+nav .navigation ul li.villas .nav-our-villas {
   background-color: rgb(255, 255, 255);
   color: rgb(1, 1, 1);
   display: none;
@@ -1239,7 +1270,7 @@ body {
   top: 47px;
   animation: show 0.4s forwards;
 }
-.navigation ul li.villas .nav-our-villas li {
+nav .navigation ul li.villas .nav-our-villas li {
   background-color: rgb(255, 255, 255);
   font-size: 0.78rem;
   color: rgb(1, 1, 1);
@@ -1247,20 +1278,20 @@ body {
   text-align: left;
   font-weight: 300;
 }
-.navigation ul li.villas .nav-our-villas li:hover {
+nav .navigation ul li.villas .nav-our-villas li:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(1, 1, 1);
 }
-.navigation ul a {
+nav .navigation ul a {
   height: 100%;
   color: rgb(102, 102, 102);
 }
-.navigation ul a :hover {
+nav .navigation ul a :hover {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
   transition: 0.5s;
 }
-.navigation ul .book {
+nav .navigation ul .book {
   font-family: "font-rob300", sans-serif;
   font-size: 18px;
   color: rgb(255, 255, 255);
@@ -1271,28 +1302,25 @@ body {
   transition: 0.4s;
   font-size: 14px;
 }
-.navigation ul .book li .svg-inline--fa {
+nav .navigation ul .book li .svg-inline--fa {
   margin-left: 10px;
 }
-.navigation ul .book:hover {
+nav .navigation ul .book:hover {
   transform: scale(1.15);
 }
-
 @keyframes show {
   to {
     height: 50px;
     opacity: 1;
   }
 }
-.scroll-up {
+nav .scroll-up {
   transform: translate(0, 0);
 }
-
-.scroll-down {
+nav .scroll-down {
   transform: translate(0, -100%);
 }
-
-.hamburguer {
+nav .hamburguer {
   height: 3rem;
   width: 100%;
   top: 40px;
@@ -1304,24 +1332,23 @@ body {
   cursor: pointer;
 }
 @media screen and (min-width: 900px) {
-  .hamburguer {
+  nav .hamburguer {
     display: none;
   }
 }
-.hamburguer span {
+nav .hamburguer span {
   color: rgb(1, 1, 1);
   position: absolute;
   top: 0.1rem;
   left: 1rem;
 }
-.hamburguer .ham-white {
+nav .hamburguer .ham-white {
   color: rgb(1, 1, 1);
 }
-.hamburguer .ham-black {
+nav .hamburguer .ham-black {
   color: rgb(255, 255, 255);
 }
-
-.hidden-nav {
+nav .hidden-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1335,28 +1362,28 @@ body {
   animation: showNav 1s forwards;
 }
 @media screen and (min-width: 900px) {
-  .hidden-nav {
+  nav .hidden-nav {
     display: none;
   }
 }
-.hidden-nav div {
+nav .hidden-nav div {
   position: absolute;
   top: 1.4rem;
   right: 2px;
   width: 2rem;
   font-size: 1.3rem;
 }
-.hidden-nav ul {
+nav .hidden-nav ul {
   text-align: center;
 }
-.hidden-nav ul li {
+nav .hidden-nav ul li {
   margin: 2rem auto;
   font-size: 1.5rem;
   color: rgb(1, 1, 1);
   opacity: 0.8;
   font-weight: 300;
 }
-.hidden-nav ul .admin-li {
+nav .hidden-nav ul .admin-li {
   background-color: rgb(1, 1, 1);
   padding: 1rem;
   color: rgb(255, 255, 255);
@@ -1751,18 +1778,11 @@ body {
   display: none;
   transition: 0.7s;
 }
-@media screen and (min-width: 1024px) {
-  .section_4 .reviews-grid .swiper {
-    margin: 1rem auto;
-    width: 100%;
-    display: block;
-  }
-}
 @media screen and (min-width: 768px) {
   .section_4 .reviews-grid .swiper {
-    margin: 1rem auto;
     width: 100%;
     display: block;
+    padding: 2rem;
   }
 }
 .section_4 .reviews-grid .swiper:hover {

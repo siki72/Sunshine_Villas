@@ -67,8 +67,8 @@ const About = () => {
           </div>
           <div className="situation-img"></div>
           <div className="plan"></div>
-          <div className="about-jambiani">
-            <h4>About Jambiani</h4>
+          <div className="about-Sunshine">
+            <h4>About Sunshine</h4>
             <p>
               Sunshine Villas is located on 3 properties, around 400 m from each
               other. Breakfast is served in our middle - Kati Kati - property.

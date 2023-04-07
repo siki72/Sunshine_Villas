@@ -1,14 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faVihara, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUp,
+  faBars,
+  faVihara,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../users/UserContext.jsx";
 
 const Navigation = () => {
+  const { user } = useContext(UserContext); // je recupére la data de user depuis
   const [show, setShow] = useState(false);
   const [lastScrol, setLastScroll] = useState(0);
+  const [scrollY, setScrollY] = useState();
   const [hidden, setHidden] = useState(true);
-  const { user } = useContext(UserContext); // je recupére la data de user depuis
   const controlNavBar = () => {
     if (window.scrollY > lastScrol) {
       // if scroll down hide the navbar
@@ -17,7 +23,6 @@ const Navigation = () => {
       // if scroll up show the navbar
       setShow(false);
     }
-
     setLastScroll(window.scrollY);
   };
   function hamburguerNav() {
@@ -31,9 +36,33 @@ const Navigation = () => {
       window.removeEventListener("scroll", controlNavBar);
     };
   }, [lastScrol]);
+  useEffect(() => {
+    function ScrollToTop() {
+      if (window.scrollY > 200) {
+        autoScroll.classList.add("show-scroll-button");
+      } else {
+        autoScroll.classList.remove("show-scroll-button");
+      }
+    }
+    const autoScroll = document.querySelector(".auto-scroll");
+    window.addEventListener("scroll", ScrollToTop);
+
+    return () => {
+      window.removeEventListener("scroll", ScrollToTop);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
   return (
-    <div>
+    <nav>
+      <div className="auto-scroll" onClick={handleScrollToTop}>
+        <FontAwesomeIcon icon={faArrowUp} className="scroll-icon" />
+      </div>
       <div className={`navigation  ${show ? "scroll-down" : "scroll-up"} `}>
         <div></div>
         <div></div>
@@ -57,6 +86,9 @@ const Navigation = () => {
 
           <NavLink to="/about">
             <li>About</li>
+          </NavLink>
+          <NavLink to="/explore-zanzibar">
+            <li>Exxplore Zanzibar</li>
           </NavLink>
 
           <li className="villas">
@@ -147,7 +179,7 @@ const Navigation = () => {
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 

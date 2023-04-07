@@ -118,6 +118,12 @@ $color9: rgb(28, 28, 28);
     height: 100vh;
   }
 }
+@keyframes autoScroll {
+  to {
+    opacity: 1;
+    bottom: 4rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;

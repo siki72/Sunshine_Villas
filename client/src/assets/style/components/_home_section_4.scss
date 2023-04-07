@@ -43,16 +43,12 @@
     }
 
     .swiper {
-      @media screen and (min-width: $breakPoint-Desktop) {
-        margin: 1rem auto;
-        width: 100%;
-        display: block;
-      }
       @media screen and (min-width: $breakPoint-Tablet) {
-        margin: 1rem auto;
         width: 100%;
         display: block;
+        padding: 2rem;
       }
+
       display: none;
       transition: 0.7s;
       &:hover {

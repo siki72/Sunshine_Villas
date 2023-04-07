@@ -27,7 +27,7 @@ const Home = () => {
               PRIVATE LUXURY VILLAS
             </h1>
             <h2 style={{ transform: `translateX(${scrollY}px)` }}>
-              Jambiani beach, Zanzibar.
+              Sunshine beach, Zanzibar.
             </h2>
             <Link to="/villas/1-bed-apartement/1">
               <button className="button">Book your Villa</button>

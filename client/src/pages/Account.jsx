@@ -47,7 +47,7 @@ const Account = () => {
     return classes;
   }
   return (
-    <div className="account-container">
+    <div id="#" className="account-container">
       <div className="container">
         <div
           style={{

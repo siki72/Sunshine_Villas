@@ -45,8 +45,8 @@ import { createConnexion } from "./connexion.js";
             
             VALUES
                  ("Maxim Vianey", "I stayed one week in this place. The villa is big with a nice pool and access to the beach. The restaurant is a short walk away", "https://i.postimg.cc/kM1chpzf/guest-1.png"),
-                 ("Remy & karin", "Very nice stay in Jambiani Villas. We were in the large apartment on first floor, with sea view. Staff is very friendly, good food.", "https://i.postimg.cc/FKVbbW0b/guest-2.png"),
-                 ("Przemysław ", "The place is simply amazing. It is located in the heart of Jambiani by the very nice beach", "https://i.postimg.cc/rmy1f19B/guest-3.png"),
+                 ("Remy & karin", "Very nice stay in Sunshine Villas. We were in the large apartment on first floor, with sea view. Staff is very friendly, good food.", "https://i.postimg.cc/FKVbbW0b/guest-2.png"),
+                 ("Przemysław ", "The place is simply amazing. It is located in the heart of Sunshine by the very nice beach", "https://i.postimg.cc/rmy1f19B/guest-3.png"),
                  ("lilas" ,"They really know how to manage such lovely place. The sites close one to the other.", "https://i.postimg.cc/Kz9nw1qR/guest-4.png")    
             
         `);

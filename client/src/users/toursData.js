@@ -21,7 +21,7 @@ export const elements = [
     id: 4,
     pic_url: "../img/tours/4.jpeg",
     title: "Maalum Cave",
-    desc: "This hidden gem provides all its visitors with a one-of-a-kind experience. Located just 5 minutes away from Jambiani Villas",
+    desc: "This hidden gem provides all its visitors with a one-of-a-kind experience. Located just 5 minutes away from Sunshine Villas",
   },
   {
     id: 5,
@@ -33,12 +33,12 @@ export const elements = [
     id: 6,
     pic_url: "../img/tours/6.jpeg",
     title: "SKuza + Voodoo Cave",
-    desc: "Kuza Cave is recognized as a sacred place to the forefathers of Jambiani residents. ",
+    desc: "Kuza Cave is recognized as a sacred place to the forefathers of Sunshine residents. ",
   },
   {
     id: 7,
     pic_url: "../img/tours/7.jpeg",
-    title: "Snorkeling in Jambiani",
+    title: "Snorkeling in Sunshine",
     desc: "For those who would like to go snorkeling and would like to avoid additional transportation, we have the perfect solution. ",
   },
   {
@@ -89,10 +89,4 @@ export const elements = [
     title: "Mtende Secret Beach",
     desc: "Mtende Beach is the perfect destination for anyone fond of unique beaches and captivating views! This beach used to be a so-called secret beach - however, due to its mesmerizing scenery and surroundings",
   },
-  /*   {
-    id: 16,
-    pic_url: "../img/tours/16.jpeg",
-    title: "Spice Farm",
-    desc: "Roam through the fragrant spice plantations of Zanzibar and breathe in the scent of an infused past. Zanzibar was one of the worlds leading producers of spices such as clove, nutmeg, and cinnamon.",
-  }, */
 ];
