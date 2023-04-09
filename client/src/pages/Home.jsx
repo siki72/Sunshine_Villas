@@ -21,13 +21,17 @@ const Home = () => {
   return (
     <div>
       <div className="header">
-        <div className="main_img">
+        <div
+          className="main_img"
+          aria-label="plane view of sunhine villas"
+          role="img"
+        >
           <div>
             <h1 style={{ transform: `translateX(-${scrollY}px)` }}>
               PRIVATE LUXURY VILLAS
             </h1>
             <h2 style={{ transform: `translateX(${scrollY}px)` }}>
-              Sunshine beach, Zanzibar.
+              Jambiani beach, Zanzibar.
             </h2>
             <Link to="/villas/1-bed-apartement/1">
               <button className="button">Book your Villa</button>

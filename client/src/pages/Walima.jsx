@@ -44,7 +44,11 @@ const Walima = () => {
 
   return (
     <div className="walima-page">
-      <div className="walima-header">
+      <div
+        className="walima-header"
+        aria-label="delicious pasta dish with a very tasty scampi"
+        role="img"
+      >
         <h1>Walima</h1>
       </div>
       <div className="walima-main">
@@ -68,14 +72,18 @@ const Walima = () => {
           </p>
         </div>
         <div className="walima-img">
-          <img src="../img/walima/2.jpeg" alt="walima restaurent picture" />
+          <img src="../img/walima/2.webp" alt="walima restaurent picture" />
         </div>
       </div>
       <div className="walima-img-swiper">
         <Swiper_walima />
       </div>
       <div className="swahili">
-        <div className="swahili-img"></div>
+        <div
+          className="swahili-img"
+          aria-label="diffents sort of swaili food"
+          role="img"
+        ></div>
         <div className="swahili-text">
           <h3>Sunshine Villas Swahili</h3>
           <p>

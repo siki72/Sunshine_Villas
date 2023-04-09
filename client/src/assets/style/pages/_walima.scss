@@ -1,7 +1,7 @@
 .walima-page {
   background-color: $color1;
   .walima-header {
-    background-image: url("../img/walima/1.png");
+    background-image: url("../img/walima/1.webp");
     background-size: cover;
     background-position: center;
     height: 37rem;
@@ -97,7 +97,14 @@
       .swiper-pagination {
         margin: 2rem auto;
       }
+      #guests-content {
+        color: $color2;
+      }
+      #guests-reviews {
+        color: $color2;
+      }
     }
+
     img {
       @media screen and (min-width: $breakPoint-Desktop) {
         width: 100%;
@@ -121,7 +128,7 @@
         height: 40rem;
         width: 170%;
       }
-      background-image: url("../img/walima/swahili.jpeg");
+      background-image: url("../img/walima/swahili.webp");
       height: 30rem;
       width: 100%;
       background-position: center;

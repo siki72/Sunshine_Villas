@@ -31,7 +31,11 @@ const Home_section1 = () => {
             </Link>
           </div>
         </div>
-        <div className="section_1_img"></div>
+        <div
+          className="section_1_img"
+          aria-label="picture of villa 1 and the swiming-pool"
+          role="img"
+        ></div>
       </div>
     </div>
   );

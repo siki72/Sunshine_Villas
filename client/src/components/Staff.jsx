@@ -7,7 +7,7 @@ const Staff = () => {
     <div className="staff-contact-box">
       <div className="staff">
         <div className="staff-avatar">
-          <img src="../img/home/manager.png" alt="manager_pic" />
+          <img src="../img/home/manager.webp" alt="manager_pic" />
         </div>
         <div className="contacts">
           <h2>Ali Missoum</h2>
@@ -22,7 +22,7 @@ const Staff = () => {
       </div>
       <div className="staff">
         <div className="staff-avatar">
-          <img src="../img/home/assistante.jpg" alt="manager_pic" />
+          <img src="../img/home/assistante.webp" alt="manager_pic" />
         </div>
         <div className="contacts">
           <h2>Alicia Missoum</h2>

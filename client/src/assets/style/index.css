@@ -250,17 +250,20 @@ body {
   margin: 0;
 }
 
+.swiper div p,
+h3 {
+  color: rgb(0, 0, 0) !important;
+}
+
 .about-page .container {
   background-color: rgb(255, 255, 255);
 }
 .about-page .container .about-header {
-  padding-top: 2rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   text-align: center;
-  background-image: url("../img/home/about_page.jpg");
+  background-image: url("../img/home/about_page.webp");
   background-size: cover;
   background-position: center;
 }
@@ -279,6 +282,7 @@ body {
   .about-page .container .about-header h1 {
     font-size: 6.125rem;
     line-height: 5.85rem;
+    padding-top: 5rem;
   }
 }
 .about-page .container .about-header h2 {
@@ -292,22 +296,12 @@ body {
     line-height: 3.625rem;
   }
 }
-.about-page .container .about-header div {
-  margin: 15px 0;
-}
 .about-page .container .about-header div img {
   width: 15rem;
   max-width: 45%;
 }
 .about-page .container .text {
   padding: 1rem;
-  /*   @media screen and (min-width: $breakPoint-Desktop) {
-    font-size: 2.875rem;
-    line-height: 2.875rem;
-    max-width: 50%;
-    margin: 30px auto;
-    text-align: center;
-  } */
   text-align: center;
 }
 @media screen and (min-width: 1024px) {
@@ -394,7 +388,7 @@ body {
 .about-page .container .about-main h6 {
   font-family: "font-rob300", sans-serif;
   font-size: 0.9rem;
-  color: #7a7a7a;
+  color: rgb(1, 1, 1);
   line-height: 1.2rem;
 }
 .about-page .container .jambian-infos-grid {
@@ -431,7 +425,7 @@ body {
 .about-page .container .jambian-infos-grid .situation p {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
-  color: #878788;
+  color: #2d2d31;
   line-height: 2rem;
 }
 @media screen and (min-width: 768px) {
@@ -441,7 +435,7 @@ body {
 }
 .about-page .container .jambian-infos-grid .situation-img {
   height: 30rem;
-  background-image: url(../img/home/beach-about.jpg);
+  background-image: url(../img/home/beach-about.webp);
   background-size: cover;
   background-position: center;
 }
@@ -452,7 +446,7 @@ body {
 }
 .about-page .container .jambian-infos-grid .plan {
   height: 30rem;
-  background-image: url(../img/home/land_contact.jpg);
+  background-image: url(../img/home/land-contact.webp);
   background-size: cover;
   background-position: center;
 }
@@ -487,7 +481,7 @@ body {
   text-align: center;
   -webkit-clip-path: polygon(49% 16%, 100% 0, 100% 100%, 0 100%, 0 0);
           clip-path: polygon(49% 16%, 100% 0, 100% 100%, 0 100%, 0 0);
-  background-image: url(../img/home/about_center.jpeg);
+  background-image: url(../img/home/about-center.webp);
   background-position: center;
   background-size: cover;
   min-height: 32rem;
@@ -776,15 +770,25 @@ body {
   height: 100vh;
 }
 .header .main_img {
-  background-image: url("../../img/home/zanzibar.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.header .main_img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/home/zanzibar.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  filter: brightness(70%);
+  z-index: -100;
 }
 .header .main_img div {
   text-align: center;
@@ -1247,6 +1251,14 @@ nav .navigation ul li {
   align-items: center;
   padding: 0 10px;
 }
+nav .navigation ul li a {
+  color: rgb(1, 1, 1);
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 nav .navigation ul li.villas {
   color: rgb(102, 102, 102);
   letter-spacing: 1px;
@@ -1277,16 +1289,17 @@ nav .navigation ul li.villas .nav-our-villas li {
   opacity: 0.8;
   text-align: left;
   font-weight: 300;
+  min-height: 100%;
 }
 nav .navigation ul li.villas .nav-our-villas li:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(1, 1, 1);
 }
-nav .navigation ul a {
-  height: 100%;
+nav .navigation ul li {
+  min-height: 100%;
   color: rgb(102, 102, 102);
 }
-nav .navigation ul a :hover {
+nav .navigation ul li :hover {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
   transition: 0.5s;
@@ -1404,7 +1417,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_1 .main-villa .section_1_img {
-  background-image: url("../img/home/section_1.jpeg");
+  background-image: url("../img/home/section_1.webp");
   background-position: right;
   background-repeat: no-repeat;
   height: 30rem;
@@ -1616,7 +1629,7 @@ nav .hidden-nav ul .admin-li {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
-  color: #878787;
+  color: rgb(1, 1, 1);
   max-width: 90%;
   margin: 2rem auto;
 }
@@ -1660,10 +1673,6 @@ nav .hidden-nav ul .admin-li {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 8px #515a5b;
 }
-.section_3 .section_3_grid {
-  /*     display: grid;
-  grid-template-columns: 70% 30%; */
-}
 @media screen and (min-width: 1024px) {
   .section_3 .section_3_grid {
     display: grid;
@@ -1671,7 +1680,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_3 .section_3_grid .img {
-  background-image: url("../img/home/section_2.jpg");
+  background-image: url("../img/home/section_2.webp");
   width: 100%;
   height: 25rem;
   background-size: 175%;
@@ -1782,7 +1791,6 @@ nav .hidden-nav ul .admin-li {
   .section_4 .reviews-grid .swiper {
     width: 100%;
     display: block;
-    padding: 2rem;
   }
 }
 .section_4 .reviews-grid .swiper:hover {
@@ -1909,13 +1917,13 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_5 .main-section-grid .walima {
-  background-image: url("../img/home/restaurent.jpeg");
+  background-image: url("../img/home/restaurent.webp");
   height: 25rem;
   width: 100%;
   background-size: cover;
 }
 .section_5 .main-section-grid .sansibility {
-  background-image: url("../img/home/children.jpeg");
+  background-image: url("../img/home/children.webp");
   height: 25rem;
   width: 100%;
   background-size: cover;
@@ -1943,7 +1951,7 @@ nav .hidden-nav ul .admin-li {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
-  color: #878787;
+  color: rgb(1, 1, 1);
   width: 90%;
   margin: 1rem auto;
 }
@@ -2201,7 +2209,7 @@ nav .hidden-nav ul .admin-li {
 }
 .footer .rights h4 {
   letter-spacing: 2px;
-  color: rgb(95, 95, 95);
+  color: rgb(216, 216, 216);
   font-size: 0.688rem;
   line-height: 1rem;
   margin-bottom: 1rem;
@@ -2229,7 +2237,7 @@ nav .hidden-nav ul .admin-li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/home/side-login-pic.jpeg");
+  background-image: url("../img/home/side-login-pic.webp");
 }
 @media screen and (min-width: 1024px) {
   .full-screen-container .grid-container {
@@ -2996,7 +3004,7 @@ input:invalid:focus ~ span {
   background-color: rgb(255, 255, 255);
 }
 .walima-page .walima-header {
-  background-image: url("../img/walima/1.png");
+  background-image: url("../img/walima/1.webp");
   background-size: cover;
   background-position: center;
   height: 37rem;
@@ -3108,6 +3116,12 @@ input:invalid:focus ~ span {
 .walima-page .walima-img-swiper .swiper div .swiper-pagination {
   margin: 2rem auto;
 }
+.walima-page .walima-img-swiper .swiper div #guests-content {
+  color: rgb(1, 1, 1);
+}
+.walima-page .walima-img-swiper .swiper div #guests-reviews {
+  color: rgb(1, 1, 1);
+}
 .walima-page .walima-img-swiper img {
   max-height: 100%;
   width: 100%;
@@ -3134,7 +3148,7 @@ input:invalid:focus ~ span {
   }
 }
 .walima-page .swahili .swahili-img {
-  background-image: url("../img/walima/swahili.jpeg");
+  background-image: url("../img/walima/swahili.webp");
   height: 30rem;
   width: 100%;
   background-position: center;
@@ -3428,7 +3442,7 @@ input:invalid:focus ~ span {
   background-color: rgb(255, 255, 255);
 }
 .explore-zanzibar-container .header-container {
-  background-image: url("../img/home/explore.jpg");
+  background-image: url("../img/home/explore.webp");
   padding: 3rem;
   background-repeat: no-repeat;
   background-size: cover;

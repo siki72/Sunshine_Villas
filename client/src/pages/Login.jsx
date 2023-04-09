@@ -50,7 +50,11 @@ const Login = () => {
   }
   return (
     <div className="full-screen-container">
-      <div className="grid-container">
+      <div
+        className="grid-container"
+        aria-label="plane view of the east coast with beaitfull sunshine"
+        role="img"
+      >
         <div className="login-container">
           <h1 className="login-title">Sign In</h1>
           <form

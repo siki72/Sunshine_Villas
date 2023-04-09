@@ -6,7 +6,11 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 const Explore_zanzibar = () => {
   return (
     <div className="explore-zanzibar-container">
-      <header className="header-container">
+      <header
+        className="header-container"
+        aria-label="Sunshine hotels over--view with somme traditionnal wood boats on the sea"
+        role="img"
+      >
         <div className="header-content">
           <h1>Discover Zanzibar</h1>
           <h2>explore the island's wonders</h2>
@@ -30,7 +34,7 @@ const Explore_zanzibar = () => {
       <aside>
         <div className="staff">
           <div className="staff-avatar">
-            <img src="../img/home/assistante.jpg" alt="manager_pic" />
+            <img src="../img/home/assistante.webp" alt="manager_pic" />
           </div>
           <div className="contacts">
             <p>

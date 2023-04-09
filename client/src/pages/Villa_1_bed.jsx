@@ -152,7 +152,7 @@ const Villa_1_bed = () => {
     <div className="booking">
       <div className="header_img">
         <img
-          src="../../img/home/choose_villas.jpeg"
+          src="../../img/home/choose_villas.webp"
           alt="general villas view"
         />
       </div>

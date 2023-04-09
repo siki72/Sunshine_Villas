@@ -13,7 +13,6 @@ const Navigation = () => {
   const { user } = useContext(UserContext); // je recupére la data de user depuis
   const [show, setShow] = useState(false);
   const [lastScrol, setLastScroll] = useState(0);
-  const [scrollY, setScrollY] = useState();
   const [hidden, setHidden] = useState(true);
   const controlNavBar = () => {
     if (window.scrollY > lastScrol) {
@@ -53,9 +52,7 @@ const Navigation = () => {
   }, []);
 
   const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
+    window.scrollTo({ top: 0 });
   };
 
   return (
@@ -80,49 +77,52 @@ const Navigation = () => {
         </Link>
 
         <ul>
-          <NavLink to="/">
-            <li>Home</li>
-          </NavLink>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
 
-          <NavLink to="/about">
-            <li>About</li>
-          </NavLink>
-          <NavLink to="/explore-zanzibar">
-            <li>Exxplore Zanzibar</li>
-          </NavLink>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/explore-zanzibar">Explore Zanzibar</NavLink>
+          </li>
 
           <li className="villas">
-            Our villas
+            <NavLink to="/villas/1-BED-APARTEMENT/1">Our villas</NavLink>
+
             <ul className="nav-our-villas">
-              <NavLink to="/villas/1-BED-APARTEMENT/1">
-                <li>1-bed-apartement</li>
-              </NavLink>
-              <NavLink to="/villas/2-BED-VILLA/2">
-                <li>2-bed-villa</li>
-              </NavLink>
-              <NavLink to="/villas/3-BED-VILLA/3">
-                <li>3-bed-villa</li>
-              </NavLink>
+              <li>
+                <NavLink to="/villas/1-BED-APARTEMENT/1">
+                  1-bed-apartement
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/villas/2-BED-VILLA/2">2-bed-villa</NavLink>
+              </li>
+              <li>
+                <NavLink to="/villas/3-BED-VILLA/3">3-bed-villa</NavLink>
+              </li>
             </ul>
           </li>
-          <NavLink to="/walima">
-            <li>Walima</li>
-          </NavLink>
+          <li>
+            <NavLink to="/walima">Walima</NavLink>
+          </li>
 
-          <NavLink to="/contact">
-            <li>Contact us</li>
-          </NavLink>
+          <li>
+            <NavLink to="/contact">Contact us</NavLink>
+          </li>
           {user?.role === "admin" && (
-            <NavLink to="/account/dashboard">
-              <li>Dashboard</li>
-            </NavLink>
+            <li>
+              <NavLink to="/account/dashboard">Dashboard</NavLink>
+            </li>
           )}
 
-          <NavLink to={user ? "/account" : "/login"} className={"book"}>
-            <li className="li">
+          <li className="li">
+            <NavLink to={user ? "/account" : "/login"} className={"book"}>
               {user ? " Welcome  " + user.name?.toUpperCase() : "Login"}
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div onClick={() => setHidden(false)} className="hamburguer">

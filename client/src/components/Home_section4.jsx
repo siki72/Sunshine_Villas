@@ -16,17 +16,17 @@ const Home_section4 = () => {
         <ReviewsSwiper />
         <div className="stars">
           <div className="trip-logo">
-            <img src="./img/logo/black-logo.png" alt="trip_advisro_logo" />
+            <img src="./img/logo/black-logo.webp" alt="trip_advisro_logo" />
           </div>
           <div className="stars">
-            <img src="./img/logo/stars.png" alt="trip_advisro_logo" />
+            <img src="./img/logo/stars.webp" alt="trip_advisro_logo" />
           </div>
         </div>
       </div>
       <div
         className="get_media"
         style={{
-          backgroundImage: `url(./img/home/section_4.jpg)`,
+          backgroundImage: `url(./img/home/section_4.webp)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right",
           backgroundSize: "cover",

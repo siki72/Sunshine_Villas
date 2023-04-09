@@ -5,7 +5,11 @@ const Home_section3 = () => {
   return (
     <div className="section_3">
       <div className="section_3_grid">
-        <div className="img"></div>
+        <div
+          className="img"
+          aria-label="picture of old wood boat in the sea"
+          role="img"
+        ></div>
         <div className="text">
           <h2>Discover Zanzibar</h2>
           <p>

@@ -3,13 +3,23 @@
   overflow: hidden;
   height: 100vh;
   .main_img {
-    background-image: url("../../img/home/zanzibar.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
     height: 100%;
     width: 100%;
     @include flex;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../img/home/zanzibar.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      filter: brightness(70%);
+      z-index: -100;
+    }
 
     div {
       text-align: center;
@@ -19,7 +29,7 @@
           line-height: 6.25rem;
         }
         font-family: $pop7;
-        color: rgb(255, 255, 255);
+        color: $color1;
         font-size: 3rem;
         line-height: 4rem;
         font-weight: 300;

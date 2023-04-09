@@ -8,14 +8,18 @@ const About = () => {
   return (
     <div className="about-page">
       <div className="container">
-        <div className="about-header">
+        <div
+          className="about-header"
+          aria-label="A view from above by a drone of the Sunshine villas"
+          role="img"
+        >
           <h1>sunshine villas</h1>
           <h2>In beautiful Zanzibar</h2>
           <div>
-            <img src="../img/logo/withe-logo.png" alt="trip-advisor-logo" />
+            <img src="../img/logo/withe-logo.webp" alt="trip-advisor-logo" />
           </div>
           <div>
-            <img src="../img/logo/stars.png" alt="5-stars-logo" />
+            <img src="../img/logo/stars.webp" alt="5-stars-logo" />
           </div>
         </div>
         <div className="text">
@@ -32,14 +36,18 @@ const About = () => {
         <div className="about-main">
           <h4>Karibu Sana</h4>
           <div className="manager-img">
-            <img src="../img/home/manager.png" alt="manager_pic" />
+            <img src="../img/home/manager.webp" alt="manager_pic" />
           </div>
           <h5>Ali missoum</h5>
           <h5>Ali Missoum</h5>
           <h6>Genral manager</h6>
         </div>
 
-        <div className="sea-img">
+        <div
+          className="sea-img"
+          aria-label="picture of the sunshine hotel with the sea on front"
+          role="img"
+        >
           <figure>
             <blockquote cite="https://fr.wikipedia.org/wiki/Eleanor_Roosevelt">
               <p>
@@ -65,8 +73,16 @@ const About = () => {
               make your stay enjoyable and memorable.
             </p>
           </div>
-          <div className="situation-img"></div>
-          <div className="plan"></div>
+          <div
+            className="situation-img"
+            aria-label="picture ok nakupenda beach"
+            role="img"
+          ></div>
+          <div
+            className="plan"
+            aria-label="plan of the east coast"
+            role="img"
+          ></div>
           <div className="about-Sunshine">
             <h4>About Sunshine</h4>
             <p>
@@ -82,10 +98,10 @@ const About = () => {
         <div className="reviews">
           <div className="logo">
             <img
-              src="../img/logo/black-logo.png"
+              src="../img/logo/black-logo.webp"
               alt="trip advisor black version"
             />
-            <img src="../img/logo/stars.png" alt="5 yellow stars picture" />
+            <img src="../img/logo/stars.webp" alt="5 yellow stars picture" />
           </div>
           <ReviewsSwiper className="reviews-swiper" />
         </div>

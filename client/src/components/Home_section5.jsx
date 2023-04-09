@@ -5,7 +5,12 @@ const Home_section5 = () => {
   return (
     <div className="section_5">
       <div className="main-section-grid">
-        <div id="restaurent-img" className="walima"></div>
+        <div
+          id="restaurent-img"
+          className="walima"
+          aria-label="picture of walima restaurent"
+          role="img"
+        ></div>
         <div className="read" id="restaurent-read">
           <h3>Walima ...</h3>
           <p>
@@ -16,7 +21,7 @@ const Home_section5 = () => {
             wines and cocktails.
           </p>
           <Link to="/walima">
-            <button>Read more</button>
+            <button>Discover our restaurant</button>
           </Link>
         </div>
         <div className="read" id="susta-read">
@@ -27,10 +32,15 @@ const Home_section5 = () => {
             and environmental support measures.
           </p>
           <Link to="/about">
-            <button>Read more</button>
+            <button>Come and discover us</button>
           </Link>
         </div>
-        <div className="sansibility" id="susta-img"></div>
+        <div
+          className="sansibility"
+          id="susta-img"
+          aria-label="picture of many chilfrens on the beack"
+          role="img"
+        ></div>
       </div>
     </div>
   );

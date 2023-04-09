@@ -37,14 +37,14 @@ export default function App() {
         {reviews.map((comment) => (
           <SwiperSlide key={comment.id}>
             <div>
-              <h3>Guest reviews :</h3>
+              <h3 id="guests-reviews">Guest reviews :</h3>
 
               <span>
                 <img src={comment.link} alt={"picture" + comment.name} />{" "}
                 <h4>{comment.name}</h4>
                 <h4>5/5</h4>
               </span>
-              <p>{comment.content}</p>
+              <p id="guests-content">{comment.content}</p>
             </div>
           </SwiperSlide>
         ))}

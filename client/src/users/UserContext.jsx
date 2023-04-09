@@ -8,24 +8,29 @@ export function UserContextProvider({ children }) {
   const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
-    if (!user) {
-      fetch("https://alimissoum.app.3wa.io/profile", {
-        credentials: "include", // renvoi tes cookie dans la req
-      }).then((resp) => {
-        if (resp.ok) {
-          resp.json().then((data) => {
+    const fetchProfile = async () => {
+      try {
+        if (!user) {
+          const resp = await fetch("https://alimissoum.app.3wa.io/profile", {
+            credentials: "include", // renvoi tes cookie dans la req
+          });
+
+          if (resp.ok) {
+            const data = await resp.json();
             setUser(data);
             if (data.role === "admin") {
               setIsAdmin(data);
             }
             setReady(true);
-          });
+          }
         }
-      });
-    }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchProfile();
   }, [user]);
-  console.log(user);
-  console.log(isAdmin);
 
   return (
     <UserContext.Provider

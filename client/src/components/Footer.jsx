@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="trip-logo">
           <div className="trip-logo-img">
             <img
-              src="../img/logo/trip-footer-logo.png"
+              src="../img/logo/trip-footer-logo.webp"
               alt="logo of sunshine villas"
             />
           </div>

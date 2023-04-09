@@ -48,7 +48,7 @@ const Message_form = () => {
   return (
     <div className="send-message">
       <div className="send-message-img">
-        <img src="../img/home/message-page.jpeg" alt="villas picture" />
+        <img src="../img/home/message-page.webp" alt="villas picture" />
       </div>
       <div className="send-message-form">
         <h2 className={success ? "succes-send-mgs" : "h2-send"}>
