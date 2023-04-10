@@ -40,7 +40,7 @@ const Mybookings = () => {
         <div className="login">
           <h1>Ooops ! {user.name} ..</h1>
           you have no reservation for the moment
-          <Link to={"/villas/1"}>
+          <Link to={"/villas/1-BED-APPARTEMENT/1"}>
             <button>
               click
               <span>
@@ -51,7 +51,7 @@ const Mybookings = () => {
         </div>
       ) : (
         myBookings?.map((resa, index) => (
-          <Link to={`/villas/${resa.id}`} key={index}>
+          <Link to={`/villas/${resa.name}/${resa.id}`} key={index}>
             <div className="reservation-grid">
               <div
                 style={{

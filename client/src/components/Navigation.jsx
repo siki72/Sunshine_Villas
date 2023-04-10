@@ -90,20 +90,6 @@ const Navigation = () => {
 
           <li className="villas">
             <NavLink to="/villas/1-BED-APARTEMENT/1">Our villas</NavLink>
-
-            <ul className="nav-our-villas">
-              <li>
-                <NavLink to="/villas/1-BED-APARTEMENT/1">
-                  1-bed-apartement
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/villas/2-BED-VILLA/2">2-bed-villa</NavLink>
-              </li>
-              <li>
-                <NavLink to="/villas/3-BED-VILLA/3">3-bed-villa</NavLink>
-              </li>
-            </ul>
           </li>
           <li>
             <NavLink to="/walima">Walima</NavLink>

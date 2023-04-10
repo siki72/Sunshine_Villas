@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { Link, Navigate, NavLink, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { UserContext } from "../users/UserContext.jsx";
 import {
   faArrowRightFromBracket,
@@ -8,16 +8,12 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-
 import Mybookings from "./Mybookings.jsx";
 import Admin from "./Admin.jsx";
-import { useEffect } from "react";
 import User_profile from "../components/User_profile.jsx";
 
 const Account = () => {
   const { pages } = useParams();
-  const [redirect, setRedirect] = useState(false);
-
   const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
   if (!ready) {
     return "loading";

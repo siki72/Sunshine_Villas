@@ -569,10 +569,8 @@ h3 {
   }
 }
 
-.contact-page {
+.contact-header {
   background-color: rgb(255, 255, 255);
-}
-.contact-page .contact-header {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -581,11 +579,11 @@ h3 {
   margin: 0 auto;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contact-header {
+  .contact-header {
     min-height: 90vh;
   }
 }
-.contact-page .contact-header .heder-color {
+.contact-header .heder-color {
   height: 3.5rem;
   width: 100%;
   background-color: #1c1c1c;
@@ -593,7 +591,7 @@ h3 {
   top: 0;
   z-index: -500;
 }
-.contact-page .contact-header h1 {
+.contact-header h1 {
   margin-top: 3rem;
   max-width: 80%;
   font-family: "font-pop-bold", sans-serif;
@@ -602,60 +600,60 @@ h3 {
   color: #1c1c1c;
 }
 @media screen and (min-width: 768px) {
-  .contact-page .contact-header h1 {
+  .contact-header h1 {
     font-size: 5.25rem;
     line-height: 6.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contact-header h1 {
+  .contact-header h1 {
     font-size: 6.25rem;
     line-height: 6.25rem;
   }
 }
-.contact-page .contact-header .staff-contact-box {
+.contact-header .staff-contact-box {
   width: 80%;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contact-header .staff-contact-box {
+  .contact-header .staff-contact-box {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 }
-.contact-page .contact-header .staff-contact-box .staff {
+.contact-header .staff-contact-box .staff {
   margin-top: 1rem;
 }
-.contact-page .contact-header .staff-contact-box .staff .staff-avatar img {
+.contact-header .staff-contact-box .staff .staff-avatar img {
   border-radius: 50%;
   width: 6rem;
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts h2 {
+.contact-header .staff-contact-box .staff .contacts h2 {
   font-family: "font-gildas", sans-serif;
   font-size: 1.563rem;
   line-height: 2.813rem;
   color: #7a7a7a;
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts a {
+.contact-header .staff-contact-box .staff .contacts a {
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   line-height: 2rem;
   color: #54595f;
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts a > * {
+.contact-header .staff-contact-box .staff .contacts a > * {
   margin-right: 0.4rem;
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts div {
+.contact-header .staff-contact-box .staff .contacts div {
   display: none;
   margin-top: 1rem;
   position: relative;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contact-header .staff-contact-box .staff .contacts div {
+  .contact-header .staff-contact-box .staff .contacts div {
     display: block;
   }
 }
-.contact-page .contact-header .staff-contact-box .staff .contacts div::before {
+.contact-header .staff-contact-box .staff .contacts div::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -664,31 +662,32 @@ h3 {
   height: 1px;
   background-color: black;
 }
-.contact-page .contact-header .style {
+.contact-header .style {
   bottom: 0;
   position: absolute;
   height: 5rem;
   width: 100%;
   background-color: rgb(28, 28, 28);
 }
-.contact-page .contacts-social {
+
+.contacts-social {
   display: block;
   min-height: 350px;
   background-color: rgb(28, 28, 28);
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social {
+  .contacts-social {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 }
-.contact-page .contacts-social .contact-us {
+.contacts-social .contact-us {
   padding: 3rem 0;
   margin-top: 2rem;
   text-align: center;
 }
-.contact-page .contacts-social .contact-us h2 {
+.contacts-social .contact-us h2 {
   font-family: "font-pop200", sans-serif;
   color: rgb(255, 255, 255);
   font-size: 1.875rem;
@@ -696,12 +695,12 @@ h3 {
   margin-bottom: 1.8rem;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social .contact-us h2 {
+  .contacts-social .contact-us h2 {
     font-size: 2.875rem;
     line-height: 2.875rem;
   }
 }
-.contact-page .contacts-social .contact-us address p {
+.contacts-social .contact-us address p {
   font-family: "font-rob400", sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -709,12 +708,12 @@ h3 {
   line-height: 2rem;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social .contact-us address p {
+  .contacts-social .contact-us address p {
     font-size: 1rem;
     line-height: 2rem;
   }
 }
-.contact-page .contacts-social .contact-us ul li {
+.contacts-social .contact-us ul li {
   margin-top: 0.9rem;
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
@@ -722,45 +721,45 @@ h3 {
   color: #878787;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social .contact-us ul li {
+  .contacts-social .contact-us ul li {
     font-size: 1rem;
     line-height: 1rem;
   }
 }
 @media screen and (max-width: 875px) {
-  .contact-page .contacts-social .social {
+  .contacts-social .social {
     padding-bottom: 3rem;
     text-align: center;
   }
 }
-.contact-page .contacts-social .social .social-media,
-.contact-page .contacts-social .social a {
+.contacts-social .social .social-media,
+.contacts-social .social a {
   font-family: "font-rob400", sans-serif;
   font-size: 1rem;
   color: #878787;
   line-height: 2rem;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social .social .social-media,
-  .contact-page .contacts-social .social a {
+  .contacts-social .social .social-media,
+  .contacts-social .social a {
     font-size: 1.2rem;
     line-height: 2rem;
   }
 }
-.contact-page .contacts-social .social .social-media .icon,
-.contact-page .contacts-social .social a .icon {
+.contacts-social .social .social-media .icon,
+.contacts-social .social a .icon {
   color: rgb(255, 255, 255);
   font-size: 1.2rem;
 }
 @media screen and (min-width: 1024px) {
-  .contact-page .contacts-social .social .social-media .icon,
-  .contact-page .contacts-social .social a .icon {
+  .contacts-social .social .social-media .icon,
+  .contacts-social .social a .icon {
     font-size: 1.3rem;
     line-height: 2rem;
   }
 }
-.contact-page .contacts-social .social .social-media span,
-.contact-page .contacts-social .social a span {
+.contacts-social .social .social-media span,
+.contacts-social .social a span {
   margin-left: 1rem;
 }
 
@@ -1176,7 +1175,7 @@ nav .navigation {
   display: grid;
   height: 60px;
   width: 100%;
-  grid-template-columns: 10% 30% 60%;
+  grid-template-columns: 15% 15% 70%;
   position: fixed;
   background-color: rgb(255, 255, 255);
   top: 0;
@@ -1241,8 +1240,7 @@ nav .navigation .logo .line {
 nav .navigation ul {
   height: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
 }
 nav .navigation ul li {
   height: 100%;
@@ -1257,12 +1255,12 @@ nav .navigation ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 nav .navigation ul li.villas {
   color: rgb(102, 102, 102);
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 300;
   height: 100%;
   cursor: pointer;
@@ -1290,10 +1288,6 @@ nav .navigation ul li.villas .nav-our-villas li {
   text-align: left;
   font-weight: 300;
   min-height: 100%;
-}
-nav .navigation ul li.villas .nav-our-villas li:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(1, 1, 1);
 }
 nav .navigation ul li {
   min-height: 100%;
@@ -2449,9 +2443,10 @@ input:invalid:focus ~ span {
   min-height: 15rem;
 }
 .account-container .container .nav-book {
-  margin: 4rem auto;
+  margin: 3rem auto;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
   align-items: center;
   border: 1px solid transparent;
   padding: 50px;
@@ -2459,8 +2454,22 @@ input:invalid:focus ~ span {
   height: 40px;
   padding: 20px;
 }
+@media screen and (min-width: 768px) {
+  .account-container .container .nav-book {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 4rem auto;
+    max-width: 70%;
+  }
+}
 .account-container .container .nav-book span {
   margin-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .account-container .container .nav-book span {
+    font-size: 1.21rem;
+  }
 }
 .account-container .container .nav-book a,
 .account-container .container .nav-book button {
@@ -2472,6 +2481,13 @@ input:invalid:focus ~ span {
   font-family: "font-rob300", sans-serif;
   transition: 0.4s;
   cursor: pointer;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .account-container .container .nav-book a,
+  .account-container .container .nav-book button {
+    max-width: 30%;
+  }
 }
 .account-container .container .nav-book a:hover,
 .account-container .container .nav-book button:hover {
@@ -2581,18 +2597,28 @@ input:invalid:focus ~ span {
 
 .container-bookings {
   max-width: 90%;
-  margin: 0 auto;
+  margin: 15rem auto;
+}
+@media screen and (min-width: 768px) {
+  .container-bookings {
+    margin: 2rem auto;
+  }
 }
 .container-bookings .reservation-grid {
-  max-width: 70%;
-  background-color: rgba(255, 255, 255, 0.56);
   display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 320px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 320px 380px;
+  background-color: rgba(255, 255, 255, 0.56);
   margin: 25px auto;
   border: 1px solid rgba(50, 84, 96, 0.454);
   box-shadow: 0 0 4px #989d85;
   border-radius: 25px;
+}
+@media screen and (min-width: 768px) {
+  .container-bookings .reservation-grid {
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 320px;
+  }
 }
 .container-bookings .reservation-grid .res-img {
   margin: 15px;
@@ -2601,9 +2627,6 @@ input:invalid:focus ~ span {
 .container-bookings .reservation-grid .res-infos {
   justify-content: center;
   text-align: center;
-}
-.container-bookings .reservation-grid .res-infos > * {
-  margin: 10px;
 }
 .container-bookings .reservation-grid .res-infos h1 {
   font-size: 1rem;
@@ -2665,7 +2688,7 @@ input:invalid:focus ~ span {
 .container-bookings .reservation-grid .res-infos .totals div {
   background-color: rgba(23, 22, 22, 0.5254901961);
   max-width: 50%;
-  margin: 10px auto;
+  margin: 1rem auto;
   padding: 10px 10px;
   border-radius: 10px;
   font-family: "font-rob300", sans-serif;

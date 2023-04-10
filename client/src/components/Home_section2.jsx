@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import CardVilla from "./CardVilla";
 
 const Home_section2 = () => {
@@ -8,7 +7,7 @@ const Home_section2 = () => {
   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
 
   return (
-    <div className="section_2">
+    <section className="section_2">
       <div className="main_select">
         <h2>Select your dream space</h2>
         <div className="villas-cards">
@@ -19,7 +18,7 @@ const Home_section2 = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

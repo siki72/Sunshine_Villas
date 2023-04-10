@@ -1,13 +1,19 @@
 .container-bookings {
+  @media screen and (min-width: $breakPoint-Tablet) {
+    margin: 2rem auto;
+  }
   max-width: 90%;
-  margin: 0 auto;
+  margin: 15rem auto;
 
   .reservation-grid {
-    max-width: 70%;
-    background-color: rgb(255 255 255 / 56%);
+    @media screen and (min-width: $breakPoint-Tablet) {
+      grid-template-columns: 30% 70%;
+      grid-template-rows: 320px;
+    }
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 320px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px 380px;
+    background-color: rgb(255 255 255 / 56%);
     margin: 25px auto;
     border: 1px solid rgba(50, 84, 96, 0.454);
     box-shadow: 0 0 4px #989d85;
@@ -18,10 +24,6 @@
       border-radius: 15px;
     }
     .res-infos {
-      > * {
-        margin: 10px;
-      }
-
       justify-content: center;
       text-align: center;
 
@@ -88,7 +90,7 @@
         div {
           background-color: #17161686;
           max-width: 50%;
-          margin: 10px auto;
+          margin: 1rem auto;
           padding: 10px 10px;
           border-radius: 10px;
           font-family: $rob3;

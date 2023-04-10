@@ -42,7 +42,7 @@ nav {
     display: grid;
     height: 60px;
     width: 100%;
-    grid-template-columns: 10% 30% 60%;
+    grid-template-columns: 15% 15% 70%;
     position: fixed;
     background-color: $color1;
     top: 0;
@@ -91,7 +91,8 @@ nav {
 
     ul {
       height: 100%;
-      @include around;
+      display: flex;
+      justify-content: space-between;
       li {
         height: 100%;
         @include flex;
@@ -100,14 +101,14 @@ nav {
           color: $color2;
           min-height: 100%;
           @include flex;
-          padding: 1rem;
+          padding: 0 1rem;
         }
       }
 
       li.villas {
         color: $color3;
         letter-spacing: 1px;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: 300;
         height: 100%;
         cursor: pointer;
@@ -115,7 +116,6 @@ nav {
         .nav-our-villas:hover {
           display: block;
         }
-
         .nav-our-villas {
           background-color: $color1;
           color: $color2;
@@ -135,10 +135,6 @@ nav {
             text-align: left;
             font-weight: 300;
             min-height: 100%;
-            &:hover {
-              color: $color1;
-              background-color: $color2;
-            }
           }
         }
       }

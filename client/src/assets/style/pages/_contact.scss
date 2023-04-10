@@ -1,173 +1,171 @@
-.contact-page {
+.contact-header {
   background-color: $color1;
-  .contact-header {
-    @media screen and (min-width: $breakPoint-Desktop) {
-      min-height: 90vh;
-    }
-    text-align: center;
-    @include flex;
-    flex-direction: column;
-    margin: 0 auto;
-    .heder-color {
-      height: 3.5rem;
-      width: 100%;
-      background-color: $color4;
-      position: absolute;
-      top: 0;
-      z-index: -500;
-    }
-    h1 {
-      @media screen and (min-width: $breakPoint-Tablet) {
-        font-size: 5.25rem;
-        line-height: 6.25rem;
-      }
-      @media screen and (min-width: $breakPoint-Desktop) {
-        font-size: 6.25rem;
-        line-height: 6.25rem;
-      }
-      margin-top: 3rem;
-      max-width: 80%;
-      font-family: $pop7;
-      font-size: 2rem;
-      line-height: 2.25rem;
-      color: $color4;
-    }
-
-    .staff-contact-box {
-      @media screen and (min-width: $breakPoint-Desktop) {
-        @include around;
-      }
-      width: 80%;
-
-      .staff {
-        margin-top: 1rem;
-        .staff-avatar {
-          img {
-            border-radius: 50%;
-            width: 6rem;
-          }
-        }
-        .contacts {
-          h2 {
-            font-family: $gildas;
-            font-size: 1.563rem;
-            line-height: 2.813rem;
-            color: $color7;
-          }
-          a {
-            > * {
-              margin-right: 0.4rem;
-            }
-            font-family: $rob4;
-            font-size: 1rem;
-            line-height: 2rem;
-            color: $color8;
-          }
-
-          div {
-            @media screen and (min-width: $breakPoint-Desktop) {
-              display: block;
-            }
-            display: none;
-            margin-top: 1rem;
-            position: relative;
-            &::before {
-              content: "";
-              position: absolute;
-              width: 100%;
-              top: -0.7rem;
-              left: 0;
-              height: 1px;
-              background-color: black;
-            }
-          }
-        }
-      }
-    }
-    .style {
-      bottom: 0;
-      position: absolute;
-      height: 5rem;
-      width: 100%;
-      background-color: $color9;
-    }
+  @media screen and (min-width: $breakPoint-Desktop) {
+    min-height: 90vh;
   }
-  .contacts-social {
+  text-align: center;
+  @include flex;
+  flex-direction: column;
+  margin: 0 auto;
+  .heder-color {
+    height: 3.5rem;
+    width: 100%;
+    background-color: $color4;
+    position: absolute;
+    top: 0;
+    z-index: -500;
+  }
+  h1 {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      font-size: 5.25rem;
+      line-height: 6.25rem;
+    }
+    @media screen and (min-width: $breakPoint-Desktop) {
+      font-size: 6.25rem;
+      line-height: 6.25rem;
+    }
+    margin-top: 3rem;
+    max-width: 80%;
+    font-family: $pop7;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    color: $color4;
+  }
+
+  .staff-contact-box {
     @media screen and (min-width: $breakPoint-Desktop) {
       @include around;
     }
-    display: block;
-    min-height: 350px;
-    background-color: $color9;
+    width: 80%;
 
-    .contact-us {
-      padding: 3rem 0;
-      margin-top: 2rem;
-      text-align: center;
-      h2 {
-        @media screen and (min-width: $breakPoint-Desktop) {
-          font-size: 2.875rem;
-          line-height: 2.875rem;
-        }
-        font-family: $pop2;
-        color: $color1;
-        font-size: 1.875rem;
-        line-height: 1.875rem;
-        margin-bottom: 1.8rem;
-      }
-      address {
-        p {
-          @media screen and (min-width: $breakPoint-Desktop) {
-            font-size: 1rem;
-            line-height: 2rem;
-          }
-          font-family: $rob4;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          color: $color5;
-          line-height: 2rem;
+    .staff {
+      margin-top: 1rem;
+      .staff-avatar {
+        img {
+          border-radius: 50%;
+          width: 6rem;
         }
       }
-      ul {
-        li {
-          @media screen and (min-width: $breakPoint-Desktop) {
-            font-size: 1rem;
-            line-height: 1rem;
+      .contacts {
+        h2 {
+          font-family: $gildas;
+          font-size: 1.563rem;
+          line-height: 2.813rem;
+          color: $color7;
+        }
+        a {
+          > * {
+            margin-right: 0.4rem;
           }
-          margin-top: 0.9rem;
           font-family: $rob4;
           font-size: 1rem;
-          text-transform: uppercase;
-          color: $color5;
+          line-height: 2rem;
+          color: $color8;
+        }
+
+        div {
+          @media screen and (min-width: $breakPoint-Desktop) {
+            display: block;
+          }
+          display: none;
+          margin-top: 1rem;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: -0.7rem;
+            left: 0;
+            height: 1px;
+            background-color: black;
+          }
         }
       }
     }
-    .social {
-      @media screen and (max-width: 875px) {
-        padding-bottom: 3rem;
-        text-align: center;
+  }
+  .style {
+    bottom: 0;
+    position: absolute;
+    height: 5rem;
+    width: 100%;
+    background-color: $color9;
+  }
+}
+.contacts-social {
+  @media screen and (min-width: $breakPoint-Desktop) {
+    @include around;
+  }
+  display: block;
+  min-height: 350px;
+  background-color: $color9;
+
+  .contact-us {
+    padding: 3rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    h2 {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 2.875rem;
+        line-height: 2.875rem;
       }
-      .social-media,
-      a {
+      font-family: $pop2;
+      color: $color1;
+      font-size: 1.875rem;
+      line-height: 1.875rem;
+      margin-bottom: 1.8rem;
+    }
+    address {
+      p {
         @media screen and (min-width: $breakPoint-Desktop) {
-          font-size: 1.2rem;
+          font-size: 1rem;
           line-height: 2rem;
         }
         font-family: $rob4;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
         color: $color5;
         line-height: 2rem;
-        .icon {
-          @media screen and (min-width: $breakPoint-Desktop) {
-            font-size: 1.3rem;
-            line-height: 2rem;
-          }
-          color: $color1;
-          font-size: 1.2rem;
+      }
+    }
+    ul {
+      li {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1rem;
+          line-height: 1rem;
         }
-        span {
-          margin-left: 1rem;
+        margin-top: 0.9rem;
+        font-family: $rob4;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $color5;
+      }
+    }
+  }
+  .social {
+    @media screen and (max-width: 875px) {
+      padding-bottom: 3rem;
+      text-align: center;
+    }
+    .social-media,
+    a {
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+      font-family: $rob4;
+      font-size: 1rem;
+      color: $color5;
+      line-height: 2rem;
+      .icon {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 1.3rem;
+          line-height: 2rem;
         }
+        color: $color1;
+        font-size: 1.2rem;
+      }
+      span {
+        margin-left: 1rem;
       }
     }
   }

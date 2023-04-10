@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Home_section1 = () => {
   return (
-    <div className="section_1">
+    <section className="section_1">
       <div className="main-villa">
         <div className="text">
           <h2>
@@ -37,7 +37,7 @@ const Home_section1 = () => {
           role="img"
         ></div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="flex">
         <div className="hotel-logo">
           <div className="logo-footer">
@@ -101,7 +101,7 @@ const Footer = () => {
         <h4>ALL RIGHTS RESERVED SUNSHNE VILLAS 2023</h4>
         <h4>FINAL PROJECT FOR 3W ACADEMY BY ALI MISSOUM</h4>
       </div>
-    </div>
+    </footer>
   );
 };
 

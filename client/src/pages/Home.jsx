@@ -19,8 +19,8 @@ const Home = () => {
     };
   }, []);
   return (
-    <div>
-      <div className="header">
+    <>
+      <header className="header">
         <div
           className="main_img"
           aria-label="plane view of sunhine villas"
@@ -38,13 +38,15 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </div>
-      <Home_section1 />
-      <Home_section2 />
-      <Home_section3 />
-      <Home_section4 />
-      <Home_section5 />
-    </div>
+      </header>
+      <main>
+        <Home_section1 />
+        <Home_section2 />
+        <Home_section3 />
+        <Home_section4 />
+        <Home_section5 />
+      </main>
+    </>
   );
 };
 

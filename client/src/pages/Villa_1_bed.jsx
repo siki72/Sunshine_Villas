@@ -150,14 +150,14 @@ const Villa_1_bed = () => {
 
   return (
     <div className="booking">
-      <div className="header_img">
+      <header className="header_img">
         <img
-          src="../../img/home/choose_villas.webp"
+          src="../../img/home/choose-villas.webp"
           alt="general villas view"
         />
-      </div>
+      </header>
 
-      <div className="container">
+      <main className="container">
         <div className="title-choose">
           <h1>Choose your stay</h1>
         </div>
@@ -181,8 +181,6 @@ const Villa_1_bed = () => {
                 <Modal_content user={user} closeModal={closeModal} />
               </ReactModal>
             )}
-            {/*     <ReservationPopUp setopen={setIsReserved} /> */}
-            {}
             <div className="choose-villa-infos">
               <div className="card-infos">
                 <h2>{villaInfos.name}</h2>
@@ -271,7 +269,7 @@ const Villa_1_bed = () => {
               ?.filter((card) => card.id != id)
               .map((card) => <CardVilla key={card.id} card={card} />)}
         </div>
-      </div>
+      </main>
     </div>
   );
 };

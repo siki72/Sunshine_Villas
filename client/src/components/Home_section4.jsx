@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import ReviewsSwiper from "./swiper/reviews/ReviewsSwiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Home_section4 = () => {
-  const [scrollY, setScrollY] = useState(window.scrollY);
-
   return (
-    <div className="section_4">
+    <section className="section_4">
       <div className="titles_div">
         <h2>"karibu sana zanzibar"</h2>
         <p>-Welcome to Zanzibar</p>
@@ -48,7 +46,7 @@ const Home_section4 = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

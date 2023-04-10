@@ -2,16 +2,23 @@
   max-width: 100%;
   .container {
     max-width: 100%;
-
     background-color: rgb(237, 230, 230);
 
     .header-img {
       min-height: 15rem;
     }
     .nav-book {
-      margin: 4rem auto;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 4rem auto;
+        max-width: 70%;
+      }
+      margin: 3rem auto;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      text-align: center;
       align-items: center;
       border: 1px solid transparent;
       padding: 50px;
@@ -19,11 +26,18 @@
       height: 40px;
       padding: 20px;
       span {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 1.21rem;
+        }
         margin-left: 1rem;
       }
 
       a,
       button {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          max-width: 30%;
+        }
+
         border: 2px solid black;
         padding: 15px 30px;
         border-radius: 5px;
@@ -32,7 +46,7 @@
         font-family: $rob3;
         transition: 0.4s;
         cursor: pointer;
-
+        width: 100%;
         &:hover {
           animation: up 0.4s ease forwards;
         }

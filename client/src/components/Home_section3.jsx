@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Home_section3 = () => {
   return (
-    <div className="section_3">
+    <section className="section_3">
       <div className="section_3_grid">
         <div
           className="img"
@@ -26,7 +26,7 @@ const Home_section3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
