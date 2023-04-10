@@ -11,11 +11,14 @@ export function UserContextProvider({ children }) {
     const fetchProfile = async () => {
       try {
         if (!user) {
-          const resp = await fetch("https://alimissoum.app.3wa.io/profile", {
-            credentials: "include", // renvoi tes cookie dans la req
-          });
+          const resp = await fetch(
+            "https://alimissoum.app.3wa.io/user/profile",
+            {
+              credentials: "include", // renvoi tes cookie dans la req
+            }
+          );
 
-          if (resp.ok) {
+          if (resp.status === 200) {
             const data = await resp.json();
             setUser(data);
             if (data.role === "admin") {

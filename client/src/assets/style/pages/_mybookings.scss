@@ -9,6 +9,7 @@
     @media screen and (min-width: $breakPoint-Tablet) {
       grid-template-columns: 30% 70%;
       grid-template-rows: 320px;
+      padding: 1rem;
     }
     display: grid;
     grid-template-columns: 1fr;

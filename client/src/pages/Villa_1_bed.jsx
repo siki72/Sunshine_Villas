@@ -80,7 +80,7 @@ const Villa_1_bed = () => {
         selectedDates: JSON.stringify(selectedDates),
       };
       try {
-        fetch("https://alimissoum.app.3wa.io/booking", {
+        fetch("https://alimissoum.app.3wa.io/villas/booking", {
           method: "POST",
           credentials: "include",
           headers: {
@@ -106,7 +106,7 @@ const Villa_1_bed = () => {
       const idOfSelectedvilla = {
         idVilla: id,
       };
-      fetch("https://alimissoum.app.3wa.io/availableDates", {
+      fetch("https://alimissoum.app.3wa.io/villas/villas/availableDates", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -133,7 +133,7 @@ const Villa_1_bed = () => {
   );
 
   useEffect(() => {
-    fetch(`https://alimissoum.app.3wa.io/villas/${id}`)
+    fetch(`https://alimissoum.app.3wa.io/villas/villa/${id}`)
       .then((resp) => resp.json())
       .then((data) => setVillaInfos(data));
     setIdReady(true);

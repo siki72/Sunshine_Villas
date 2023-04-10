@@ -15,9 +15,12 @@ const Mybookings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://alimissoum.app.3wa.io/bookings", {
-          credentials: "include",
-        });
+        const response = await fetch(
+          "https://alimissoum.app.3wa.io/villas/user/myBookings",
+          {
+            credentials: "include",
+          }
+        );
         if (!response.ok) {
           throw new Error("network response fail");
         }

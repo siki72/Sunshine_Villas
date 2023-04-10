@@ -15,7 +15,7 @@ export default function App() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://alimissoum.app.3wa.io/reviews")
+    fetch("https://alimissoum.app.3wa.io/user/reviews")
       .then((resp) => resp.json())
       .then((data) => {
         setReviews(data);

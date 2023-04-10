@@ -8,7 +8,7 @@ function App() {
   //const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
 
   if (!cards) {
-    fetch("https://alimissoum.app.3wa.io/villas")
+    fetch("https://alimissoum.app.3wa.io/villas/villas")
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(setCardsData(data));
