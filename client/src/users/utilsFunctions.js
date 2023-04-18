@@ -1,9 +1,6 @@
-const userURL = "https://alimissoum.app.3wa.io/user/";
-const adminURL = "https://alimissoum.app.3wa.io/admin/";
-
 async function addUser(user) {
   try {
-    const response = await fetch(`${userURL}register`, {
+    const response = await fetch(`${import.meta.env.VITE_URL_USER}register`, {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(user),
@@ -20,7 +17,7 @@ async function addUser(user) {
 
 async function login(user) {
   try {
-    const response = await fetch(`${userURL}login`, {
+    const response = await fetch(`${import.meta.env.VITE_URL_USER}login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -44,7 +41,7 @@ function getFormData(refer, names = []) {
 }
 async function handleBookTable(guest) {
   try {
-    const response = await fetch(`${adminURL}walima`, {
+    const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}walima`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -59,7 +56,7 @@ async function handleBookTable(guest) {
 }
 async function fetchUserDatas(a) {
   try {
-    const response = await fetch(`${userURL}` + a, {
+    const response = await fetch(`${import.meta.env.VITE_URL_USER}` + a, {
       method: "GET",
       credentials: "include",
       headers: {
@@ -73,7 +70,7 @@ async function fetchUserDatas(a) {
 }
 async function fetchAdminDatas(a) {
   try {
-    const response = await fetch(`${adminURL}` + a, {
+    const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}` + a, {
       method: "GET",
       credentials: "include",
       headers: {
@@ -87,13 +84,16 @@ async function fetchAdminDatas(a) {
 }
 async function deleteDatas(a) {
   try {
-    const response = await fetch(`${adminURL}users/` + a, {
-      method: "DELETE",
-      credentials: "include",
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_URL_ADMIN}users/` + a,
+      {
+        method: "DELETE",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
     return response;
   } catch (e) {
     console.log(e);
@@ -101,14 +101,17 @@ async function deleteDatas(a) {
 }
 async function updateUserRole(body) {
   try {
-    const response = await fetch(`${adminURL}users/role/`, {
-      method: "PUT",
-      credentials: "include",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_URL_ADMIN}users/role/`,
+      {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
     return response;
   } catch (e) {
     console.log(e);

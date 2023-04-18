@@ -162,7 +162,7 @@
         text-transform: uppercase;
         color: $color5;
       }
-      ul a {
+      ul li {
         > * {
           @media screen and (min-width: $breakPoint-Tablet) {
             font-size: 0.8rem;
@@ -190,7 +190,7 @@
         color: $color5;
         text-transform: uppercase;
       }
-      ul a {
+      ul li {
         > * {
           @media screen and (min-width: $breakPoint-Tablet) {
             font-size: 0.8rem;

@@ -3,7 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import ReactModal from "react-modal";
 
-const Message_form = () => {
+const MessageForm = () => {
   const [pending, setPending] = useState(false);
   const [success, setSuccess] = useState(false);
   const refCaptcha = useRef();
@@ -116,4 +116,4 @@ const Message_form = () => {
   );
 };
 
-export default Message_form;
+export default MessageForm;

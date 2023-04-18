@@ -8,11 +8,7 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleCheck,
-  faHouse,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -23,8 +19,7 @@ import { UserContext } from "../users/UserContext.jsx";
 import CardVilla from "../components/CardVilla.jsx";
 import { useSelector } from "react-redux";
 import BarLoader from "react-spinners/BarLoader";
-import ReactModal from "react-modal";
-import Modal_content from "../components/Modal_content.jsx";
+import { Modal, Button, Alert, Toast } from "flowbite-react";
 
 const override = {
   display: "block",
@@ -39,7 +34,6 @@ const Villa_1_bed = () => {
   const [idReady, setIdReady] = useState(false);
   const cards = useSelector((state) => state.threeCards.cards);
   const [jsonData, setJsonData] = useState([]);
-  const [jsonReady, setJsonReady] = useState(false);
   const [isReserved, setIsReserved] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -80,7 +74,7 @@ const Villa_1_bed = () => {
         selectedDates: JSON.stringify(selectedDates),
       };
       try {
-        fetch("https://alimissoum.app.3wa.io/villas/booking", {
+        fetch(`${import.meta.env.VITE_URL_VILLAS_BOOKING}`, {
           method: "POST",
           credentials: "include",
           headers: {
@@ -139,15 +133,6 @@ const Villa_1_bed = () => {
     setIdReady(true);
   }, [id]);
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    if (isReserved) {
-      body.classList.add("no-scroll");
-    } else {
-      body.classList.remove("no-scroll");
-    }
-  }, [isReserved]);
-
   return (
     <div className="booking">
       <header className="header_img">
@@ -156,10 +141,38 @@ const Villa_1_bed = () => {
           alt="general villas view"
         />
       </header>
-
       <main className="container">
         <div className="title-choose">
           <h1>Choose your stay</h1>
+          <Modal
+            className="backdrop-blur-sm"
+            show={isReserved}
+            onClose={closeModal}
+          >
+            <Modal.Header className=" text-white text-3xl text-center bg-neutral-300 ">
+              Thanks{" "}
+              <span className="text-green-400 first-letter:text-xl ">
+                {user?.name.toUpperCase()}
+              </span>
+            </Modal.Header>
+            <Modal.Body className="bg-black">
+              <div className="space-y-6">
+                <p className="text-base leading-relaxed text-white dark:text-gray-400">
+                  Your booking at Sunshine Villas is{" "}
+                  <span className="text-green-400">confirmer</span> .
+                </p>
+                <p className="text-base leading-relaxed text-white dark:text-gray-400">
+                  Sunshine Villas all our staff is delighted to receive you !
+                  Your payement will be handled directly in the reception
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer className="bg-black flex justify-center">
+              <Button color="success" onClick={closeModal}>
+                Done
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
 
         <div className="choose-villas">
@@ -169,18 +182,6 @@ const Villa_1_bed = () => {
               {slug === "2-BED-VILLA" && <Swiper_img_2 />}
               {slug === "3-BED-VILLA" && <Swiper_img_3 />}
             </div>
-            {isReserved && (
-              <ReactModal
-                closeTimeoutMS="4000"
-                className="modale"
-                isOpen={isReserved}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                contentLabel="confirmation of sending a message"
-              >
-                <Modal_content user={user} closeModal={closeModal} />
-              </ReactModal>
-            )}
             <div className="choose-villa-infos">
               <div className="card-infos">
                 <h2>{villaInfos.name}</h2>
@@ -262,6 +263,9 @@ const Villa_1_bed = () => {
         </div>
         <div className="title-cards">
           <h3>Check our others luxury villas and apartments</h3>
+          <div className="flex items-center justify-center h-10 w-10 rounded-full text-white bg-indigo-400 flex-shrink-0">
+            A
+          </div>
         </div>
         <div className="choose-villas-cards">
           {idReady &&

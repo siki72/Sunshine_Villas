@@ -3,14 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import utils from "../users/utilsFunctions.js";
 
-const Users_table = () => {
+const UsersTable = () => {
   const [data, setData] = useState([]);
   const [isDeleting, setIsDeleting] = useState(false);
   const [editRole, setEditRole] = useState("");
   useEffect(() => {
     const handleGetAllUsers = async () => {
       try {
-        const response = await utils.fetchAdminDatas("users");
+        const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}users`, {
+          credentials: "include",
+        });
         if (!response.ok) {
           throw new Error("unable to fetch table's reservation");
         } else {
@@ -150,4 +152,4 @@ const Users_table = () => {
   );
 };
 
-export default Users_table;
+export default UsersTable;

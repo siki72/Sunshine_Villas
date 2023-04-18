@@ -17,7 +17,6 @@ dotenv.config();
 router.post("/register", register);
 router.post("/login", login);
 router.get("/logout", logout);
-
 // ------------------------------------------
 //       Users datas
 // ------------------------------------------

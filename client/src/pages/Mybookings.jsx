@@ -6,26 +6,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyBookingsSkeleton from "../components/MyBookingsSkeleton.jsx";
 
-const Mybookings = () => {
+const MyBookings = () => {
   const { user } = useContext(UserContext);
 
   const [myBookings, setMyBookings] = useState([]);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setPending(true);
         const response = await fetch(
-          "https://alimissoum.app.3wa.io/villas/user/myBookings",
+          `${import.meta.env.VITE_URL_VILLAS_USER}myBookings`,
           {
             credentials: "include",
           }
         );
         if (!response.ok) {
+          setPending(false);
           throw new Error("network response fail");
         }
         const data = await response.json();
         setMyBookings(data);
+        setPending(false);
       } catch (error) {
         console.error("error fetching bookings: ", error);
         toast.error(
@@ -52,6 +57,8 @@ const Mybookings = () => {
             </button>
           </Link>
         </div>
+      ) : pending ? (
+        <MyBookingsSkeleton />
       ) : (
         myBookings?.map((resa, index) => (
           <Link to={`/villas/${resa.name}/${resa.id}`} key={index}>
@@ -102,4 +109,4 @@ const Mybookings = () => {
   );
 };
 
-export default Mybookings;
+export default MyBookings;

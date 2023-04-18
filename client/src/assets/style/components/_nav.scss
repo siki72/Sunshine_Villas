@@ -1,4 +1,5 @@
 nav {
+  z-index: 100000;
   .auto-scroll {
     position: absolute;
     bottom: -30rem;
@@ -181,7 +182,7 @@ nav {
   }
 
   .scroll-down {
-    transform: translate(0, -100%);
+    transform: translate(0, -300%);
   }
 
   .hamburguer {

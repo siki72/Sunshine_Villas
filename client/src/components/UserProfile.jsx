@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import utils from "../users/utilsFunctions.js";
-import Update_user from "./Update_user.jsx";
+import UpdateUser from "./UpdateUser.jsx";
 
-const User_profile = () => {
+const UserProfile = () => {
   const [userDatas, setUserDatas] = useState([]);
   const [isEditing, setIsEditng] = useState(false);
   useEffect(() => {
@@ -54,10 +54,10 @@ const User_profile = () => {
           </div>
         </div>
       ) : (
-        <Update_user data={userDatas} edit={setIsEditng} />
+        <UpdateUser data={userDatas} edit={setIsEditng} />
       )}
     </div>
   );
 };
 
-export default User_profile;
+export default UserProfile;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Home_section1 from "../components/Home_section1";
-import Home_section2 from "../components/Home_section2";
-import Home_section3 from "../components/Home_section3";
-import Home_section4 from "../components/Home_section4";
-import Home_section5 from "../components/Home_section5";
+import HomeSection1 from "../components/HomeSection1";
+import HomeSection2 from "../components/HomeSection2";
+import HomeSection3 from "../components/HomeSection3";
+import HomeSection4 from "../components/HomeSection4";
+import HomeSection5 from "../components/HomeSection5";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(window.scrollY);
@@ -40,11 +40,11 @@ const Home = () => {
         </div>
       </header>
       <main>
-        <Home_section1 />
-        <Home_section2 />
-        <Home_section3 />
-        <Home_section4 />
-        <Home_section5 />
+        <HomeSection1 />
+        <HomeSection2 />
+        <HomeSection3 />
+        <HomeSection4 />
+        <HomeSection5 />
       </main>
     </>
   );

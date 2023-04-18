@@ -3,10 +3,10 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-import Message_form from "../components/Message_form.jsx";
+import MessageForm from "../components/MessageForm.jsx";
 import Staff from "../components/Staff.jsx";
 
-const Contact_page = () => {
+const ContactPage = () => {
   return (
     <>
       <header className="contact-header">
@@ -53,10 +53,10 @@ const Contact_page = () => {
             </div>
           </div>
         </div>
-        <Message_form />
+        <MessageForm />
       </main>
     </>
   );
 };
 
-export default Contact_page;
+export default ContactPage;

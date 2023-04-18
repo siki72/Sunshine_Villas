@@ -1,14 +1,18 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import utils from "../users/utilsFunctions.js";
-const Walima_datas = () => {
+const WalimaDatas = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const handleGetReservation = async () => {
       try {
-        const response = await utils.fetchAdminDatas("walima");
+        const response = await fetch(
+          `${import.meta.env.VITE_URL_ADMIN}walima`,
+          {
+            credentials: "include",
+          }
+        );
         if (!response.ok) {
           throw new Error("unable to fetch table's reservation");
         } else {
@@ -61,4 +65,4 @@ const Walima_datas = () => {
   );
 };
 
-export default Walima_datas;
+export default WalimaDatas;

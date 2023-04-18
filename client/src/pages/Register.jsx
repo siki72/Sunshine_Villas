@@ -3,13 +3,14 @@ import { Link, Navigate } from "react-router-dom";
 import utils from "../users/utilsFunctions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-
+import { Alert } from "flowbite-react";
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const formRegisterRef = useRef();
   const [focused, setFocused] = useState(false);
   const [invalidField, setInvalidField] = useState(false);
   const [existEmail, setExistEmail] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const handleFocus = () => {
     setFocused(true);
   };
@@ -28,9 +29,9 @@ const Register = () => {
     }
 
     utils.addUser(formData).then((resp) => {
-      console.log(resp.status);
+      console.log(resp);
       if (resp.status === 200) {
-        setRedirect(true);
+        setShowToast(true);
       } else if (resp.status === 400) {
         setExistEmail(true);
       }
@@ -44,6 +45,15 @@ const Register = () => {
   return (
     <div className="full-screen-container">
       <div className="grid-container">
+        {showToast && (
+          <Alert color="success" onDismiss={() => setRedirect(true)}>
+            <span>
+              <span className="font-medium">Info alert!</span> "Congratulations!
+              Your registration was successful. You can now go ahead and log in
+              to your account."
+            </span>
+          </Alert>
+        )}
         <div className="login-container">
           <h1
             className={existEmail ? "error-email login-title" : "login-title"}

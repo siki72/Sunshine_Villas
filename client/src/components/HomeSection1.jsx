@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Home_section1 = () => {
+const HomeSection1 = () => {
   return (
     <section className="section_1">
       <div className="main-villa">
@@ -41,4 +41,4 @@ const Home_section1 = () => {
   );
 };
 
-export default Home_section1;
+export default HomeSection1;

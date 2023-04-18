@@ -3,7 +3,7 @@ import ReviewsSwiper from "./swiper/reviews/ReviewsSwiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const Home_section4 = () => {
+const HomeSection4 = () => {
   return (
     <section className="section_4">
       <div className="titles_div">
@@ -50,4 +50,4 @@ const Home_section4 = () => {
   );
 };
 
-export default Home_section4;
+export default HomeSection4;

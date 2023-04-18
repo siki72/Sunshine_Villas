@@ -30,8 +30,8 @@ app.use("/admin", adminDatas);
 app.use("/villas", villasRoutes);
 
 app.use(function (err, req, res, next) {
-  console.log(err);
-  res.status(500).json({ message: "internal server error" });
+  console.error(err.stack);
+  res.status(500).json({ error: "internal server error" });
 });
 
 const PORT = process.env.PORT || 3000;

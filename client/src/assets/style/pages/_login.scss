@@ -9,12 +9,16 @@
   .grid-container {
     @media screen and (min-width: $breakPoint-Desktop) {
       height: 100vh;
+      margin-top: 3rem;
+      padding-top: 4rem;
     }
-    padding: 5rem 0;
+    padding: 2rem 0.5rem;
     min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    @include flex;
     background-image: url("../img/home/side-login-pic.webp");
   }
 }
@@ -23,6 +27,7 @@
   @media screen and (min-width: $breakPoint-Desktop) {
     margin: 2rem;
   }
+  margin-top: 3rem;
   border-radius: 1rem;
   background-color: rgba(0, 2, 5, 0.852);
   padding: 1rem;

@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "../reviews/SwiperStyle.css";
-import { useSelector } from "react-redux";
 
 const Swiper_img_1 = () => {
   return (

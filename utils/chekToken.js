@@ -6,28 +6,23 @@ dotenv.config();
 export const checkToken = (req, res, next) => {
   try {
     const token = req.cookies.karibu;
-
     if (!token) {
       return res.status(401).json("you are not authenticated!");
     }
-
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, userData) => {
       if (err) {
         return res.status(403).json("token is not valid");
       }
-
       const { email } = userData;
       const co = await createPoolConnexion();
       const [user] = await co.query(
         `SELECT email FROM users WHERE users.email = ?`,
         [email]
       );
-
       if (!user.length) {
         res.clearCookie("karibu", { sameSite: "none", secure: true });
         return res.status(401).json("invalid token");
       }
-
       next();
     });
   } catch (err) {
@@ -38,16 +33,13 @@ export const checkToken = (req, res, next) => {
 export const isAdmin = (req, res, next) => {
   try {
     const token = req.cookies.karibu;
-
     if (!token) {
       return res.status(401).json("you are not authenticated!");
     }
-
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, userData) => {
       if (err) {
         return res.status(403).json("token is not valid");
       }
-
       const { email, role } = userData;
       console.log(email, role);
       const co = await createPoolConnexion();

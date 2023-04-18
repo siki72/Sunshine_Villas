@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Home_section3 = () => {
+const HomeSection3 = () => {
   return (
     <section className="section_3">
       <div className="section_3_grid">
@@ -30,4 +30,4 @@ const Home_section3 = () => {
   );
 };
 
-export default Home_section3;
+export default HomeSection3;

@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
-import { UserContext } from "../users/UserContext.jsx";
 import utils from "../users/utilsFunctions.js";
-const Update_user = ({ data, edit }) => {
+const UpdateUser = ({ data, edit }) => {
   const [pending, setPending] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [showError, setShowError] = useState("");
@@ -37,17 +35,14 @@ const Update_user = ({ data, edit }) => {
         "email",
         "location",
       ]);
-      const response = await fetch(
-        "https://alimissoum.app.3wa.io/user/update",
-        {
-          method: "POST",
-          credentials: "include",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      )
+      const response = await fetch(`${import.meta.env.VITE_URL_USER}update`, {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
         .then((resp) => resp.json())
         .then((data) => {
           edit(false);
@@ -133,4 +128,4 @@ const Update_user = ({ data, edit }) => {
   );
 };
 
-export default Update_user;
+export default UpdateUser;

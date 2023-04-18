@@ -1,9 +1,11 @@
 .about-page {
   .container {
     background-color: $color1;
+    min-width: 100%;
     .about-header {
       height: 100vh;
       display: flex;
+      text-align: center;
       flex-direction: column;
       text-align: center;
       background-image: url("../img/home/about_page.webp");

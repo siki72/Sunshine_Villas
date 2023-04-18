@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family: "font-pop";
   src: url(../fonts/Poppins-Medium.ttf);
@@ -290,4 +293,14 @@ body {
 .swiper div p,
 h3 {
   color: rgb(0, 0, 0);
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline;
 }

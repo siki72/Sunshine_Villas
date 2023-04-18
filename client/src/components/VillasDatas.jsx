@@ -4,34 +4,37 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteBookDatas, setBookDatas } from "../feature/villa1.slice.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-const Villas_datas = ({ id }) => {
+const VillasDatas = ({ id }) => {
   const data = useSelector((state) => state.villa_1_book.book); // ramener la da
   const dispatch = useDispatch();
   const [ready, setReady] = useState(false);
-  const [oldbooking, SetOldBooking] = useState(false);
   const actuelDate = new Date();
   const date = actuelDate.toISOString().slice(0, 10);
 
   useEffect(() => {
-    const body = {
-      id,
-    };
     const getDatas = async () => {
-      const response = await fetch("https://alimissoum.app.3wa.io/admin/data", {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-type": "application/json ; charset=UTF-8",
-        },
-      });
-      return response
-        .json()
-        .then((data) => {
-          data.flatMap((date) => console.log(date.start_date.split("T", 1)));
-          dispatch(setBookDatas(data));
+      try {
+        const body = {
+          id,
+        };
+        const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}data`, {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(body),
         })
-        .finally(() => setReady(true));
+          .then((resp) => resp.json())
+
+          .then((data) => {
+            data.flatMap((date) => console.log(date.start_date.split("T", 1)));
+            dispatch(setBookDatas(data));
+          })
+          .finally(() => setReady(true));
+      } catch (error) {
+        console.error(error);
+      }
     };
     getDatas();
   }, [id]);
@@ -136,4 +139,4 @@ const Villas_datas = ({ id }) => {
   );
 };
 
-export default Villas_datas;
+export default VillasDatas;

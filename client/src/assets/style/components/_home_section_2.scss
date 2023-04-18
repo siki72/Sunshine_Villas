@@ -29,6 +29,21 @@
         width: 95%;
         background-color: rgb(249, 249, 249);
       }
+      .cards_skeleton {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          @include flex;
+          gap: 1rem;
+          max-width: 100%;
+          margin: 2rem auto;
+        }
+        .mx-auto {
+          @media screen and (min-width: $breakPoint-Desktop) {
+          }
+          margin: 2rem auto;
+          max-width: 90%;
+        }
+        background-color: $color1;
+      }
     }
   }
 }
