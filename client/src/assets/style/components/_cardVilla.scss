@@ -1,15 +1,13 @@
 .card-container {
-  margin-top: 1rem;
+  padding: 2rem 0;
   position: relative;
-  min-height: 32rem;
   width: 100%;
+  min-height: 35rem;
   transition: 0.5s;
   @media screen and (min-width: $breakPoint-Tablet) {
-    height: 48rem;
   }
   @media screen and (min-width: $breakPoint-Desktop) {
-    min-height: 100%;
-    height: 50rem;
+    min-height: 60rem;
     box-shadow: 0px 0px 6px 1px #c7bdbd;
     border: 1px solid rgb(213, 210, 205);
     &:hover {
@@ -81,12 +79,6 @@
   }
 
   .card-booking {
-    min-width: 100%;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-
     span {
       padding: 10px 20px;
       border-radius: 5px;
