@@ -1583,7 +1583,7 @@ nav .hidden-nav ul .admin-li {
   max-width: 90%;
 }
 .card-container {
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   position: relative;
   width: 100%;
   min-height: 35rem;
@@ -1591,7 +1591,7 @@ nav .hidden-nav ul .admin-li {
 }
 @media screen and (min-width: 1024px) {
   .card-container {
-    min-height: 60rem;
+    min-height: 42rem;
     box-shadow: 0px 0px 6px 1px #c7bdbd;
     border: 1px solid rgb(213, 210, 205);
   }

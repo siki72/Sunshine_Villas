@@ -1,9 +1,8 @@
 import React from "react";
 import Navigation from "../Navigation";
-import { BrowserRouter, redirect, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import About from "../../pages/About";
 import Home from "../../pages/Home";
-import Villa_1_bed from "../../pages/Villa_1_bed";
 import ExploreZanzibar from "../../pages/ExploreZanzibar";
 import Footer from "../Footer";
 import Login from "../../pages/Login";
@@ -13,6 +12,7 @@ import Account from "../../pages/Account.jsx";
 import ContactPage from "../../pages/ContactPage.jsx";
 import Walima from "../../pages/Walima.jsx";
 import Errorpage from "../../pages/Errorpage";
+import Bookings from "../../pages/Bookings.jsx";
 
 const index = () => {
   return (
@@ -22,7 +22,7 @@ const index = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="villas/:slug/:id" element={<Villa_1_bed />} />
+          <Route path="villas/:slug/:id" element={<Bookings />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
