@@ -280,6 +280,14 @@
       }
       max-width: 100%;
       text-align: center;
+      .recherche {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          .cards_skeleton {
+            display: flex;
+            gap: 2rem;
+          }
+        }
+      }
     }
   }
 }

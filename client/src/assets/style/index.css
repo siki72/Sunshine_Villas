@@ -584,6 +584,12 @@ object {
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 1024px) {
+  .about-page .container .ours-villas .recherche .cards_skeleton {
+    display: flex;
+    gap: 2rem;
+  }
+}
 
 .contact-header {
   background-color: rgb(255, 255, 255);

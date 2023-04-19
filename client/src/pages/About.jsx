@@ -2,6 +2,8 @@ import React from "react";
 import CardVilla from "../components/CardVilla.jsx";
 import ReviewsSwiper from "../components/swiper/reviews/ReviewsSwiper.jsx";
 import { useSelector } from "react-redux";
+import CardsSkeleton from "../components/CardsSkeleton";
+import ReviewsSkeleton from "../components/ReviewsSkeleton";
 const About = () => {
   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
 
@@ -105,11 +107,17 @@ const About = () => {
               />
               <img src="../img/logo/stars.webp" alt="5 yellow stars picture" />
             </div>
-            <ReviewsSwiper className="reviews-swiper" />
+            {data ? (
+              <ReviewsSwiper className="reviews-swiper" />
+            ) : (
+              <ReviewsSkeleton />
+            )}
           </div>
           <div className="ours-villas">
             {!data ? (
-              <div className="recherche">Aucune recette trouvé !</div>
+              <div className="recherche">
+                <CardsSkeleton />
+              </div>
             ) : (
               data.map((card) => <CardVilla key={card.id} card={card} />)
             )}
