@@ -279,7 +279,7 @@ object {
   text-align: center;
   flex-direction: column;
   text-align: center;
-  background-image: url("../img/home/about_page.webp");
+  background-image: url("./img/home/about_page.webp");
   background-size: cover;
   background-position: center;
 }
@@ -1436,7 +1436,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_1 .main-villa .section_1_img {
-  background-image: url("../../img/home/section_1.webp");
+  background-image: url("../img/home/section_1.webp");
   background-position: right;
   background-repeat: no-repeat;
   height: 30rem;
@@ -1939,13 +1939,13 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_5 .main-section-grid .walima {
-  background-image: url("../img/home/restaurent.webp");
+  background-image: url("/img/home/restaurent.webp");
   height: 25rem;
   width: 100%;
   background-size: cover;
 }
 .section_5 .main-section-grid .sansibility {
-  background-image: url("../img/home/children.webp");
+  background-image: url("/img/home/children.webp");
   height: 25rem;
   width: 100%;
   background-size: cover;

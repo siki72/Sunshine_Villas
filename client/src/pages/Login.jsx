@@ -9,7 +9,6 @@ const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
   const [errorLog, setErrorLOg] = useState(false);
-  //ramener setUser de notre UserCOntext grace au hook useContext
   const { user, setUser, setReady, setIsAdmin } = useContext(UserContext);
 
   const handeleLogin = async (e) => {
@@ -39,7 +38,7 @@ const Login = () => {
     }
   };
   useEffect(() => {
-    // Rediriger l'utilisateur vers la page d'accueil s'il est connecté et qu'il accède à la page de connexion
+    // redirect user
     if (user && location.pathname === "/login") {
       setRedirect(true);
     }

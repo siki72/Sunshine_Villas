@@ -18,7 +18,7 @@ const UpdateUser = ({ data, edit }) => {
       "email",
       "location",
     ];
-    // Vérifier que tous les champs requis sont remplis
+
     for (const field of requiredFields) {
       if (!formRef.current[field].value) {
         setErrorMsg(true);
@@ -55,8 +55,6 @@ const UpdateUser = ({ data, edit }) => {
       console.error(err);
     }
   };
-
-  console.log(data);
 
   return (
     <div className="login">

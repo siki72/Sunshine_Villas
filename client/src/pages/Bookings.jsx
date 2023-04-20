@@ -33,9 +33,6 @@ const Bookings = () => {
         />
         <div className="title-cards">
           <h3>Check our others luxury villas and apartments</h3>
-          <div className="flex items-center justify-center h-10 w-10 rounded-full text-white bg-indigo-400 flex-shrink-0">
-            A
-          </div>
         </div>
         <div className="choose-villas-cards">
           {idReady &&

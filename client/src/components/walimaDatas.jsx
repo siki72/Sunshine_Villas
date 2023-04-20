@@ -17,7 +17,6 @@ const WalimaDatas = () => {
           throw new Error("unable to fetch table's reservation");
         } else {
           const data = await response.json();
-          console.log(data);
           setData(data);
         }
       } catch (error) {

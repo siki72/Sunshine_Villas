@@ -40,7 +40,6 @@ const Dashboard = () => {
           throw new Error("unable to fetch table's reservation");
         } else {
           const data = await response.json();
-          console.log(data);
           setBookingTable(data);
         }
       } catch (error) {

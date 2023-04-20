@@ -35,9 +35,11 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
   const checkIn = date[0].startDate;
   const checkOut = date[0].endDate;
   let numberOfnights = "";
+
   if (checkIn && checkOut) {
     numberOfnights = differenceInCalendarDays(checkOut, checkIn);
   }
+
   const selectedDates = date.flatMap((range) =>
     eachDayOfInterval({
       start: range.startDate.getTime(),
@@ -78,12 +80,15 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
       alert("Please select à chekout !");
     }
   };
+  //import datas villa by villa id
   useEffect(() => {
     fetch(`${import.meta.env.VITE_URL_VILLAS}${id}`)
       .then((resp) => resp.json())
       .then((data) => setVillaInfos(data));
     setIdReady(true);
   }, [id]);
+
+  //import availables dates to book from DB
   useEffect(() => {
     try {
       const idOfSelectedvilla = {

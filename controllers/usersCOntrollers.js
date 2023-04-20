@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
@@ -45,7 +44,10 @@ export const loggedUserDatas = async (req, res, next) => {
 
         const co = await createPoolConnexion();
         const [userInfos] = await co.query(
-          ` SELECT * FROM users WHERE users.id = ? `,
+          ` SELECT
+              firstname, lastname, email, phone, location
+          
+            FROM users WHERE users.id = ? `,
           [id]
         );
         res.status(200).json(userInfos);

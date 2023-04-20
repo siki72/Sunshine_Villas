@@ -11,12 +11,9 @@ export function UserContextProvider({ children }) {
     const fetchProfile = async () => {
       try {
         if (!user) {
-          const resp = await fetch(
-            "https://alimissoum.app.3wa.io/user/profile",
-            {
-              credentials: "include", // renvoi tes cookie dans la req
-            }
-          );
+          const resp = await fetch(`${import.meta.env.VITE_URL_USER}profile`, {
+            credentials: "include", // renvoi tes cookie dans la req
+          });
 
           if (resp.status === 200) {
             const data = await resp.json();

@@ -28,7 +28,7 @@ const VillasDatas = ({ id }) => {
           .then((resp) => resp.json())
 
           .then((data) => {
-            data.flatMap((date) => console.log(date.start_date.split("T", 1)));
+            data.flatMap((date) => date.start_date.split("T", 1));
             dispatch(setBookDatas(data));
           })
           .finally(() => setReady(true));
@@ -38,8 +38,6 @@ const VillasDatas = ({ id }) => {
     };
     getDatas();
   }, [id]);
-  console.log(new Date("2023-03-28T22:00:00.000Z"));
-  console.log(new Date(date));
 
   const compareDates = (date1, date2) => {
     return compareAsc(new Date(date1), new Date(date2));
@@ -48,7 +46,7 @@ const VillasDatas = ({ id }) => {
   const handleDeleteRow = async (id) => {
     try {
       const response = await fetch(
-        `https://alimissoum.app.3wa.io/admin/bookings/${id}`,
+        `${import.meta.env.VITE_URL_ADMIN}bookings/${id}`,
         {
           method: "DELETE",
           credentials: "include",
@@ -67,8 +65,6 @@ const VillasDatas = ({ id }) => {
     }
   };
 
-  console.log(format(new Date(date), "dd/MM/yyyy"));
-  console.log(format(new Date("2023-03-27T22:00:00.000Z"), "dd/MM/yyyy"));
   return (
     <div className="data">
       <table>
