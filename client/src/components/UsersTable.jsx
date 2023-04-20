@@ -51,7 +51,7 @@ const UsersTable = () => {
       if (!response.ok) {
         throw new Error("unable to update role user");
       } else {
-        const data = await response.js;
+        const data = await response.json();
         setIsDeleting(true);
       }
     } catch (err) {

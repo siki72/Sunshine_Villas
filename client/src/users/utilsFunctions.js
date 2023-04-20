@@ -118,6 +118,25 @@ async function updateUserRole(body) {
   }
 }
 
+async function editVillas(datas) {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_URL_ADMIN}datas/villas`,
+      {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(datas),
+      }
+    );
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 export default {
   addUser,
   login,
@@ -127,4 +146,5 @@ export default {
   fetchUserDatas,
   deleteDatas,
   updateUserRole,
+  editVillas,
 };

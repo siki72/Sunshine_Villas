@@ -13,6 +13,7 @@ import VillasDatas from "../components/VillasDatas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
 import WalimaDatas from "../components/walimaDatas.jsx";
 import UsersTable from "../components/UsersTable.jsx";
+import VillasEditor from "../components/VillasEditor.jsx";
 
 const Admin = ({ logout }) => {
   const { user, ready } = useContext(UserContext);
@@ -68,6 +69,12 @@ const Admin = ({ logout }) => {
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 3 bed</span>
             </li>
             <li
+              onClick={() => handleTabClick("villasEditor")}
+              className={activeTab === "villasEditor" ? "li-active" : ""}
+            >
+              <FontAwesomeIcon icon={faHouseUser} /> <span>Villas infos</span>
+            </li>
+            <li
               onClick={() => handleTabClick("walima")}
               className={activeTab === "walima" ? "li-active" : ""}
             >
@@ -91,6 +98,7 @@ const Admin = ({ logout }) => {
           {activeTab === "villa1" && <VillasDatas id={1} />}
           {activeTab === "villa2" && <VillasDatas id={2} />}
           {activeTab === "villa3" && <VillasDatas id={3} />}
+          {activeTab === "villasEditor" && <VillasEditor id={3} />}
           {activeTab === "walima" && <WalimaDatas />}
           {activeTab === "users" && <UsersTable />}
         </div>

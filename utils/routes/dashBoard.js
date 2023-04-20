@@ -10,6 +10,7 @@ import {
   gelAllUsers,
   deleteUserById,
   updateUserRole,
+  updateVillasDatas,
 } from "../../controllers/adminControllers.js";
 import { isAdmin } from "../chekToken.js";
 
@@ -22,5 +23,6 @@ router.get("/datas/villas", allBookingsDates);
 router.get("/users", gelAllUsers);
 router.delete("/users/:id", isAdmin, deleteUserById);
 router.put("/users/role", isAdmin, updateUserRole);
+router.put("/datas/villas", isAdmin, updateVillasDatas);
 
 export default router;

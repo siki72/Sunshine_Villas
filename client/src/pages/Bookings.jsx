@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { useParams } from "react-router-dom";
 import CardVilla from "../components/CardVilla.jsx";
 import { useSelector } from "react-redux";

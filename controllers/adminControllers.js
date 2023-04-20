@@ -152,7 +152,7 @@ export const deleteUserById = async (req, res, next) => {
 
 export const updateUserRole = async (req, res, next) => {
   const { id, role } = req.body;
-  console.log(id, role);
+
   try {
     const co = await createPoolConnexion();
     const [updateRole] = await co.query(
@@ -160,6 +160,31 @@ export const updateUserRole = async (req, res, next) => {
       [role, id]
     );
     res.status(200).json(updateRole);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------
+//        Update villas data
+// ------------------------------------------
+
+export const updateVillasDatas = async (req, res, next) => {
+  const { id, name, price, infos, url } = req.body;
+  try {
+    const co = await createPoolConnexion();
+    const [updateVilla] = await co.query(
+      ` 
+      UPDATE villas
+        SET name = ? ,
+            price = ?,
+            infos = ?,
+            url = ? 
+        WHERE villas.id = ?    
+    `,
+      [name, price, infos, url, id]
+    );
+    res.status(200).json(updateVilla);
   } catch (err) {
     next(err);
   }
