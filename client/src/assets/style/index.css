@@ -279,7 +279,7 @@ object {
   text-align: center;
   flex-direction: column;
   text-align: center;
-  background-image: url("./img/home/about_page.webp");
+  background-image: url("../../img/home/about_page.webp");
   background-size: cover;
   background-position: center;
 }
