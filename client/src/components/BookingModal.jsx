@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Modal, Button, Alert, Toast } from "flowbite-react";
+import { Modal, Button } from "flowbite-react";
 import { UserContext } from "../users/UserContext.jsx";
 const BookingModal = ({ isReserved, setIsReserved }) => {
   const { user } = useContext(UserContext);

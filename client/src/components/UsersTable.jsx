@@ -6,7 +6,6 @@ import utils from "../users/utilsFunctions.js";
 const UsersTable = () => {
   const [data, setData] = useState([]);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [editRole, setEditRole] = useState("");
   useEffect(() => {
     const handleGetAllUsers = async () => {
       try {

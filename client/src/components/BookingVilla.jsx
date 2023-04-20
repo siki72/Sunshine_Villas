@@ -79,7 +79,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
     }
   };
   useEffect(() => {
-    fetch(`https://alimissoum.app.3wa.io/villas/villa/${id}`)
+    fetch(`${import.meta.env.VITE_URL_VILLAS}${id}`)
       .then((resp) => resp.json())
       .then((data) => setVillaInfos(data));
     setIdReady(true);
@@ -89,7 +89,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
       const idOfSelectedvilla = {
         idVilla: id,
       };
-      fetch("https://alimissoum.app.3wa.io/villas/villas/availableDates", {
+      fetch(`${import.meta.env.VITE_URL_AVAILAIBLES_DATES}`, {
         method: "POST",
         credentials: "include",
         headers: {
