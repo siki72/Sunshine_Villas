@@ -1,62 +1,63 @@
 .section_4 {
-  margin: 60px auto;
+  @media screen and (min-width: $breakPoint-Desktop) {
+    margin: 0 auto;
+  }
+  background-color: $color1;
   text-align: center;
-
+  margin: 2rem 0 0 0;
+  padding: 2rem 0;
   .titles_div {
     h2 {
-      @media screen and (max-width: 1050px) {
-        font-size: 2.5rem;
-      }
-      @media screen and (max-width: 340px) {
-        font-size: 1.3rem;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 4.375rem;
+        line-height: 6.25rem;
       }
       font-family: $pop7;
-      font-size: 4.375rem;
-      line-height: 6.25rem;
+      font-size: 2.5rem;
       color: $color6;
       text-transform: uppercase;
     }
 
     p {
-      @media screen and (max-width: 1050px) {
-        font-size: 1.8rem;
-      }
-      @media screen and (max-width: 350px) {
-        font-size: 1rem;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 2.75rem;
+        line-height: 2.75rem;
+        font-weight: 100;
       }
       font-family: $gildas;
-      font-size: 2.75rem;
-      line-height: 2.75rem;
-      font-weight: 100;
+      font-size: 1.8rem;
       color: $color6;
     }
   }
   .reviews-grid {
-    @media screen and (max-width: 1050px) {
-      display: block;
+    @media screen and (min-width: $breakPoint-Tablet) {
+      display: grid;
+      grid-template-columns: 1fr;
     }
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 70% 30%;
+
+    @media screen and (min-width: $breakPoint-Desktop) {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
+    }
 
     .swiper {
-      @media screen and (max-width: 670px) {
-        display: none;
-      }
-      transition: 0.7s;
-      @media screen and (max-width: 850px) {
-        max-width: 80%;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        width: 100%;
+        display: block;
       }
 
+      display: none;
+      transition: 0.7s;
       &:hover {
         box-shadow: 0px 0px 10px 2px #989393;
       }
     }
-
+    .trip-logo {
+      margin: 2rem 0;
+    }
     .stars img {
-      @media screen and (max-width: 1050px) {
-        margin-top: 30px;
-      }
       width: 11rem;
       transition: 0.4s;
       &:hover {
@@ -68,40 +69,37 @@
   .get_media {
     min-height: 500px;
     min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex;
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 70%);
     ul {
-      @media screen and (max-width: 1090px) {
-        min-width: 100%;
-      }
-      @media screen and (max-width: 1090px) {
-        display: block;
-        > * {
-          margin-top: 20px;
-        }
-      }
-      min-width: 60%;
       display: flex;
-      justify-content: space-around;
-
+      flex-direction: column;
       li h4 {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 3.188rem;
+          line-height: 3.188rem;
+        }
         font-family: $pop2;
-        font-size: 3.188rem;
-        line-height: 3.188rem;
+        font-size: 2.188rem;
+        line-height: 2.188rem;
         color: $color1;
       }
       li a {
-        font-size: 44px;
+        font-size: 1.4rem;
         & :hover {
           animation: up 0.4s ease forwards;
         }
       }
+
       .media-icons {
-        font-size: 2.813rem;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 2.888rem;
+          line-height: 2.988rem;
+        }
+        font-size: 1.813rem;
         line-height: 2.813rem;
         color: $color1;
+        margin: 1rem;
       }
     }
   }

@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family: "font-pop";
   src: url(../fonts/Poppins-Medium.ttf);
@@ -46,6 +49,9 @@ $pop2: "font-pop200", sans-serif;
 $rob3: "font-rob300", sans-serif;
 $rob4: "font-rob400", sans-serif;
 $pop4: "font-pop400", sans-serif;
+
+$breakPoint-Tablet: 768px;
+$breakPoint-Desktop: 1024px;
 
 $color1: rgb(255, 255, 255);
 $color2: rgb(1, 1, 1);
@@ -105,7 +111,20 @@ $color9: rgb(28, 28, 28);
 @keyframes popBooking {
   to {
     opacity: 1;
-    transform: translate(-100%, 420%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes showNav {
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
+}
+@keyframes autoScroll {
+  to {
+    opacity: 1;
+    bottom: 4rem;
   }
 }
 * {
@@ -128,7 +147,7 @@ $color9: rgb(28, 28, 28);
 }
 
 body {
-  background-color: $color1;
+  background-color: rgb(237, 230, 230);
 }
 
 .error {
@@ -160,6 +179,12 @@ body {
   min-width: 200px;
   min-height: 200px;
 }
+.swiper-pagination,
+.swiper-pagination-clickable,
+.swiper-pagination-bullets,
+.swiper-pagination-horizontal {
+  height: 2rem;
+}
 
 .active-nav {
   background-color: $color2;
@@ -179,6 +204,7 @@ body {
   cursor: pointer;
 }
 .modale {
+  z-index: 10;
   .container {
     button {
       cursor: pointer;
@@ -199,30 +225,39 @@ body {
     align-items: center;
   }
   h2 {
+    margin-bottom: 1rem;
     span {
       color: #015706;
     }
     color: rgb(244, 244, 244);
   }
   span {
-    color: rgb(13, 124, 13);
+    @media screen and (min-width: $breakPoint-Tablet) {
+      margin-bottom: 1rem;
+    }
+    color: rgb(43, 156, 107);
     margin-right: 1rem;
     font-family: $gildas;
   }
-  background-color: rgba(0, 0, 0, 0.865);
+  @media screen and (min-width: $breakPoint-Tablet) {
+    width: 62%;
+  }
+  @media screen and (min-width: $breakPoint-Desktop) {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+  background-color: rgb(0, 0, 0);
   color: grey;
-
   text-align: center;
-  line-height: 2rem;
   letter-spacing: 1px;
-  font-size: 1.1rem;
-  top: -20rem;
-  left: 90%;
+  font-size: 0.9rem;
+  top: 50%;
+  left: 50%;
   width: 40%;
   border-radius: 2rem;
-  padding: 20px;
+  padding: 1rem;
   position: absolute;
-  min-width: 20rem;
+  width: 90%;
   opacity: 0;
   animation: popBooking 1s ease-in-out forwards;
 }
@@ -250,4 +285,22 @@ body {
     font-size: 1.1rem;
     color: rgb(0, 0, 0);
   }
+}
+
+.swiper-slide {
+  margin: 0;
+}
+.swiper div p,
+h3 {
+  color: rgb(0, 0, 0);
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline;
 }

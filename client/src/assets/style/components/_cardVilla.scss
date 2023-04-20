@@ -1,24 +1,35 @@
 .card-container {
-  @media screen and (max-width: 350px) {
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
-  }
+  padding-bottom: 2rem;
   position: relative;
-  height: 950px;
-  margin-top: 40px;
   width: 100%;
-  border: 1px solid rgb(239, 234, 234);
-  border-radius: 10px;
-  padding: 15px;
-  margin-left: 2rem;
-  transition: 0.4s;
-
-  &:hover {
-    box-shadow: 0px 0px 6px 0px #424141;
-    transform: scale(1.05);
+  min-height: 35rem;
+  transition: 0.5s;
+  @media screen and (min-width: $breakPoint-Tablet) {
+  }
+  @media screen and (min-width: $breakPoint-Desktop) {
+    min-height: 42rem;
+    box-shadow: 0px 0px 6px 1px #c7bdbd;
+    border: 1px solid rgb(213, 210, 205);
+    &:hover {
+      box-shadow: 0px 0px 6px 0px #424141;
+      transform: scale(1.01);
+    }
+  }
+  img {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      width: 90%;
+      margin-top: 2rem;
+    }
+    @media screen and (min-width: $breakPoint-Desktop) {
+      object-fit: cover;
+      height: 60%;
+      object-position: center;
+      margin: 0rem;
+      padding: 0.4rem;
+      width: 100%;
+    }
+    padding: 0.3rem;
+    width: 90%;
   }
 
   .card-infos {
@@ -58,29 +69,17 @@
       }
     }
     .card-desc {
-      @media screen and (max-width: 400px) {
-        font-size: 0.8rem;
-        padding: 0 10px;
-      }
       font-family: $rob4;
       font-size: 0.875rem;
       line-height: 1.75rem;
-      color: $color5;
+      color: $color2;
+      max-width: 90%;
+      margin: 2rem auto;
     }
   }
 
   .card-booking {
-    min-width: 100%;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-
     span {
-      @media screen and (max-width: 480px) {
-        font-size: 0.7rem;
-      }
-
       padding: 10px 20px;
       border-radius: 5px;
       font-family: $rob3;
@@ -94,6 +93,18 @@
         background-color: $color2;
         color: $color1;
       }
+    }
+  }
+}
+.card-container:nth-child(2) {
+  @media screen and (min-width: $breakPoint-Desktop) {
+    box-shadow: none;
+    border: none;
+    background-color: rgb(249, 249, 249);
+  }
+  img {
+    @media screen and (min-width: $breakPoint-Desktop) {
+      object-position: calc(20%);
     }
   }
 }

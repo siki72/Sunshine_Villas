@@ -21,34 +21,34 @@ const Swiper_walima = () => {
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src="../img/walima/p1.png" alt="food picture" />
+        <img src="../img/walima/p1.webp" alt="food picture" />
       </SwiperSlide>
 
       <SwiperSlide>
-        <img src="../img/walima/p2.png" alt="food picture" />
+        <img src="../img/walima/p2.webp" alt="food picture" />
       </SwiperSlide>
 
-      <SwiperSlide>
-        <img src="../img/walima/p3.png" alt="food picture" />
-      </SwiperSlide>
+      {/*      <SwiperSlide>
+        <img src="../img/walima/p3.webp" alt="food picture" />
+      </SwiperSlide> */}
 
       <SwiperSlide>
-        <img src="../img/walima/p4.png" alt="food picture" />
+        <img src="../img/walima/p4.webp" alt="food picture" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../img/walima/p5.jpg" alt="food picture" />
+        <img src="../img/walima/p5.webp" alt="food picture" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../img/walima/p6.jpg" alt="food picture" />
+        <img src="../img/walima/p6.webp" alt="food picture" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../img/walima/p7.jpg" alt="food picture" />
+        <img src="../img/walima/p7.webp" alt="food picture" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../img/walima/p8.jpg" alt="food picture" />
+        <img src="../img/walima/p8.webp" alt="food picture" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../img/walima/p9.png" alt="food picture" />
+        <img src="../img/walima/p9.webp" alt="food picture" />
       </SwiperSlide>
     </Swiper>
   );

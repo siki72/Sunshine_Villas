@@ -1,226 +1,251 @@
-.navigation {
-  @media screen and (max-width: 1120px) {
-    display: block;
-    div {
-      display: none;
+nav {
+  z-index: 100000;
+  .auto-scroll {
+    position: absolute;
+    bottom: -30rem;
+    opacity: 0;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(51, 51, 51);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+
+    @include flex;
+    .scroll-icon {
+      height: 40%;
+      color: rgb(192, 190, 190);
     }
   }
-  @media screen and (max-width: 900px) {
-    display: none;
+
+  .show-scroll-button {
+    opacity: 1;
+    position: fixed;
+    animation: autoScroll 1s forwards;
+    z-index: 100;
   }
-  /*   @media screen and (max-width: 720px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    div {
-      display: none;
-    }
-  } */
-
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-
-  display: grid;
-  height: 60px;
-  width: 100%;
-  grid-template-columns: 10% 30% 60%;
-  position: fixed;
-  background-color: $color1;
-  top: 0;
-  transition: 0.3s linear;
-
-  .logo {
+  .navigation {
     @media screen and (max-width: 1120px) {
-      display: none;
+      display: block;
       div {
         display: none;
       }
     }
-    position: absolute;
-    left: 15%;
-    color: $color2;
-    font-family: $gildas;
-    max-width: 30%;
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
 
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 10px 10px;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+
+    display: grid;
+    height: 60px;
+    width: 100%;
+    grid-template-columns: 10% 10% 80%;
+    position: fixed;
     background-color: $color1;
+    top: 0;
+    transition: 0.3s linear;
 
-    p {
+    .logo {
+      @media screen and (max-width: 1120px) {
+        display: none;
+        div {
+          display: none;
+        }
+      }
+      position: absolute;
+      left: 10%;
       color: $color2;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      font-family: $rob;
-      font-weight: 400;
-      margin-top: 5px;
-      font-weight: 300;
-      letter-spacing: 2px;
-    }
+      font-family: $gildas;
+      max-width: 30%;
 
-    p:last-child {
-      background-color: $color2;
-      color: $color1;
-      font-size: 0.7rem;
-    }
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px 10px;
+      background-color: $color1;
 
-    .line {
-      width: 100%;
-      border-bottom: 1px solid black;
-    }
-  }
-
-  ul {
-    height: 100%;
-    @include around;
-    li {
-      height: 100%;
-      @include flex;
-      padding: 0 10px;
-    }
-
-    li.villas {
-      color: $color3;
-      letter-spacing: 1px;
-      font-size: 14px;
-      font-weight: 300;
-      height: 100%;
-      cursor: pointer;
-      &:hover .nav-our-villas,
-      .nav-our-villas:hover {
-        display: block;
+      p {
+        color: $color2;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        font-family: $rob;
+        font-weight: 400;
+        margin-top: 5px;
+        font-weight: 300;
+        letter-spacing: 2px;
       }
 
-      .nav-our-villas {
-        background-color: $color1;
-        color: $color2;
-        display: none;
-        opacity: 0;
-        height: 0;
-        position: absolute;
-        visibility: visible;
-        top: 47px;
-        animation: show 0.4s forwards;
+      p:last-child {
+        background-color: $color2;
+        color: $color1;
+        font-size: 0.7rem;
+      }
 
-        li {
-          background-color: $color1;
-          font-size: 0.78rem;
+      .line {
+        width: 100%;
+        border-bottom: 1px solid black;
+      }
+    }
+
+    ul {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      li {
+        height: 100%;
+        @include flex;
+        padding: 0 10px;
+        a {
           color: $color2;
-          opacity: 0.8;
-          text-align: left;
-          font-weight: 300;
+          min-height: 100%;
+          @include flex;
+          padding: 0 1rem;
+        }
+      }
 
-          &:hover {
-            color: $color1;
-            background-color: $color2;
+      li.villas {
+        color: $color3;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        font-weight: 300;
+        height: 100%;
+        cursor: pointer;
+        &:hover .nav-our-villas,
+        .nav-our-villas:hover {
+          display: block;
+        }
+        .nav-our-villas {
+          background-color: $color1;
+          color: $color2;
+          display: none;
+          opacity: 0;
+          height: 0;
+          position: absolute;
+          visibility: visible;
+          top: 47px;
+          animation: show 0.4s forwards;
+
+          li {
+            background-color: $color1;
+            font-size: 0.78rem;
+            color: $color2;
+            opacity: 0.8;
+            text-align: left;
+            font-weight: 300;
+            min-height: 100%;
           }
         }
       }
-    }
-    a {
-      height: 100%;
-      color: $color3;
-      & :hover {
-        @include hover-nav;
-      }
-    }
-
-    .book {
-      font-family: $rob3;
-      font-size: 18px;
-      color: $color1;
-      background: $color2;
-      cursor: pointer;
-      line-height: 18px;
-      padding: 10px 30px;
-      transition: 0.4s;
-      font-size: 14px;
       li {
-        .svg-inline--fa {
-          margin-left: 10px;
+        min-height: 100%;
+        color: $color3;
+        & :hover {
+          @include hover-nav;
         }
       }
 
-      &:hover {
-        transform: scale(1.15);
+      .book {
+        font-family: $rob3;
+        font-size: 18px;
+        color: $color1;
+        background: $color2;
+        cursor: pointer;
+        line-height: 18px;
+        padding: 10px 30px;
+        transition: 0.4s;
+        font-size: 14px;
+        li {
+          .svg-inline--fa {
+            margin-left: 10px;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.15);
+        }
       }
     }
   }
-}
 
-@keyframes show {
-  to {
-    height: 50px;
-    opacity: 1;
-  }
-}
-
-.scroll-up {
-  transform: translate(0, 0);
-}
-
-.scroll-down {
-  transform: translate(0, -100%);
-}
-
-.hamburguer {
-  @media screen and (min-width: 900px) {
-    display: none;
-  }
-  top: 40px;
-  right: 25px;
-  min-width: 100%;
-  background-color: $color2;
-  font-size: 2rem;
-  cursor: pointer;
-  span {
-    color: $color2;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-  }
-  .ham-white {
-    color: $color1;
-  }
-  .ham-black {
-    color: $color2;
-  }
-}
-.hidden-nav {
-  transition: 0.4s;
-  @include flex;
-  @media screen and (min-width: 900px) {
-    display: none;
-  }
-  height: 100vh;
-  top: 0rem;
-  width: 100%;
-  /*   backdrop-filter: blur(10px); */
-  background-color: rgb(255, 255, 255);
-  div {
-    position: absolute;
-    top: 1.4rem;
-    right: 2px;
-    width: 2rem;
-    font-size: 1.3rem;
-  }
-  ul {
-    text-align: center;
-    li {
-      margin: 2rem auto;
-      font-size: 1.5rem;
-      color: $color2;
-      opacity: 0.8;
-      font-weight: 300;
+  @keyframes show {
+    to {
+      height: 50px;
+      opacity: 1;
     }
-    .admin-li {
-      background-color: $color2;
-      padding: 1rem;
+  }
+
+  .scroll-up {
+    transform: translate(0, 0);
+  }
+
+  .scroll-down {
+    transform: translate(0, -300%);
+  }
+
+  .hamburguer {
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+
+    height: 3rem;
+    width: 100%;
+    top: 40px;
+    right: 25px;
+    min-width: 100%;
+    background-color: $color1;
+    color: $color2;
+    font-size: 2rem;
+    cursor: pointer;
+    span {
+      color: $color2;
+      position: absolute;
+      top: 0.1rem;
+      left: 1rem;
+    }
+    .ham-white {
+      color: $color2;
+    }
+    .ham-black {
       color: $color1;
+    }
+  }
+  .hidden-nav {
+    @include flex;
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+    opacity: 0;
+    height: 0;
+    height: 0;
+    top: 0rem;
+    width: 100%;
+    transition: 0.3s;
+    background-color: $color1;
+    animation: showNav 1s forwards;
+    div {
+      position: absolute;
+      top: 1.4rem;
+      right: 2px;
+      width: 2rem;
+      font-size: 1.3rem;
+    }
+    ul {
+      text-align: center;
+      li {
+        margin: 2rem auto;
+        font-size: 1.5rem;
+        color: $color2;
+        opacity: 0.8;
+        font-weight: 300;
+      }
+      .admin-li {
+        background-color: $color2;
+        padding: 1rem;
+        color: $color1;
+      }
     }
   }
 }

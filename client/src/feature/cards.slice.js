@@ -19,11 +19,26 @@ export const cardsSlice = createSlice({
     setCardsData: (state, action) => {
       state.cards = action.payload;
     },
+    editVillaData: (state, action) => {
+      state.cards = state.cards.map((villa) => {
+        if (villa.id === action.payload[1]) {
+          return {
+            ...villa,
+            name: action.payload[0].name,
+            price: action.payload[0].price,
+            url: action.payload[0].url,
+            infos: action.payload[0].infos,
+          };
+        } else {
+          return villa;
+        }
+      });
+    },
   },
 });
 
 // action et reducer au méme endroit
 
-export const { setCardsData } = cardsSlice.actions;
+export const { setCardsData, editVillaData } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

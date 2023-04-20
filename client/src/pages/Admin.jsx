@@ -9,40 +9,19 @@ import {
   faUsers,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-import Villas_datas from "../components/Villas_datas.jsx";
+import VillasDatas from "../components/VillasDatas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
-import Walima_datas from "../components/walima_datas.jsx";
-import Users_table from "../components/Users_table.jsx";
+import WalimaDatas from "../components/walimaDatas.jsx";
+import UsersTable from "../components/UsersTable.jsx";
+import VillasEditor from "../components/VillasEditor.jsx";
 
 const Admin = ({ logout }) => {
   const { user, ready } = useContext(UserContext);
+  const [activeTab, setActiveTab] = useState("dashboard");
   const [redirect, setRedirect] = useState(false);
-  const [showData1, setShowData1] = useState(false);
-  const [showData2, setShowData2] = useState(false);
-  const [showData3, setShowData3] = useState(false);
-  const [showData4, setShowData4] = useState(false);
-  const [showData5, setShowData5] = useState(false);
-  const [dashboard, setDashboard] = useState(true);
 
-  // a refactoriser
-  const handleshow = (setShowData) => {
-    return () => {
-      setShowData1(false);
-      setShowData2(false);
-      setShowData3(false);
-      setShowData4(false);
-      setShowData5(false);
-      setShowData(true);
-      setDashboard(false);
-    };
-  };
-  const handleShowDashboard = () => {
-    setDashboard(true);
-    setShowData1(false);
-    setShowData2(false);
-    setShowData3(false);
-    setShowData4(false);
-    setShowData5(false);
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
   };
 
   useEffect(() => {
@@ -62,40 +41,48 @@ const Admin = ({ logout }) => {
         <div className="dashboard">
           <ul>
             <li
-              onClick={handleShowDashboard}
-              className={dashboard ? "li-active" : ""}
+              onClick={() => {
+                handleTabClick("dashboard");
+              }}
+              className={activeTab === "dashboard" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faDatabase} /> Dashboard
             </li>
 
             <li
-              onClick={handleshow(setShowData1)}
-              className={showData1 ? "li-active" : ""}
+              onClick={() => handleTabClick("villa1")}
+              className={activeTab === "villa1" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 1 bed</span>
             </li>
             <li
-              onClick={handleshow(setShowData2)}
-              className={showData2 ? "li-active" : ""}
+              onClick={() => handleTabClick("villa2")}
+              className={activeTab === "villa2" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faHouseUser} />
               <span>Villa 2 bed</span>
             </li>
             <li
-              onClick={handleshow(setShowData3)}
-              className={showData3 ? "li-active" : ""}
+              onClick={() => handleTabClick("villa3")}
+              className={activeTab === "villa3" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 3 bed</span>
             </li>
             <li
-              onClick={handleshow(setShowData4)}
-              className={showData4 ? "li-active" : ""}
+              onClick={() => handleTabClick("villasEditor")}
+              className={activeTab === "villasEditor" ? "li-active" : ""}
+            >
+              <FontAwesomeIcon icon={faHouseUser} /> <span>Villas infos</span>
+            </li>
+            <li
+              onClick={() => handleTabClick("walima")}
+              className={activeTab === "walima" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faHouseUser} /> <span>Walima</span>
             </li>
             <li
-              onClick={handleshow(setShowData5)}
-              className={showData5 ? "li-active" : ""}
+              onClick={() => handleTabClick("users")}
+              className={activeTab === "users" ? "li-active" : ""}
             >
               <FontAwesomeIcon icon={faUsers} /> <span>Users</span>
             </li>
@@ -107,12 +94,13 @@ const Admin = ({ logout }) => {
           </ul>
         </div>
         <div className="datas">
-          {dashboard && <Dashboard />}
-          {showData1 && <Villas_datas id={1} />}
-          {showData2 && <Villas_datas id={2} />}
-          {showData3 && <Villas_datas id={3} />}
-          {showData4 && <Walima_datas />}
-          {showData5 && <Users_table />}
+          {activeTab === "dashboard" && <Dashboard />}
+          {activeTab === "villa1" && <VillasDatas id={1} />}
+          {activeTab === "villa2" && <VillasDatas id={2} />}
+          {activeTab === "villa3" && <VillasDatas id={3} />}
+          {activeTab === "villasEditor" && <VillasEditor id={3} />}
+          {activeTab === "walima" && <WalimaDatas />}
+          {activeTab === "users" && <UsersTable />}
         </div>
       </div>
     </div>

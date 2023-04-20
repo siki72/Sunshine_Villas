@@ -6,11 +6,11 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="flex">
         <div className="hotel-logo">
           <div className="logo-footer">
@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="trip-logo">
           <div className="trip-logo-img">
             <img
-              src="../img/logo/trip-footer-logo.png"
+              src="../../img/logo/trip-footer-logo.webp"
               alt="logo of sunshine villas"
             />
           </div>
@@ -67,33 +67,34 @@ const Footer = () => {
           <h3>accommodation</h3>
 
           <ul className="nav-our-villasours-villas">
-            <NavLink to="/1-bed-apartement">
-              <li>1-bed-apartement</li>
-            </NavLink>
-            <NavLink to="/2-bed-villa">
-              <li>2-bed-villa</li>
-            </NavLink>
-            <NavLink to="/3-bed-villa">
-              <li>3-bed-villa</li>
-            </NavLink>
+            <li>
+              <Link to="/1-bed-apartement">1-bed-apartement</Link>
+            </li>
+            <li>
+              <Link to="/2-bed-villa">2-bed-villa</Link>
+            </li>
+            <li>
+              <Link to="/3-bed-villa">3-bed-villa</Link>
+            </li>
           </ul>
         </div>
         <div className="get-in-touche">
           <h3>get in touch</h3>
           <ul>
-            <NavLink to="/">
-              <li>Home</li>
-            </NavLink>
-            <NavLink to="/about">
-              <li>About</li>
-            </NavLink>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about"> About</Link>
+            </li>
 
-            <NavLink to="/explore-zanzibar">
-              <li>Explore</li>
-            </NavLink>
-            <NavLink to="/contact">
-              <li>Contact us</li>
-            </NavLink>
+            <li>
+              <Link to="/explore-zanzibar">Explore</Link>
+            </li>
+
+            <li>
+              <Link to="/contact">Contact us</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -101,7 +102,7 @@ const Footer = () => {
         <h4>ALL RIGHTS RESERVED SUNSHNE VILLAS 2023</h4>
         <h4>FINAL PROJECT FOR 3W ACADEMY BY ALI MISSOUM</h4>
       </div>
-    </div>
+    </footer>
   );
 };
 

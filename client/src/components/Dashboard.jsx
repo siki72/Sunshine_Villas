@@ -1,8 +1,6 @@
-import React, { Profiler, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowTrendUp,
-  faChartGantt,
   faEuroSign,
   faHotel,
   faUser,
@@ -10,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect } from "react";
-import utils from "../users/utilsFunctions.js";
 
 const Dashboard = () => {
   const [profits, setProfits] = useState([]);
@@ -18,7 +15,9 @@ const Dashboard = () => {
   const [bookingTable, setBookingTable] = useState([]);
   const [guests, setGuests] = useState([]);
   useEffect(() => {
-    fetch("https://alimissoum.app.3wa.io/admin/widgets")
+    fetch(`${import.meta.env.VITE_URL_ADMIN}widgets`, {
+      credentials: "include",
+    })
       .then((resp) => resp.json())
       .then((data) => setProfits(data));
   }, []);
@@ -31,12 +30,16 @@ const Dashboard = () => {
   useEffect(() => {
     const handleGetReservation = async () => {
       try {
-        const response = await utils.fetchAdminDatas("walima");
+        const response = await fetch(
+          `${import.meta.env.VITE_URL_ADMIN}walima`,
+          {
+            credentials: "include",
+          }
+        );
         if (!response.ok) {
           throw new Error("unable to fetch table's reservation");
         } else {
           const data = await response.json();
-          console.log(data);
           setBookingTable(data);
         }
       } catch (error) {
@@ -48,7 +51,9 @@ const Dashboard = () => {
   useEffect(() => {
     const handleGetReservation = async () => {
       try {
-        const response = await utils.fetchAdminDatas("users");
+        const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}users`, {
+          credentials: "include",
+        });
         if (!response.ok) {
           throw new Error("unable to fetch table's reservation");
         } else {

@@ -1,23 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { Link, Navigate, NavLink, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { UserContext } from "../users/UserContext.jsx";
 import {
   faArrowRightFromBracket,
   faHouse,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-
-import Mybookings from "./Mybookings.jsx";
+import MyBookings from "./MyBookings.jsx";
 import Admin from "./Admin.jsx";
-import { useEffect } from "react";
-import User_profile from "../components/User_profile.jsx";
+import UserProfile from "../components/UserProfile.jsx";
 
 const Account = () => {
   const { pages } = useParams();
-  const [redirect, setRedirect] = useState(false);
-
   const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
   if (!ready) {
     return "loading";
@@ -27,7 +22,7 @@ const Account = () => {
   }
 
   const handleLogout = () => {
-    fetch("https://alimissoum.app.3wa.io/user/logout", {
+    fetch(`${import.meta.env.VITE_URL_USER}logout`, {
       method: "GET",
       credentials: "include",
       headers: {
@@ -47,11 +42,11 @@ const Account = () => {
     return classes;
   }
   return (
-    <div className="account-container">
+    <div id="#" className="account-container">
       <div className="container">
         <div
           style={{
-            backgroundImage: `url(../img/home/login.jpeg)`,
+            backgroundImage: `url(../img/home/login.webp)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -77,8 +72,8 @@ const Account = () => {
         )}
         {pages === "dashboard" && <Admin logout={handleLogout} />}
 
-        {pages === undefined && <User_profile />}
-        {pages === "bookings" && <Mybookings />}
+        {pages === undefined && <UserProfile />}
+        {pages === "bookings" && <MyBookings />}
       </div>
     </div>
   );

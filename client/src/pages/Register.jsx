@@ -1,11 +1,16 @@
 import React, { useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import utils from "../users/utilsFunctions";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Alert } from "flowbite-react";
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const formRegisterRef = useRef();
   const [focused, setFocused] = useState(false);
+  const [invalidField, setInvalidField] = useState(false);
+  const [existEmail, setExistEmail] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const handleFocus = () => {
     setFocused(true);
   };
@@ -18,8 +23,18 @@ const Register = () => {
       "email",
       "password",
     ]);
+    if (formData.password.length < 8 && formData.password.length > 20) {
+      setInvalidField(true);
+      return;
+    }
+
     utils.addUser(formData).then((resp) => {
-      setRedirect(true);
+      console.log(resp);
+      if (resp.status === 200) {
+        setShowToast(true);
+      } else if (resp.status === 400) {
+        setExistEmail(true);
+      }
     });
   };
 
@@ -30,16 +45,32 @@ const Register = () => {
   return (
     <div className="full-screen-container">
       <div className="grid-container">
+        {showToast && (
+          <Alert color="success" onDismiss={() => setRedirect(true)}>
+            <span>
+              <span className="font-medium">Info alert!</span> "Congratulations!
+              Your registration was successful. You can now go ahead and log in
+              to your account."
+            </span>
+          </Alert>
+        )}
         <div className="login-container">
-          <h1 className="login-title">Welcome</h1>
+          <h1
+            className={existEmail ? "error-email login-title" : "login-title"}
+          >
+            {existEmail ? "email already registered please login" : "Welcome"}
+          </h1>
           <form
             className="form "
             ref={formRegisterRef}
             action="/user/register"
             method="POST"
             onSubmit={registerUser}
+            onClick={() => setExistEmail(false)}
           >
             <div className="input-group ">
+              <FontAwesomeIcon className="icon" icon={faUser} />
+              <label htmlFor="firstname">First name</label>
               <input
                 placeholder="john"
                 required={true}
@@ -50,14 +81,12 @@ const Register = () => {
                 onBlur={handleFocus}
                 focused={focused.toString()}
               />
-              <span className="msg">
-                Username should be 3-16 characters and shouldn't include any
-                special character!",
-              </span>
+              <p className="msg">First name should be 3-16 characters</p>
             </div>
             <div className="input-group ">
+              <FontAwesomeIcon className="icon" icon={faUser} />
+              <label htmlFor="lastname">Last name</label>
               <input
-                placeholder="smith"
                 required={true}
                 pattern="^[A-Za-z0-9]{3,16}$"
                 type="text"
@@ -66,12 +95,11 @@ const Register = () => {
                 onBlur={handleFocus}
                 focused={focused.toString()}
               />
-              <span className="msg">
-                Username should be 3-16 characters and shouldn't include any
-                special character!",
-              </span>
+              <p className="msg">Last name should be 3-16 characters</p>
             </div>
             <div className="input-group ">
+              <FontAwesomeIcon className="icon" icon={faEnvelope} />
+              <label htmlFor="email">Email</label>
               <input
                 placeholder="exemple@ex.com"
                 type="email"
@@ -81,25 +109,26 @@ const Register = () => {
                 onBlur={handleFocus}
                 focused={focused.toString()}
               />
-              <span className="msg">It should be a valid email address!</span>
+              <p className="msg">Please enter a valid email</p>
             </div>
 
             <div className="input-group ">
+              <FontAwesomeIcon className="icon" icon={faLock} />
+              <label htmlFor="passsword">Password</label>
               <input
                 placeholder="password"
                 required={true}
-                pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':\\|,.<>/?]{8,20}$"
                 type="password"
                 name="password"
                 id="password"
                 onBlur={handleFocus}
                 focused={focused.toString()}
               />
-              <span className="msg">
-                Password should be 8-20 characters and include at least 1
-                letter, 1 number and 1 special character!
-              </span>
+              <p className="msg">Last name should be 3-16 characters</p>
             </div>
+            <p className={invalidField ? "invalidField msg" : "msg"}>
+              Password should be 8-20 characters!
+            </p>
             <button type="submit" className="login-button">
               Register
             </button>

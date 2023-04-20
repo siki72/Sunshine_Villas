@@ -1,39 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Home_section1 from "../components/Home_section1";
-import Home_section2 from "../components/Home_section2";
-import Home_section3 from "../components/Home_section3";
-import Home_section4 from "../components/Home_section4";
-import Home_section5 from "../components/Home_section5";
+import HomeSection1 from "../components/HomeSection1";
+import HomeSection2 from "../components/HomeSection2";
+import HomeSection3 from "../components/HomeSection3";
+import HomeSection4 from "../components/HomeSection4";
+import HomeSection5 from "../components/HomeSection5";
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(window.scrollY);
+  useEffect(() => {
+    function handleScroll() {
+      setScrollY(window.scrollY);
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div>
-      <div className="header">
+    <>
+      <header className="header">
         <div
-          style={{
-            backgroundImage: `url(../img/home/zanzibar.jpg)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
           className="main_img"
+          aria-label="plane view of sunhine villas"
+          role="img"
         >
           <div>
-            <h1>PRIVATE LUXURY VILLAS</h1>
-            <h2>Jambiani beach, Zanzibar.</h2>
-            <Link to="/booking">
+            <h1 style={{ transform: `translateX(-${scrollY}px)` }}>
+              PRIVATE LUXURY VILLAS
+            </h1>
+            <h2 style={{ transform: `translateX(${scrollY}px)` }}>
+              Jambiani beach, Zanzibar.
+            </h2>
+            <Link to="/villas/1-bed-apartement/1">
               <button className="button">Book your Villa</button>
             </Link>
           </div>
         </div>
-      </div>
-      <Home_section1 />
-      <Home_section2 />
-      <Home_section3 />
-      <Home_section4 />
-      <Home_section5 />
-    </div>
+      </header>
+      <main>
+        <HomeSection1 />
+        <HomeSection2 />
+        <HomeSection3 />
+        <HomeSection4 />
+        <HomeSection5 />
+      </main>
+    </>
   );
 };
 

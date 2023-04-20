@@ -1,89 +1,73 @@
 .section_1 {
-  max-width: 90%;
-  padding: 40px;
-  margin: 0 auto;
-
+  padding: 1rem 2rem;
+  background-color: $color1;
   .main-villa {
-    @media screen and (max-width: 1200px) {
-      display: block;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    display: block;
 
     .section_1_img {
-      @media screen and (max-width: 380px) {
-        display: none;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        background-position: center;
+        background-size: 110%;
       }
-      box-shadow: 0 0 3px black;
-      border-radius: 10px;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        background-size: cover;
+        background-position: left;
+        height: 40rem;
+        margin-top: 6rem;
+      }
+      background-image: url("../img/home/section_1.webp");
+      background-position: right;
+      background-repeat: no-repeat;
+      height: 30rem;
+      width: 100%;
+      background-size: 180%;
+      border-radius: 1rem;
     }
 
     .text {
-      margin-top: 40px;
-      padding-top: 50px;
-      @media screen and (max-width: 1200px) {
-        margin-bottom: 30px;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        padding: 3rem 0 0 3rem;
       }
-      @media screen and (max-width: 400px) {
-        text-align: center;
-      }
-
       h2 {
-        @media screen and (max-width: 750px) {
-          font-size: 1.9rem;
-          text-align: center;
-        }
-        @media screen and (max-width: 400px) {
-          font-size: 1rem;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          text-align: left;
+          font-size: 2.875rem;
+          line-height: 2.75rem;
         }
 
         font-family: $pop2;
-        line-height: 46px;
-        font-size: 46px;
+        line-height: 2.5rem;
+        font-size: 2.5rem;
+        text-align: center;
       }
       p {
-        @media screen and (max-width: 1200px) {
-          font-size: 0.9rem;
-        }
-        @media screen and (max-width: 520px) {
-          text-align: center;
-        }
-        @media screen and (max-width: 400px) {
-          font-size: 0.8rem;
-          text-align: center;
-        }
-        margin-top: 30px;
+        margin-top: 1.875rem;
         font-family: $rob3;
         font-weight: 200;
-        font-size: 16px;
-        line-height: 31px;
+        font-size: 1rem;
+        line-height: 1.938rem;
         color: $color3;
+        text-align: left;
       }
 
       .link-villas {
-        @media screen and (max-width: 1200px) {
-          @include flex;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: row;
+          width: 100%;
         }
-        @media screen and (max-width: 520px) {
-          display: block;
-          justify-content: center;
-
-          > * {
-            margin-bottom: 20px;
-          }
-        }
-        margin-top: 60px;
         display: flex;
-        justify-content: flex-end;
-
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem auto;
         .button {
-          @media screen and (max-width: 520px) {
-            display: flex;
-            justify-content: center;
-            max-width: 50%;
-            margin: 0 auto;
-          }
+          margin: 1rem auto;
           font-family: $rob3;
           font-size: 18px;
           color: $color1;
@@ -96,12 +80,9 @@
           &:hover {
             transform: scale(1.15);
           }
-        }
-        .check-div {
-          @media screen and (max-width: 400px) {
-            margin-bottom: 20px;
+          span {
+            margin: 0 auto;
           }
-          @include flex;
         }
 
         .check {
@@ -111,18 +92,6 @@
           line-height: 24px;
           color: $color4;
         }
-      }
-    }
-    .section_1_img {
-      background-image: url("../img/home/section_1.jpeg");
-      background-position: center;
-      height: 50rem;
-      @media screen and (max-width: 1067px) {
-        background-position: left;
-      }
-      @media screen and (max-width: 607px) {
-        background-position: left;
-        height: 30rem;
       }
     }
   }

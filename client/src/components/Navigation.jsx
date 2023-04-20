@@ -1,14 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faVihara, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUp,
+  faBars,
+  faVihara,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../users/UserContext.jsx";
 
 const Navigation = () => {
+  const { user } = useContext(UserContext); // je recupére la data de user depuis
   const [show, setShow] = useState(false);
   const [lastScrol, setLastScroll] = useState(0);
   const [hidden, setHidden] = useState(true);
-  const { user } = useContext(UserContext); // je recupére la data de user depuis
   const controlNavBar = () => {
     if (window.scrollY > lastScrol) {
       // if scroll down hide the navbar
@@ -17,7 +22,6 @@ const Navigation = () => {
       // if scroll up show the navbar
       setShow(false);
     }
-
     setLastScroll(window.scrollY);
   };
   function hamburguerNav() {
@@ -31,9 +35,31 @@ const Navigation = () => {
       window.removeEventListener("scroll", controlNavBar);
     };
   }, [lastScrol]);
+  useEffect(() => {
+    function ScrollToTop() {
+      if (window.scrollY > 200) {
+        autoScroll.classList.add("show-scroll-button");
+      } else {
+        autoScroll.classList.remove("show-scroll-button");
+      }
+    }
+    const autoScroll = document.querySelector(".auto-scroll");
+    window.addEventListener("scroll", ScrollToTop);
+
+    return () => {
+      window.removeEventListener("scroll", ScrollToTop);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
 
   return (
-    <div>
+    <nav>
+      <div className="auto-scroll" onClick={handleScrollToTop}>
+        <FontAwesomeIcon icon={faArrowUp} className="scroll-icon" />
+      </div>
       <div className={`navigation  ${show ? "scroll-down" : "scroll-up"} `}>
         <div></div>
         <div></div>
@@ -51,46 +77,38 @@ const Navigation = () => {
         </Link>
 
         <ul>
-          <NavLink to="/">
-            <li>Home</li>
-          </NavLink>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
 
-          <NavLink to="/about">
-            <li>About</li>
-          </NavLink>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/explore-zanzibar">Explore Zanzibar</NavLink>
+          </li>
 
           <li className="villas">
-            Our villas
-            <ul className="nav-our-villas">
-              <NavLink to="/villas/1">
-                <li>1-bed-apartement</li>
-              </NavLink>
-              <NavLink to="/villas/2">
-                <li>2-bed-villa</li>
-              </NavLink>
-              <NavLink to="/villas/3">
-                <li>3-bed-villa</li>
-              </NavLink>
-            </ul>
+            <NavLink to="/villas/1-BED-APARTEMENT/1">Our villas</NavLink>
           </li>
-          <NavLink to="/walima">
-            <li>Walima</li>
-          </NavLink>
+          <li>
+            <NavLink to="/walima">Walima</NavLink>
+          </li>
 
-          <NavLink to="/contact">
-            <li>Contact us</li>
-          </NavLink>
+          <li>
+            <NavLink to="/contact">Contact us</NavLink>
+          </li>
           {user?.role === "admin" && (
-            <NavLink to="/account/dashboard">
-              <li>Dashboard</li>
-            </NavLink>
+            <li>
+              <NavLink to="/account/dashboard">Dashboard</NavLink>
+            </li>
           )}
 
-          <NavLink to={user ? "/account" : "/login"} className={"book"}>
-            <li className="li">
+          <li className="li">
+            <NavLink to={user ? "/account" : "/login"} className={"book"}>
               {user ? " Welcome  " + user.name?.toUpperCase() : "Login"}
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div onClick={() => setHidden(false)} className="hamburguer">
@@ -116,13 +134,13 @@ const Navigation = () => {
               <li>About</li>
             </NavLink>
 
-            <NavLink to="/villas/1">
+            <NavLink to="/villas/1-BED-APARTEMENT/1">
               <li>1-bed-apartement</li>
             </NavLink>
-            <NavLink to="/villas/2">
+            <NavLink to="/villas/2-BED-VILLA/2">
               <li>2-bed-villa</li>
             </NavLink>
-            <NavLink to="/villas/3">
+            <NavLink to="/villas/3-BED-VILLA/3">
               <li>3-bed-villa</li>
             </NavLink>
 
@@ -147,7 +165,7 @@ const Navigation = () => {
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 

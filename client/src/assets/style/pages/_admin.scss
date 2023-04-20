@@ -7,15 +7,20 @@
     padding-top: 50px;
   }
   .admin-container {
-    display: grid;
-    grid-template-columns: 15% 85%;
+    @media screen and (min-width: $breakPoint-Desktop) {
+      display: grid;
+      grid-template-columns: 15% 85%;
+    }
+
     background-color: rgb(34, 34, 34);
 
     .dashboard {
-      margin-top: 4rem;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        margin-top: 4rem;
+        margin-left: 2rem;
+      }
       color: $color1;
       background-color: rgb(34, 34, 34);
-      margin-left: 2rem;
 
       h2 {
         padding-top: 1rem;
@@ -32,7 +37,11 @@
           font-family: $pop4;
           margin-bottom: 30px;
         }
-        min-height: 100%;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
         display: flex;
         flex-direction: column;
 
@@ -52,10 +61,21 @@
       }
     }
     .datas {
-      margin: 2rem 2rem 2rem 0;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        margin: 2rem 2rem 2rem 0;
+        padding-left: 1rem;
+      }
+
       border-radius: 30px;
       background-color: rgb(230, 230, 230);
       color: $color1;
+      .data {
+        overflow-x: auto;
+        .form-edit-villa {
+          .modal-villa {
+          }
+        }
+      }
 
       table {
         border-radius: 1rem;

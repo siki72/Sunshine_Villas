@@ -1,21 +1,42 @@
 .booking {
+  background-color: $color1;
   text-align: center;
 
   .main_img {
-    margin: 50px 0;
-    height: 340px;
     min-width: 100%;
+    margin-right: 15rem;
+  }
+  .main_img img {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      min-width: 100%;
+    }
+    height: 25rem;
+    width: 15rem;
+  }
+  .header_img img {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      height: 37rem;
+      object-fit: cover;
+    }
+    width: 100%;
+    height: 100%;
   }
   .container {
     .choose-villas-cards {
-      display: flex;
-      @media screen and (max-width: 830px) {
-        display: block;
-        max-width: 50%;
-        margin: 0 auto;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        display: flex;
+        gap: 1.1rem;
+        padding-bottom: 2rem;
       }
-      @media screen and (max-width: 496px) {
-        display: none;
+      .card-container {
+        @media screen and (min-width: $breakPoint-Desktop) {
+          box-shadow: 0px 0px 6px 1px #c7bdbd;
+          border: 1px solid w;
+        }
+        img {
+          height: auto;
+          height: auto;
+        }
       }
     }
     max-width: 90%;
@@ -43,12 +64,13 @@
       padding: 30px;
       background-color: rgb(237, 237, 237);
       h1 {
-        @media screen and (max-width: 430px) {
-          font-size: 1.5rem;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          font-size: 2.875rem;
+          line-height: 2.875rem;
         }
-        font-size: 2.875rem;
+        font-size: 2rem;
         color: $color4;
-        line-height: 2.875rem;
+        line-height: 2rem;
         font-family: $pop2;
       }
     }
@@ -56,24 +78,18 @@
     .choose-villas {
     }
     .title-cards {
-      margin-top: 25px;
-      padding: 30px;
+      padding: 1rem;
       background-color: rgb(237, 237, 237);
       h3 {
-        @media screen and (max-width: 1244px) {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          font-size: 1.875rem;
+          line-height: 2.875rem;
+        }
+        @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 2rem;
+          line-height: 2.875rem;
         }
-        @media screen and (max-width: 890px) {
-          font-size: 1.5rem;
-        }
-        @media screen and (max-width: 690px) {
-          font-size: 1.2rem;
-        }
-        @media screen and (max-width: 340px) {
-          font-size: 0.9rem;
-        }
-
-        font-size: 2.875rem;
+        font-size: 1.875rem;
         color: $color4;
 
         line-height: 2.875rem;
@@ -81,47 +97,70 @@
       }
     }
     .choose-villa-card {
-      @include around;
-      @media screen and (max-width: 920px) {
-        display: block;
+      @media screen and (min-width: $breakPoint-Desktop) {
+        display: flex;
       }
-      @media screen and (max-width: 377px) {
-        box-shadow: none;
-      }
+
       border: 1px solid $color1;
       box-shadow: 0px 0px 6px #6e6161;
       border-radius: 10px;
-
-      max-width: 80%;
       margin: 1.5rem auto;
 
+      // swiper cntainer
+      .swipe div {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          margin: 0rem 0 2rem 0rem;
+        }
+        @media screen and (min-width: $breakPoint-Desktop) {
+          background-color: $color1;
+        }
+        z-index: 0;
+        padding: 0;
+        margin: 0 1rem 2rem 1.5rem;
+        background-color: #ededed;
+        //paginations container
+        .swiper-pagination {
+          margin: 2rem auto;
+        }
+      }
       .swipe {
-        @media screen and (max-width: 920px) {
-          margin: 0 auto;
+        @media screen and (min-width: $breakPoint-Tablet) {
+          max-width: 100%;
         }
-        @media screen and (max-width: 680px) {
-          display: none;
+        @media screen and (min-width: $breakPoint-Desktop) {
+          max-width: 50%;
+          padding-left: 3rem;
         }
-        max-width: 300px;
-
-        /*           max-height: 200px; */
+        padding: 0;
         .swiper-pagination-bullet-active {
-          background-color: rgb(36, 34, 34);
+          margin-top: 2rem;
+          background-color: rgb(0, 0, 0);
         }
         .swiper-wrapper {
-          width: 500px;
         }
         .swiper,
         .swiper-initialized,
         .swiper-horizontal,
         .swiper-backface-hidden,
         .mySwiper {
+          margin: 0;
           width: 100%;
         }
         max-width: 500px;
-        .swiper-slide .swiper-slide-active {
-          min-width: 100%;
+        .swiper-slide,
+        .swiper-slide-active {
+          margin: 0;
         }
+        .swiper-slide-active {
+          min-width: 100%;
+          margin-right: 0;
+          margin: 0;
+        }
+        .swiper-slide-prev {
+          width: auto;
+          margin: 0;
+        }
+
         div {
           border-radius: 5px;
           min-width: 100%;
@@ -130,17 +169,15 @@
         .swiper-horizontal,
         .swiper-backface-hidden,
         .mySwiper {
-          max-width: 300px;
+          margin: 0;
         }
       }
 
       //calendar
       .choose-villa-infos {
-        @media screen and (max-width: 430px) {
-          max-width: 60%;
+        @media screen and (min-width: $breakPoint-Desktop) {
           margin: 0 auto;
         }
-
         @include flex;
         .card-infos {
           padding: 15px 0;
@@ -148,9 +185,6 @@
             margin-bottom: 15px;
           }
           h2 {
-            @media screen and (max-width: 430px) {
-              font-size: 1.3rem;
-            }
             font-family: $pop2;
             font-size: 1.875rem;
             line-height: 2.875rem;
@@ -163,9 +197,6 @@
             }
             .infos {
               div {
-                @media screen and (max-width: 430px) {
-                  font-size: 0.8rem;
-                }
                 width: 50%;
                 margin: 15px auto;
                 display: flex;
@@ -190,9 +221,6 @@
                 }
               }
               .price {
-                @media screen and (max-width: 430px) {
-                  font-size: 1rem;
-                }
                 position: relative;
                 font-family: $pop2;
                 font-size: 1.375rem;
@@ -202,14 +230,14 @@
             }
 
             .date {
-              @media screen and (max-width: 377px) {
-                .rdrMonth,
-                .rdrMonthAndYearWrapper,
-                .rdrDateDisplayWrapper {
-                  width: 80%;
-                  margin: 0 auto;
-                }
-              }
+              /*  @media screen and (max-width: 377px) {
+                  .rdrMonth,
+                  .rdrMonthAndYearWrapper,
+                  .rdrDateDisplayWrapper {
+                    width: 80%;
+                    margin: 0 auto;
+                  }
+                } */
               .header-book {
                 margin-top: 1rem;
                 font-size: 1rem;

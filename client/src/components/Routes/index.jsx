@@ -1,19 +1,18 @@
 import React from "react";
 import Navigation from "../Navigation";
-import { BrowserRouter, redirect, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import About from "../../pages/About";
-import Booking from "../../pages/Booking";
 import Home from "../../pages/Home";
-import Villa_1_bed from "../../pages/Villa_1_bed";
-import Explore_zanzibar from "../../pages/Explore_zanzibar";
+import ExploreZanzibar from "../../pages/ExploreZanzibar";
 import Footer from "../Footer";
 import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 import { UserContextProvider } from "../../users/UserContext.jsx";
 import Account from "../../pages/Account.jsx";
-import Contact_page from "../../pages/Contact_page.jsx";
+import ContactPage from "../../pages/ContactPage.jsx";
 import Walima from "../../pages/Walima.jsx";
 import Errorpage from "../../pages/Errorpage";
+import Bookings from "../../pages/Bookings.jsx";
 
 const index = () => {
   return (
@@ -23,18 +22,16 @@ const index = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/villas/:id" element={<Villa_1_bed />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/contact" element={<Contact_page />} />
+          <Route path="villas/:slug/:id" element={<Bookings />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/walima" element={<Walima />} />
-          <Route path="/explore-zanzibar" element={<Explore_zanzibar />} />
+          <Route path="/explore-zanzibar" element={<ExploreZanzibar />} />
           <Route path="/account/" element={<Account />} />
           <Route path="/account/:pages" element={<Account />} />
           <Route path="/account/dashboard/:pages" element={<Account />} />
           <Route path="*" element={<Errorpage />} />
-          {/*           <Route path="/account/dashboard" element={<Admin />} /> */}
         </Routes>
         <Footer />
       </UserContextProvider>

@@ -1,15 +1,10 @@
 .send-message {
-  @media screen and (max-width: 1040px) {
-    display: block;
+  @media screen and (min-width: $breakPoint-Desktop) {
+    display: flex;
+    min-width: 100%;
   }
-  display: flex;
-  min-width: 100%;
 
   .send-message-img {
-    @media screen and (max-width: 1040px) {
-      min-width: 100%;
-    }
-    max-width: 50%;
     img {
       height: 100%;
       width: 100%;
@@ -18,31 +13,25 @@
   }
 
   .send-message-form {
-    @media screen and (max-width: 349px) {
-      display: none;
-    }
-    .h2-send {
-      @media screen and (max-width: 720px) {
-        font-size: 2rem;
-      }
-      @media screen and (max-width: 584px) {
-        font-size: 1.4rem;
-      }
-      margin-top: 2rem;
-      font-family: $pop2;
+    @media screen and (min-width: $breakPoint-Tablet) {
       font-size: 2.875rem;
       line-height: 2.875rem;
+    }
+    .h2-send {
+      padding-top: 2rem;
+      font-family: $pop2;
+      font-size: 1.875rem;
+      line-height: 0.875rem;
       text-align: center;
       color: $color4;
     }
     background-color: rgb(244, 244, 244);
     width: 100%;
     form {
+      max-height: 40rem;
       padding: 2rem;
       .input-groups {
-        @media screen and (max-width: 385px) {
-          max-width: 80%;
-          margin: 0 auto;
+        @media screen and (min-width: $breakPoint-Tablet) {
         }
         label {
           font-family: $rob4;
@@ -54,6 +43,8 @@
         flex-direction: column;
       }
       input {
+        @media screen and (min-width: $breakPoint-Desktop) {
+        }
         padding: 1rem;
         background-color: transparent;
         border: 1px solid $color2;
@@ -75,7 +66,7 @@
           color: #969696;
         }
       }
-      @media screen and (max-width: 584px) {
+      /*  @media screen and (max-width: 584px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
@@ -84,15 +75,39 @@
           "message"
           "recaptcha"
           "send";
+      } */
+      @media screen and (min-width: $breakPoint-Tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        grid-template-areas:
+          "fullName email"
+          "message message"
+          "recaptcha recaptcha"
+          "send send";
       }
+
+      @media screen and (min-width: $breakPoint-Desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        grid-template-areas:
+          "fullName email"
+          "message message"
+          "recaptcha recaptcha"
+          "send send";
+      }
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 2rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 6.25rem);
+
       grid-template-areas:
-        "fullName email"
-        "message message"
-        "recaptcha recaptcha"
-        "send send";
+        "fullName "
+        "email"
+        "message "
+        "recaptcha "
+        "send ";
 
       .name {
         grid-area: fullName;
@@ -112,11 +127,11 @@
         grid-area: recaptcha;
       }
       .send {
-        @media screen and (max-width: 584px) {
+        /*      @media screen and (max-width: 584px) {
           width: 90%;
           margin: 0 auto;
           height: 4rem;
-        }
+        } */
         font-family: $rob4;
         font-size: 1rem;
         color: $color1;
