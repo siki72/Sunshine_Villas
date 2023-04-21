@@ -1,5 +1,5 @@
 nav {
-  z-index: 100000;
+  z-index: 100;
   .auto-scroll {
     position: absolute;
     bottom: -30rem;
@@ -45,6 +45,7 @@ nav {
     width: 100%;
     grid-template-columns: 10% 10% 80%;
     position: fixed;
+    z-index: 100;
     background-color: $color1;
     top: 0;
     transition: 0.3s linear;
@@ -57,6 +58,7 @@ nav {
         }
       }
       position: absolute;
+      z-index: 100;
       left: 10%;
       color: $color2;
       font-family: $gildas;
@@ -124,6 +126,7 @@ nav {
           opacity: 0;
           height: 0;
           position: absolute;
+          z-index: 100;
           visibility: visible;
           top: 47px;
           animation: show 0.4s forwards;
@@ -230,6 +233,7 @@ nav {
       top: 1.4rem;
       right: 2px;
       width: 2rem;
+      z-index: 100;
       font-size: 1.3rem;
     }
     ul {

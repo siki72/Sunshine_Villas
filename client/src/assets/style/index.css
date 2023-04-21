@@ -157,8 +157,49 @@ body {
   cursor: pointer;
 }
 
-.modale {
+/* .modale {
   z-index: 10;
+  .container {
+    button {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $color1;
+      background-color: rgba(0, 0, 0, 0.865);
+    }
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .first-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    span {
+      color: #015706;
+    }
+    color: rgb(244, 244, 244);
+  }
+  span {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      margin-bottom: 1rem;
+    }
+    color: rgb(43, 156, 107);
+    margin-right: 1rem;
+    font-family: $gildas;
+  }
+  @media screen and (min-width: $breakPoint-Tablet) {
+    width: 62%;
+  }
+  @media screen and (min-width: $breakPoint-Desktop) {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
   background-color: rgb(0, 0, 0);
   color: grey;
   text-align: center;
@@ -173,55 +214,7 @@ body {
   width: 90%;
   opacity: 0;
   animation: popBooking 1s ease-in-out forwards;
-}
-.modale .container {
-  position: relative;
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
-.modale .container button {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.865);
-}
-.modale .first-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modale h2 {
-  margin-bottom: 1rem;
-  color: rgb(244, 244, 244);
-}
-.modale h2 span {
-  color: #015706;
-}
-.modale span {
-  color: rgb(43, 156, 107);
-  margin-right: 1rem;
-  font-family: "font-gildas", sans-serif;
-}
-@media screen and (min-width: 768px) {
-  .modale span {
-    margin-bottom: 1rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .modale {
-    width: 62%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .modale {
-    font-size: 1.1rem;
-    line-height: 2rem;
-  }
-}
-
+} */
 .no-scroll {
   overflow: hidden;
 }
@@ -1169,7 +1162,7 @@ object {
 }
 
 nav {
-  z-index: 100000;
+  z-index: 100;
 }
 nav .auto-scroll {
   position: absolute;
@@ -1202,6 +1195,7 @@ nav .navigation {
   width: 100%;
   grid-template-columns: 10% 10% 80%;
   position: fixed;
+  z-index: 100;
   background-color: rgb(255, 255, 255);
   top: 0;
   transition: 0.3s linear;
@@ -1226,6 +1220,7 @@ nav .navigation {
 }
 nav .navigation .logo {
   position: absolute;
+  z-index: 100;
   left: 10%;
   color: rgb(1, 1, 1);
   font-family: "font-gildas", sans-serif;
@@ -1301,6 +1296,7 @@ nav .navigation ul li.villas .nav-our-villas {
   opacity: 0;
   height: 0;
   position: absolute;
+  z-index: 100;
   visibility: visible;
   top: 47px;
   animation: show 0.4s forwards;
@@ -1403,6 +1399,7 @@ nav .hidden-nav div {
   top: 1.4rem;
   right: 2px;
   width: 2rem;
+  z-index: 100;
   font-size: 1.3rem;
 }
 nav .hidden-nav ul {
@@ -1583,11 +1580,16 @@ nav .hidden-nav ul .admin-li {
   max-width: 90%;
 }
 .card-container {
+  z-index: 0;
   padding-bottom: 2rem;
   position: relative;
   width: 100%;
   min-height: 35rem;
   transition: 0.5s;
+}
+.card-container a {
+  position: relative;
+  z-index: -1;
 }
 @media screen and (min-width: 1024px) {
   .card-container {
@@ -1601,6 +1603,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .card-container img {
+  z-index: -100;
   padding: 0.3rem;
   width: 90%;
 }
@@ -2263,7 +2266,7 @@ nav .hidden-nav ul .admin-li {
 }
 @media screen and (min-width: 1024px) {
   .full-screen-container .grid-container {
-    height: 100vh;
+    /*       height: 100vh; */
     margin-top: 3rem;
     padding-top: 4rem;
   }

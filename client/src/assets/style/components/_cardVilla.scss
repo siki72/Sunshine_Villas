@@ -1,9 +1,14 @@
 .card-container {
+  z-index: 0;
   padding-bottom: 2rem;
   position: relative;
   width: 100%;
   min-height: 35rem;
   transition: 0.5s;
+  a {
+    position: relative;
+    z-index: -1;
+  }
   @media screen and (min-width: $breakPoint-Tablet) {
   }
   @media screen and (min-width: $breakPoint-Desktop) {
@@ -28,6 +33,7 @@
       padding: 0.4rem;
       width: 100%;
     }
+    z-index: -100;
     padding: 0.3rem;
     width: 90%;
   }

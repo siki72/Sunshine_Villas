@@ -26,7 +26,7 @@ const HomeSection1 = () => {
             <div className="check-div">
               <span className="check">Check Availability</span>
             </div>
-            <Link to="/booking" className="button">
+            <Link to="/villas/1-BED-APARTEMENT/1" className="button">
               <span>BOOKINGS</span>
             </Link>
           </div>
