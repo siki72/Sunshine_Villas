@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
+import { sendConfirmationEmail } from "../utils/sendEmail.js";
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
 // ------------------------------------------
@@ -34,6 +35,7 @@ export const register = async (req, res) => {
           id: userRow.insertId,
           firstname,
         });
+        console.log(userRow);
       }
     }
   } catch (e) {

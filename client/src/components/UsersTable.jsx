@@ -71,7 +71,7 @@ const UsersTable = () => {
             <th>location</th>
             <th>number of bookings</th>
             <th>profits</th>
-
+            <th>email confirmed</th>
             <th>delete</th>
           </tr>
         </thead>
@@ -124,7 +124,13 @@ const UsersTable = () => {
                     {!row.reservations_count ? "0" : row.reservations_count}
                   </td>
                   <td>{!row.profits ? "0" : row.profits}</td>
-
+                  <td
+                    className={
+                      !row.confirmed ? "red-background" : "green-background"
+                    }
+                  >
+                    {row.confirmed ? "YES" : "NOT YET"}
+                  </td>
                   <td
                     className="dlt-td"
                     onClick={() => {
