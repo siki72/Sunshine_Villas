@@ -1,6 +1,9 @@
 .explore-zanzibar-container {
   background-color: $color1;
   .header-container {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      height: 100vh;
+    }
     background-image: url("../../img/home/explore.webp");
     padding: 3rem;
     background-repeat: no-repeat;

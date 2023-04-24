@@ -3498,6 +3498,11 @@ input:invalid:focus ~ span {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .explore-zanzibar-container .header-container {
+    height: 100vh;
+  }
+}
 .explore-zanzibar-container .header-container .header-content {
   margin: 5rem 0;
 }
