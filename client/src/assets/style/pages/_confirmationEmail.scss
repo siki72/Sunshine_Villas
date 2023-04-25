@@ -1,0 +1,35 @@
+.confirm-page {
+  @media screen and (min-width: $breakPoint-Desktop) {
+    height: 30rem;
+  }
+  background-color: $color1;
+  @include flex;
+  .page-container {
+    @media screen and (min-width: $breakPoint-Desktop) {
+      max-width: 70%;
+    }
+    padding: 3rem 2rem;
+    text-align: center;
+    h1 {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 3rem;
+      }
+      font-family: $gildas;
+      font-size: 2.4rem;
+      line-height: 3rem;
+      color: darkgreen;
+    }
+    .check-icon {
+      color: green;
+      font-size: 3rem;
+      margin: 2rem;
+    }
+    p {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1rem;
+      }
+      font-family: $rob4;
+      line-height: 2rem;
+    }
+  }
+}

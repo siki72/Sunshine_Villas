@@ -9,7 +9,8 @@ const Login = () => {
   const formLoginRef = useRef();
   const [redirect, setRedirect] = useState(false);
   const [errorLog, setErrorLOg] = useState(false);
-  const { user, setUser, setReady, setIsAdmin } = useContext(UserContext);
+  const { user, setUser, setReady, setIsAdmin, setMailConfirmed } =
+    useContext(UserContext);
 
   const handeleLogin = async (e) => {
     e.preventDefault();

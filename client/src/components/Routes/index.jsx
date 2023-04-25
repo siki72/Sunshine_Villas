@@ -13,6 +13,7 @@ import ContactPage from "../../pages/ContactPage.jsx";
 import Walima from "../../pages/Walima.jsx";
 import Errorpage from "../../pages/Errorpage";
 import Bookings from "../../pages/Bookings.jsx";
+import ConfirmationPage from "../../pages/ConfirmationPage.jsx";
 
 const index = () => {
   return (
@@ -31,6 +32,10 @@ const index = () => {
           <Route path="/account/" element={<Account />} />
           <Route path="/account/:pages" element={<Account />} />
           <Route path="/account/dashboard/:pages" element={<Account />} />
+          <Route
+            path="/user/confirmation/:confirmation"
+            element={<ConfirmationPage />}
+          />
           <Route path="*" element={<Errorpage />} />
         </Routes>
         <Footer />

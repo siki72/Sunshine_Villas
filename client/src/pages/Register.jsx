@@ -29,7 +29,6 @@ const Register = () => {
     }
 
     utils.addUser(formData).then((resp) => {
-      console.log(resp);
       if (resp.status === 200) {
         setShowToast(true);
       } else if (resp.status === 400) {

@@ -203,64 +203,6 @@ body {
   letter-spacing: 1px;
   cursor: pointer;
 }
-/* .modale {
-  z-index: 10;
-  .container {
-    button {
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: $color1;
-      background-color: rgba(0, 0, 0, 0.865);
-    }
-    position: relative;
-    display: block;
-    justify-content: center;
-    align-items: center;
-  }
-  .first-line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h2 {
-    margin-bottom: 1rem;
-    span {
-      color: #015706;
-    }
-    color: rgb(244, 244, 244);
-  }
-  span {
-    @media screen and (min-width: $breakPoint-Tablet) {
-      margin-bottom: 1rem;
-    }
-    color: rgb(43, 156, 107);
-    margin-right: 1rem;
-    font-family: $gildas;
-  }
-  @media screen and (min-width: $breakPoint-Tablet) {
-    width: 62%;
-  }
-  @media screen and (min-width: $breakPoint-Desktop) {
-    font-size: 1.1rem;
-    line-height: 2rem;
-  }
-  background-color: rgb(0, 0, 0);
-  color: grey;
-  text-align: center;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-  top: 50%;
-  left: 50%;
-  width: 40%;
-  border-radius: 2rem;
-  padding: 1rem;
-  position: absolute;
-  width: 90%;
-  opacity: 0;
-  animation: popBooking 1s ease-in-out forwards;
-} */
 .no-scroll {
   overflow: hidden;
 }
@@ -274,6 +216,7 @@ body {
   grid-area: send;
   padding: 1rem;
 }
+
 .li-active {
   padding: 0.4rem;
   background-color: rgb(230, 230, 230);

@@ -22,9 +22,10 @@ const override = {
 };
 const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
   const [villaInfos, setVillaInfos] = useState([]);
-  const { user } = useContext(UserContext);
+  const { user, setMailConfirmed, mailConfirmed } = useContext(UserContext);
   const [jsonData, setJsonData] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -46,6 +47,28 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
       end: range.endDate.getTime(),
     })
   );
+
+  useEffect(() => {
+    const fetchDatas = async () => {
+      try {
+        const resp = await fetch(`${import.meta.env.VITE_URL_USER}profile`, {
+          credentials: "include",
+        });
+        if (resp.status === 200) {
+          const data = await resp.json();
+          console.log(data);
+          if (data.emailStatus) {
+            setMailConfirmed(true);
+          } else {
+            setMailConfirmed(false);
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchDatas();
+  }, [id]);
   const handleBooking = () => {
     if (checkIn < checkOut) {
       setLoading(true);
@@ -112,6 +135,13 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
       console.log(err);
     }
   }, [id]);
+
+  useEffect(() => {
+    const checkConfirmationMailStaus = async (id) => {
+      await fetch(`${import.meta.env.VITE_URL_USER}`);
+    };
+  }, []);
+
   return (
     <div className="choose-villas">
       <div className="choose-villa-card">
@@ -143,18 +173,22 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
 
               <div className="date">
                 {user ? (
-                  <>
-                    <DateRange
-                      months={1}
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      minDate={new Date()}
-                      disabledDates={jsonData.map((a) => parseISO(a))}
-                      ranges={date}
-                      className="date"
-                    />
-                  </>
+                  mailConfirmed ? (
+                    <>
+                      <DateRange
+                        months={1}
+                        editableDateInputs={true}
+                        onChange={(item) => setDate([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        minDate={new Date()}
+                        disabledDates={jsonData.map((a) => parseISO(a))}
+                        ranges={date}
+                        className="date"
+                      />
+                    </>
+                  ) : (
+                    <p>Please confirm your email address to book a villa. </p>
+                  )
                 ) : (
                   <div className="link">
                     <Link to={""}>
@@ -165,27 +199,31 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
               </div>
             </div>
             {user ? (
-              <div className="button-book">
-                {loading ? (
-                  <BarLoader
-                    color="#8381a5"
-                    loading={loading}
-                    cssOverride={override}
-                    size={300}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                  />
-                ) : (
-                  <button id="button" onClick={handleBooking}>
-                    {user ? "Book now   " : "Login"}
-                    {numberOfnights > 0 ? (
-                      <span> : {numberOfnights * villaInfos.price} €</span>
-                    ) : (
-                      ""
-                    )}
-                  </button>
-                )}
-              </div>
+              mailConfirmed ? (
+                <div className="button-book">
+                  {loading ? (
+                    <BarLoader
+                      color="#8381a5"
+                      loading={loading}
+                      cssOverride={override}
+                      size={300}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
+                  ) : (
+                    <button id="button" onClick={handleBooking}>
+                      {user ? "Book now   " : "Login"}
+                      {numberOfnights > 0 ? (
+                        <span> : {numberOfnights * villaInfos.price} €</span>
+                      ) : (
+                        ""
+                      )}
+                    </button>
+                  )}
+                </div>
+              ) : (
+                ""
+              )
             ) : (
               <div className="button-book">
                 <Link to={"/login"}>

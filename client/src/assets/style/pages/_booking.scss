@@ -230,14 +230,10 @@
             }
 
             .date {
-              /*  @media screen and (max-width: 377px) {
-                  .rdrMonth,
-                  .rdrMonthAndYearWrapper,
-                  .rdrDateDisplayWrapper {
-                    width: 80%;
-                    margin: 0 auto;
-                  }
-                } */
+              p {
+                font-family: $rob4;
+                font-size: 1rem;
+              }
               .header-book {
                 margin-top: 1rem;
                 font-size: 1rem;

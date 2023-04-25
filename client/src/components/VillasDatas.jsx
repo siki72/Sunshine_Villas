@@ -79,6 +79,7 @@ const VillasDatas = ({ id }) => {
             <th>Nights</th>
             <th>date of reservation</th>
             <th>Total</th>
+            <th>status</th>
             <th>delete</th>
           </tr>
         </thead>
@@ -112,6 +113,7 @@ const VillasDatas = ({ id }) => {
                 <td>{row.nights}</td>
                 <td>{format(new Date(row.created_at), "dd/MM/yyyy")}</td>
                 <td>{row.total_price} euros</td>
+                <td>PENDING</td>
                 <td
                   className="dlt-td"
                   onClick={() => {
