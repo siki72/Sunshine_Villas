@@ -15,16 +15,19 @@ import {
   parseISO,
   eachDayOfInterval,
 } from "date-fns";
+import { Alert } from "flowbite-react";
+import VillaOnePics from "./VillaOnePics.jsx";
 const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
 };
-const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
+const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
   const [villaInfos, setVillaInfos] = useState([]);
   const { user, setMailConfirmed, mailConfirmed } = useContext(UserContext);
   const [jsonData, setJsonData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [checkOutMissing, setCheckOutMissing] = useState(false);
 
   const [date, setDate] = useState([
     {
@@ -56,7 +59,6 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
         });
         if (resp.status === 200) {
           const data = await resp.json();
-          console.log(data);
           if (data.emailStatus) {
             setMailConfirmed(true);
           } else {
@@ -69,7 +71,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
     };
     fetchDatas();
   }, [id]);
-  const handleBooking = () => {
+  const handleBooking = async () => {
     if (checkIn < checkOut) {
       setLoading(true);
       const reservationData = {
@@ -83,24 +85,31 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
         selectedDates: JSON.stringify(selectedDates),
       };
       try {
-        fetch(`${import.meta.env.VITE_URL_VILLAS_BOOKING}`, {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(reservationData),
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            setLoading(false);
-            setIsReserved(true);
-          });
+        const bookVilla = await fetch(
+          `${import.meta.env.VITE_URL_VILLAS_BOOKING}`,
+          {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(reservationData),
+          }
+        );
+
+        if (bookVilla.status === 200) {
+          const data = await bookVilla.json();
+          setLoading(false);
+          setIsReserved(true);
+        } else {
+          setLoading(false);
+          window.location.reload(false);
+        }
       } catch (e) {
         console.log(e);
       }
     } else {
-      alert("Please select à chekout !");
+      setCheckOutMissing(true);
     }
   };
   //import datas villa by villa id
@@ -136,16 +145,34 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
     }
   }, [id]);
 
-  useEffect(() => {
-    const checkConfirmationMailStaus = async (id) => {
-      await fetch(`${import.meta.env.VITE_URL_USER}`);
-    };
-  }, []);
+  const handleShowPics = (slug) => {
+    switch (slug) {
+      case "1-BED-APARTEMENT":
+        setShowPics(true);
+        break;
+      case "2-BED-VILLA":
+        setShowPics(true);
+        break;
+      case "3-BED-VILLA":
+        setShowPics(true);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div className="choose-villas">
+      {checkOutMissing && (
+        <Alert color="failure">
+          <span>
+            <span className="font-medium">Info alert!</span> Please select à
+            chekout
+          </span>
+        </Alert>
+      )}
       <div className="choose-villa-card">
-        <div className="swipe">
+        <div className="swipe" onClick={() => setShowPics(true)}>
           {slug === "1-BED-APARTEMENT" && <Swiper_img_1 />}
           {slug === "2-BED-VILLA" && <Swiper_img_2 />}
           {slug === "3-BED-VILLA" && <Swiper_img_3 />}
@@ -174,7 +201,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
               <div className="date">
                 {user ? (
                   mailConfirmed ? (
-                    <>
+                    <div onClick={() => setCheckOutMissing(false)}>
                       <DateRange
                         months={1}
                         editableDateInputs={true}
@@ -185,7 +212,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved }) => {
                         ranges={date}
                         className="date"
                       />
-                    </>
+                    </div>
                   ) : (
                     <p>Please confirm your email address to book a villa. </p>
                   )

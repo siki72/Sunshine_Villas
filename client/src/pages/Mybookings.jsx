@@ -46,16 +46,16 @@ const MyBookings = () => {
       <ToastContainer />
       {!myBookings.length ? (
         <div className="login">
-          <h1>Ooops ! {user.name} ..</h1>
-          you have no reservation for the moment
-          <Link to={"/villas/1-BED-APPARTEMENT/1"}>
-            <button>
-              click
-              <span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </span>
-            </button>
-          </Link>
+          <div className="no-bookings">
+            <h1>Ooops ! {user.name} ..</h1>
+            <p>
+              you have no reservation for the moment, but you can go and see our
+              villas by following this link
+            </p>
+            <Link to={"/villas/1-BED-APARTEMENT/1"}>
+              <button className="btn click">visit ours villas</button>
+            </Link>
+          </div>
         </div>
       ) : pending ? (
         <MyBookingsSkeleton />

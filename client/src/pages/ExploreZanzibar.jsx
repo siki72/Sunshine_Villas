@@ -74,8 +74,10 @@ const ExploreZanzibar = () => {
               you might have!
             </p>
             <h2>Alicia Missoum</h2>
-            <a href="mailto:admin@admin.com">
-              <FontAwesomeIcon icon={faEnvelope} />
+            <a href="mailto:Alicia@sunshine.com">
+              <span>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
               Alicia@sunshine.com
             </a>
           </div>

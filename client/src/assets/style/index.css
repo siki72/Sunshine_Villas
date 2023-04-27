@@ -97,7 +97,7 @@
 }
 
 body {
-  background-color: rgb(237, 230, 230);
+  background-color: rgb(255, 255, 255);
 }
 
 .error {
@@ -1523,10 +1523,6 @@ nav .hidden-nav ul .admin-li {
   min-height: 35rem;
   transition: 0.5s;
 }
-.card-container a {
-  position: relative;
-  z-index: -1;
-}
 @media screen and (min-width: 1024px) {
   .card-container {
     min-height: 42rem;
@@ -1538,19 +1534,23 @@ nav .hidden-nav ul .admin-li {
     transform: scale(1.01);
   }
 }
-.card-container img {
+.card-container a {
+  position: relative;
+  z-index: -1;
+}
+.card-container a img {
   z-index: -100;
   padding: 0.3rem;
   width: 90%;
 }
 @media screen and (min-width: 768px) {
-  .card-container img {
+  .card-container a img {
     width: 90%;
     margin-top: 2rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .card-container img {
+  .card-container a img {
     -o-object-fit: cover;
        object-fit: cover;
     height: 60%;
@@ -1561,30 +1561,30 @@ nav .hidden-nav ul .admin-li {
     width: 100%;
   }
 }
-.card-container .card-infos > * {
+.card-container a .card-infos > * {
   margin-top: 1.5rem;
 }
-.card-container .card-infos p {
+.card-container a .card-infos p {
   font-family: "font-pop400", sans-serif;
   font-size: 1.25rem;
   line-height: 1.25rem;
   color: #1c1c1c;
 }
-.card-container .card-infos .guests > * {
+.card-container a .card-infos .guests > * {
   margin-top: 10px;
   font-family: "font-rob400", sans-serif;
   font-size: 0.813rem;
   line-height: 1.438rem;
 }
-.card-container .card-infos .guests span {
+.card-container a .card-infos .guests span {
   margin-left: 10px;
   color: rgb(1, 1, 1);
 }
-.card-container .card-infos .guests .house {
+.card-container a .card-infos .guests .house {
   margin-left: 20px;
   position: relative;
 }
-.card-container .card-infos .guests .house::before {
+.card-container a .card-infos .guests .house::before {
   position: absolute;
   content: "";
   width: 2px;
@@ -1593,7 +1593,7 @@ nav .hidden-nav ul .admin-li {
   left: -9px;
   bottom: 0;
 }
-.card-container .card-infos .card-desc {
+.card-container a .card-infos .card-desc {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
@@ -1601,7 +1601,7 @@ nav .hidden-nav ul .admin-li {
   max-width: 90%;
   margin: 2rem auto;
 }
-.card-container .card-booking span {
+.card-container a .card-booking span {
   padding: 10px 20px;
   border-radius: 5px;
   font-family: "font-rob300", sans-serif;
@@ -1611,7 +1611,7 @@ nav .hidden-nav ul .admin-li {
   color: rgb(1, 1, 1);
   transition: 0.4s;
 }
-.card-container .card-booking span:hover {
+.card-container a .card-booking span:hover {
   background-color: rgb(1, 1, 1);
   color: rgb(255, 255, 255);
 }
@@ -1812,6 +1812,7 @@ nav .hidden-nav ul .admin-li {
 }
 
 .swiper {
+  cursor: pointer;
   width: 800px;
   display: flex;
 }
@@ -2198,7 +2199,7 @@ nav .hidden-nav ul .admin-li {
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../img/home/side-login-pic.webp");
+  background-image: url("../../img/home/side-login-pic.webp");
 }
 @media screen and (min-width: 1024px) {
   .full-screen-container .grid-container {
@@ -2406,8 +2407,9 @@ input:invalid:focus ~ span {
   max-width: 100%;
 }
 .account-container .container {
+  justify-content: space-between;
   max-width: 100%;
-  background-color: rgb(237, 230, 230);
+  background-color: rgb(255, 255, 255);
 }
 .account-container .container .header-img {
   min-height: 15rem;
@@ -2464,13 +2466,16 @@ input:invalid:focus ~ span {
   animation: up 0.4s ease forwards;
 }
 .account-container .container .nav-book button {
-  background-color: rgb(237, 230, 230);
+  background-color: rgb(255, 255, 255);
+}
+.account-container .container .login {
+  margin: 14rem 0 1rem 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.7rem;
 }
 @media screen and (min-width: 768px) {
   .account-container .container .login {
     width: 90%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2rem;
     margin: 3rem auto;
     font-family: "font-pop200", sans-serif;
     font-size: 1.875rem;
@@ -2484,8 +2489,6 @@ input:invalid:focus ~ span {
 @media screen and (min-width: 1024px) {
   .account-container .container .login {
     width: 40%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2rem;
     margin: 3rem auto;
     font-family: "font-pop200", sans-serif;
     font-size: 1.875rem;
@@ -2496,11 +2499,36 @@ input:invalid:focus ~ span {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 }
+.account-container .container .login .no-bookings {
+  text-align: center;
+  margin: 2rem 0;
+  background-color: rgb(255, 255, 255);
+}
+.account-container .container .login .no-bookings h1 {
+  color: rgb(1, 1, 1);
+}
+.account-container .container .login .no-bookings p {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: rgb(1, 1, 1);
+}
+.account-container .container .login .no-bookings .click {
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+.account-container .container .login .no-bookings .click span {
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+}
 .account-container .container .login h1 {
   text-align: center;
   font-family: "font-gildas", sans-serif;
   font-size: 2.5rem;
   line-height: 7rem;
+  color: rgb(1, 1, 1);
 }
 .account-container .container .login .row {
   display: flex;
@@ -2510,7 +2538,6 @@ input:invalid:focus ~ span {
   width: 90%;
   margin: 1rem auto;
   padding: 0 1rem;
-  border-radius: 2rem;
 }
 .account-container .container .login .row h2 {
   font-family: "font-rob300", sans-serif;
@@ -2532,11 +2559,17 @@ input:invalid:focus ~ span {
 }
 .account-container .container .login .row input {
   margin: 1rem 0;
+  outline: none;
   padding: 0.2rem 0.2rem 0.3rem 1rem;
   width: 60%;
   font-size: 1rem;
   background-color: rgb(255, 255, 255);
   border-radius: 2rem;
+  border: none;
+}
+.account-container .container .login .row input:focus {
+  outline: none;
+  border: none;
 }
 .account-container .container .login h1 {
   font-family: "font-gildas", sans-serif;
@@ -2566,8 +2599,8 @@ input:invalid:focus ~ span {
 }
 
 .container-bookings {
+  margin: 15rem auto 0;
   max-width: 90%;
-  margin: 15rem auto;
 }
 @media screen and (min-width: 768px) {
   .container-bookings {
@@ -2681,7 +2714,7 @@ input:invalid:focus ~ span {
 .resa-popUp-container .container {
   padding: 20px;
   position: relative;
-  background-color: rgba(250, 250, 250, 0.82);
+  background-color: rgba(176, 33, 33, 0.82);
   min-width: 600px;
   max-height: 300px;
   opacity: 0;
@@ -3620,6 +3653,9 @@ input:invalid:focus ~ span {
   line-height: 2.5rem;
   color: rgb(255, 255, 255);
 }
+.explore-zanzibar-container aside .staff .contacts a span {
+  margin-right: 0.4rem;
+}
 .explore-zanzibar-container aside .staff .contacts div {
   display: none;
   margin-top: 1rem;
@@ -3687,5 +3723,64 @@ input:invalid:focus ~ span {
 @media screen and (min-width: 768px) {
   .confirm-page .page-container p {
     font-size: 1rem;
+  }
+}
+
+.all-pics {
+  background-color: rgb(1, 1, 1);
+  min-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+}
+@media screen and (min-width: 1024px) {
+  .all-pics {
+    padding: 3rem 0 0 0;
+  }
+}
+.all-pics h1 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .all-pics h1 {
+    font-size: 2rem;
+  }
+}
+.all-pics .closeBtn {
+  background-color: rgb(176, 167, 167);
+  border-radius: 1rem;
+  padding: 0.3rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  box-shadow: 0 0 2px black;
+  font-size: 0.6rem;
+  transition: 0.4s;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .all-pics .closeBtn {
+    font-size: 1rem;
+  }
+}
+.all-pics .closeBtn:hover {
+  transform: scale(1.1);
+}
+.all-pics .closeBtn .x-icon {
+  margin-right: 0.3rem;
+}
+.all-pics .main_img {
+  position: relative;
+  margin: 0.5rem auto;
+}
+.all-pics .main_img img {
+  min-width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .all-pics .main_img {
+    margin: 1.5rem auto;
   }
 }/*# sourceMappingURL=index.css.map */

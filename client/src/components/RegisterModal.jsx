@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Modal, Button } from "flowbite-react";
-import { UserContext } from "../users/UserContext.jsx";
-const BookingModal = ({ isReserved, setIsReserved }) => {
-  const { user } = useContext(UserContext);
-  function closeModal() {
-    setIsReserved(false);
-    window.location.reload(false);
-  }
+const RegisterModal = ({ setRedirect, showToast }) => {
   return (
-    <Modal className="backdrop-blur-sm" show={isReserved} onClose={closeModal}>
+    <Modal
+      className="backdrop-blur-sm"
+      show={showToast}
+      onClose={() => setRedirect(true)}
+    >
       <Modal.Header className=" text-white text-3xl text-center bg-withe ">
         Thank You{" "}
         <span className="text-green-500 first-letter:text-xl ">
-          {user?.name.toUpperCase()}
+          {/*  {user?.name.toUpperCase()} */}
         </span>
       </Modal.Header>
       <Modal.Body className="bg-black">
@@ -22,13 +20,13 @@ const BookingModal = ({ isReserved, setIsReserved }) => {
             <span className="text-green-400">confirmer</span> .
           </p>
           <p className="text-base leading-relaxed text-white dark:text-gray-400">
-            Sunshine Villas all our staff is delighted to receive you ! Your
-            payement will be handled directly in the reception
+            Congratulations! Your registration was successful. You can now go
+            ahead and log in to your account."
           </p>
         </div>
       </Modal.Body>
       <Modal.Footer className="bg-black flex justify-center">
-        <Button color="success" onClick={closeModal}>
+        <Button color="success" onClick={() => setRedirect(true)}>
           Done
         </Button>
       </Modal.Footer>
@@ -36,4 +34,4 @@ const BookingModal = ({ isReserved, setIsReserved }) => {
   );
 };
 
-export default BookingModal;
+export default RegisterModal;

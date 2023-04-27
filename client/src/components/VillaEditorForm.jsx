@@ -26,9 +26,7 @@ const VillaEditorForm = ({ id, editing, setEditing }) => {
         console.log("cannot edit villas datas");
       } else {
         setEditing(false);
-        console.log(formData);
         dispatch(editVillaData([formData, id]));
-        console.log("allo");
       }
     } catch (error) {
       console.error(error);

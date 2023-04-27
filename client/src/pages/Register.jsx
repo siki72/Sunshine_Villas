@@ -2,11 +2,18 @@ import React, { useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import utils from "../users/utilsFunctions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Alert } from "flowbite-react";
+import {
+  faEnvelope,
+  faEnvelopeCircleCheck,
+  faLock,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { Alert, Modal, Button } from "flowbite-react";
+import RegisterModal from "../components/RegisterModal.jsx";
 const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const formRegisterRef = useRef();
+  const firstNameRef = useRef();
   const [focused, setFocused] = useState(false);
   const [invalidField, setInvalidField] = useState(false);
   const [existEmail, setExistEmail] = useState(false);
@@ -44,15 +51,40 @@ const Register = () => {
   return (
     <div className="full-screen-container">
       <div className="grid-container">
-        {showToast && (
-          <Alert color="success" onDismiss={() => setRedirect(true)}>
-            <span>
-              <span className="font-medium">Info alert!</span> "Congratulations!
-              Your registration was successful. You can now go ahead and log in
-              to your account."
-            </span>
-          </Alert>
-        )}
+        <Modal
+          className="backdrop-blur-sm"
+          show={showToast}
+          onClose={() => setRedirect(true)}
+        >
+          <Modal.Header className="text-3xl text-center bg-black ">
+            <p className="text-white text-center ">Sing up completed</p>
+          </Modal.Header>
+          <Modal.Body className="bg-withe text-center">
+            <div className="space-y-6">
+              <FontAwesomeIcon
+                icon={faEnvelopeCircleCheck}
+                className="text-green-500 text-4xl"
+              />
+
+              <p className="text-base leading-relaxed text-black dark:text-gray-400">
+                "Congratulations!{" "}
+                <span className="text-green-600">
+                  {firstNameRef?.current?.value}
+                </span>{" "}
+                Your registration was successful. To complete the registration
+                process, please check your email inbox for a confirmation email
+                from us. Click on the confirmation link in the email to verify
+                your email address and activate your account."
+              </p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer className="bg-withe flex justify-center">
+            <Button color="dark" onClick={() => setRedirect(true)}>
+              Login
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
         <div className="login-container">
           <h1
             className={existEmail ? "error-email login-title" : "login-title"}
@@ -79,6 +111,7 @@ const Register = () => {
                 id="firstname"
                 onBlur={handleFocus}
                 focused={focused.toString()}
+                ref={firstNameRef}
               />
               <p className="msg">First name should be 3-16 characters</p>
             </div>

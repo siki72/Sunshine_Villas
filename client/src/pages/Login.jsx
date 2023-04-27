@@ -7,7 +7,7 @@ import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const formLoginRef = useRef();
-  const [redirect, setRedirect] = useState(false);
+  const [redirectTo, setRedirectTo] = useState(false);
   const [errorLog, setErrorLOg] = useState(false);
   const { user, setUser, setReady, setIsAdmin, setMailConfirmed } =
     useContext(UserContext);
@@ -25,14 +25,12 @@ const Login = () => {
         throw new Error("unable to login");
       } else {
         const user = await response.json();
-        console.log(user);
         setUser(user);
         if (user.role === "admin") {
           setIsAdmin(user);
         }
         setReady(true);
-        console.log(user);
-        setRedirect(true);
+        setRedirectTo(true);
       }
     } catch (error) {
       console.error(error);
@@ -41,11 +39,11 @@ const Login = () => {
   useEffect(() => {
     // redirect user
     if (user && location.pathname === "/login") {
-      setRedirect(true);
+      setRedirectTo(true);
     }
   }, [user, location]);
 
-  if (redirect) {
+  if (redirectTo) {
     return <Navigate to={"/"} />;
   }
   return (

@@ -27,7 +27,9 @@ const Staff = () => {
         <div className="contacts">
           <h2>Alicia Missoum</h2>
           <a href="mailto:admin@admin.com">
-            <FontAwesomeIcon icon={faEnvelope} />
+            <span>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </span>
             Alicia@sunshine.com
           </a>
 

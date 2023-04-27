@@ -5,12 +5,6 @@
   width: 100%;
   min-height: 35rem;
   transition: 0.5s;
-  a {
-    position: relative;
-    z-index: -1;
-  }
-  @media screen and (min-width: $breakPoint-Tablet) {
-  }
   @media screen and (min-width: $breakPoint-Desktop) {
     min-height: 42rem;
     box-shadow: 0px 0px 6px 1px #c7bdbd;
@@ -20,84 +14,89 @@
       transform: scale(1.01);
     }
   }
-  img {
-    @media screen and (min-width: $breakPoint-Tablet) {
+  a {
+    position: relative;
+    z-index: -1;
+
+    img {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        width: 90%;
+        margin-top: 2rem;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        object-fit: cover;
+        height: 60%;
+        object-position: center;
+        margin: 0rem;
+        padding: 0.4rem;
+        width: 100%;
+      }
+      z-index: -100;
+      padding: 0.3rem;
       width: 90%;
-      margin-top: 2rem;
-    }
-    @media screen and (min-width: $breakPoint-Desktop) {
-      object-fit: cover;
-      height: 60%;
-      object-position: center;
-      margin: 0rem;
-      padding: 0.4rem;
-      width: 100%;
-    }
-    z-index: -100;
-    padding: 0.3rem;
-    width: 90%;
-  }
-
-  .card-infos {
-    > * {
-      margin-top: 1.5rem;
-    }
-    p {
-      font-family: $pop4;
-      font-size: 1.25rem;
-      line-height: 1.25rem;
-      color: $color4;
     }
 
-    .guests {
+    .card-infos {
       > * {
-        margin-top: 10px;
-        font-family: $rob4;
-        font-size: 0.813rem;
-        line-height: 1.438rem;
+        margin-top: 1.5rem;
       }
-      span {
-        margin-left: 10px;
-        color: $color2;
+      p {
+        font-family: $pop4;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        color: $color4;
       }
-      .house {
-        margin-left: 20px;
-        position: relative;
-        &::before {
-          position: absolute;
-          content: "";
-          width: 2px;
-          height: 100%;
-          background-color: $color4;
-          left: -9px;
-          bottom: 0;
+
+      .guests {
+        > * {
+          margin-top: 10px;
+          font-family: $rob4;
+          font-size: 0.813rem;
+          line-height: 1.438rem;
+        }
+        span {
+          margin-left: 10px;
+          color: $color2;
+        }
+        .house {
+          margin-left: 20px;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 100%;
+            background-color: $color4;
+            left: -9px;
+            bottom: 0;
+          }
         }
       }
+      .card-desc {
+        font-family: $rob4;
+        font-size: 0.875rem;
+        line-height: 1.75rem;
+        color: $color2;
+        max-width: 90%;
+        margin: 2rem auto;
+      }
     }
-    .card-desc {
-      font-family: $rob4;
-      font-size: 0.875rem;
-      line-height: 1.75rem;
-      color: $color2;
-      max-width: 90%;
-      margin: 2rem auto;
-    }
-  }
 
-  .card-booking {
-    span {
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-family: $rob3;
-      font-size: 1rem;
-      line-height: 1rem;
-      border: 2px solid black;
-      color: $color2;
-      transition: 0.4s;
+    .card-booking {
+      span {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: $rob3;
+        font-size: 1rem;
+        line-height: 1rem;
+        border: 2px solid black;
+        color: $color2;
+        transition: 0.4s;
 
-      &:hover {
-        background-color: $color2;
-        color: $color1;
+        &:hover {
+          background-color: $color2;
+          color: $color1;
+        }
       }
     }
   }

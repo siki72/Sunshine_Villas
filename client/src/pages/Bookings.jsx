@@ -4,6 +4,7 @@ import CardVilla from "../components/CardVilla.jsx";
 import { useSelector } from "react-redux";
 import BookingVilla from "../components/BookingVilla.jsx";
 import BookingModal from "../components/BookingModal.jsx";
+import VillaOnePics from "../components/VillaOnePics.jsx";
 
 const Bookings = () => {
   const { slug } = useParams();
@@ -11,7 +12,12 @@ const Bookings = () => {
   const [idReady, setIdReady] = useState(false);
   const cards = useSelector((state) => state.threeCards.cards);
   const [isReserved, setIsReserved] = useState(false);
-
+  const [showPics, setShowPics] = useState(false);
+  console.log(showPics);
+  console.log(slug);
+  if (showPics) {
+    return <VillaOnePics setShowPics={setShowPics} slug={slug} />;
+  }
   return (
     <div className="booking">
       <header className="header_img">
@@ -30,6 +36,7 @@ const Bookings = () => {
           id={id}
           setIdReady={setIdReady}
           setIsReserved={setIsReserved}
+          setShowPics={setShowPics}
         />
         <div className="title-cards">
           <h3>Check our others luxury villas and apartments</h3>

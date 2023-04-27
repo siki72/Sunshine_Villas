@@ -27,7 +27,7 @@ const Swiper_img_3 = () => {
       <SwiperSlide>
         <div className="main_img">
           <img
-            src="../../img/choose_book/3_bed/1.webp"
+            src="../../img/choose_book/3-BED-VILLA/1.webp"
             alt="picture 3 bed appartement"
           />
         </div>
@@ -36,7 +36,7 @@ const Swiper_img_3 = () => {
       <SwiperSlide>
         <div className="main_img">
           <img
-            src="../../img/choose_book/3_bed/2.webp"
+            src="../../img/choose_book/3-BED-VILLA/2.webp"
             alt="picture 3bed appartement"
           />
         </div>
@@ -45,7 +45,7 @@ const Swiper_img_3 = () => {
       <SwiperSlide>
         <div className="main_img">
           <img
-            src="../../img/choose_book/3_bed/3.webp"
+            src="../../img/choose_book/3-BED-VILLA/3.webp"
             alt="picture 3 bed appartement"
           />
         </div>
@@ -54,7 +54,7 @@ const Swiper_img_3 = () => {
       <SwiperSlide>
         <div className="main_img">
           <img
-            src="../../img/choose_book/3_bed/4.webp"
+            src="../../img/choose_book/3-BED-VILLA/4.webp"
             alt="picture 3 bed appartement"
           />
         </div>
