@@ -1,33 +1,39 @@
 import React from "react";
 import { Modal, Button } from "flowbite-react";
-const RegisterModal = ({ setRedirect, showToast }) => {
+import { faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const RegisterModal = ({ setRedirect, showToast, firstNameRef }) => {
   return (
     <Modal
       className="backdrop-blur-sm"
       show={showToast}
       onClose={() => setRedirect(true)}
     >
-      <Modal.Header className=" text-white text-3xl text-center bg-withe ">
-        Thank You{" "}
-        <span className="text-green-500 first-letter:text-xl ">
-          {/*  {user?.name.toUpperCase()} */}
-        </span>
+      <Modal.Header className="text-3xl text-center bg-black ">
+        <p className="text-white text-center ">Sing up completed</p>
       </Modal.Header>
-      <Modal.Body className="bg-black">
+      <Modal.Body className="bg-withe text-center">
         <div className="space-y-6">
-          <p className="text-base leading-relaxed text-white dark:text-gray-400">
-            Your booking at Sunshine Villas is{" "}
-            <span className="text-green-400">confirmer</span> .
-          </p>
-          <p className="text-base leading-relaxed text-white dark:text-gray-400">
-            Congratulations! Your registration was successful. You can now go
-            ahead and log in to your account."
+          <FontAwesomeIcon
+            icon={faEnvelopeCircleCheck}
+            className="text-green-500 text-4xl"
+          />
+
+          <p className="text-base leading-relaxed text-black dark:text-gray-400">
+            "Congratulations!{" "}
+            <span className="text-green-600">
+              {firstNameRef?.current?.value}
+            </span>{" "}
+            Your registration was successful. To complete the registration
+            process, please check your email inbox for a confirmation email from
+            us. Click on the confirmation link in the email to verify your email
+            address and activate your account."
           </p>
         </div>
       </Modal.Body>
-      <Modal.Footer className="bg-black flex justify-center">
-        <Button color="success" onClick={() => setRedirect(true)}>
-          Done
+      <Modal.Footer className="bg-withe flex justify-center">
+        <Button color="dark" onClick={() => setRedirect(true)}>
+          Login
         </Button>
       </Modal.Footer>
     </Modal>

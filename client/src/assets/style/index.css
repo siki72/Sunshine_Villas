@@ -154,7 +154,6 @@ body {
   padding: 1rem;
   color: rgb(255, 255, 255);
   background-color: rgb(1, 1, 1);
-  border: none;
   font-size: 1rem;
   letter-spacing: 1px;
   cursor: pointer;
@@ -746,7 +745,7 @@ object {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  filter: brightness(70%);
+  filter: brightness(90%);
   z-index: -100;
 }
 .header .main_img div {
@@ -3797,4 +3796,120 @@ input:focus {
 }
 .all-pics .main_img .img {
   min-width: 100%;
+}
+
+.error-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.485);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.error-container .error-message-container {
+  border: 1px solid rgb(162, 156, 156);
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  box-shadow: 0 0 2px rgb(60, 57, 57);
+}
+.error-container .error-message-container .modal-header {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+  height: 3rem;
+  width: 100%;
+  background-color: rgb(1, 1, 1);
+}
+.error-container .error-message-container .modal-header .redpoint {
+  position: absolute;
+  top: 0.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  left: 0.4rem;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.error-container .error-message-container .modal-header .redpoint .xmark-icon {
+  color: rgb(1, 1, 1);
+}
+.error-container .error-message-container main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.error-container .error-message-container main .server-stratus {
+  font-size: 3rem;
+  color: rgb(185, 23, 23);
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main .server-stratus {
+    font-size: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 0;
+  }
+}
+.error-container .error-message-container main h1 {
+  font-family: "font-pop400", sans-serif;
+  font-size: 1rem;
+  color: #7a7a7a;
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main h1 {
+    font-family: "font-pop-bold", sans-serif;
+    font-size: 2rem;
+  }
+}
+.error-container .error-message-container main p {
+  font-family: "font-rob400", sans-serif;
+  font-size: 0.7rem;
+  color: #403f3d;
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main p {
+    font-size: 1rem;
+  }
+}
+.error-container .error-message-container .close-button {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container .close-button {
+    padding: 2rem 0;
+  }
+}
+.error-container .error-message-container .close-button .try {
+  border: 1px solid rgb(1, 1, 1);
+  border-radius: 1rem;
+  font-size: 0.6rem;
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container .close-button .try {
+    font-size: 1rem;
+  }
+}
+
+.pending {
+  position: absolute;
+  width: 100vw;
+  min-height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.485);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: not-allowed;
 }/*# sourceMappingURL=index.css.map */

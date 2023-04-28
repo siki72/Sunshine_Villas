@@ -4,26 +4,33 @@ import utils from "../users/utilsFunctions.js";
 import { UserContext } from "../users/UserContext.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import RegisterErrorModal from "../components/RegisterErrorModal.jsx";
+import PendingPage from "../components/PendingPage.jsx";
 
 const Login = () => {
   const formLoginRef = useRef();
   const [redirectTo, setRedirectTo] = useState(false);
   const [errorLog, setErrorLOg] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState(false);
   const { user, setUser, setReady, setIsAdmin, setMailConfirmed } =
     useContext(UserContext);
 
   const handeleLogin = async (e) => {
+    setPending(true);
     e.preventDefault();
     const formData = utils.getFormData(formLoginRef, ["email", "password"]);
     try {
       const response = await utils.login(formData);
       if (!response.ok) {
+        setPending(false);
         setErrorLOg(true);
         setTimeout(() => {
           setErrorLOg(false);
         }, 2500);
         throw new Error("unable to login");
       } else {
+        setPending(false);
         const user = await response.json();
         setUser(user);
         if (user.role === "admin") {
@@ -33,7 +40,8 @@ const Login = () => {
         setRedirectTo(true);
       }
     } catch (error) {
-      console.error(error);
+      setPending(false);
+      setError(true);
     }
   };
   useEffect(() => {
@@ -48,6 +56,8 @@ const Login = () => {
   }
   return (
     <div className="full-screen-container">
+      {pending && <PendingPage />}
+      {error && <RegisterErrorModal setError={setError} />}
       <div
         className="grid-container"
         aria-label="plane view of the east coast with beaitfull sunshine"

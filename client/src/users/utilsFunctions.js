@@ -11,7 +11,8 @@ async function addUser(user) {
 
     return response;
   } catch (e) {
-    alert("Registration failed. Please try again later");
+    cnsole.log("errrrrreuer");
+    /*  throw new Error("error ", e); */
   }
 }
 

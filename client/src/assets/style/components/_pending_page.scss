@@ -1,0 +1,10 @@
+.pending {
+  position: absolute;
+  width: 100vw;
+  min-height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.485);
+  z-index: 1;
+  @include flex;
+  cursor: not-allowed;
+}
