@@ -3,7 +3,7 @@ export const elements = [
     id: 1,
     pic_url: "../img/tours/1.webp",
     title: "Ocean Retreat + Dolphins",
-    desc: "The deluxe version of Blue Safari provides any adventure and seafood enthusiast with a superior experience that will leave you captivated by Zanzibar's marine life and culinary delights. Starting with an early morning swim with dolphins, experience them swimming alongside you playfully in their natural environment. Take a swim in the hidden mangrove lagoon. Then continue on to one of the private islands of Pamunda to enjoy a mouth-watering, freshly prepared seafood bbq while quenching your thirst with a wide selection of alcoholic and non-alcoholic beverages and sampling the best fresh fruits Zanzibar has to offer.",
+    desc: "The deluxe version of Blue Safari provides any adventure and seafood enthusiast with a superior experience that will leave you captivated by Zanzibar's marine life and culinary delights. Starting with an early morning swim with dolphins, experience them swimming alongside you playfully in their natural environment. .",
   },
   {
     id: 2,

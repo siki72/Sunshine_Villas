@@ -3605,6 +3605,7 @@ input:focus {
   font-size: 1rem;
   line-height: 2rem;
   color: #878787;
+  text-align: left;
 }
 @media screen and (min-width: 768px) {
   .explore-zanzibar-container main article p {

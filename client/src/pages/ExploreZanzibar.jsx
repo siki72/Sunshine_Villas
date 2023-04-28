@@ -54,7 +54,9 @@ const ExploreZanzibar = () => {
               <img src={tour.pic_url} alt="" />
             </figure>
             <h3>{tour.title}</h3>
-            <p>{tour.desc}</p>
+            <p>
+              {tour.desc.slice(0, 200)} <span> ...</span>
+            </p>
           </article>
         ))}
       </main>

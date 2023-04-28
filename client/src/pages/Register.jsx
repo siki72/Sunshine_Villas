@@ -16,7 +16,7 @@ const Register = () => {
   const [existEmail, setExistEmail] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [pending, setPending] = useState(false);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const handleFocus = () => {
     setFocused(true);
   };
