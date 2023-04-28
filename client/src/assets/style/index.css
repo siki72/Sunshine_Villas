@@ -471,17 +471,19 @@ object {
 }
 .about-page .container .reviews {
   align-items: center;
-  margin: 3rem;
+  margin: 3rem 0;
 }
 @media screen and (min-width: 1024px) {
   .about-page .container .reviews {
     max-width: 80%;
     margin: 0 auto;
     display: flex;
+    justify-content: space-around;
     align-items: center;
   }
 }
 .about-page .container .reviews .logo {
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -489,6 +491,14 @@ object {
 }
 .about-page .container .reviews .logo img {
   width: 200px;
+}
+.about-page .container .reviews .flex {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .about-page .container .reviews .flex {
+    min-width: 50%;
+  }
 }
 .about-page .container .reviews .swiper {
   display: none;
@@ -520,6 +530,9 @@ object {
     max-width: 90%;
     margin: 0 auto;
   }
+}
+.about-page .container .ours-villas .recherche .cards_skeleton {
+  display: none;
 }
 @media screen and (min-width: 1024px) {
   .about-page .container .ours-villas .recherche .cards_skeleton {

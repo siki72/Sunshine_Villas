@@ -241,12 +241,12 @@
       @media screen and (min-width: $breakPoint-Desktop) {
         max-width: 80%;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
+        @include around;
       }
       align-items: center;
-      margin: 3rem;
+      margin: 3rem 0;
       .logo {
+        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -254,6 +254,12 @@
         img {
           width: 200px;
         }
+      }
+      .flex {
+        @media screen and (min-width: $breakPoint-Tablet) {
+          min-width: 50%;
+        }
+        max-width: 100%;
       }
       .swiper {
         @media screen and (min-width: $breakPoint-Tablet) {
@@ -281,11 +287,12 @@
       max-width: 100%;
       text-align: center;
       .recherche {
-        @media screen and (min-width: $breakPoint-Desktop) {
-          .cards_skeleton {
+        .cards_skeleton {
+          @media screen and (min-width: $breakPoint-Desktop) {
             display: flex;
             gap: 2rem;
           }
+          display: none;
         }
       }
     }
