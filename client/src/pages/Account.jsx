@@ -60,7 +60,7 @@ const Account = () => {
             </Link>
             <Link className={linkClasses("bookings")} to={"/account/bookings"}>
               <FontAwesomeIcon icon={faHouse} />
-              <span>My Booking</span>
+              <span>My Bookings</span>
             </Link>
             <button onClick={handleLogout}>
               Logout{" "}

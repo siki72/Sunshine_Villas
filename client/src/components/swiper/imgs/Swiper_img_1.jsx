@@ -28,6 +28,7 @@ const Swiper_img_1 = () => {
           <img
             src="../../img/choose_book/1-BED-APARTEMENT/1.webp"
             alt="picture 1 bed appartement"
+            title="Cliquez ici pour voir plus de photos"
           />
         </div>
       </SwiperSlide>

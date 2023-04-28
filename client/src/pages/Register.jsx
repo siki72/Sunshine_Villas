@@ -103,7 +103,7 @@ const Register = () => {
               <FontAwesomeIcon className="icon" icon={faUser} />
               <label htmlFor="firstname">First name</label>
               <input
-                placeholder="john"
+                placeholder="your first name"
                 required={true}
                 pattern="^[A-Za-z0-9]{3,16}$"
                 type="text"
@@ -120,6 +120,7 @@ const Register = () => {
               <label htmlFor="lastname">Last name</label>
               <input
                 required={true}
+                placeholder="your last name"
                 pattern="^[A-Za-z0-9]{3,16}$"
                 type="text"
                 name="lastname"
@@ -133,7 +134,7 @@ const Register = () => {
               <FontAwesomeIcon className="icon" icon={faEnvelope} />
               <label htmlFor="email">Email</label>
               <input
-                placeholder="exemple@ex.com"
+                placeholder="exemple@email.com"
                 type="email"
                 name="email"
                 id="email"

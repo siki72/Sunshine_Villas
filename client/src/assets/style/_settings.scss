@@ -137,6 +137,10 @@ $color9: rgb(28, 28, 28);
   text-decoration: none;
   font-family: $pop;
   scroll-behavior: smooth;
+  input:focus {
+    outline: none;
+  }
+
   ::selection {
     color: $color1;
     background-color: $color2;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CardVilla from "../components/CardVilla.jsx";
 import ReviewsSwiper from "../components/swiper/reviews/ReviewsSwiper.jsx";
 import { useSelector } from "react-redux";
@@ -6,7 +6,9 @@ import CardsSkeleton from "../components/CardsSkeleton";
 import ReviewsSkeleton from "../components/ReviewsSkeleton";
 const About = () => {
   const data = useSelector((state) => state.threeCards.cards); // ramener la data depuis le store
-
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <div className="about-page">
       <div className="container">

@@ -68,7 +68,7 @@ const Login = () => {
               <input type="email" name="email" id="email" required={true} />
             </div>
 
-            <div className="input-group ">
+            <div className="input-group">
               <FontAwesomeIcon className="icon" icon={faLock} />
               <label htmlFor="password">Password</label>
               <input
@@ -81,7 +81,7 @@ const Login = () => {
             <span className={errorLog ? "show-error-msg" : "error-msg"}>
               wrong email or password
             </span>
-            <button type="submit" className="login-button">
+            <button type="submit" className="btn login-button">
               Login
             </button>
             <div className="need-register">

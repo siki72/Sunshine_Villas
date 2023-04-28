@@ -1,51 +1,58 @@
 .all-pics {
   background-color: $color2;
-  min-width: 100vw;
-  min-height: 100vh;
-  display: grid;
+  padding: 1rem;
   @media screen and (min-width: $breakPoint-Desktop) {
-    padding: 3rem 0 0 0;
+    padding: 3rem 1rem 1rem 1rem;
   }
-
-  h1 {
-    font-family: $gildas;
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    color: $color1;
-    text-align: center;
+  header {
     @media screen and (min-width: $breakPoint-Desktop) {
-      font-size: 2rem;
+      max-width: 90%;
+      margin: 0 auto;
     }
-  }
-  .closeBtn {
-    @media screen and (min-width: $breakPoint-Tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-family: $gildas;
       font-size: 1rem;
+      margin-top: 0.5rem;
+      color: $color1;
+      text-align: center;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1.5rem;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 2rem;
+      }
     }
-    background-color: rgb(176, 167, 167);
-    border-radius: 1rem;
-    padding: 0.3rem;
-    position: absolute;
-    right: 0.4rem;
-    top: 0.4rem;
-    box-shadow: 0 0 2px black;
-    font-size: 0.6rem;
-    transition: 0.4s;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
-    }
-    .x-icon {
-      margin-right: 0.3rem;
+    .closeBtn {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 0.7rem;
+      }
+      @media screen and (min-width: $breakPoint-Desktop) {
+        font-size: 1rem;
+      }
+      background-color: rgb(248, 248, 248);
+      border-radius: 1rem;
+      padding: 0.3rem;
+      color: rgb(0, 0, 0);
+      box-shadow: 0 0 2px black;
+      font-size: 0.6rem;
+      transition: 0.4s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .x-icon {
+        margin-right: 0.3rem;
+      }
     }
   }
   .main_img {
     position: relative;
-    margin: 0.5rem auto;
-    img {
+    margin: 1rem auto;
+    .img {
       min-width: 100%;
-    }
-    @media screen and (min-width: $breakPoint-Desktop) {
-      margin: 1.5rem auto;
     }
   }
 }

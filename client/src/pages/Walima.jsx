@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import Swiper_walima from "../components/swiper/walima/Swiper_walima.jsx";
@@ -8,6 +8,10 @@ const Walima = () => {
   const [date, setDate] = useState(getTodayDate());
   const formRef = useRef();
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
 
   function getTodayDate() {
     const today = new Date();

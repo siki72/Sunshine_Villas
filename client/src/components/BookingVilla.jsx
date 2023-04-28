@@ -52,6 +52,7 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
   );
 
   useEffect(() => {
+    window.scrollTo({ top: 0 });
     const fetchDatas = async () => {
       try {
         const resp = await fetch(`${import.meta.env.VITE_URL_USER}profile`, {

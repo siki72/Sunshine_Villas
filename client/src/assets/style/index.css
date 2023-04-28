@@ -84,6 +84,9 @@
   font-family: "font-pop", sans-serif;
   scroll-behavior: smooth;
 }
+* input:focus {
+  outline: none;
+}
 * ::-moz-selection {
   color: rgb(255, 255, 255);
   background-color: rgb(1, 1, 1);
@@ -1369,7 +1372,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_1 .main-villa .section_1_img {
-  background-image: url("../img/home/section_1.webp");
+  background-image: url("../../img/home/section_1.webp");
   background-position: right;
   background-repeat: no-repeat;
   height: 30rem;
@@ -1641,7 +1644,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .section_3 .section_3_grid .img {
-  background-image: url("../img/home/section_2.webp");
+  background-image: url("../../img/home/section_2.webp");
   width: 100%;
   height: 25rem;
   background-size: 175%;
@@ -2185,123 +2188,128 @@ nav .hidden-nav ul .admin-li {
 
 .full-screen-container {
   background-color: rgba(255, 253, 253, 0.712);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .full-screen-container {
+    height: 100vh;
+  }
 }
 .full-screen-container .grid-container {
   padding: 2rem 0.5rem;
   min-width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../img/home/side-login-pic.webp");
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .full-screen-container .grid-container {
-    /*       height: 100vh; */
-    margin-top: 3rem;
-    padding-top: 4rem;
+    min-height: 100vh;
   }
 }
-
-.login-container {
-  margin-top: 3rem;
+.full-screen-container .login-container {
+  margin: 3rem 0;
+  border: 1px solid rgb(184, 177, 177);
   border-radius: 1rem;
-  background-color: rgba(0, 2, 5, 0.852);
+  background-color: rgba(255, 255, 255, 0.852);
   padding: 1rem;
   max-width: 60%;
   width: 30rem;
 }
-@media screen and (min-width: 1024px) {
-  .login-container {
-    margin: 2rem;
-  }
-}
-
-.login-title {
+.full-screen-container .login-container .login-title {
   margin: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(1, 1, 1);
   text-align: center;
   font-size: 1rem;
   font-weight: normal;
 }
 @media screen and (min-width: 1024px) {
-  .login-title {
+  .full-screen-container .login-container .login-title {
     font-size: 2rem;
   }
 }
-
-.form {
+.full-screen-container .login-container .form {
   display: flex;
   flex-direction: column;
 }
-.form .need-register {
+.full-screen-container .login-container .form input[type=password] {
+  outline: none;
+}
+.full-screen-container .login-container .form .need-register {
   text-align: center;
-  color: rgba(255, 253, 253, 0.611);
+  color: rgb(1, 1, 1);
   font-family: "font-rob400", sans-serif;
   margin-top: 1rem;
   font-size: 0.6rem;
 }
 @media screen and (min-width: 1024px) {
-  .form .need-register {
+  .full-screen-container .login-container .form .need-register {
     font-size: 1rem;
   }
 }
-.form .need-register a {
+.full-screen-container .login-container .form .need-register a {
   color: rgb(32, 141, 32);
 }
-
-.input-group {
+.full-screen-container .login-container .form .input-group {
   display: flex;
   flex-direction: column;
   position: relative;
 }
-
-.input-group input {
+.full-screen-container .login-container .form .input-group input {
   font-family: "font-pop400", sans-serif;
-  background-color: transparent;
   font-size: 0.8rem;
   padding: 0.5em;
-  border-bottom: 1px solid rgb(214, 213, 211);
-  color: rgb(253, 253, 253);
+  background-color: rgba(234, 234, 234, 0.476);
+  border: 1px solid rgb(214, 213, 211);
+  color: rgb(0, 0, 0);
+  border-radius: 1rem;
 }
 @media screen and (min-width: 1024px) {
-  .input-group input {
+  .full-screen-container .login-container .form .input-group input {
     font-size: 1rem;
   }
 }
-.input-group input::-moz-placeholder {
-  color: rgba(29, 29, 29, 0.783);
+.full-screen-container .login-container .form .input-group input:focus {
+  border: 1px solid rgb(0, 0, 0);
 }
-.input-group input::placeholder {
-  color: rgba(29, 29, 29, 0.783);
+.full-screen-container .login-container .form .input-group input::-moz-placeholder {
+  font-size: 0.7rem;
+  color: rgb(130, 128, 128);
 }
-
-.input-group label {
-  color: rgb(254, 232, 192);
+.full-screen-container .login-container .form .input-group input::placeholder {
+  font-size: 0.7rem;
+  color: rgb(130, 128, 128);
+}
+@media screen and (min-width: 1024px) {
+  .full-screen-container .login-container .form .input-group input::-moz-placeholder {
+    padding-left: 0.2rem;
+    font-size: 0.8rem;
+  }
+  .full-screen-container .login-container .form .input-group input::placeholder {
+    padding-left: 0.2rem;
+    font-size: 0.8rem;
+  }
+}
+.full-screen-container .login-container .form .input-group label {
+  color: rgb(0, 0, 0);
   margin: 0.6rem 0;
   font-size: 0.8rem;
 }
 @media screen and (min-width: 1024px) {
-  .input-group label {
+  .full-screen-container .login-container .form .input-group label {
     font-size: 1rem;
   }
 }
-
-.input-group .icon {
+.full-screen-container .login-container .form .input-group .icon {
   font-size: 0.8rem;
-  color: rgb(167, 149, 149);
+  color: rgb(0, 0, 0);
   position: absolute;
-  right: 0.4rem;
-  top: 60%;
+  right: 0.8rem;
+  top: 59%;
 }
 @media screen and (min-width: 1024px) {
-  .input-group .icon {
+  .full-screen-container .login-container .form .input-group .icon {
     font-size: 1rem;
   }
 }
@@ -2313,7 +2321,7 @@ nav .hidden-nav ul .admin-li {
   width: 50%;
   margin: 1rem auto;
   color: rgba(255, 253, 253, 0.839);
-  background-color: rgba(173, 165, 165, 0.639);
+  background-color: rgb(0, 149, 246);
   border-radius: 20rem;
   outline: none;
   cursor: pointer;
@@ -2327,8 +2335,7 @@ nav .hidden-nav ul .admin-li {
 
 .login-button:hover,
 .login-button:focus {
-  background-color: rgb(255, 255, 255);
-  color: rgb(1, 1, 1);
+  background-color: rgb(0, 115, 246);
 }
 
 .input-group span {
@@ -2339,16 +2346,6 @@ nav .hidden-nav ul .admin-li {
   .input-group span {
     visibility: hidden;
   }
-}
-
-input:invalid:focus {
-  border-bottom: 1px solid rgb(142, 27, 27);
-}
-
-input:invalid:focus ~ span {
-  color: darkred;
-  font-size: 0.5rem;
-  display: block;
 }
 
 .error-msg {
@@ -2401,6 +2398,11 @@ input:invalid:focus ~ span {
   .error-email {
     font-size: 1.3rem;
   }
+}
+
+input:focus {
+  border: none;
+  outline: none;
 }
 
 .account-container {
@@ -3728,59 +3730,71 @@ input:invalid:focus ~ span {
 
 .all-pics {
   background-color: rgb(1, 1, 1);
-  min-width: 100vw;
-  min-height: 100vh;
-  display: grid;
+  padding: 1rem;
 }
 @media screen and (min-width: 1024px) {
   .all-pics {
-    padding: 3rem 0 0 0;
+    padding: 3rem 1rem 1rem 1rem;
   }
 }
-.all-pics h1 {
+.all-pics header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .all-pics header {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+.all-pics header h1 {
   font-family: "font-gildas", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
   color: rgb(255, 255, 255);
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .all-pics header h1 {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 1024px) {
-  .all-pics h1 {
+  .all-pics header h1 {
     font-size: 2rem;
   }
 }
-.all-pics .closeBtn {
-  background-color: rgb(176, 167, 167);
+.all-pics header .closeBtn {
+  background-color: rgb(248, 248, 248);
   border-radius: 1rem;
   padding: 0.3rem;
-  position: absolute;
-  right: 0.4rem;
-  top: 0.4rem;
+  color: rgb(0, 0, 0);
   box-shadow: 0 0 2px black;
   font-size: 0.6rem;
   transition: 0.4s;
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  .all-pics .closeBtn {
+  .all-pics header .closeBtn {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .all-pics header .closeBtn {
     font-size: 1rem;
   }
 }
-.all-pics .closeBtn:hover {
+.all-pics header .closeBtn:hover {
   transform: scale(1.1);
 }
-.all-pics .closeBtn .x-icon {
+.all-pics header .closeBtn .x-icon {
   margin-right: 0.3rem;
 }
 .all-pics .main_img {
   position: relative;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
 }
-.all-pics .main_img img {
+.all-pics .main_img .img {
   min-width: 100%;
-}
-@media screen and (min-width: 1024px) {
-  .all-pics .main_img {
-    margin: 1.5rem auto;
-  }
 }/*# sourceMappingURL=index.css.map */
