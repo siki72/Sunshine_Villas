@@ -2199,7 +2199,7 @@ nav .hidden-nav ul .admin-li {
 }
 
 .full-screen-container {
-  background-color: rgba(255, 253, 253, 0.712);
+  background-color: rgba(122, 27, 27, 0.408);
 }
 @media screen and (min-width: 768px) {
   .full-screen-container {
@@ -2207,6 +2207,7 @@ nav .hidden-nav ul .admin-li {
   }
 }
 .full-screen-container .grid-container {
+  background-color: rgb(241, 241, 241);
   padding: 2rem 0.5rem;
   min-width: 100%;
   display: flex;
@@ -2227,6 +2228,7 @@ nav .hidden-nav ul .admin-li {
   background-color: rgba(255, 255, 255, 0.852);
   padding: 1rem;
   max-width: 60%;
+  box-shadow: 0 0 0 black;
   width: 30rem;
 }
 .full-screen-container .login-container .login-title {
@@ -3825,17 +3827,14 @@ input:focus {
   z-index: 1;
 }
 .error-container .error-message-container {
-  border: 1px solid rgb(162, 156, 156);
-  width: 70%;
+  width: 80%;
   background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0 2px rgb(60, 57, 57);
 }
 .error-container .error-message-container .modal-header {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   position: relative;
-  height: 3rem;
+  height: 2rem;
   width: 100%;
   background-color: rgb(1, 1, 1);
 }
@@ -3856,26 +3855,34 @@ input:focus {
   color: rgb(1, 1, 1);
 }
 .error-container .error-message-container main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.error-container .error-message-container main .server-stratus {
-  font-size: 3rem;
-  color: rgb(185, 23, 23);
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .error-container .error-message-container main .server-stratus {
-    font-size: 5rem;
+  .error-container .error-message-container main {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main .server-stratus {
     padding: 3rem 0;
+  }
+}
+.error-container .error-message-container main .server-stratus p {
+  font-size: 2rem;
+  color: rgb(185, 23, 23);
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main .server-stratus p {
+    font-size: 3rem;
   }
 }
 .error-container .error-message-container main h1 {
   font-family: "font-pop400", sans-serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #7a7a7a;
 }
 @media screen and (min-width: 768px) {
@@ -3896,7 +3903,7 @@ input:focus {
 }
 .error-container .error-message-container .close-button {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .error-container .error-message-container .close-button {
@@ -3905,6 +3912,7 @@ input:focus {
 }
 .error-container .error-message-container .close-button .try {
   border: 1px solid rgb(1, 1, 1);
+  padding: 0.5rem;
   border-radius: 1rem;
   font-size: 0.6rem;
 }

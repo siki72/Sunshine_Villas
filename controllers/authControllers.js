@@ -1,16 +1,16 @@
 import jwt from "jsonwebtoken";
 import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
-import { sendConfirmationEmail } from "../utils/sendEmail.js";
 const maxAge = 3 * 24 * 60 * 60 * 1000;
-
+import { sendConfirmationEmail } from "../utils/sendEmail.js";
+import { v4 as uuidv4 } from "uuid";
 // ------------------------------------------
 //       Register new user
 // ------------------------------------------
 
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
   const { firstname, lastname, email, password } = req.body;
-
+  const confirmationCode = uuidv4();
   try {
     if (firstname && lastname && email && password) {
       const [user] = await createPoolConnexion().query(
@@ -27,15 +27,15 @@ export const register = async (req, res) => {
 
         const [userRow] = await createPoolConnexion().query(
           `
-          INSERT INTO users (firstname, lastname, email, password, role) VALUES (?, ?, ?, ?, ?)
+          INSERT INTO users (firstname, lastname, email, password, confirmation_code) VALUES (?, ?, ?, ?, ?)
         `,
-          [firstname, lastname, email, hashedPassword, "guest"]
+          [firstname, lastname, email, hashedPassword, confirmationCode]
         );
         res.status(200).json({
           id: userRow.insertId,
           firstname,
         });
-        console.log(userRow);
+        sendConfirmationEmail(email, firstname, confirmationCode);
       }
     }
   } catch (e) {
@@ -50,14 +50,12 @@ export const register = async (req, res) => {
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    console.log(email);
     const [user] = await createPoolConnexion().query(
       ` SELECT * FROM users WHERE email = ?`,
       [email]
     );
     if (user.length) {
       const validPass = await argon2.verify(user[0].password, password);
-
       if (validPass) {
         jwt.sign(
           {
@@ -65,6 +63,7 @@ export const login = async (req, res, next) => {
             id: user[0].id,
             name: user[0].firstname,
             role: user[0].role,
+            confirmed: user[0].confirmed,
           },
           process.env.TOKEN_SECRET,
           {},
@@ -75,12 +74,14 @@ export const login = async (req, res, next) => {
                 sameSite: "none",
                 secure: true,
                 maxAge: maxAge,
+                httpOnly: true,
               })
               .json({
                 id: user[0].id,
                 name: user[0].firstname,
                 email: user[0].email,
                 role: user[0].role,
+                confirmed: user[0].confirmed,
               });
             res.status(200);
           }
@@ -104,4 +105,39 @@ export const logout = async (req, res) => {
     .status(202)
     .clearCookie("karibu", { sameSite: "none", secure: true })
     .send("cookie cleared");
+};
+
+// ------------------------------------------
+//       register confirmation
+// ------------------------------------------
+
+export const confirmation = async (req, res, next) => {
+  const { confirmationCode } = req.params;
+
+  try {
+    const [user] = await createPoolConnexion().query(
+      `
+      SELECT confirmed FROM users WHERE confirmation_code = ?
+    `,
+      [confirmationCode]
+    );
+    if (user.length > 0) {
+      if (user[0].confirmed === 1) {
+        res.status(204).json("votre email est déja confirmé");
+      } else {
+        await createPoolConnexion().query(
+          `
+        UPDATE users 
+          SET confirmed = 1 WHERE confirmation_code = ?
+      `,
+          [confirmationCode]
+        );
+        res.status(202).json("votre inscription à été confirmée avec succés !");
+      }
+    } else {
+      res.status(400).json("code de confirmation invalide.");
+    }
+  } catch (err) {
+    next(err);
+  }
 };

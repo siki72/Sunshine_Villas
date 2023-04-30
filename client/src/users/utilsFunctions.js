@@ -138,6 +138,29 @@ async function editVillas(datas) {
   }
 }
 
+async function sendErrorDatas(error) {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_URL_LOG}`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(error),
+    });
+    return response;
+  } catch (e) {
+    fetch(`${import.meta.env.VITE_URL_LOG}`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(e),
+    });
+  }
+}
+
 export default {
   addUser,
   login,
@@ -148,4 +171,5 @@ export default {
   deleteDatas,
   updateUserRole,
   editVillas,
+  sendErrorDatas,
 };

@@ -119,7 +119,7 @@ export const gelAllUsers = async (req, res, next) => {
   try {
     const co = await createPoolConnexion();
     const [usersRows] = await co.query(
-      `SELECT id, firstname, lastname, email, role, phone, location, reservations_count, profits FROM users WHERE 1/*users.role = "guest"*/`
+      `SELECT id, firstname, lastname, email, role, phone, location, confirmed,reservations_count, profits FROM users WHERE 1/*users.role = "guest"*/`
     );
     res.status(200).json(usersRows);
   } catch (err) {

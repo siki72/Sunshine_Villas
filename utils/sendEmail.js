@@ -1,29 +1,31 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "ali.missoum@3wa.io",
-    pass: "AdamAchillelilas",
+    pass: "rpyotuwieubvndnk",
   },
 });
 
-export const sendConfirmationEmail = (user) => {
+export const sendConfirmationEmail = (email, name, code) => {
   const mailOptions = {
     from: "ali.missoum@3wa.io",
-    to: user.email,
+    to: email,
     subject: "Confirmation d'inscrption sur notre site",
-    html: `<p>Bonjour ${user.name},</p>
-    <p>Merci de vous être inscrit sur notre site. Veuillez cliquer sur le lien suivant pour confirmer votre inscription :</p>
-    <a href="http://votresite.com/confirmation/${user.confirmationCode}">Confirmer mon inscription</a>
-    <p>Cordialement,</p>
-    <p>L'équipe de notre site</p>`,
+    html: `<p>Dear ${name},</p>
+    <p>Thank you for registering on our site. Please click on the following link to confirm your registration :</p>
+    <a href="https://alimissoum.app.3wa.io/user/confirmation/${code}">Confirm my registration</a>
+    <p>Sincerely,,</p>
+    <p>Sunchine Villas' team</p>`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log("erreur pendant lenvoi du mail", error);
+      console.log("erreur pendant l'envoi du mail", error);
     } else {
-      console.log("email envoye avec succes à ", user.email);
+      console.log("email envoyée avec success à ", email);
     }
   });
 };

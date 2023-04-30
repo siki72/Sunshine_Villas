@@ -28,7 +28,7 @@ const Login = () => {
         setTimeout(() => {
           setErrorLOg(false);
         }, 2500);
-        throw new Error("unable to login");
+        throw new Error("wrong email or password");
       } else {
         setPending(false);
         const user = await response.json();
@@ -41,7 +41,12 @@ const Login = () => {
       }
     } catch (error) {
       setPending(false);
-      setError(true);
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_USER}login`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
   useEffect(() => {
@@ -50,7 +55,6 @@ const Login = () => {
       setRedirectTo(true);
     }
   }, [user, location]);
-
   if (redirectTo) {
     return <Navigate to={"/"} />;
   }

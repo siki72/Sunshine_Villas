@@ -12,10 +12,13 @@ const RegisterErrorModal = ({ setError }) => {
           </div>
         </div>
         <main>
-          <div className="server-stratus">500</div>
+          <div className="server-stratus">
+            <p>Server Error</p>
+            <p>500</p>
+          </div>
           <div>
             <h1>Internal Server Error</h1>
-            <p>Server Error please try again </p>
+            <p>Oops, something went wrong, please try again later</p>
           </div>
         </main>
         <div className="close-button" onClick={() => setError(false)}>

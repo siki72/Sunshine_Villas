@@ -3,11 +3,12 @@
     height: 100vh;
   }
 
-  background-color: rgba(255, 253, 253, 0.712);
+  background-color: rgba(122, 27, 27, 0.408);
   .grid-container {
     @media screen and (min-width: $breakPoint-Tablet) {
       min-height: 100vh;
     }
+    background-color: rgb(241, 241, 241);
     padding: 2rem 0.5rem;
     min-width: 100%;
     display: flex;
@@ -24,6 +25,7 @@
     background-color: rgba(255, 255, 255, 0.852);
     padding: 1rem;
     max-width: 60%;
+    box-shadow: 0 0 0 black;
     width: 30rem;
     .login-title {
       @media screen and (min-width: $breakPoint-Desktop) {

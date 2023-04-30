@@ -7,16 +7,13 @@
   @include flex;
   z-index: 1;
   .error-message-container {
-    border: 1px solid rgb(162, 156, 156);
-    width: 70%;
+    width: 80%;
     background-color: $color1;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: 0 0 2px rgb(60, 57, 57);
     .modal-header {
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
       position: relative;
-      height: 3rem;
+      height: 2rem;
       width: 100%;
       background-color: $color2;
       .redpoint {
@@ -37,15 +34,23 @@
       }
     }
     main {
-      @include around;
+      @media screen and (min-width: $breakPoint-Tablet) {
+        @include around;
+        max-width: 85%;
+        margin: 0 auto;
+      }
+      text-align: center;
       .server-stratus {
         @media screen and (min-width: $breakPoint-Tablet) {
-          font-size: 5rem;
-          @include around;
           padding: 3rem 0;
         }
-        font-size: 3rem;
-        color: rgb(185, 23, 23);
+        p {
+          @media screen and (min-width: $breakPoint-Tablet) {
+            font-size: 3rem;
+          }
+          font-size: 2rem;
+          color: rgb(185, 23, 23);
+        }
       }
       h1 {
         @media screen and (min-width: $breakPoint-Tablet) {
@@ -53,7 +58,7 @@
           font-size: 2rem;
         }
         font-family: $pop4;
-        font-size: 1rem;
+        font-size: 1.4rem;
         color: $color7;
       }
       p {
@@ -70,13 +75,14 @@
         padding: 2rem 0;
       }
       text-align: center;
-      padding-bottom: 1rem;
+      padding: 1rem;
 
       .try {
         @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 1rem;
         }
         border: 1px solid $color2;
+        padding: 0.5rem;
         border-radius: 1rem;
         font-size: 0.6rem;
       }

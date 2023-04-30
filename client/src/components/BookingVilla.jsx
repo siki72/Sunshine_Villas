@@ -8,6 +8,7 @@ import { UserContext } from "../users/UserContext.jsx";
 import { Link } from "react-router-dom";
 import BarLoader from "react-spinners/BarLoader";
 import { DateRange } from "react-date-range";
+import utils from "../users/utilsFunctions.js";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import {
@@ -16,7 +17,6 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { Alert } from "flowbite-react";
-import VillaOnePics from "./VillaOnePics.jsx";
 const override = {
   display: "block",
   margin: "0 auto",
@@ -67,7 +67,14 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
           }
         }
       } catch (err) {
-        console.log(err);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_USER}profile`,
+          user: user.id,
+          message: err.message,
+          stackTrace: err.stack,
+        };
+        const log = await utils.sendErrorDatas(errorDatas);
+        console.log(log);
       }
     };
     fetchDatas();

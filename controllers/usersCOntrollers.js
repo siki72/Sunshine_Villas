@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
@@ -7,6 +8,7 @@ const maxAge = 3 * 24 * 60 * 60 * 1000;
 // ------------------------------------------
 export const getProfile = (req, res, next) => {
   try {
+    console.log("called");
     const { karibu } = req.cookies; // ---> on récupére le cookie par le nom qu'on lui attribué
     if (karibu) {
       jwt.verify(
@@ -16,7 +18,14 @@ export const getProfile = (req, res, next) => {
         async (err, karibuData) => {
           if (err) throw err;
           const { name, email, id, role } = karibuData; // --> on récupére l'ID de notre utilisateur depuis le cookie qui ont été passé dans l'objet JWT
-          res.status(200).json({ name, email, id, role });
+          const [status] = await createPoolConnexion().query(
+            `
+            SELECT confirmed FROM users where id = ?
+          `,
+            [id]
+          );
+          const emailStatus = status[0].confirmed;
+          res.status(200).json({ name, email, id, role, emailStatus });
         }
       );
     } else {

@@ -2,7 +2,12 @@ import express from "express";
 const router = express.Router();
 import dotenv from "dotenv";
 import { checkToken } from "../chekToken.js";
-import { logout, login, register } from "../../controllers/authControllers.js";
+import {
+  logout,
+  login,
+  register,
+  confirmation,
+} from "../../controllers/authControllers.js";
 import {
   getProfile,
   loggedUserDatas,
@@ -17,11 +22,12 @@ dotenv.config();
 router.post("/register", register);
 router.post("/login", login);
 router.get("/logout", logout);
+router.get("/confirmation/:confirmationCode", confirmation);
 
 // ------------------------------------------
 //       Users datas
 // ------------------------------------------
-router.get("/profile", getProfile);
+router.get("/profile", checkToken, getProfile);
 router.get("/user", loggedUserDatas);
 router.post("/update", checkToken, updateUserDatas);
 router.get("/reviews", reviewsDatas);
