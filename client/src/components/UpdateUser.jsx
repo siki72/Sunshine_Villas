@@ -51,8 +51,13 @@ const UpdateUser = ({ data, edit }) => {
           setPending(false);
           window.location.reload(false);
         });
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_USER}update`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

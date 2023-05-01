@@ -1,6 +1,7 @@
+import React, { useEffect, useState } from "react";
+import utils from "../users/utilsFunctions.js";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
 const WalimaDatas = () => {
   const [data, setData] = useState([]);
 
@@ -20,7 +21,12 @@ const WalimaDatas = () => {
           setData(data);
         }
       } catch (error) {
-        console.error(error);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_ADMIN}walima`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     handleGetReservation();

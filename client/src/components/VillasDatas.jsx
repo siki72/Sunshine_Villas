@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteBookDatas, setBookDatas } from "../feature/villa1.slice.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import utils from "../users/utilsFunctions.js";
 const VillasDatas = ({ id }) => {
   const data = useSelector((state) => state.villa_1_book.book); // ramener la da
   const dispatch = useDispatch();
@@ -33,7 +34,12 @@ const VillasDatas = ({ id }) => {
           })
           .finally(() => setReady(true));
       } catch (error) {
-        console.error(error);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_ADMIN}data`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     getDatas();
@@ -61,7 +67,12 @@ const VillasDatas = ({ id }) => {
         dispatch(deleteBookDatas(id));
       }
     } catch (error) {
-      console.error(error);
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_ADMIN}bookings/${id}`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import utils from "../users/utilsFunctions.js";
 
 export const UserContext = createContext({});
 
@@ -27,8 +28,13 @@ export function UserContextProvider({ children }) {
             setReady(true);
           }
         }
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_USER}profile`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
 

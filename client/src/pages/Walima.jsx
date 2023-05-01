@@ -42,7 +42,12 @@ const Walima = () => {
         }, 2000);
       }
     } catch (error) {
-      console.error(error);
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_ADMIN}walima`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

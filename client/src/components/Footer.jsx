@@ -46,17 +46,26 @@ const Footer = () => {
           <div className="socials-medias">
             <ul>
               <li>
-                <a href="https://www.facebook.com">
+                <a
+                  href="https://www.facebook.com"
+                  aria-label="follow us on facebook"
+                >
                   <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com">
+                <a
+                  href="https://www.instagram.com"
+                  aria-label="follow us on instagram"
+                >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com">
+                <a
+                  href="https://www.instagram.com"
+                  aria-label="follow us on twitter"
+                >
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>

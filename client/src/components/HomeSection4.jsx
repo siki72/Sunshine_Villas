@@ -21,25 +21,23 @@ const HomeSection4 = () => {
           </div>
         </div>
       </div>
-      <div
-        className="get_media"
-        style={{
-          backgroundImage: `url(./img/home/section_4.webp)`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "right",
-          backgroundSize: "cover",
-        }}
-      >
+      <div className="get_media">
         <ul>
           <li>
-            <h4>#Let's get social</h4>
+            <h3>#Let's get social</h3>
           </li>
           <li>
             <div>
-              <a href="https://www.facebook.com">
+              <a
+                href="https://www.facebook.com"
+                aria-label="follow us on facebook"
+              >
                 <FontAwesomeIcon className="media-icons" icon={faFacebook} />
               </a>
-              <a href="https://www.instagram.com">
+              <a
+                href="https://www.instagram.com"
+                aria-label="follow us on instagram"
+              >
                 <FontAwesomeIcon className="media-icons" icon={faInstagram} />
               </a>
             </div>

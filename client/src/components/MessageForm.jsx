@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import ReactModal from "react-modal";
+import utils from "../users/utilsFunctions.js";
 
 const MessageForm = () => {
   const [pending, setPending] = useState(false);
@@ -34,7 +35,11 @@ const MessageForm = () => {
           setSuccess(true);
         },
         (error) => {
-          console.log(error);
+          const errorDatas = {
+            message: error.message,
+            stackTrace: error.stack,
+          };
+          utils.sendErrorDatas(errorDatas);
         }
       )
       .finally(() => {

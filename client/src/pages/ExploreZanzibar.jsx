@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Pagination, Carousel } from "flowbite-react";
 
 const ExploreZanzibar = () => {
-  const elementsPerPage = 3;
+  const elementsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const numberOfPages = Math.ceil(elements.length / elementsPerPage);
   const startIndex = (currentPage - 1) * elementsPerPage;

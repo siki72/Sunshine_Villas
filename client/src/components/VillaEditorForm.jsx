@@ -23,13 +23,18 @@ const VillaEditorForm = ({ id, editing, setEditing }) => {
     try {
       const response = await utils.editVillas(formData);
       if (!response.ok) {
-        console.log("cannot edit villas datas");
+        throw new Error("cannot edit villas datas");
       } else {
         setEditing(false);
         dispatch(editVillaData([formData, id]));
       }
     } catch (error) {
-      console.error(error);
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_ADMIN}datas/villas`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

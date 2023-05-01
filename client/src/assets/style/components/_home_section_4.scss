@@ -71,10 +71,11 @@
     min-width: 100%;
     @include flex;
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 70%);
+    background-image: url("../../img/home/section_4.webp");
     ul {
       display: flex;
       flex-direction: column;
-      li h4 {
+      li h3 {
         @media screen and (min-width: $breakPoint-Tablet) {
           font-size: 3.188rem;
           line-height: 3.188rem;

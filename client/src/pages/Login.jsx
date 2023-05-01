@@ -22,7 +22,7 @@ const Login = () => {
     const formData = utils.getFormData(formLoginRef, ["email", "password"]);
     try {
       const response = await utils.login(formData);
-      if (!response.ok) {
+      if (response.status !== 200) {
         setPending(false);
         setErrorLOg(true);
         setTimeout(() => {

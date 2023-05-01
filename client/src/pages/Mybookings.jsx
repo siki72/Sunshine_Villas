@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyBookingsSkeleton from "../components/MyBookingsSkeleton.jsx";
+import utils from "../users/utilsFunctions.js";
 
 const MyBookings = () => {
   const { user } = useContext(UserContext);
@@ -32,10 +31,12 @@ const MyBookings = () => {
         setMyBookings(data);
         setPending(false);
       } catch (error) {
-        console.error("error fetching bookings: ", error);
-        toast.error(
-          "Une erreur est survenue lors de la récupération des réservations"
-        );
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_VILLAS_USER}myBookings`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     fetchData();

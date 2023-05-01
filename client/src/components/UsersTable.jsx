@@ -20,7 +20,12 @@ const UsersTable = () => {
           setIsDeleting(false);
         }
       } catch (error) {
-        console.error(error);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_ADMIN}users`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     handleGetAllUsers();
@@ -35,7 +40,12 @@ const UsersTable = () => {
         setIsDeleting(true);
       }
     } catch (error) {
-      console.error(error);
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_ADMIN}users/${id}`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
   const handleChangeRole = async (e, rowid) => {
@@ -52,8 +62,13 @@ const UsersTable = () => {
         const data = await response.json();
         setIsDeleting(true);
       }
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      const errorDatas = {
+        url: `${import.meta.env.VITE_URL_ADMIN}users/role/`,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

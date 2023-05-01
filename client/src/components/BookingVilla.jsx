@@ -66,15 +66,14 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
             setMailConfirmed(false);
           }
         }
-      } catch (err) {
+      } catch (error) {
         const errorDatas = {
           url: `${import.meta.env.VITE_URL_USER}profile`,
-          user: user.id,
-          message: err.message,
-          stackTrace: err.stack,
+          user: user?.id,
+          message: error.message,
+          stackTrace: error.stack,
         };
         const log = await utils.sendErrorDatas(errorDatas);
-        console.log(log);
       }
     };
     fetchDatas();
@@ -113,8 +112,13 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
           setLoading(false);
           window.location.reload(false);
         }
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        const errorDatas = {
+          url: import.meta.env.VITE_URL_VILLAS_BOOKING,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     } else {
       setCheckOutMissing(true);
@@ -148,8 +152,13 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
 
           setJsonData(t);
         });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      const errorDatas = {
+        url: import.meta.env.VITE_URL_AVAILAIBLES_DATES,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      utils.sendErrorDatas(errorDatas);
     }
   }, [id]);
 

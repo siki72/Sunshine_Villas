@@ -6,6 +6,10 @@
     background-color: $color1;
     .header-img {
       min-height: 15rem;
+      background-image: url("../../img/home/login.webp");
+      background-position-y: calc(40%);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     .nav-book {
       @media screen and (min-width: $breakPoint-Tablet) {

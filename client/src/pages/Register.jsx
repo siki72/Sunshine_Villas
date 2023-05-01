@@ -37,7 +37,6 @@ const Register = () => {
     }
     try {
       const resp = await utils.addUser(formData);
-      console.log(resp);
       if (resp.status === 200) {
         setPending(false);
         setShowToast(true);
@@ -45,11 +44,17 @@ const Register = () => {
         setPending(false);
         setExistEmail(true);
       } else {
-        console.log("celleci");
+        throw new Error("unable to register");
       }
-    } catch (e) {
+    } catch (error) {
       setPending(false);
       setError(true);
+      const errorDatas = {
+        url: import.meta.env.VITE_URL_USER,
+        message: error.message,
+        stackTrace: error.stack,
+      };
+      await utils.sendErrorDatas(errorDatas);
     }
   };
 

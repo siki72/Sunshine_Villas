@@ -4,7 +4,6 @@ import { Carousel } from "flowbite-react";
 import React from "react";
 
 const VillaOnePics = ({ setShowPics, slug }) => {
-  console.log(slug);
   return (
     <section className="all-pics">
       <header>

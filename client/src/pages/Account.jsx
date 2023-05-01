@@ -44,14 +44,7 @@ const Account = () => {
   return (
     <div id="#" className="account-container">
       <div className="container">
-        <div
-          style={{
-            backgroundImage: `url(../img/home/login.webp)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="header-img"
-        ></div>
+        <div className="header-img"></div>
         {!isAdmin && (
           <nav className="nav-book">
             <Link className={linkClasses("")} to={"/account"}>

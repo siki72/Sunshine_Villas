@@ -13,8 +13,6 @@ const Bookings = () => {
   const cards = useSelector((state) => state.threeCards.cards);
   const [isReserved, setIsReserved] = useState(false);
   const [showPics, setShowPics] = useState(false);
-  console.log(showPics);
-  console.log(slug);
   if (showPics) {
     return <VillaOnePics setShowPics={setShowPics} slug={slug} />;
   }

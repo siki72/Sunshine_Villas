@@ -6,6 +6,7 @@ import {
   faUser,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import utils from "../users/utilsFunctions.js";
 
 import { useEffect } from "react";
 
@@ -43,7 +44,12 @@ const Dashboard = () => {
           setBookingTable(data);
         }
       } catch (error) {
-        console.error(error);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_ADMIN}walima`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     handleGetReservation();
@@ -61,7 +67,12 @@ const Dashboard = () => {
           setGuests(data);
         }
       } catch (error) {
-        console.error(error);
+        const errorDatas = {
+          url: `${import.meta.env.VITE_URL_ADMIN}users`,
+          message: error.message,
+          stackTrace: error.stack,
+        };
+        await utils.sendErrorDatas(errorDatas);
       }
     };
     handleGetReservation();
