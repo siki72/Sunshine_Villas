@@ -10,7 +10,8 @@ import PendingPage from "../components/PendingPage.jsx";
 const Login = () => {
   const formLoginRef = useRef();
   const [redirectTo, setRedirectTo] = useState(false);
-  const [errorLog, setErrorLOg] = useState(false);
+  const [unfoundEmail, setUnfoundEmail] = useState(false);
+  const [falsePassword, setFalsePassword] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(false);
   const { user, setUser, setReady, setIsAdmin, setMailConfirmed } =
@@ -22,14 +23,13 @@ const Login = () => {
     const formData = utils.getFormData(formLoginRef, ["email", "password"]);
     try {
       const response = await utils.login(formData);
-      if (response.status !== 200) {
+      if (response.status === 422) {
         setPending(false);
-        setErrorLOg(true);
-        setTimeout(() => {
-          setErrorLOg(false);
-        }, 2500);
-        throw new Error("wrong email or password");
-      } else {
+        setFalsePassword(true);
+      } else if (response.status === 404) {
+        setPending(false);
+        setUnfoundEmail(true);
+      } else if (response.status === 200) {
         setPending(false);
         const user = await response.json();
         setUser(user);
@@ -41,6 +41,7 @@ const Login = () => {
       }
     } catch (error) {
       setPending(false);
+      setError(true);
       const errorDatas = {
         url: `${import.meta.env.VITE_URL_USER}login`,
         message: error.message,
@@ -59,10 +60,14 @@ const Login = () => {
     return <Navigate to={"/"} />;
   }
   return (
-    <div className="full-screen-container">
+    <div
+      className="full-screen-container"
+      onClick={() => setFalsePassword(false)}
+    >
       {pending && <PendingPage />}
       {error && <RegisterErrorModal setError={setError} />}
       <div
+        onClick={() => setUnfoundEmail(false)}
         className="grid-container"
         aria-label="plane view of the east coast with beaitfull sunshine"
         role="img"
@@ -92,8 +97,13 @@ const Login = () => {
                 required={true}
               />
             </div>
-            <span className={errorLog ? "show-error-msg" : "error-msg"}>
-              wrong email or password
+            <span
+              className={
+                falsePassword || unfoundEmail ? "show-error-msg" : "error-msg"
+              }
+            >
+              {falsePassword && "Wrong password please try again"}
+              {unfoundEmail && "email not found please retry or register"}
             </span>
             <button type="submit" className="btn login-button">
               Login
