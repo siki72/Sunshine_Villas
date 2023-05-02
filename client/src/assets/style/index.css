@@ -3939,4 +3939,9 @@ input:focus {
   justify-content: center;
   align-items: center;
   cursor: not-allowed;
+}
+
+.charts_container #myChart {
+  max-width: 20rem;
+  max-height: 20rem;
 }/*# sourceMappingURL=index.css.map */

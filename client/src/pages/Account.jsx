@@ -14,9 +14,6 @@ import UserProfile from "../components/UserProfile.jsx";
 const Account = () => {
   const { pages } = useParams();
   const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
-  if (!ready) {
-    return "loading";
-  }
   if (ready && !user) {
     return <Navigate to={"/login"} />;
   }

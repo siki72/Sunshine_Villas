@@ -9,6 +9,7 @@ import {
 import utils from "../users/utilsFunctions.js";
 
 import { useEffect } from "react";
+import ChartsVillas from "./ChartsVillas.jsx";
 
 const Dashboard = () => {
   const [profits, setProfits] = useState([]);
@@ -126,6 +127,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <ChartsVillas />
     </div>
   );
 };
