@@ -1,6 +1,7 @@
 .charts_container {
   @media screen and (min-width: $breakPoint-Tablet) {
     @include around;
+    flex-wrap: wrap;
   }
 
   padding: 3rem 0;
@@ -8,5 +9,37 @@
     margin: auto;
     max-width: 20rem;
     max-height: 20rem;
+  }
+}
+
+.world-map {
+  margin: 2rem 0;
+  margin: 0 auto;
+  .widget {
+    @media screen and (min-width: $breakPoint-Tablet) {
+      width: 40%;
+      border-radius: 1rem;
+    }
+    background-color: $color2;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
+    h3 {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1.5rem;
+      }
+      font-family: $rob4;
+      font-size: 1.5rem;
+      line-height: 1.4rem;
+      color: rgb(59, 210, 59);
+      text-align: center;
+      margin: 1rem;
+    }
+  }
+  .map {
+    border: 3px solid black;
+    height: 30rem;
+    max-width: 95%;
+    margin: 2rem auto;
   }
 }

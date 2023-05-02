@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import utils from "../users/utilsFunctions.js";
 import Chart from "chart.js/auto";
 import { format } from "date-fns";
+import WorldMapUser from "./WorldMapUser.jsx";
 
 const ChartsVillas = () => {
   const chartRef = useRef(null);
@@ -137,10 +138,18 @@ const ChartsVillas = () => {
     };
   }, [profits]);
   return (
-    <div className="charts_container">
-      <canvas ref={chartRef} className="myChart"></canvas>
-      <canvas ref={lineRef} className="myChart"></canvas>
-    </div>
+    <>
+      <div className="charts_container">
+        <canvas ref={chartRef} className="myChart"></canvas>
+        <canvas ref={lineRef} className="myChart"></canvas>
+      </div>
+      <div className="world-map">
+        <div className="widget">
+          <h3>Guest's location Map</h3>
+        </div>
+        <WorldMapUser />
+      </div>
+    </>
   );
 };
 

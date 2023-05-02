@@ -2857,7 +2857,6 @@ input:focus {
 @media screen and (min-width: 768px) {
   .admin-page .admin-container .datas {
     margin: 2rem 2rem 2rem 0;
-    padding-left: 1rem;
   }
 }
 .admin-page .admin-container .datas .data {
@@ -3953,10 +3952,47 @@ input:focus {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 .charts_container .myChart {
   margin: auto;
   max-width: 20rem;
   max-height: 20rem;
+}
+
+.world-map {
+  margin: 2rem 0;
+  margin: 0 auto;
+}
+.world-map .widget {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .world-map .widget {
+    width: 40%;
+    border-radius: 1rem;
+  }
+}
+.world-map .widget h3 {
+  font-family: "font-rob400", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+  color: rgb(59, 210, 59);
+  text-align: center;
+  margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .world-map .widget h3 {
+    font-size: 1.5rem;
+  }
+}
+.world-map .map {
+  border: 3px solid black;
+  height: 30rem;
+  max-width: 95%;
+  margin: 2rem auto;
 }/*# sourceMappingURL=index.css.map */
