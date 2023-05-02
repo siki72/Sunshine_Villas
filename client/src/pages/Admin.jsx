@@ -46,49 +46,58 @@ const Admin = ({ logout }) => {
               }}
               className={activeTab === "dashboard" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faDatabase} /> Dashboard
+              <FontAwesomeIcon className="icon-dash" icon={faDatabase} />{" "}
+              <span>Dashboard</span>
             </li>
 
             <li
               onClick={() => handleTabClick("villa1")}
               className={activeTab === "villa1" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 1 bed</span>
+              <FontAwesomeIcon className="icon-dash" icon={faHouseUser} />{" "}
+              <span>Villa 1 bed</span>
             </li>
             <li
               onClick={() => handleTabClick("villa2")}
               className={activeTab === "villa2" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} />
+              <FontAwesomeIcon className="icon-dash" icon={faHouseUser} />
               <span>Villa 2 bed</span>
             </li>
             <li
               onClick={() => handleTabClick("villa3")}
               className={activeTab === "villa3" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>Villa 3 bed</span>
+              <FontAwesomeIcon className="icon-dash" icon={faHouseUser} />{" "}
+              <span>Villa 3 bed</span>
             </li>
             <li
               onClick={() => handleTabClick("villasEditor")}
               className={activeTab === "villasEditor" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>Villas infos</span>
+              <FontAwesomeIcon className="icon-dash" icon={faHouseUser} />{" "}
+              <span>Villas infos</span>
             </li>
             <li
               onClick={() => handleTabClick("walima")}
               className={activeTab === "walima" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faHouseUser} /> <span>Walima</span>
+              <FontAwesomeIcon className="icon-dash" icon={faHouseUser} />{" "}
+              <span>Walima</span>
             </li>
             <li
               onClick={() => handleTabClick("users")}
               className={activeTab === "users" ? "li-active" : ""}
             >
-              <FontAwesomeIcon icon={faUsers} /> <span>Users</span>
+              <FontAwesomeIcon className="icon-dash" icon={faUsers} />{" "}
+              <span>Users</span>
             </li>
 
             <li onClick={logout}>
-              <FontAwesomeIcon icon={faArrowRightToBracket} />{" "}
+              <FontAwesomeIcon
+                className="icon-dash"
+                icon={faArrowRightToBracket}
+              />{" "}
               <span>Logout</span>
             </li>
           </ul>

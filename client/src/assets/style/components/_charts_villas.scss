@@ -1,5 +1,11 @@
 .charts_container {
-  #myChart {
+  @media screen and (min-width: $breakPoint-Tablet) {
+    @include around;
+  }
+
+  padding: 3rem 0;
+  .myChart {
+    margin: auto;
     max-width: 20rem;
     max-height: 20rem;
   }

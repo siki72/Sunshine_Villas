@@ -16,7 +16,7 @@
       @include around;
       text-align: center;
       color: $color1;
-      background-color: rgba(52, 58, 69, 0.769);
+      background-color: $color2;
       padding: 1rem 3rem;
 
       .items {

@@ -89,11 +89,11 @@
 }
 * ::-moz-selection {
   color: rgb(255, 255, 255);
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
 }
 * ::selection {
   color: rgb(255, 255, 255);
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
 }
 * textarea {
   resize: none;
@@ -143,7 +143,7 @@ body {
 }
 
 .active-nav {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
 .active-nav > * {
@@ -153,7 +153,7 @@ body {
 .btn {
   padding: 1rem;
   color: rgb(255, 255, 255);
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   font-size: 1rem;
   letter-spacing: 1px;
   cursor: pointer;
@@ -175,10 +175,14 @@ body {
 
 .li-active {
   padding: 0.4rem;
+  color: rgb(0, 0, 0);
   background-color: rgb(230, 230, 230);
   width: 100%;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+}
+.li-active .icon-dash {
+  color: rgb(0, 0, 0);
 }
 .li-active span {
   font-family: "font-pop400", sans-serif;
@@ -341,7 +345,7 @@ object {
 .about-page .container .about-main h6 {
   font-family: "font-rob300", sans-serif;
   font-size: 0.9rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   line-height: 1.2rem;
 }
 .about-page .container .jambian-infos-grid {
@@ -1173,7 +1177,7 @@ nav .navigation .logo {
   position: absolute;
   z-index: 100;
   left: 10%;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-family: "font-gildas", sans-serif;
   max-width: 30%;
   font-size: 0.9rem;
@@ -1190,7 +1194,7 @@ nav .navigation .logo {
   }
 }
 nav .navigation .logo p {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1.1rem;
   font-family: "font-rob", sans-serif;
@@ -1200,7 +1204,7 @@ nav .navigation .logo p {
   letter-spacing: 2px;
 }
 nav .navigation .logo p:last-child {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   font-size: 0.7rem;
 }
@@ -1221,7 +1225,7 @@ nav .navigation ul li {
   padding: 0 10px;
 }
 nav .navigation ul li a {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   min-height: 100%;
   display: flex;
   justify-content: center;
@@ -1242,7 +1246,7 @@ nav .navigation ul li.villas .nav-our-villas:hover {
 }
 nav .navigation ul li.villas .nav-our-villas {
   background-color: rgb(255, 255, 255);
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   display: none;
   opacity: 0;
   height: 0;
@@ -1255,7 +1259,7 @@ nav .navigation ul li.villas .nav-our-villas {
 nav .navigation ul li.villas .nav-our-villas li {
   background-color: rgb(255, 255, 255);
   font-size: 0.78rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   opacity: 0.8;
   text-align: left;
   font-weight: 300;
@@ -1266,7 +1270,7 @@ nav .navigation ul li {
   color: rgb(102, 102, 102);
 }
 nav .navigation ul li :hover {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   transition: 0.5s;
 }
@@ -1274,7 +1278,7 @@ nav .navigation ul .book {
   font-family: "font-rob300", sans-serif;
   font-size: 18px;
   color: rgb(255, 255, 255);
-  background: rgb(1, 1, 1);
+  background: rgb(0, 0, 0);
   cursor: pointer;
   line-height: 18px;
   padding: 10px 30px;
@@ -1306,7 +1310,7 @@ nav .hamburguer {
   right: 25px;
   min-width: 100%;
   background-color: rgb(255, 255, 255);
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -1316,13 +1320,13 @@ nav .hamburguer {
   }
 }
 nav .hamburguer span {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   position: absolute;
   top: 0.1rem;
   left: 1rem;
 }
 nav .hamburguer .ham-white {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 nav .hamburguer .ham-black {
   color: rgb(255, 255, 255);
@@ -1359,12 +1363,12 @@ nav .hidden-nav ul {
 nav .hidden-nav ul li {
   margin: 2rem auto;
   font-size: 1.5rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   opacity: 0.8;
   font-weight: 300;
 }
 nav .hidden-nav ul .admin-li {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   padding: 1rem;
   color: rgb(255, 255, 255);
 }
@@ -1452,7 +1456,7 @@ nav .hidden-nav ul .admin-li {
   font-family: "font-rob300", sans-serif;
   font-size: 18px;
   color: rgb(255, 255, 255);
-  background: rgb(1, 1, 1);
+  background: rgb(0, 0, 0);
   cursor: pointer;
   line-height: 18px;
   padding: 10px 30px;
@@ -1593,7 +1597,7 @@ nav .hidden-nav ul .admin-li {
 }
 .card-container a .card-infos .guests span {
   margin-left: 10px;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .card-container a .card-infos .guests .house {
   margin-left: 20px;
@@ -1612,7 +1616,7 @@ nav .hidden-nav ul .admin-li {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   max-width: 90%;
   margin: 2rem auto;
 }
@@ -1623,11 +1627,11 @@ nav .hidden-nav ul .admin-li {
   font-size: 1rem;
   line-height: 1rem;
   border: 2px solid black;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   transition: 0.4s;
 }
 .card-container a .card-booking span:hover {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
 
@@ -1929,7 +1933,7 @@ nav .hidden-nav ul .admin-li {
   font-family: "font-rob400", sans-serif;
   font-size: 0.875rem;
   line-height: 1.75rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   width: 90%;
   margin: 1rem auto;
 }
@@ -2015,7 +2019,7 @@ nav .hidden-nav ul .admin-li {
   max-width: 50%;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-size: 0.8rem;
 }
 .footer .flex .hotel-logo .logo-footer .lin {
@@ -2234,7 +2238,7 @@ nav .hidden-nav ul .admin-li {
 }
 .full-screen-container .login-container .login-title {
   margin: 0;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 1rem;
   font-weight: normal;
@@ -2253,7 +2257,7 @@ nav .hidden-nav ul .admin-li {
 }
 .full-screen-container .login-container .form .need-register {
   text-align: center;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-family: "font-rob400", sans-serif;
   margin-top: 1rem;
   font-size: 0.6rem;
@@ -2470,7 +2474,7 @@ input:focus {
   padding: 15px 30px;
   border-radius: 5px;
   font-size: 1.2rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-family: "font-rob300", sans-serif;
   transition: 0.4s;
   cursor: pointer;
@@ -2526,13 +2530,13 @@ input:focus {
   background-color: rgb(255, 255, 255);
 }
 .account-container .container .login .no-bookings h1 {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .account-container .container .login .no-bookings p {
   font-family: "font-gildas", sans-serif;
   font-size: 1.4rem;
   line-height: 2rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .account-container .container .login .no-bookings .click {
   margin: 1rem 0;
@@ -2549,7 +2553,7 @@ input:focus {
   font-family: "font-gildas", sans-serif;
   font-size: 2.5rem;
   line-height: 7rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .account-container .container .login .row {
   display: flex;
@@ -2563,19 +2567,19 @@ input:focus {
 .account-container .container .login .row h2 {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-weight: 900;
 }
 .account-container .container .login .row p {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-weight: 900;
 }
 .account-container .container .login .row label {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-weight: 900;
 }
 .account-container .container .login .row input {
@@ -2612,7 +2616,7 @@ input:focus {
 }
 .account-container .container .login .send-div .send:hover {
   animation: up 0.4s ease forwards;
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
 .account-container .container .login .send-div .send span {
@@ -2717,7 +2721,7 @@ input:focus {
   padding: 10px 10px;
   border-radius: 10px;
   font-family: "font-rob300", sans-serif;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   line-height: 2rem;
   font-size: 1.2rem;
 }
@@ -2787,12 +2791,12 @@ input:focus {
 }
 .admin-page h1 {
   text-align: center;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-family: "font-pop400", sans-serif;
   padding-top: 50px;
 }
 .admin-page .admin-container {
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(0, 0, 0);
 }
 @media screen and (min-width: 1024px) {
   .admin-page .admin-container {
@@ -2802,7 +2806,7 @@ input:focus {
 }
 .admin-page .admin-container .dashboard {
   color: rgb(255, 255, 255);
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(0, 0, 0);
 }
 @media screen and (min-width: 1024px) {
   .admin-page .admin-container .dashboard {
@@ -2840,7 +2844,7 @@ input:focus {
   cursor: pointer;
   font-size: 1rem;
   line-height: 2rem;
-  color: rgb(121, 116, 116);
+  color: rgb(255, 255, 255);
 }
 .admin-page .admin-container .dashboard ul li span {
   margin-left: 1rem;
@@ -2883,7 +2887,7 @@ input:focus {
   text-transform: uppercase;
   border: 1px solid #888282;
   padding: 1rem;
-  background: rgb(34, 34, 34);
+  background: rgb(0, 0, 0);
   color: #fafafa;
 }
 .admin-page .admin-container .datas table td {
@@ -2958,7 +2962,7 @@ input:focus {
 .send-message .send-message-form form input {
   padding: 1rem;
   background-color: transparent;
-  border: 1px solid rgb(1, 1, 1);
+  border: 1px solid rgb(0, 0, 0);
 }
 .send-message .send-message-form form input::-moz-placeholder {
   font-family: "font-rob300", sans-serif;
@@ -3165,10 +3169,10 @@ input:focus {
   margin: 2rem auto;
 }
 .walima-page .walima-img-swiper .swiper div #guests-content {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .walima-page .walima-img-swiper .swiper div #guests-reviews {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .walima-page .walima-img-swiper img {
   max-height: 100%;
@@ -3239,7 +3243,7 @@ input:focus {
   }
 }
 .walima-page .reservation {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
 }
 @media screen and (min-width: 1024px) {
   .walima-page .reservation {
@@ -3314,7 +3318,7 @@ input:focus {
   padding: 0 1rem;
   font-family: "font-rob400", sans-serif;
   letter-spacing: 1px;
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
   font-size: 1.2rem;
 }
 @media screen and (min-width: 1024px) {
@@ -3402,7 +3406,7 @@ input:focus {
   align-items: center;
   text-align: center;
   color: rgb(255, 255, 255);
-  background-color: rgba(52, 58, 69, 0.769);
+  background-color: rgb(0, 0, 0);
   padding: 1rem 3rem;
 }
 @media screen and (min-width: 1024px) {
@@ -3749,7 +3753,7 @@ input:focus {
 }
 
 .all-pics {
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
   padding: 1rem;
 }
 @media screen and (min-width: 1024px) {
@@ -3841,7 +3845,7 @@ input:focus {
   position: relative;
   height: 2rem;
   width: 100%;
-  background-color: rgb(1, 1, 1);
+  background-color: rgb(0, 0, 0);
 }
 .error-container .error-message-container .modal-header .redpoint {
   position: absolute;
@@ -3857,7 +3861,7 @@ input:focus {
   cursor: pointer;
 }
 .error-container .error-message-container .modal-header .redpoint .xmark-icon {
-  color: rgb(1, 1, 1);
+  color: rgb(0, 0, 0);
 }
 .error-container .error-message-container main {
   text-align: center;
@@ -3916,7 +3920,7 @@ input:focus {
   }
 }
 .error-container .error-message-container .close-button .try {
-  border: 1px solid rgb(1, 1, 1);
+  border: 1px solid rgb(0, 0, 0);
   padding: 0.5rem;
   border-radius: 1rem;
   font-size: 0.6rem;
@@ -3941,7 +3945,18 @@ input:focus {
   cursor: not-allowed;
 }
 
-.charts_container #myChart {
+.charts_container {
+  padding: 3rem 0;
+}
+@media screen and (min-width: 768px) {
+  .charts_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+.charts_container .myChart {
+  margin: auto;
   max-width: 20rem;
   max-height: 20rem;
 }/*# sourceMappingURL=index.css.map */

@@ -54,7 +54,7 @@ $breakPoint-Tablet: 768px;
 $breakPoint-Desktop: 1024px;
 
 $color1: rgb(255, 255, 255);
-$color2: rgb(1, 1, 1);
+$color2: rgb(0, 0, 0);
 $color3: rgb(102, 102, 102);
 $color4: #1c1c1c;
 $color5: #878787;
@@ -222,10 +222,14 @@ body {
 
 .li-active {
   padding: 0.4rem;
+  color: $color2;
   background-color: rgb(230, 230, 230);
   width: 100%;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  .icon-dash {
+    color: $color2;
+  }
   span {
     font-family: $pop4;
     font-size: 1.1rem;
