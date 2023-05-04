@@ -81,7 +81,7 @@ const ChartsVillas = () => {
           const reserations = await datas.json();
           setBookings(reserations);
         } else {
-          alert("rien");
+          throw new Error("unable to fetch datas");
         }
       } catch (error) {
         const errorDatas = {
