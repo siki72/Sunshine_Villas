@@ -13,6 +13,8 @@ import {
   loggedUserDatas,
   updateUserDatas,
   reviewsDatas,
+  reSendMailCOnfirmation,
+  checkConfirmationCode,
 } from "../../controllers/usersControllers.js";
 dotenv.config();
 
@@ -28,8 +30,10 @@ router.get("/confirmation/:confirmationCode", confirmation);
 //       Users datas
 // ------------------------------------------
 router.get("/profile", checkToken, getProfile);
-router.get("/user", loggedUserDatas);
+router.get("/user", checkToken, loggedUserDatas);
 router.post("/update", checkToken, updateUserDatas);
+router.post("/email", checkToken, reSendMailCOnfirmation);
+router.post("/validation", checkToken, checkConfirmationCode);
 router.get("/reviews", reviewsDatas);
 
 export default router;

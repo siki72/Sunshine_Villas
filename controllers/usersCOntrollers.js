@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
-import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
-const maxAge = 3 * 24 * 60 * 60 * 1000;
+import { sendConfirmationEmail } from "../utils/sendEmail.js";
 
 // ------------------------------------------
 //       Get user profile
@@ -53,7 +52,8 @@ export const loggedUserDatas = async (req, res, next) => {
         const co = await createPoolConnexion();
         const [userInfos] = await co.query(
           ` SELECT
-              firstname, lastname, email, phone, location
+              firstname, lastname, email, phone, location, confirmed,
+              CASE WHEN confirmed = 0 THEN confirmation_code ELSE NULL END AS confirmation_code
           
             FROM users WHERE users.id = ? `,
           [id]
@@ -108,7 +108,61 @@ export const reviewsDatas = async (req, res, next) => {
   try {
     const co = await createPoolConnexion();
     const [table] = await co.query(`SELECT * FROM reveiws WHERE 1`);
-    res.json(table);
+    res.status(200).json(table);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------
+//        send confirmation email again
+// ------------------------------------------
+
+export const reSendMailCOnfirmation = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const co = await createPoolConnexion();
+    const [user] = await co.query(
+      `
+      SELECT confirmation_code, firstname from users WHERE email = ?
+    `,
+      [email]
+    );
+
+    sendConfirmationEmail(email, user.firstname, user.confirmation_code);
+    res.status(204).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------
+//        verify validation code from user account
+// ------------------------------------------
+
+export const checkConfirmationCode = async (req, res, next) => {
+  try {
+    const validationCode = req.body.code;
+    const co = await createPoolConnexion();
+    const [validate] = await co.query(
+      `
+      SELECT confirmation_code FROM users WHERE confirmation_code =?
+    `,
+      [validationCode]
+    );
+    if (validate.length > 0) {
+      await co.query(
+        `
+        UPDATE users 
+          SET confirmed = 1 
+          WHERE users.confirmation_code =?
+      `,
+        [validationCode]
+      );
+      res.status(200).json("code ok");
+    } else {
+      res.status(404).json("invalid confirmation code");
+    }
   } catch (err) {
     next(err);
   }

@@ -7,7 +7,6 @@ import { createPoolConnexion } from "../config/db/connexion.js";
 export const villasBookingsById = async (req, res, next) => {
   try {
     const { id } = req.body;
-    /*AND start_date >= DATE(NOW() - INTERVAL 1 DAY)*/
     const co = await createPoolConnexion();
     const [myDatas] = await co.query(
       `SELECT
@@ -49,7 +48,7 @@ export const profitBookingsDay = async (req, res, next) => {
     const co = await createPoolConnexion();
     const [myWidgets] = await co.query(`
         SELECT
-        total_price FROM reservations WHERE DATE(start_date) = DATE(NOW() - INTERVAL 1 DAY)
+        total_price FROM reservations WHERE DATE(created_at) = DATE(NOW())
     `);
     res.status(200).json(myWidgets);
   } catch (err) {
@@ -185,6 +184,59 @@ export const updateVillasDatas = async (req, res, next) => {
       [name, price, infos, url, id]
     );
     res.status(200).json(updateVilla);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------
+//        Get All Bookings villas data
+// ------------------------------------------
+
+export const getAllBookings = async (req, res, next) => {
+  try {
+    const co = await createPoolConnexion();
+    const [bookings] = await co.query(`
+      SELECT villa_id FROM reservations
+    `);
+    res.status(200).json(bookings);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------
+//        Get profits booking of the week
+// ------------------------------------------
+
+export const getProfits = async (req, res, next) => {
+  try {
+    console.log("profits");
+    const co = await createPoolConnexion();
+
+    const [weekProfits] = await co.query(`
+      SELECT DATE(created_at) as day, SUM(total_price) as profit
+      FROM reservations
+      WHERE created_at >= DATE(NOW()) - INTERVAL 7 DAY
+      GROUP BY day 
+    `);
+    res.status(200).json(weekProfits);
+  } catch (err) {
+    next(err);
+  }
+};
+// ------------------------------------------
+//        Get Users Locations
+// ------------------------------------------
+
+export const getUsersLocations = async (req, res, next) => {
+  try {
+    const co = await createPoolConnexion();
+    const [locations] = await co.query(`
+      SELECT location FROM users 
+      WHERE location IS NOT NULL
+    `);
+    res.status(200).json(locations);
   } catch (err) {
     next(err);
   }

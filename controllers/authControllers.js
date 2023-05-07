@@ -3,14 +3,16 @@ import argon2 from "argon2";
 import { createPoolConnexion } from "../config/db/connexion.js";
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 import { sendConfirmationEmail } from "../utils/sendEmail.js";
-import { v4 as uuidv4 } from "uuid";
+
 // ------------------------------------------
 //       Register new user
 // ------------------------------------------
 
 export const register = async (req, res, next) => {
   const { firstname, lastname, email, password } = req.body;
-  const confirmationCode = uuidv4();
+  const confirmationCode = (
+    Math.floor(Math.random() * 90000) + 10000
+  ).toString();
   try {
     if (firstname && lastname && email && password) {
       const [user] = await createPoolConnexion().query(
@@ -75,6 +77,7 @@ export const login = async (req, res, next) => {
                 secure: true,
                 maxAge: maxAge,
                 httpOnly: true,
+                domain: ".3wa.io",
               })
               .json({
                 id: user[0].id,
@@ -103,7 +106,11 @@ export const login = async (req, res, next) => {
 export const logout = async (req, res) => {
   res
     .status(202)
-    .clearCookie("karibu", { sameSite: "none", secure: true })
+    .clearCookie("karibu", {
+      sameSite: "none",
+      secure: true,
+      domain: ".3wa.io",
+    })
     .send("cookie cleared");
 };
 

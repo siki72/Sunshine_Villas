@@ -4,19 +4,19 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "ali.missoum@3wa.io",
-    pass: "rpyotuwieubvndnk",
+    user: process.env.MAIL_ADDRESS,
+    pass: process.env.MAIL_PASS,
   },
 });
 
 export const sendConfirmationEmail = (email, name, code) => {
   const mailOptions = {
-    from: "ali.missoum@3wa.io",
+    from: process.env.MAIL_ADDRESS,
     to: email,
-    subject: "Confirmation d'inscrption sur notre site",
+    subject: "Registration confirmation on our site",
     html: `<p>Dear ${name},</p>
-    <p>Thank you for registering on our site. Please click on the following link to confirm your registration :</p>
-    <a href="https://alimissoum.app.3wa.io/user/confirmation/${code}">Confirm my registration</a>
+    <p>Thank you for registering on our site. you will find in this email your confirmation code which is used to validate your email address from your account on our site  :</p>
+    ${code}
     <p>Sincerely,,</p>
     <p>Sunchine Villas' team</p>`,
   };

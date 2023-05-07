@@ -5,8 +5,6 @@ import { createConnexion } from "./connexion.js";
     const co = await createConnexion();
     await co.query("DROP TABLE IF EXISTS villas ");
 
-    // { name: max-people: area: des:   }
-
     await co.query(`CREATE TABLE IF NOT EXISTS villas(
             id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
             name VARCHAR(255) NOT NULL,
@@ -22,7 +20,7 @@ import { createConnexion } from "./connexion.js";
     co.query(`INSERT INTO villas (name, max_guests, area, price, infos, url, link)
             
             VALUES
-                 ("1-BED-APARTEMENT", 2, 40, 75, "Modern apartements with a private balcony overlooking the ocean, Perfect for couples.", "https://i.postimg.cc/g066x36v/card2.png", "/1-bed-apartement"),
+                 ("1-BED-APARTEMENT", 2, 40, 75, "Modern apartements with a private balcony overlooking the ocean, Perfect for couples.", "https://i.postimg.cc/5tvXMsdb/ezgif-com-gif-maker.webp", "/1-bed-apartement"),
                  ("2-BED-VILLA", 5, 90, 95,  "Villas designed for perfect and relaxing holidays, The ideal choice for those searching for a tropical home away from home.", "https://i.postimg.cc/SK10XzCf/card1.jpg", "/2-bed-villa"),
                  ("3-BED-VILLA", 7, 160, 125, "Luxurious, tastefully decorated, and spacious villas providing stunning Ocean Views, The perfect base for a memorable vacation.", "https://i.postimg.cc/9FDDzG9J/card3.jpg", "/3-bed-villa")
             
@@ -100,6 +98,17 @@ import { createConnexion } from "./connexion.js";
 
         ) `);
 
+    await co.query("DROP TABLE IF EXISTS  errors_logs");
+
+    await co.query(`CREATE TABLE IF NOT EXISTS errors_logs(
+            id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+            url VARCHAR(255),
+            message TEXT,
+            user INT,
+            stackTrace TEXT,
+            created_at DATETIME NOT NULL DEFAULT NOW(),
+            FOREIGN KEY(user) REFERENCES users(id)
+        ) `);
     await co.close();
   } catch (e) {
     console.error(e.message);

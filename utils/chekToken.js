@@ -8,7 +8,7 @@ export const checkToken = (req, res, next) => {
     const token = req.cookies.karibu;
 
     if (!token) {
-      return res.status(401).json("you are not authenticated!");
+      return res.status(204).json("you are not authenticated!");
     }
 
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, userData) => {
@@ -38,7 +38,6 @@ export const checkToken = (req, res, next) => {
 export const isAdmin = (req, res, next) => {
   try {
     const karibu = req.cookies.karibu;
-
     if (!karibu) {
       return res.status(401).json("you are not authenticated !!");
     }
@@ -47,7 +46,6 @@ export const isAdmin = (req, res, next) => {
       if (err) {
         return res.status(403).json("token is not valid");
       }
-
       const { email, role } = userData;
       console.log(email, role);
       const co = await createPoolConnexion();
