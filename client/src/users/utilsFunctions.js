@@ -10,9 +10,13 @@ async function addUser(user) {
     });
 
     return response;
-  } catch (e) {
-    cnsole.log("errrrrreuer");
-    /*  throw new Error("error ", e); */
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_USER}register`,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 
@@ -27,8 +31,13 @@ async function login(user) {
       body: JSON.stringify(user),
     });
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_USER}login`,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 
@@ -51,8 +60,13 @@ async function handleBookTable(guest) {
       body: JSON.stringify(guest),
     });
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_ADMIN}walima`,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 async function fetchUserDatas(a) {
@@ -65,8 +79,13 @@ async function fetchUserDatas(a) {
       },
     });
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_USER}` + a,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 async function fetchAdminDatas(a) {
@@ -79,8 +98,13 @@ async function fetchAdminDatas(a) {
       },
     });
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_ADMIN}` + a,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 async function deleteDatas(a) {
@@ -96,8 +120,13 @@ async function deleteDatas(a) {
       }
     );
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_ADMIN}users/` + a,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 async function updateUserRole(body) {
@@ -114,8 +143,13 @@ async function updateUserRole(body) {
       }
     );
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_ADMIN}users/role/`,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 
@@ -133,8 +167,13 @@ async function editVillas(datas) {
       }
     );
     return response;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    const errorDatas = {
+      url: `${import.meta.env.VITE_URL_ADMIN}datas/villas`,
+      message: error.message,
+      stackTrace: error.stack,
+    };
+    await sendErrorDatas(errorDatas);
   }
 }
 

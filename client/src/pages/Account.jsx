@@ -13,7 +13,8 @@ import UserProfile from "../components/UserProfile.jsx";
 
 const Account = () => {
   const { pages } = useParams();
-  const { user, ready, setUser, isAdmin, setIsAdmin } = useContext(UserContext);
+  const { user, ready, setUser, isAdmin, setIsAdmin, setMailConfirmed } =
+    useContext(UserContext);
   if (ready && !user) {
     return <Navigate to={"/login"} />;
   }
@@ -28,6 +29,7 @@ const Account = () => {
     }).then(() => {
       setUser(null);
       setIsAdmin(null);
+      setMailConfirmed(null);
     });
   };
 

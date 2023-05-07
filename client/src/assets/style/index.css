@@ -73,6 +73,11 @@
     bottom: 4rem;
   }
 }
+@keyframes emailOk {
+  to {
+    transform: translate(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -2206,11 +2211,6 @@ nav .hidden-nav ul .admin-li {
 .full-screen-container {
   background-color: rgba(122, 27, 27, 0.408);
 }
-@media screen and (min-width: 768px) {
-  .full-screen-container {
-    height: 100vh;
-  }
-}
 .full-screen-container .grid-container {
   background-color: rgb(241, 241, 241);
   padding: 2rem 0.5rem;
@@ -2246,6 +2246,16 @@ nav .hidden-nav ul .admin-li {
 @media screen and (min-width: 1024px) {
   .full-screen-container .login-container .login-title {
     font-size: 2rem;
+  }
+}
+.full-screen-container .login-container .error-email {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: red;
+}
+@media screen and (min-width: 768px) {
+  .full-screen-container .login-container .error-email {
+    font-size: 1.1rem;
   }
 }
 .full-screen-container .login-container .form {
@@ -2409,16 +2419,6 @@ nav .hidden-nav ul .admin-li {
   visibility: visible;
 }
 
-.error-email {
-  font-size: 0.8rem;
-  color: red;
-}
-@media screen and (min-width: 768px) {
-  .error-email {
-    font-size: 1.3rem;
-  }
-}
-
 input:focus {
   border: none;
   outline: none;
@@ -2493,13 +2493,16 @@ input:focus {
 .account-container .container .nav-book button {
   background-color: rgb(255, 255, 255);
 }
-.account-container .container .login {
+.account-container .container .container-bookings {
+  height: 100vh;
+}
+.account-container .container .container-bookings .myBookings {
   margin: 14rem 0 1rem 0;
   background-color: rgb(255, 255, 255);
   border-radius: 0.7rem;
 }
 @media screen and (min-width: 768px) {
-  .account-container .container .login {
+  .account-container .container .container-bookings .myBookings {
     width: 90%;
     margin: 3rem auto;
     font-family: "font-pop200", sans-serif;
@@ -2512,7 +2515,7 @@ input:focus {
   }
 }
 @media screen and (min-width: 1024px) {
-  .account-container .container .login {
+  .account-container .container .container-bookings .myBookings {
     width: 40%;
     margin: 3rem auto;
     font-family: "font-pop200", sans-serif;
@@ -2524,38 +2527,38 @@ input:focus {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 }
-.account-container .container .login .no-bookings {
+.account-container .container .container-bookings .myBookings .no-bookings {
   text-align: center;
   margin: 2rem 0;
   background-color: rgb(255, 255, 255);
 }
-.account-container .container .login .no-bookings h1 {
+.account-container .container .container-bookings .myBookings .no-bookings h1 {
   color: rgb(0, 0, 0);
 }
-.account-container .container .login .no-bookings p {
+.account-container .container .container-bookings .myBookings .no-bookings p {
   font-family: "font-gildas", sans-serif;
   font-size: 1.4rem;
   line-height: 2rem;
   color: rgb(0, 0, 0);
 }
-.account-container .container .login .no-bookings .click {
+.account-container .container .container-bookings .myBookings .no-bookings .click {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
   text-transform: uppercase;
 }
-.account-container .container .login .no-bookings .click span {
+.account-container .container .container-bookings .myBookings .no-bookings .click span {
   margin: 0 0.5rem;
   font-size: 1.3rem;
 }
-.account-container .container .login h1 {
+.account-container .container .container-bookings .myBookings h1 {
   text-align: center;
   font-family: "font-gildas", sans-serif;
   font-size: 2.5rem;
   line-height: 7rem;
   color: rgb(0, 0, 0);
 }
-.account-container .container .login .row {
+.account-container .container .container-bookings .myBookings .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2564,25 +2567,25 @@ input:focus {
   margin: 1rem auto;
   padding: 0 1rem;
 }
-.account-container .container .login .row h2 {
+.account-container .container .container-bookings .myBookings .row h2 {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
   color: rgb(0, 0, 0);
   font-weight: 900;
 }
-.account-container .container .login .row p {
+.account-container .container .container-bookings .myBookings .row p {
   font-family: "font-rob300", sans-serif;
   font-size: 1.2rem;
   color: rgb(0, 0, 0);
   font-weight: 900;
 }
-.account-container .container .login .row label {
+.account-container .container .container-bookings .myBookings .row label {
   font-family: "font-rob300", sans-serif;
   font-size: 1rem;
   color: rgb(0, 0, 0);
   font-weight: 900;
 }
-.account-container .container .login .row input {
+.account-container .container .container-bookings .myBookings .row input {
   margin: 1rem 0;
   outline: none;
   padding: 0.2rem 0.2rem 0.3rem 1rem;
@@ -2592,19 +2595,19 @@ input:focus {
   border-radius: 2rem;
   border: none;
 }
-.account-container .container .login .row input:focus {
+.account-container .container .container-bookings .myBookings .row input:focus {
   outline: none;
   border: none;
 }
-.account-container .container .login h1 {
+.account-container .container .container-bookings .myBookings h1 {
   font-family: "font-gildas", sans-serif;
   font-size: 2.5rem;
   line-height: 7rem;
 }
-.account-container .container .login .send-div {
+.account-container .container .container-bookings .myBookings .send-div {
   text-align: center;
 }
-.account-container .container .login .send-div .send {
+.account-container .container .container-bookings .myBookings .send-div .send {
   margin-top: 40px;
   border: 2px solid #1c1c1c;
   padding: 15px 30px;
@@ -2614,12 +2617,12 @@ input:focus {
   transition: 0.4s;
   margin-bottom: 1rem;
 }
-.account-container .container .login .send-div .send:hover {
+.account-container .container .container-bookings .myBookings .send-div .send:hover {
   animation: up 0.4s ease forwards;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
-.account-container .container .login .send-div .send span {
+.account-container .container .container-bookings .myBookings .send-div .send span {
   margin-left: 15px;
 }
 
@@ -3823,19 +3826,29 @@ input:focus {
 }
 
 .error-container {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.485);
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .error-container {
+    min-height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .error-container {
+    min-height: 100vh;
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.485);
+  }
+}
 .error-container .error-message-container {
-  width: 80%;
+  width: 60%;
   background-color: rgb(255, 255, 255);
   border-radius: 0.5rem;
   box-shadow: 0 0 2px rgb(60, 57, 57);
@@ -3879,44 +3892,70 @@ input:focus {
     padding: 3rem 0;
   }
 }
-.error-container .error-message-container main .server-stratus p {
+.error-container .error-message-container main .message p {
   font-size: 2rem;
   color: rgb(185, 23, 23);
 }
 @media screen and (min-width: 768px) {
-  .error-container .error-message-container main .server-stratus p {
+  .error-container .error-message-container main .message p {
     font-size: 3rem;
   }
 }
-.error-container .error-message-container main h1 {
+.error-container .error-message-container main .message span {
+  color: green;
+}
+@media screen and (min-width: 768px) {
+  .error-container .error-message-container main .message span {
+    font-size: 1.2rem;
+  }
+}
+.error-container .error-message-container main .message h1 {
   font-family: "font-pop400", sans-serif;
   font-size: 1.4rem;
   color: #7a7a7a;
 }
 @media screen and (min-width: 768px) {
-  .error-container .error-message-container main h1 {
+  .error-container .error-message-container main .message h1 {
     font-family: "font-pop-bold", sans-serif;
     font-size: 2rem;
+    margin: 1rem 0;
   }
 }
-.error-container .error-message-container main p {
+.error-container .error-message-container main .message p {
   font-family: "font-rob400", sans-serif;
   font-size: 0.7rem;
-  color: #403f3d;
+  color: rgb(102, 102, 102);
 }
 @media screen and (min-width: 768px) {
-  .error-container .error-message-container main p {
-    font-size: 1rem;
+  .error-container .error-message-container main .message p {
+    font-family: "font-rob400", sans-serif;
+    font-size: 1.1rem;
   }
+}
+.error-container .error-message-container main .message p span {
+  color: darkgreen;
+}
+.error-container .error-message-container main .message .email {
+  border-radius: 1rem;
+  background-color: transparent;
+  color: #403f3d;
+}
+.error-container .error-message-container main .message a {
+  color: green;
+}
+.error-container .error-message-container main .message .email-success {
+  visibility: hidden;
+  color: green;
+}
+.error-container .error-message-container main .message .visible {
+  visibility: visible;
+  color: green;
+  transform: translateX(-200px);
+  animation: emailOk 1s forwards;
 }
 .error-container .error-message-container .close-button {
   text-align: center;
   padding: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .error-container .error-message-container .close-button {
-    padding: 2rem 0;
-  }
 }
 .error-container .error-message-container .close-button .try {
   border: 1px solid rgb(0, 0, 0);
@@ -3933,7 +3972,7 @@ input:focus {
 .pending {
   position: absolute;
   width: 100vw;
-  min-height: 100%;
+  min-height: 100vh;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.485);
@@ -3995,4 +4034,198 @@ input:focus {
   height: 30rem;
   max-width: 95%;
   margin: 2rem auto;
+}
+
+.profile-container .confirmation-code {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+}
+.profile-container .confirmation-code h2 {
+  text-transform: uppercase;
+  font-family: "font-rob300", sans-serif;
+  font-size: 1.3rem;
+  color: #878787;
+}
+.profile-container .confirmation-code input {
+  outline: none;
+  border-radius: 1rem;
+  width: 80%;
+  margin: 1rem auto;
+  background-color: rgb(66, 59, 57);
+  color: rgb(255, 255, 255);
+}
+.profile-container .confirmation-code input::-moz-placeholder {
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+}
+.profile-container .confirmation-code input::placeholder {
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+}
+.profile-container .confirmation-code .send-code {
+  padding: 0.5rem 2rem;
+  max-width: 40%;
+  background-color: #7a7a7a;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.profile-container .confirmation-code .send-success {
+  padding: 0.5rem 2rem;
+  max-width: 40%;
+  background-color: rgb(30, 108, 30);
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.profile-container .login {
+  margin: 14rem 0 1rem 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.7rem;
+}
+@media screen and (min-width: 768px) {
+  .profile-container .login {
+    width: 90%;
+    margin: 3rem auto;
+    font-family: "font-pop200", sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.875rem;
+    color: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .profile-container .login {
+    width: 40%;
+    margin: 3rem auto;
+    font-family: "font-pop200", sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.875rem;
+    color: #1c1c1c;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+.profile-container .login .no-bookings {
+  text-align: center;
+  margin: 2rem 0;
+  background-color: rgb(255, 255, 255);
+}
+.profile-container .login .no-bookings h1 {
+  color: rgb(0, 0, 0);
+}
+.profile-container .login .no-bookings p {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: rgb(0, 0, 0);
+}
+.profile-container .login .no-bookings .click {
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+.profile-container .login .no-bookings .click span {
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+}
+.profile-container .login h1 {
+  text-align: center;
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.5rem;
+  line-height: 7rem;
+  color: rgb(0, 0, 0);
+}
+.profile-container .login .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(252, 252, 252);
+  width: 90%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+.profile-container .login .row h2 {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+}
+.profile-container .login .row p {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+}
+.profile-container .login .row label {
+  font-family: "font-rob300", sans-serif;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+}
+.profile-container .login .row input {
+  margin: 1rem 0;
+  outline: none;
+  padding: 0.2rem 0.2rem 0.3rem 1rem;
+  width: 60%;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  border: none;
+}
+.profile-container .login .row input:focus {
+  outline: none;
+  border: none;
+}
+.profile-container .login h1 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2.5rem;
+  line-height: 7rem;
+}
+.profile-container .login .send-div {
+  text-align: center;
+}
+.profile-container .login .send-div .send {
+  margin-top: 40px;
+  border: 2px solid #1c1c1c;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-family: "font-rob300", sans-serif;
+  line-height: 1rem;
+  transition: 0.4s;
+  margin-bottom: 1rem;
+}
+.profile-container .login .send-div .send:hover {
+  animation: up 0.4s ease forwards;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.profile-container .login .send-div .send span {
+  margin-left: 15px;
+}
+.profile-container .success-div {
+  padding: 2rem;
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+}
+.profile-container .success-div p {
+  font-family: "font-gildas", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: green;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: rgb(255, 255, 255);
+}
+@media screen and (min-width: 1024px) {
+  .profile-container .success-div p {
+    width: 40%;
+  }
 }/*# sourceMappingURL=index.css.map */

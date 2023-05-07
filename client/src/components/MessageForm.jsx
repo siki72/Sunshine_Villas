@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
-import ReactModal from "react-modal";
 import utils from "../users/utilsFunctions.js";
 
 const MessageForm = () => {

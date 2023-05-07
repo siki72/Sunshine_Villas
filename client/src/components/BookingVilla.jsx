@@ -17,12 +17,20 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { Alert } from "flowbite-react";
+import { set } from "lodash";
 const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
 };
-const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
+const BookingVilla = ({
+  slug,
+  id,
+  setIdReady,
+  setIsReserved,
+  setShowPics,
+  setError,
+}) => {
   const [villaInfos, setVillaInfos] = useState([]);
   const { user, setMailConfirmed, mailConfirmed } = useContext(UserContext);
   const [jsonData, setJsonData] = useState([]);
@@ -80,45 +88,51 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
   }, [id]);
   const handleBooking = async () => {
     if (checkIn < checkOut) {
-      setLoading(true);
-      const reservationData = {
-        slug,
-        checkIn,
-        checkOut,
-        villaId: id,
-        userId: user.id,
-        nights: numberOfnights,
-        total: numberOfnights * villaInfos.price,
-        selectedDates: JSON.stringify(selectedDates),
-      };
-      try {
-        const bookVilla = await fetch(
-          `${import.meta.env.VITE_URL_VILLAS_BOOKING}`,
-          {
-            method: "POST",
-            credentials: "include",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify(reservationData),
-          }
-        );
-
-        if (bookVilla.status === 200) {
-          const data = await bookVilla.json();
-          setLoading(false);
-          setIsReserved(true);
-        } else {
-          setLoading(false);
-          window.location.reload(false);
-        }
-      } catch (error) {
-        const errorDatas = {
-          url: import.meta.env.VITE_URL_VILLAS_BOOKING,
-          message: error.message,
-          stackTrace: error.stack,
+      if (!user) {
+        setError(true);
+      } else if (user && !mailConfirmed) {
+        setError(true);
+      } else {
+        setLoading(true);
+        const reservationData = {
+          slug,
+          checkIn,
+          checkOut,
+          villaId: id,
+          userId: user.id,
+          nights: numberOfnights,
+          total: numberOfnights * villaInfos.price,
+          selectedDates: JSON.stringify(selectedDates),
         };
-        await utils.sendErrorDatas(errorDatas);
+        try {
+          const bookVilla = await fetch(
+            `${import.meta.env.VITE_URL_VILLAS_BOOKING}`,
+            {
+              method: "POST",
+              credentials: "include",
+              headers: {
+                "Content-type": "application/json",
+              },
+              body: JSON.stringify(reservationData),
+            }
+          );
+
+          if (bookVilla.status === 200) {
+            const data = await bookVilla.json();
+            setLoading(false);
+            setIsReserved(true);
+          } else {
+            setLoading(false);
+            window.location.reload(false);
+          }
+        } catch (error) {
+          const errorDatas = {
+            url: import.meta.env.VITE_URL_VILLAS_BOOKING,
+            message: error.message,
+            stackTrace: error.stack,
+          };
+          await utils.sendErrorDatas(errorDatas);
+        }
       }
     } else {
       setCheckOutMissing(true);
@@ -216,65 +230,44 @@ const BookingVilla = ({ slug, id, setIdReady, setIsReserved, setShowPics }) => {
               </div>
 
               <div className="date">
-                {user ? (
-                  mailConfirmed ? (
-                    <div onClick={() => setCheckOutMissing(false)}>
-                      <DateRange
-                        months={1}
-                        editableDateInputs={true}
-                        onChange={(item) => setDate([item.selection])}
-                        moveRangeOnFirstSelection={false}
-                        minDate={new Date()}
-                        disabledDates={jsonData.map((a) => parseISO(a))}
-                        ranges={date}
-                        className="date"
-                      />
-                    </div>
-                  ) : (
-                    <p>Please confirm your email address to book a villa. </p>
-                  )
-                ) : (
-                  <div className="link">
-                    <Link to={""}>
-                      <p>Authentifiaction required ,, Please login</p>
-                    </Link>
-                  </div>
-                )}
+                <div onClick={() => setCheckOutMissing(false)}>
+                  <DateRange
+                    months={1}
+                    editableDateInputs={true}
+                    onChange={(item) => setDate([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    minDate={new Date()}
+                    disabledDates={jsonData.map((a) => parseISO(a))}
+                    ranges={date}
+                    className="date"
+                  />
+                </div>
               </div>
             </div>
-            {user ? (
-              mailConfirmed ? (
-                <div className="button-book">
-                  {loading ? (
-                    <BarLoader
-                      color="#8381a5"
-                      loading={loading}
-                      cssOverride={override}
-                      size={300}
-                      aria-label="Loading Spinner"
-                      data-testid="loader"
-                    />
-                  ) : (
-                    <button id="button" onClick={handleBooking}>
-                      {user ? "Book now   " : "Login"}
-                      {numberOfnights > 0 ? (
-                        <span> : {numberOfnights * villaInfos.price} €</span>
-                      ) : (
-                        ""
-                      )}
-                    </button>
-                  )}
-                </div>
+
+            <div className="button-book">
+              {loading ? (
+                <BarLoader
+                  color="#8381a5"
+                  loading={loading}
+                  cssOverride={override}
+                  size={300}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
               ) : (
-                ""
-              )
-            ) : (
-              <div className="button-book">
-                <Link to={"/login"}>
-                  <button id="button">{user ? "Book now" : "Login"}</button>
-                </Link>
-              </div>
-            )}
+                <button id="button" onClick={handleBooking}>
+                  {numberOfnights > 0 ? (
+                    <span>
+                      {" "}
+                      Total price: {numberOfnights * villaInfos.price} €
+                    </span>
+                  ) : (
+                    <span> Total price: €</span>
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

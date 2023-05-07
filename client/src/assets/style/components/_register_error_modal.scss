@@ -1,15 +1,22 @@
 .error-container {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.485);
+  @media screen and (min-width: $breakPoint-Tablet) {
+    min-height: 100vh;
+  }
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  @media screen and (min-width: $breakPoint-Tablet) {
+    min-height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.485);
+  }
   @include flex;
   z-index: 1;
   .error-message-container {
-    width: 80%;
+    width: 60%;
     background-color: $color1;
     border-radius: 0.5rem;
+
     box-shadow: 0 0 2px rgb(60, 57, 57);
     .modal-header {
       position: relative;
@@ -44,6 +51,9 @@
         @media screen and (min-width: $breakPoint-Tablet) {
           padding: 3rem 0;
         }
+      }
+
+      .message {
         p {
           @media screen and (min-width: $breakPoint-Tablet) {
             font-size: 3rem;
@@ -51,29 +61,56 @@
           font-size: 2rem;
           color: rgb(185, 23, 23);
         }
-      }
-      h1 {
-        @media screen and (min-width: $breakPoint-Tablet) {
-          font-family: $pop7;
-          font-size: 2rem;
+        span {
+          @media screen and (min-width: $breakPoint-Tablet) {
+            font-size: 1.2rem;
+          }
+          color: green;
         }
-        font-family: $pop4;
-        font-size: 1.4rem;
-        color: $color7;
-      }
-      p {
-        @media screen and (min-width: $breakPoint-Tablet) {
-          font-size: 1rem;
+        h1 {
+          @media screen and (min-width: $breakPoint-Tablet) {
+            font-family: $pop7;
+            font-size: 2rem;
+            margin: 1rem 0;
+          }
+          font-family: $pop4;
+          font-size: 1.4rem;
+          color: $color7;
         }
-        font-family: $rob4;
-        font-size: 0.7rem;
-        color: $color6;
+        p {
+          @media screen and (min-width: $breakPoint-Tablet) {
+            font-family: $rob4;
+            font-size: 1.1rem;
+          }
+          font-family: $rob4;
+          font-size: 0.7rem;
+          color: $color3;
+          span {
+            color: darkgreen;
+          }
+        }
+
+        .email {
+          border-radius: 1rem;
+          background-color: transparent;
+          color: $color6;
+        }
+        a {
+          color: green;
+        }
+        .email-success {
+          visibility: hidden;
+          color: green;
+        }
+        .visible {
+          visibility: visible;
+          color: green;
+          transform: translateX(-200px);
+          animation: emailOk 1s forwards;
+        }
       }
     }
     .close-button {
-      @media screen and (min-width: $breakPoint-Tablet) {
-        padding: 2rem 0;
-      }
       text-align: center;
       padding: 1rem;
 

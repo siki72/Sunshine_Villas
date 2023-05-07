@@ -44,11 +44,10 @@ const MyBookings = () => {
 
   return (
     <div className="container-bookings">
-      <ToastContainer />
       {!myBookings.length ? (
-        <div className="login">
+        <div className="myBookings">
           <div className="no-bookings">
-            <h1>Ooops ! {user.name} ..</h1>
+            <h1>Ooops ! {user?.name} ..</h1>
             <p>
               you have no reservation for the moment, but you can go and see our
               villas by following this link

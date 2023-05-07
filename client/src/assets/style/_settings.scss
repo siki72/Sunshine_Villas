@@ -127,6 +127,12 @@ $color9: rgb(28, 28, 28);
     bottom: 4rem;
   }
 }
+
+@keyframes emailOk {
+  to {
+    transform: translate(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;

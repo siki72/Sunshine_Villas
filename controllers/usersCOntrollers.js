@@ -8,7 +8,6 @@ const maxAge = 3 * 24 * 60 * 60 * 1000;
 // ------------------------------------------
 export const getProfile = (req, res, next) => {
   try {
-    console.log("called");
     const { karibu } = req.cookies; // ---> on récupére le cookie par le nom qu'on lui attribué
     if (karibu) {
       jwt.verify(

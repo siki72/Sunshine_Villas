@@ -26,8 +26,8 @@ const RegisterModal = ({ setRedirect, showToast, firstNameRef }) => {
             </span>{" "}
             Your registration was successful. To complete the registration
             process, please check your email inbox for a confirmation email from
-            us. Click on the confirmation link in the email to verify your email
-            address and activate your account."
+            us. Please enter your confirmation code in your customer area to
+            verify your email address and activate your account."
           </p>
         </div>
       </Modal.Body>

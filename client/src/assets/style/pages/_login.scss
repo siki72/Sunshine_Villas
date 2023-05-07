@@ -1,6 +1,5 @@
 .full-screen-container {
   @media screen and (min-width: $breakPoint-Tablet) {
-    height: 100vh;
   }
 
   background-color: rgba(122, 27, 27, 0.408);
@@ -36,6 +35,14 @@
       text-align: center;
       font-size: 1rem;
       font-weight: normal;
+    }
+    .error-email {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1.1rem;
+      }
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: red;
     }
     .form {
       input[type="password"] {
@@ -169,14 +176,6 @@
 }
 .invalidField {
   visibility: visible;
-}
-
-.error-email {
-  @media screen and (min-width: $breakPoint-Tablet) {
-    font-size: 1.3rem;
-  }
-  font-size: 0.8rem;
-  color: red;
 }
 
 input:focus {

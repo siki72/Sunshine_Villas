@@ -14,8 +14,7 @@ const Login = () => {
   const [falsePassword, setFalsePassword] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(false);
-  const { user, setUser, setReady, setIsAdmin, setMailConfirmed } =
-    useContext(UserContext);
+  const { user, setUser, setReady, setIsAdmin } = useContext(UserContext);
 
   const handeleLogin = async (e) => {
     setPending(true);
