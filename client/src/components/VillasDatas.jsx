@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import utils from "../users/utilsFunctions.js";
 const VillasDatas = ({ id }) => {
-  const data = useSelector((state) => state.villa_1_book.book); // ramener la da
+  const data = useSelector((state) => state.villa_1_book.book);
   const dispatch = useDispatch();
   const [ready, setReady] = useState(false);
   const actuelDate = new Date();
@@ -90,7 +90,6 @@ const VillasDatas = ({ id }) => {
             <th>Nights</th>
             <th>date of reservation</th>
             <th>Total</th>
-            <th>status</th>
             <th>delete</th>
           </tr>
         </thead>
@@ -124,7 +123,6 @@ const VillasDatas = ({ id }) => {
                 <td>{row.nights}</td>
                 <td>{format(new Date(row.created_at), "dd/MM/yyyy")}</td>
                 <td>{row.total_price} euros</td>
-                <td>PENDING</td>
                 <td
                   className="dlt-td"
                   onClick={() => {

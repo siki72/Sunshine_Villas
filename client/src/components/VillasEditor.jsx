@@ -1,8 +1,7 @@
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { tr } from "date-fns/locale";
-import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { faPen, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import VillaEditorForm from "./VillaEditorForm.jsx";
 
 const VillasEditor = () => {

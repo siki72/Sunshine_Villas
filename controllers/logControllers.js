@@ -1,7 +1,6 @@
 import { createPoolConnexion } from "../config/db/connexion.js";
 
 export const logRegister = async (req, res, next) => {
-  console.log(req.body);
   try {
     const { url, message, user, stackTrace } = req.body;
     const co = await createPoolConnexion();

@@ -4,11 +4,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ConfirmationRequired = ({ user, setError }) => {
-  const [pending, setPending] = useState(false);
   const responseRef = useRef();
   const sendEmail = async () => {
     try {
-      setPending(true);
       const response = await fetch(import.meta.env.VITE_URL_USER_EMAIL, {
         method: "POST",
         credentials: "include",

@@ -7,7 +7,6 @@ import {
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 import utils from "../users/utilsFunctions.js";
-
 import { useEffect } from "react";
 import ChartsVillas from "./ChartsVillas.jsx";
 
@@ -30,7 +29,7 @@ const Dashboard = () => {
   }, [profits]);
 
   useEffect(() => {
-    const handleGetReservation = async () => {
+    const getWalimaReservation = async () => {
       try {
         const response = await fetch(
           `${import.meta.env.VITE_URL_ADMIN}walima`,
@@ -53,16 +52,16 @@ const Dashboard = () => {
         await utils.sendErrorDatas(errorDatas);
       }
     };
-    handleGetReservation();
+    getWalimaReservation();
   }, []);
   useEffect(() => {
-    const handleGetReservation = async () => {
+    const getAllUsers = async () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_URL_ADMIN}users`, {
           credentials: "include",
         });
         if (!response.ok) {
-          throw new Error("unable to fetch table's reservation");
+          throw new Error("unable to fetch users from DB");
         } else {
           const data = await response.json();
           setGuests(data);
@@ -76,7 +75,7 @@ const Dashboard = () => {
         await utils.sendErrorDatas(errorDatas);
       }
     };
-    handleGetReservation();
+    getAllUsers();
   }, []);
 
   return (

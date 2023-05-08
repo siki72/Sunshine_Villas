@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import utils from "../users/utilsFunctions.js";
 import { UserContext } from "../users/UserContext.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,7 +50,6 @@ const Login = () => {
     }
   };
   useEffect(() => {
-    // redirect user
     if (user && location.pathname === "/login") {
       setRedirectTo(true);
     }

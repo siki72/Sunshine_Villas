@@ -1,6 +1,5 @@
-import { faCircle, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Carousel } from "flowbite-react";
 import React from "react";
 
 const VillaOnePics = ({ setShowPics, slug }) => {

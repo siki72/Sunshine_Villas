@@ -5,7 +5,6 @@ import Swiper_img_2 from "../components/swiper/imgs/Swiper_img_2.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../users/UserContext.jsx";
-import { Link } from "react-router-dom";
 import BarLoader from "react-spinners/BarLoader";
 import { DateRange } from "react-date-range";
 import utils from "../users/utilsFunctions.js";
@@ -17,7 +16,6 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { Alert } from "flowbite-react";
-import { set } from "lodash";
 const override = {
   display: "block",
   margin: "0 auto",
@@ -48,10 +46,12 @@ const BookingVilla = ({
   const checkOut = date[0].endDate;
   let numberOfnights = "";
 
+  // Get number of nights of the booking
   if (checkIn && checkOut) {
     numberOfnights = differenceInCalendarDays(checkOut, checkIn);
   }
 
+  // Get dates between chekIn and checkOut
   const selectedDates = date.flatMap((range) =>
     eachDayOfInterval({
       start: range.startDate.getTime(),
@@ -163,7 +163,6 @@ const BookingVilla = ({
         .then((resp) => resp.json(resp))
         .then((data) => {
           const t = data.flatMap((item) => JSON.parse(item.selected_dates));
-
           setJsonData(t);
         });
     } catch (error) {
@@ -175,23 +174,6 @@ const BookingVilla = ({
       utils.sendErrorDatas(errorDatas);
     }
   }, [id]);
-
-  const handleShowPics = (slug) => {
-    switch (slug) {
-      case "1-BED-APARTEMENT":
-        setShowPics(true);
-        break;
-      case "2-BED-VILLA":
-        setShowPics(true);
-        break;
-      case "3-BED-VILLA":
-        setShowPics(true);
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <div className="choose-villas">
       {checkOutMissing && (

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import utils from "../users/utilsFunctions.js";
 const UpdateUser = ({ data, edit }) => {

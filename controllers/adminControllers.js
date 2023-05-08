@@ -211,7 +211,6 @@ export const getAllBookings = async (req, res, next) => {
 
 export const getProfits = async (req, res, next) => {
   try {
-    console.log("profits");
     const co = await createPoolConnexion();
 
     const [weekProfits] = await co.query(`

@@ -7,7 +7,6 @@ import {
   faDatabase,
   faHouseUser,
   faUsers,
-  faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 import VillasDatas from "../components/VillasDatas.jsx";
 import Dashboard from "../components/Dashboard.jsx";
@@ -25,7 +24,6 @@ const Admin = ({ logout }) => {
   };
 
   useEffect(() => {
-    // Rediriger l'utilisateur vers la page d'accueil s'il est connecté et qu'il accède à la page de connexion
     if (ready && user.role === "guest") {
       setRedirect(true);
     }
