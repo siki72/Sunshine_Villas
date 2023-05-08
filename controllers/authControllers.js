@@ -77,7 +77,6 @@ export const login = async (req, res, next) => {
                 secure: true,
                 maxAge: maxAge,
                 httpOnly: true,
-                domain: ".3wa.io",
               })
               .json({
                 id: user[0].id,
@@ -106,11 +105,7 @@ export const login = async (req, res, next) => {
 export const logout = async (req, res) => {
   res
     .status(202)
-    .clearCookie("karibu", {
-      sameSite: "none",
-      secure: true,
-      domain: ".3wa.io",
-    })
+    .clearCookie("karibu", { sameSite: "none", secure: true, httpOnly: true })
     .send("cookie cleared");
 };
 
