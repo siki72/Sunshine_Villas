@@ -4,7 +4,7 @@
     margin: 2rem auto;
   }
   max-width: 90%;
-
+  min-height: 100vh;
   .reservation-grid {
     @media screen and (min-width: $breakPoint-Tablet) {
       grid-template-columns: 30% 70%;

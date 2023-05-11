@@ -14,10 +14,10 @@ const RegisterErrorModal = ({ setError }) => {
         <main>
           <div className="server-stratus">
             <p>Server Error</p>
-            <p>500</p>
+            <p>...</p>
           </div>
           <div>
-            <h1>Internal Server Error</h1>
+            <h1>Server</h1>
             <p>Oops, something went wrong, please try again later</p>
           </div>
         </main>

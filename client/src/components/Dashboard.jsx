@@ -108,8 +108,8 @@ const Dashboard = () => {
         <div className="widget villa">
           <div className="items">
             <span></span>
-            <h3>{profits.length} / 3 </h3>
-            <h5>villas are booked today</h5>
+            <h3>{profits.length}</h3>
+            <h5>Booking today</h5>
           </div>
           <div className="icon">
             <FontAwesomeIcon icon={faHotel} />

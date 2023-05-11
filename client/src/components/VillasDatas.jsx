@@ -75,6 +75,7 @@ const VillasDatas = ({ id }) => {
       await utils.sendErrorDatas(errorDatas);
     }
   };
+  console.log(data);
 
   return (
     <div className="data">

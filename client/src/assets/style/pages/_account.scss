@@ -1,5 +1,6 @@
 .account-container {
   max-width: 100%;
+  min-height: 100vh;
   .container {
     justify-content: space-between;
     max-width: 100%;
@@ -61,7 +62,7 @@
       }
     }
     .container-bookings {
-      height: 100vh;
+      min-height: 100vh;
       .myBookings {
         margin: 14rem 0 1rem 0;
         background-color: $color1;

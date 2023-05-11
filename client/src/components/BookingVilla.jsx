@@ -16,25 +16,18 @@ import {
   eachDayOfInterval,
 } from "date-fns";
 import { Alert } from "flowbite-react";
+import { useSelector } from "react-redux";
 const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
 };
-const BookingVilla = ({
-  slug,
-  id,
-  setIdReady,
-  setIsReserved,
-  setShowPics,
-  setError,
-}) => {
+const BookingVilla = ({ slug, id, setIdReady, setShowPics, setError }) => {
   const [villaInfos, setVillaInfos] = useState([]);
   const { user, setMailConfirmed, mailConfirmed } = useContext(UserContext);
   const [jsonData, setJsonData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [checkOutMissing, setCheckOutMissing] = useState(false);
-
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -58,7 +51,6 @@ const BookingVilla = ({
       end: range.endDate.getTime(),
     })
   );
-
   useEffect(() => {
     window.scrollTo({ top: 0 });
     const fetchDatas = async () => {
@@ -118,9 +110,9 @@ const BookingVilla = ({
           );
 
           if (bookVilla.status === 200) {
-            const data = await bookVilla.json();
             setLoading(false);
-            setIsReserved(true);
+            const data = await bookVilla.json();
+            window.location.href = data.url;
           } else {
             setLoading(false);
             window.location.reload(false);
@@ -226,7 +218,6 @@ const BookingVilla = ({
                 </div>
               </div>
             </div>
-
             <div className="button-book">
               {loading ? (
                 <BarLoader

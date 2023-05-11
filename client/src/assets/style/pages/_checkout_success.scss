@@ -1,0 +1,41 @@
+.success-container {
+  @media screen and (min-width: $breakPoint-Tablet) {
+    @include flex;
+    height: 100vh;
+  }
+  .container {
+    @media screen and (min-width: $breakPoint-Tablet) {
+    }
+    text-align: center;
+    > * {
+      margin: 1rem 0;
+    }
+    h1 {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 3rem;
+      }
+      font-family: $gildas;
+      font-size: 2rem;
+      line-height: 4rem;
+      color: green;
+    }
+    h2 {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1.4rem;
+      }
+      color: darkgoldenrod;
+      font-size: 1rem;
+    }
+    .icon-check {
+      color: green;
+      font-size: 3rem;
+    }
+    .btn-check {
+      @media screen and (min-width: $breakPoint-Tablet) {
+        font-size: 1rem;
+      }
+      border-radius: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+}

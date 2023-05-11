@@ -13,7 +13,7 @@ import ContactPage from "../../pages/ContactPage.jsx";
 import Walima from "../../pages/Walima.jsx";
 import Errorpage from "../../pages/Errorpage";
 import Bookings from "../../pages/Bookings.jsx";
-import ConfirmationPage from "../../pages/ConfirmationPage.jsx";
+import CheckOutSuccess from "../CheckOutSuccess.jsx";
 
 const index = () => {
   return (
@@ -32,10 +32,7 @@ const index = () => {
           <Route path="/account/" element={<Account />} />
           <Route path="/account/:pages" element={<Account />} />
           <Route path="/account/dashboard/:pages" element={<Account />} />
-          <Route
-            path="/user/confirmation/:confirmation"
-            element={<ConfirmationPage />}
-          />
+          <Route path="/checkout-succes" element={<CheckOutSuccess />} />
           <Route path="*" element={<Errorpage />} />
         </Routes>
         <Footer />

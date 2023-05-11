@@ -2426,6 +2426,7 @@ input:focus {
 
 .account-container {
   max-width: 100%;
+  min-height: 100vh;
 }
 .account-container .container {
   justify-content: space-between;
@@ -2494,7 +2495,7 @@ input:focus {
   background-color: rgb(255, 255, 255);
 }
 .account-container .container .container-bookings {
-  height: 100vh;
+  min-height: 100vh;
 }
 .account-container .container .container-bookings .myBookings {
   margin: 14rem 0 1rem 0;
@@ -2629,6 +2630,7 @@ input:focus {
 .container-bookings {
   margin: 15rem auto 0;
   max-width: 90%;
+  min-height: 100vh;
 }
 @media screen and (min-width: 768px) {
   .container-bookings {
@@ -4227,5 +4229,53 @@ input:focus {
 @media screen and (min-width: 1024px) {
   .profile-container .success-div p {
     width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
+.success-container .container {
+  text-align: center;
+}
+.success-container .container > * {
+  margin: 1rem 0;
+}
+.success-container .container h1 {
+  font-family: "font-gildas", sans-serif;
+  font-size: 2rem;
+  line-height: 4rem;
+  color: green;
+}
+@media screen and (min-width: 768px) {
+  .success-container .container h1 {
+    font-size: 3rem;
+  }
+}
+.success-container .container h2 {
+  color: darkgoldenrod;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .success-container .container h2 {
+    font-size: 1.4rem;
+  }
+}
+.success-container .container .icon-check {
+  color: green;
+  font-size: 3rem;
+}
+.success-container .container .btn-check {
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .success-container .container .btn-check {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=index.css.map */
