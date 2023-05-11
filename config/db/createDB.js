@@ -61,7 +61,7 @@ import { createConnexion } from "./connexion.js";
             phone VARCHAR(255),
             location VARCHAR(255),
             reservations_count INT,
-            profits INT,
+            profits INT NOT NULL DEFAULT "0",
             confirmation_code VARCHAR(255),
             confirmed BOOLEAN NOT NULL DEFAULT FALSE,
             created_at DATETIME NOT NULL DEFAULT NOW()
@@ -78,7 +78,7 @@ import { createConnexion } from "./connexion.js";
             end_date VARCHAR(255) NOT NULL,
             nights INT NOT NULL,
             total_price INT NOT NULL,
-            selected_dates VARCHAR(255) NOT NULL,
+            selected_dates LONGTEXT NOT NULL,
             created_at DATETIME NOT NULL DEFAULT NOW(),
             FOREIGN KEY(guest_id) REFERENCES users(id),
             FOREIGN KEY(villa_id) REFERENCES villas(id)

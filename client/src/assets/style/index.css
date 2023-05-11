@@ -2427,6 +2427,7 @@ input:focus {
 .account-container {
   max-width: 100%;
   min-height: 100vh;
+  background-color: rgb(0, 0, 0);
 }
 .account-container .container {
   justify-content: space-between;

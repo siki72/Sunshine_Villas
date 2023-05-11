@@ -110,9 +110,9 @@ const BookingVilla = ({ slug, id, setIdReady, setShowPics, setError }) => {
           );
 
           if (bookVilla.status === 200) {
-            setLoading(false);
             const data = await bookVilla.json();
             window.location.href = data.url;
+            setLoading(false);
           } else {
             setLoading(false);
             window.location.reload(false);

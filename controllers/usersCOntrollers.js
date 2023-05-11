@@ -129,7 +129,7 @@ export const reSendMailCOnfirmation = async (req, res, next) => {
       [email]
     );
 
-    sendConfirmationEmail(email, user.firstname, user.confirmation_code);
+    await sendConfirmationEmail(email, user.firstname, user.confirmation_code);
     res.status(204).end();
   } catch (err) {
     next(err);

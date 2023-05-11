@@ -1,6 +1,9 @@
 import { createPoolConnexion } from "../config/db/connexion.js";
 import jwt from "jsonwebtoken";
-
+import dotenv from "dotenv";
+import Stripe from "stripe";
+dotenv.config();
+const stripe = Stripe(process.env.STRIPE_KEY);
 // ------------------------------------------
 //       GET  all villas datas to implement the Store.
 // ------------------------------------------
@@ -41,34 +44,53 @@ export const getVillasDataById = async (req, res, next) => {
 
 export const newBooking = async (req, res, next) => {
   try {
-    const { checkIn, checkOut, villaId, userId, nights, total, selectedDates } =
-      req.body;
+    const {
+      slug,
+      checkIn,
+      checkOut,
+      villaId,
+      userId,
+      nights,
+      total,
+      selectedDates,
+    } = req.body;
     const co = await createPoolConnexion();
-    const [reservation] = await co.query(
-      ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price, selected_dates) VALUES(?, ?, ?, ?, ?, ?, ?)`,
-      [userId, villaId, checkIn, checkOut, nights, total, selectedDates]
+    const [villaImg] = await co.query(
+      ` SELECT url, infos FROM villas WHERE id = ?`,
+      [villaId]
     );
-    const [price] = await co.query(
-      `SELECT profits FROM users WHERE id = ? FOR UPDATE`,
-      [userId]
-    );
-    const newTotal = price[0].profits + total;
-    await co.query(`UPDATE users SET profits = ? WHERE id = ?`, [
-      newTotal,
-      userId,
-    ]);
 
-    const [user] = await co.query(
-      `SELECT reservations_count FROM users WHERE id = ? FOR UPDATE`,
-      [userId]
-    );
-    const reservationsCount = user[0].reservations_count + 1;
-    // update count of reservations
-    await co.query(`UPDATE users SET reservations_count = ? WHERE id = ?`, [
-      reservationsCount,
-      userId,
-    ]);
-    res.status(200).json(reservation);
+    // create payement sessions
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price_data: {
+            currency: "eur",
+            product_data: {
+              name: "villas " + slug,
+              images: [villaImg[0].url],
+              description: villaImg[0].infos,
+            },
+            unit_amount: total * 100,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      success_url: `${process.env.CLIENT_URL}/checkout-succes`,
+      cancel_url: `${process.env.CLIENT_URL}/villas/${slug}/${villaId}`,
+      // save all bokking data of our guest in metadata to implement db one payement success
+      metadata: {
+        checkIn,
+        checkOut,
+        villaId,
+        userId,
+        nights,
+        total,
+        selectedDates,
+      },
+    });
+    res.status(200).send({ url: session.url });
   } catch (err) {
     next(err);
   }
@@ -95,7 +117,8 @@ export const allUserBookings = async (req, res, next) => {
      FROM reservations
      INNER JOIN users ON reservations.guest_id = users.id 
      INNER JOIN villas ON reservations.villa_id = villas.id 
-     WHERE guest_id = ?`,
+     WHERE guest_id = ?
+     ORDER BY reservations.created_at DESC`,
           [id]
         );
         res.status(200).json(myBbookings);
@@ -120,4 +143,48 @@ export const availableDates = async (req, res) => {
     [idVilla]
   );
   res.json(gresyCases);
+};
+
+// ------------------------------------------
+//       payment of the booking && implement DB
+// ------------------------------------------
+
+export const payment = async (req, res, next) => {
+  try {
+    const { metadata, payment_status } = req.body.data.object;
+    const { checkIn, checkOut, villaId, userId, nights, total, selectedDates } =
+      metadata;
+    if (payment_status === "paid") {
+      const co = await createPoolConnexion();
+      const [reservation] = await co.query(
+        ` INSERT INTO reservations (guest_id, villa_id, start_date, end_date, nights, total_price, selected_dates) VALUES(?, ?, ?, ?, ?, ?, ?)`,
+        [userId, villaId, checkIn, checkOut, nights, total, selectedDates]
+      );
+      const [price] = await co.query(
+        `SELECT profits FROM users WHERE id = ? FOR UPDATE`,
+        [userId]
+      );
+      const newTotal = parseInt(price[0].profits) + parseInt(total);
+      await co.query(`UPDATE users SET profits = ? WHERE id = ?`, [
+        newTotal,
+        userId,
+      ]);
+
+      const [user] = await co.query(
+        `SELECT reservations_count FROM users WHERE id = ? FOR UPDATE`,
+        [userId]
+      );
+      const reservationsCount = user[0].reservations_count + 1;
+      // update count of reservations
+      await co.query(`UPDATE users SET reservations_count = ? WHERE id = ?`, [
+        reservationsCount,
+        userId,
+      ]);
+      res.status(201).json("payement successful");
+    } else {
+      res.status(200).json("payement failded");
+    }
+  } catch (err) {
+    next(err);
+  }
 };
