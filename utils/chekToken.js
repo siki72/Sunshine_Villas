@@ -45,7 +45,6 @@ export const isAdmin = (req, res, next) => {
         return res.status(403).json("token is not valid");
       }
       const { email, role } = userData;
-      console.log(email, role);
       const co = await createPoolConnexion();
       const [admin] = await co.query(
         `SELECT email, role FROM users WHERE users.email = ?`,

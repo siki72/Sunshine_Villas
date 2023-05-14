@@ -7,10 +7,13 @@ const ConfirmationRequired = ({ user, setError }) => {
   const responseRef = useRef();
   const sendEmail = async () => {
     try {
+      const data = {
+        email: user.email,
+      };
       const response = await fetch(import.meta.env.VITE_URL_USER_EMAIL, {
         method: "POST",
         credentials: "include",
-        body: JSON.stringify(user),
+        body: JSON.stringify(data),
         headers: {
           "Content-type": "application/json ; charset=UTF-8",
         },

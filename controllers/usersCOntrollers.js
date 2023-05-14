@@ -121,15 +121,20 @@ export const reviewsDatas = async (req, res, next) => {
 export const reSendMailCOnfirmation = async (req, res, next) => {
   try {
     const { email } = req.body;
+    console.log(email);
     const co = await createPoolConnexion();
     const [user] = await co.query(
       `
-      SELECT confirmation_code, firstname from users WHERE email = ?
+      SELECT confirmation_code, firstname FROM users WHERE email = ?
     `,
       [email]
     );
-
-    await sendConfirmationEmail(email, user.firstname, user.confirmation_code);
+    console.log(user);
+    await sendConfirmationEmail(
+      email,
+      user[0].firstname,
+      user[0].confirmation_code
+    );
     res.status(204).end();
   } catch (err) {
     next(err);

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../users/UserContext.jsx";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyBookingsSkeleton from "../components/MyBookingsSkeleton.jsx";
 import utils from "../users/utilsFunctions.js";
